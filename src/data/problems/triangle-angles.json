@@ -1,0 +1,28 @@
+[
+  {
+    "id": "tri-01",
+    "topicId": "triangle-angles",
+    "question": "삼각형 ABC에서 $\\angle A = 50°$, $\\angle B = 70°$일 때, $\\angle C$의 크기를 구하시오.",
+    "difficulty": 1,
+    "hints": [
+      "삼각형의 세 내각의 합은 180°입니다.",
+      "$\\angle C = 180° - \\angle A - \\angle B$"
+    ],
+    "solution": "삼각형의 내각의 합은 180°이므로:\n\n$$\\angle C = 180° - 50° - 70° = 60°$$\n\n따라서 $\\angle C = 60°$입니다.",
+    "answer": "60",
+    "concepts": ["삼각형 내각의 합", "각도 계산"]
+  },
+  {
+    "id": "tri-02",
+    "topicId": "triangle-angles",
+    "question": "이등변삼각형에서 꼭지각이 $40°$일 때, 두 밑각의 크기를 각각 구하시오.",
+    "difficulty": 2,
+    "hints": [
+      "이등변삼각형에서 두 밑각의 크기는 같습니다.",
+      "세 내각의 합은 180°입니다."
+    ],
+    "solution": "이등변삼각형에서 두 밑각을 $x$라 하면:\n\n$$40° + x + x = 180°$$\n$$2x = 140°$$\n$$x = 70°$$\n\n따라서 두 밑각의 크기는 각각 $70°$입니다.",
+    "answer": "70",
+    "concepts": ["삼각형 내각의 합", "이등변삼각형", "각도 계산"]
+  }
+]

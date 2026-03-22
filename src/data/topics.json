@@ -1,0 +1,10 @@
+[
+  {
+    "id": "triangle-angles",
+    "title": "삼각형의 내각의 합",
+    "subject": "math",
+    "grade": 8,
+    "theoryFile": "triangle-angles.md",
+    "problemIds": ["tri-01", "tri-02"]
+  }
+]
