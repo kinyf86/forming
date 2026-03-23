@@ -12,9 +12,12 @@ export interface Problem {
   topicId: string;
   question: string;
   questionImage?: string;
+  diagram?: string;
   difficulty: 1 | 2 | 3;
   hints: string[];
+  choices: string[];
   solution: string;
+  solutionDiagram?: string;
   answer: string;
   concepts: string[];
 }

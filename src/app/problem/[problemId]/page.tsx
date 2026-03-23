@@ -1,6 +1,7 @@
-import { notFound } from "next/navigation";
 import { getProblem, getTopic } from "@/lib/problems";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { ProblemClient } from "./ProblemClient";
+import { DynamicProblemLoader } from "./DynamicProblemLoader";
 
 export default async function ProblemPage({
   params,
@@ -8,15 +9,25 @@ export default async function ProblemPage({
   params: Promise<{ problemId: string }>;
 }) {
   const { problemId } = await params;
+
+  // Static problem from JSON
   const problem = getProblem(problemId);
-  if (!problem) notFound();
+  if (problem) {
+    const topic = getTopic(problem.topicId);
+    const question = problem.question.slice(0, 20) + "...";
+    const breadcrumb = buildBreadcrumb({
+      chapterId: problem.topicId,
+      problemSummary: question,
+    });
+    return (
+      <ProblemClient
+        problem={problem}
+        topicTitle={topic?.title ?? ""}
+        breadcrumb={breadcrumb}
+      />
+    );
+  }
 
-  const topic = getTopic(problem.topicId);
-
-  return (
-    <ProblemClient
-      problem={problem}
-      topicTitle={topic?.title ?? ""}
-    />
-  );
+  // AI-generated problem (stored in sessionStorage, loaded client-side)
+  return <DynamicProblemLoader problemId={problemId} />;
 }

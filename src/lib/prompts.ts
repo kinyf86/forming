@@ -1,4 +1,5 @@
 import type { Problem } from "@/types";
+import { buildCurriculumContext } from "@/lib/curriculum";
 
 export function buildAnalysisPrompt(params: {
   problem: Problem;
@@ -7,18 +8,23 @@ export function buildAnalysisPrompt(params: {
   finalAnswer: string;
   passed: boolean;
   hasImage?: boolean;
+  curriculumChapterId?: string;
 }): string {
-  const { problem, canvasText, drawingDescription, finalAnswer, passed, hasImage } =
+  const { problem, canvasText, drawingDescription, finalAnswer, passed, hasImage, curriculumChapterId } =
     params;
 
   const imageNote = hasImage
     ? "\n- 캔버스 이미지: 첨부된 이미지를 확인하세요. 학생이 캔버스에 직접 그린 풀이 과정입니다."
     : "";
 
-  return `당신은 수학/과학 튜터입니다. 학생의 풀이를 분석하고 피드백을 제공해주세요.
+  const curriculumContext = curriculumChapterId
+    ? buildCurriculumContext(curriculumChapterId) + "\n\n"
+    : "";
+
+  return `당신은 대한민국 초등학교 수학/과학 튜터입니다. 학생의 풀이를 분석하고 피드백을 제공해주세요.
 ${hasImage ? "첨부된 이미지는 학생이 캔버스에 직접 작성한 풀이 과정입니다. 이미지를 꼼꼼히 분석해주세요." : ""}
 
-## 문제
+${curriculumContext}## 문제
 ${problem.question}
 
 ## 정답

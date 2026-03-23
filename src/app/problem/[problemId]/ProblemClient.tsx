@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
+import { getClientId } from "@/lib/client-id";
 import type { Problem } from "@/types";
 import {
   ExcalidrawCanvas,
@@ -12,19 +12,42 @@ import {
   exportCanvasAsBase64,
 } from "@/components/canvas/ExcalidrawCanvas";
 import { TheoryContent } from "@/components/theory/TheoryContent";
+import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { DiagramSvg } from "@/components/ui/DiagramSvg";
 
 interface ProblemClientProps {
   problem: Problem;
   topicTitle: string;
+  breadcrumb?: BreadcrumbItem[];
 }
 
-export function ProblemClient({ problem, topicTitle }: ProblemClientProps) {
+export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClientProps) {
   const router = useRouter();
   const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
   const [finalAnswer, setFinalAnswer] = useState("");
   const [showHints, setShowHints] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [diagram, setDiagram] = useState<string | null>(problem.diagram ?? null);
+  const [diagramLoading, setDiagramLoading] = useState(false);
+
+  // Auto-generate diagram if question mentions "그림" but no diagram exists
+  useEffect(() => {
+    if (!diagram && /그림|도형|아래/.test(problem.question)) {
+      setDiagramLoading(true);
+      fetch("/api/generate-diagram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ problemId: problem.id, question: problem.question }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.diagram) setDiagram(data.diagram);
+        })
+        .catch(() => {})
+        .finally(() => setDiagramLoading(false));
+    }
+  }, [problem.id, problem.question, diagram]);
 
   const handleApiReady = useCallback((api: ExcalidrawImperativeAPI) => {
     apiRef.current = api;
@@ -47,11 +70,13 @@ export function ProblemClient({ problem, topicTitle }: ProblemClientProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           problemId: problem.id,
+          problem,
           canvasText,
           drawingDescription,
           canvasImage,
           finalAnswer: passed ? "" : finalAnswer,
           passed,
+          clientId: getClientId(),
         }),
       });
 
@@ -87,19 +112,23 @@ export function ProblemClient({ problem, topicTitle }: ProblemClientProps) {
 
   return (
     <div>
-      <div className="mb-6">
-        <Link
-          href={`/theory/${problem.topicId}`}
-          className="text-sm text-blue-600 hover:underline"
-        >
-          &larr; {topicTitle}
-        </Link>
-      </div>
+      {breadcrumb && <Breadcrumb items={breadcrumb} />}
 
       {/* Frame#4: 문제 영역 */}
       <div className="mb-6 rounded-xl border bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-semibold">문제</h2>
+        <div className="mb-4 flex items-center gap-3">
+          <h2 className="text-lg font-semibold">문제</h2>
+          <span className="text-sm text-yellow-500">
+            {"★".repeat(problem.difficulty)}{"☆".repeat(3 - problem.difficulty)}
+          </span>
+        </div>
         <TheoryContent content={problem.question} />
+        {diagramLoading && (
+          <div className="my-4 flex justify-center">
+            <span className="text-sm text-gray-400">도형 생성 중...</span>
+          </div>
+        )}
+        {diagram && <DiagramSvg svg={diagram} />}
       </div>
 
       {/* Frame#5: Reference 영역 */}
@@ -128,19 +157,55 @@ export function ProblemClient({ problem, topicTitle }: ProblemClientProps) {
         <h2 className="mb-4 text-lg font-semibold">풀이 과정</h2>
         <ExcalidrawCanvas onApiReady={handleApiReady} height="800px" />
 
-        <div className="mt-6">
-          <label className="mb-2 block text-sm font-medium text-gray-700">
-            최종 답
-          </label>
-          <input
-            type="text"
-            value={finalAnswer}
-            onChange={(e) => setFinalAnswer(e.target.value)}
-            placeholder="답을 입력하세요"
-            className="w-full rounded-lg border px-4 py-3 text-lg focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-            disabled={loading}
-          />
-        </div>
+        {/* 객관식 보기 */}
+        {problem.choices && problem.choices.length > 0 ? (
+          <div className="mt-6">
+            <label className="mb-3 block text-sm font-medium text-gray-700">
+              답 선택
+            </label>
+            <div className="grid gap-2">
+              {problem.choices.map((choice, i) => (
+                <button
+                  key={i}
+                  onClick={() => setFinalAnswer(choice)}
+                  disabled={loading}
+                  className={`flex items-center gap-3 rounded-lg border px-4 py-3 text-left transition-colors ${
+                    finalAnswer === choice
+                      ? "border-blue-500 bg-blue-50 text-blue-800"
+                      : "border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+                  } disabled:cursor-not-allowed disabled:opacity-50`}
+                >
+                  <span
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-medium ${
+                      finalAnswer === choice
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-100 text-gray-500"
+                    }`}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-lg">
+                    <TheoryContent content={choice} />
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="mt-6">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              최종 답
+            </label>
+            <input
+              type="text"
+              value={finalAnswer}
+              onChange={(e) => setFinalAnswer(e.target.value)}
+              placeholder="답을 입력하세요"
+              className="w-full rounded-lg border px-4 py-3 text-lg focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              disabled={loading}
+            />
+          </div>
+        )}
 
         {error && (
           <div className="mt-4 rounded-lg bg-red-50 p-4 text-sm text-red-700">
