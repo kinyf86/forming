@@ -2,8 +2,15 @@
 
 # Forming - AI 학습 도구
 
+## Language Rules
+
+- **Code, files, and artifacts**: Always write in **English** (variable names, comments, commit messages, documentation files, CHANGELOG, etc.)
+- **Conversation with user**: Always respond in **Korean** (chat, explanations, questions, design discussions)
+- **User-facing UI content**: Always in **Korean** — button labels, headings, descriptions, placeholder text, error messages, toast messages, and any text rendered in the browser. This project targets Korean elementary students.
+- **AI-generated responses**: Always in **Korean** — tutor explanations, feedback analysis, chat replies, problem generation, and any AI output displayed to users. Prompts should explicitly instruct Korean output (already handled via locale.ts tutorPrompt).
+
 ## 프로젝트 개요
-초등학생을 위한 AI 기반 학습 도구. Next.js + Excalidraw + Claude Code CLI.
+초등학생을 위한 AI 기반 학습 도구. Next.js + perfect-freehand + Claude Code CLI.
 
 ## AI Agentic 구현 원칙
 
@@ -27,8 +34,8 @@
 코드는 **데이터 흐름, 저장, UI 렌더링**에 집중하고, **판단과 생성**은 AI에게 맡깁니다.
 
 ## 기술 스택
-- Frontend: Next.js 15 (App Router) + Tailwind CSS
-- 캔버스: @excalidraw/excalidraw (펜/텍스트 입력)
+- Frontend: Next.js 16 (App Router) + Tailwind CSS 4
+- Canvas: perfect-freehand (pen/text input, SVG-based)
 - AI: Claude Code CLI (`claude -p`, stream-json for vision)
 - 데이터: JSON 파일 (src/data/generated/, src/data/history/)
 - 로케일: src/lib/locale.ts (프롬프트 기반 다국어 지원)
@@ -39,3 +46,13 @@
 - src/lib/locale.ts - 나라별 tutorPrompt (AI가 교육과정에 맞게 자율 적응)
 - src/lib/history.ts - 학생 풀이 이력 JSONL 저장
 - src/data/curriculum/ - 교육과정 데이터 (학년/단원/개념)
+
+## gstack
+
+Use /browse from gstack for all web browsing. Never use mcp__claude-in-chrome__* tools.
+Available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review,
+/design-consultation, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse,
+/qa, /qa-only, /design-review, /setup-browser-cookies, /setup-deploy, /retro,
+/investigate, /document-release, /codex, /cso, /autoplan, /careful, /freeze, /guard,
+/unfreeze, /gstack-upgrade.
+If gstack skills aren't working, run `cd .claude/skills/gstack && ./setup` to rebuild.

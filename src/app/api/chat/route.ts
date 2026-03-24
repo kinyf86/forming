@@ -33,7 +33,12 @@ ${chatHistory}
 - 학생이 어디서 실수했는지 구체적으로 설명해주세요
 - 필요하면 관련 개념을 쉽게 다시 설명해주세요
 - 짧고 명확하게 답변하세요 (3~5문장)
-- 마크다운 형식으로 답변하세요`;
+- 마크다운 형식으로 답변하세요
+- 시각적 설명이 도움이 되는 경우, SVG 다이어그램을 포함하세요:
+  - <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"> 로 시작
+  - 모든 텍스트는 text-anchor="middle"
+  - 색상: 주요 #4A90D9, 보조 #5CB85C, 강조 #E67E22
+  - 한국어 레이블, 외부 참조 금지`;
 
     const response = await askClaude(prompt);
 

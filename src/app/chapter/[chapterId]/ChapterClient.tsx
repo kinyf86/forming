@@ -78,6 +78,19 @@ export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientPro
         </div>
       </div>
 
+      {/* AI 튜터 수업 버튼 */}
+      <div className="mt-6">
+        <button
+          onClick={() => router.push(`/tutor/${chapter.id}`)}
+          className="w-full rounded-xl bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-5 text-lg font-bold text-white hover:from-blue-600 hover:to-indigo-600 transition-all shadow-md hover:shadow-lg"
+        >
+          AI 튜터 수업 시작하기
+          <span className="block text-sm font-normal text-blue-100 mt-1">
+            {chapter.concepts.length}개 개념을 시각적으로 배워요
+          </span>
+        </button>
+      </div>
+
       {error && (
         <div className="mt-4 rounded-lg bg-red-50 p-4 text-sm text-red-700">
           {error}

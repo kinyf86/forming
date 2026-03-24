@@ -43,3 +43,7 @@ next-env.d.ts
 # Generated problems and student history
 src/data/generated/
 src/data/history/
+.gstack/
+
+# gstack skills (vendored, large)
+.claude/skills/

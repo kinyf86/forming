@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { TheoryContent } from "@/components/theory/TheoryContent";
+import SvgRenderer from "@/components/ui/SvgRenderer";
 
 interface Message {
   role: "user" | "assistant";
@@ -113,7 +114,22 @@ export function FeedbackChat({ problemContext }: FeedbackChatProps) {
                 }`}
               >
                 {msg.role === "assistant" ? (
-                  <TheoryContent content={msg.content} />
+                  <>
+                    {/* Render SVG blocks from AI response */}
+                    {msg.content.includes("<svg") ? (
+                      <>
+                        {msg.content.split(/(<svg[\s\S]*?<\/svg>)/g).map((part, j) =>
+                          part.startsWith("<svg") ? (
+                            <SvgRenderer key={j} svg={part} className="my-3" />
+                          ) : part.trim() ? (
+                            <TheoryContent key={j} content={part} />
+                          ) : null
+                        )}
+                      </>
+                    ) : (
+                      <TheoryContent content={msg.content} />
+                    )}
+                  </>
                 ) : (
                   <p>{msg.content}</p>
                 )}

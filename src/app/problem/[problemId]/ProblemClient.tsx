@@ -1,16 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { ExcalidrawImperativeAPI } from "@excalidraw/excalidraw/types";
 import { getClientId } from "@/lib/client-id";
 import type { Problem } from "@/types";
-import {
-  ExcalidrawCanvas,
-  extractCanvasText,
-  describeCanvasDrawing,
-  exportCanvasAsBase64,
-} from "@/components/canvas/ExcalidrawCanvas";
+import DrawingCanvas, {
+  type DrawingCanvasAPI,
+} from "@/components/canvas/DrawingCanvas";
 import { TheoryContent } from "@/components/theory/TheoryContent";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
 import { DiagramSvg } from "@/components/ui/DiagramSvg";
@@ -23,7 +19,7 @@ interface ProblemClientProps {
 
 export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClientProps) {
   const router = useRouter();
-  const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
+  const canvasRef = useRef<DrawingCanvasAPI>(null);
   const [finalAnswer, setFinalAnswer] = useState("");
   const [showHints, setShowHints] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -49,21 +45,15 @@ export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClient
     }
   }, [problem.id, problem.question, diagram]);
 
-  const handleApiReady = useCallback((api: ExcalidrawImperativeAPI) => {
-    apiRef.current = api;
-  }, []);
-
   const handleSubmit = async (passed: boolean) => {
     setLoading(true);
     setError(null);
 
-    const canvasText = apiRef.current ? extractCanvasText(apiRef.current) : "";
-    const drawingDescription = apiRef.current
-      ? describeCanvasDrawing(apiRef.current)
-      : "";
-    const canvasImage = apiRef.current
-      ? await exportCanvasAsBase64(apiRef.current)
-      : null;
+    const canvas = canvasRef.current;
+    const canvasText = canvas ? canvas.extractText() : "";
+    const drawingDescription = canvas ? canvas.describeDrawing() : "";
+    const canvasImage = canvas ? await canvas.exportAsBase64() : null;
+
     try {
       const res = await fetch("/api/analyze", {
         method: "POST",
@@ -155,7 +145,7 @@ export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClient
       {/* Frame#6: 답변 영역 */}
       <div className="rounded-xl border bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold">풀이 과정</h2>
-        <ExcalidrawCanvas onApiReady={handleApiReady} height="800px" />
+        <DrawingCanvas ref={canvasRef} height="800px" />
 
         {/* 객관식 보기 */}
         {problem.choices && problem.choices.length > 0 ? (
