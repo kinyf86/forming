@@ -214,26 +214,37 @@ export default function MultimodalChat({
         </div>
       )}
 
-      {/* Input area — fixed at bottom */}
+      {/* Input area */}
       <div className="border-t px-4 py-4 space-y-3">
-        {/* Drawing canvas — always visible */}
-        <DrawingCanvas ref={canvasRef} height="200px" compact />
+        {/* Drawing canvas — always visible, generous height */}
+        <DrawingCanvas ref={canvasRef} height="400px" compact />
 
-        {/* Text input + send */}
-        <div className="flex gap-2">
-          <input
-            type="text"
+        {/* Text input (auto-expanding textarea) + send */}
+        <div className="flex gap-2 items-end">
+          <textarea
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && sendMessage(input)}
-            placeholder="질문을 입력하거나, 위에 그려서 전송하세요..."
-            className="flex-1 rounded-xl border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            onChange={(e) => {
+              setInput(e.target.value);
+              // Auto-expand height
+              e.target.style.height = "auto";
+              e.target.style.height = Math.min(e.target.scrollHeight, 200) + "px";
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage(input);
+              }
+            }}
+            placeholder="질문을 입력하거나, 위에 그려서 전송하세요... (Shift+Enter로 줄바꿈)"
+            className="flex-1 rounded-xl border px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 resize-none overflow-hidden"
+            style={{ minHeight: "48px" }}
+            rows={1}
             disabled={loading}
           />
           <button
             onClick={() => sendMessage(input)}
             disabled={loading}
-            className="rounded-xl bg-blue-600 px-5 py-3 text-white font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors"
+            className="rounded-xl bg-blue-600 px-5 py-3 text-white font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors shrink-0"
           >
             전송
           </button>
