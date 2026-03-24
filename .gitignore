@@ -45,5 +45,8 @@ src/data/generated/
 src/data/history/
 .gstack/
 
+# raw data (large images)
+rawdata/
+
 # gstack skills (vendored, large)
 .claude/skills/
