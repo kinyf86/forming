@@ -88,8 +88,12 @@ function getSvgPathFromStroke(strokePoints: number[][]): string {
 
 // --- Component ---
 
+const MIN_HEIGHT = 200;
+const RESIZE_HANDLE_HEIGHT = 12;
+
 const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
   function DrawingCanvas({ height = "400px", compact = false }, ref) {
+    const initialHeight = parseInt(height) || 400;
     const svgRef = useRef<SVGSVGElement>(null);
     const [strokes, setStrokes] = useState<Stroke[]>([]);
     const [currentPoints, setCurrentPoints] = useState<Point[]>([]);
@@ -100,6 +104,10 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const [texts, setTexts] = useState<TextElement[]>([]);
     const [editingText, setEditingText] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const [canvasHeight, setCanvasHeight] = useState(initialHeight);
+    const [isResizing, setIsResizing] = useState(false);
+    const resizeStartY = useRef(0);
+    const resizeStartHeight = useRef(0);
 
     // --- Imperative API ---
     useImperativeHandle(ref, () => ({
@@ -258,6 +266,34 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
       return () => window.removeEventListener("keydown", handler);
     }, []);
 
+    // --- Resize handle ---
+    useEffect(() => {
+      if (!isResizing) return;
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const delta = e.clientY - resizeStartY.current;
+        setCanvasHeight(Math.max(MIN_HEIGHT, resizeStartHeight.current + delta));
+      };
+      const handleMouseUp = () => setIsResizing(false);
+
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseup", handleMouseUp);
+      };
+    }, [isResizing]);
+
+    const handleResizeStart = useCallback(
+      (e: React.MouseEvent) => {
+        e.preventDefault();
+        resizeStartY.current = e.clientY;
+        resizeStartHeight.current = canvasHeight;
+        setIsResizing(true);
+      },
+      [canvasHeight]
+    );
+
     // --- Render strokes ---
 
     const renderStroke = useCallback(
@@ -381,16 +417,26 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
           </div>
         </div>
 
-        {/* Canvas */}
+        {/* Canvas — scrollable, resizable */}
         <div
-          className="relative overflow-hidden rounded-lg border bg-white"
-          style={{ height }}
+          className="relative overflow-auto rounded-lg border bg-white"
+          style={{ height: canvasHeight }}
         >
           <svg
             ref={svgRef}
-            className="w-full h-full touch-none"
+            className="w-full touch-none"
             style={{
               cursor: tool === "pen" ? "crosshair" : tool === "eraser" ? "cell" : "text",
+              minHeight: canvasHeight,
+              height: Math.max(canvasHeight, /* auto-expand based on content */ (() => {
+                const maxY = Math.max(
+                  ...strokes.flatMap(s => s.points.map(p => p.y)),
+                  ...texts.map(t => t.y),
+                  ...currentPoints.map(p => p.y),
+                  canvasHeight - 50,
+                );
+                return maxY + 100;
+              })()),
             }}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
@@ -442,6 +488,15 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
               </button>
             </div>
           )}
+        </div>
+
+        {/* Resize handle */}
+        <div
+          onMouseDown={handleResizeStart}
+          className="flex items-center justify-center h-3 cursor-ns-resize bg-gray-100 hover:bg-gray-200 rounded-b-lg border border-t-0 transition-colors select-none"
+          title="드래그하여 캔버스 크기 조절"
+        >
+          <div className="w-8 h-1 bg-gray-300 rounded-full" />
         </div>
       </div>
     );
