@@ -8,7 +8,7 @@ import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { TheoryContent } from "@/components/theory/TheoryContent";
 import { DiagramSvg } from "@/components/ui/DiagramSvg";
-import { FeedbackChat } from "@/components/result/FeedbackChat";
+import MultimodalChat from "@/components/chat/MultimodalChat";
 
 interface StoredResult {
   problem: Problem;
@@ -209,9 +209,9 @@ export default function ResultPage() {
         </div>
       )}
 
-      {/* 대화형 피드백 */}
+      {/* 대화형 피드백 — 멀티모달 채팅 */}
       <div className="mb-6">
-        <FeedbackChat
+        <MultimodalChat
           problemContext={{
             question: problem.question,
             answer: problem.answer,

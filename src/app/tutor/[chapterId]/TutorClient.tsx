@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import TutorLesson from "@/components/tutor/TutorLesson";
+import MultimodalChat from "@/components/chat/MultimodalChat";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { LessonContent } from "@/lib/lessons";
 
@@ -50,6 +51,14 @@ export default function TutorClient({
           lessons={lessons}
           onComplete={handleComplete}
         />
+
+        {/* AI tutor chat */}
+        <div className="mt-8">
+          <MultimodalChat
+            title="궁금한 점이 있나요?"
+            subtitle="수업 내용에 대해 그려서 또는 텍스트로 질문할 수 있어요"
+          />
+        </div>
       </div>
     </div>
   );

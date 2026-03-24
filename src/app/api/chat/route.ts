@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { askClaude } from "@/lib/claude";
+import { askClaude, askClaudeWithImage } from "@/lib/claude";
 import { getLocale } from "@/lib/locale";
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages, problemContext } = await request.json();
+    const { messages, problemContext, canvasImage } = await request.json();
 
     const chatHistory = messages
       .map((m: { role: string; content: string }) =>
@@ -14,17 +14,24 @@ export async function POST(request: NextRequest) {
 
     const locale = getLocale();
 
-    const prompt = `당신은 ${locale.country} 초등학교 수학/과학 튜터입니다. 학생이 문제를 풀고 난 후 대화하고 있습니다.
-${locale.tutorPrompt}
-수식은 LaTeX ($...$)로, 표는 마크다운 표 형식으로, 도형은 텍스트로 설명하세요.
+    const imageNote = canvasImage
+      ? "\n\n## 학생의 손글씨/그림\n첨부된 이미지는 학생이 직접 그린 풀이/질문입니다. 이미지를 꼼꼼히 분석하여 답변에 반영해주세요."
+      : "";
 
-## 문제 컨텍스트
+    const contextSection = problemContext
+      ? `\n## 문제 컨텍스트
 - 문제: ${problemContext.question}
 - 정답: ${problemContext.answer}
 - 학생의 답: ${problemContext.studentAnswer}
 - 정답 여부: ${problemContext.isCorrect ? "정답" : "오답"}
 - 학생의 풀이과정 분석: ${problemContext.processAnalysis}
-- 보완할 개념: ${problemContext.weaknesses?.join(", ") || "없음"}
+- 보완할 개념: ${problemContext.weaknesses?.join(", ") || "없음"}`
+      : "";
+
+    const prompt = `당신은 ${locale.country} 초등학교 수학/과학 튜터입니다.
+${locale.tutorPrompt}
+수식은 LaTeX ($...$)로, 표는 마크다운 표 형식으로 작성하세요.
+${contextSection}${imageNote}
 
 ## 대화 내역
 ${chatHistory}
@@ -40,7 +47,9 @@ ${chatHistory}
   - 색상: 주요 #4A90D9, 보조 #5CB85C, 강조 #E67E22
   - 한국어 레이블, 외부 참조 금지`;
 
-    const response = await askClaude(prompt);
+    const response = canvasImage
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
+      : await askClaude(prompt);
 
     return NextResponse.json({ content: response });
   } catch (error) {
