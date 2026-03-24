@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { askClaude } from "@/lib/claude";
+import { getLocale } from "@/lib/locale";
 
 export async function POST(request: NextRequest) {
   try {
@@ -11,9 +12,11 @@ export async function POST(request: NextRequest) {
       )
       .join("\n\n");
 
-    const prompt = `당신은 대한민국 초등학교 수학/과학 튜터입니다. 학생이 문제를 풀고 난 후 대화하고 있습니다.
-학생의 눈높이에 맞춰 친절하고 격려하는 톤으로 답변하세요.
-수식은 LaTeX ($...$)로 표현하세요.
+    const locale = getLocale();
+
+    const prompt = `당신은 ${locale.country} 초등학교 수학/과학 튜터입니다. 학생이 문제를 풀고 난 후 대화하고 있습니다.
+${locale.tutorPrompt}
+수식은 LaTeX ($...$)로, 표는 마크다운 표 형식으로, 도형은 텍스트로 설명하세요.
 
 ## 문제 컨텍스트
 - 문제: ${problemContext.question}
@@ -30,9 +33,7 @@ ${chatHistory}
 - 학생이 어디서 실수했는지 구체적으로 설명해주세요
 - 필요하면 관련 개념을 쉽게 다시 설명해주세요
 - 짧고 명확하게 답변하세요 (3~5문장)
-- 마크다운 형식으로 답변하세요
-- 그림이나 도형은 ASCII 아트 대신 텍스트로 설명하세요
-- 수식은 반드시 LaTeX ($...$, $$...$$)로 표현하세요`;
+- 마크다운 형식으로 답변하세요`;
 
     const response = await askClaude(prompt);
 

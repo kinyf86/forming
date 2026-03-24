@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
     // Use vision if canvas image is available
     const response = canvasImage
-      ? await askClaudeWithImage(prompt, canvasImage, "image/png")
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
       : await askClaude(prompt);
 
     const analysis = parseJsonFromResponse(response) as AnalysisResult;

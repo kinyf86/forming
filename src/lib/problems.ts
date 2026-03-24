@@ -3,8 +3,14 @@ import path from "path";
 import type { Problem, Topic } from "@/types";
 import topics from "@/data/topics.json";
 import triangleProblems from "@/data/problems/triangle-angles.json";
+import grade5Ch4Problems from "@/data/problems/grade5-math-ch4.json";
+import grade5Ch5Problems from "@/data/problems/grade5-math-ch5.json";
 
-const allProblems: Problem[] = [...triangleProblems] as Problem[];
+const allProblems: Problem[] = [
+  ...triangleProblems,
+  ...grade5Ch4Problems,
+  ...grade5Ch5Problems,
+] as Problem[];
 
 const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
 

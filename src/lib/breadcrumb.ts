@@ -1,9 +1,10 @@
 import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
-import { getChapter } from "@/lib/curriculum";
+import { getChapter, getGradeFromChapterId } from "@/lib/curriculum";
 
 function subjectLabel(chapterId: string): { label: string; subject: string } {
-  if (chapterId.startsWith("math")) return { label: "초등6수학", subject: "math" };
-  if (chapterId.startsWith("sci")) return { label: "초등6과학", subject: "science" };
+  const grade = getGradeFromChapterId(chapterId);
+  if (chapterId.startsWith("math")) return { label: `초등${grade}수학`, subject: "math" };
+  if (chapterId.startsWith("sci")) return { label: `초등${grade}과학`, subject: "science" };
   return { label: "학습", subject: "" };
 }
 

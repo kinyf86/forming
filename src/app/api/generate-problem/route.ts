@@ -2,9 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import fs from "fs";
 import path from "path";
-import { getChapter } from "@/lib/curriculum";
+import { getChapter, getConceptAxes, getGradeFromChapterId } from "@/lib/curriculum";
+import { getLocale } from "@/lib/locale";
 import { askClaude, parseJsonFromResponse } from "@/lib/claude";
 import { appendRecord } from "@/lib/history";
+import { loadPrompt } from "@/lib/prompt-loader";
 import type { Problem } from "@/types";
 
 const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
@@ -17,10 +19,70 @@ function saveGeneratedProblem(problem: Problem): void {
   fs.writeFileSync(filePath, JSON.stringify(problem, null, 2), "utf-8");
 }
 
+/** DB에서 해당 단원 + 난이도에 맞는 미풀이 문제를 랜덤으로 찾기 */
+function findExistingProblem(
+  chapterId: string,
+  difficulty: number,
+  clientId: string
+): Problem | null {
+  if (!fs.existsSync(GENERATED_DIR)) return null;
+
+  // Load all problems for this chapter + difficulty
+  const candidates: Problem[] = [];
+  for (const file of fs.readdirSync(GENERATED_DIR)) {
+    if (!file.endsWith(".json")) continue;
+    try {
+      const p = JSON.parse(
+        fs.readFileSync(path.join(GENERATED_DIR, file), "utf-8")
+      ) as Problem;
+      if (p.topicId === chapterId && p.difficulty === difficulty) {
+        candidates.push(p);
+      }
+    } catch {
+      // skip
+    }
+  }
+
+  if (candidates.length === 0) return null;
+
+  // Check which ones the student already solved
+  const historyPath = path.join(
+    process.cwd(),
+    "src/data/history",
+    `${clientId}_submission.jsonl`
+  );
+  const solvedIds = new Set<string>();
+  if (fs.existsSync(historyPath)) {
+    for (const line of fs.readFileSync(historyPath, "utf-8").trim().split("\n")) {
+      if (!line) continue;
+      try {
+        const record = JSON.parse(line);
+        solvedIds.add(record.problemId);
+      } catch {
+        // skip
+      }
+    }
+  }
+
+  // Filter out already solved
+  const unsolved = candidates.filter((p) => !solvedIds.has(p.id));
+  if (unsolved.length === 0) return null;
+
+  // Random pick
+  return unsolved[Math.floor(Math.random() * unsolved.length)];
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { chapterId, difficulty = 1, clientId = "default" } = await request.json();
 
+    // Try DB first - instant response
+    const existing = findExistingProblem(chapterId, difficulty, clientId);
+    if (existing) {
+      return NextResponse.json(existing);
+    }
+
+    // No unsolved problem in DB - generate new one
     const chapter = getChapter(chapterId);
     if (!chapter) {
       return NextResponse.json(
@@ -30,55 +92,21 @@ export async function POST(request: NextRequest) {
     }
 
     const subject = chapterId.startsWith("math") ? "수학" : "과학";
+    const grade = getGradeFromChapterId(chapterId);
+    const locale = getLocale();
     const problemId = `gen-${randomUUID().slice(0, 8)}`;
+    const conceptAxes = getConceptAxes(chapterId);
 
-    const difficultyLabels: Record<number, string> = {
-      1: "기본 (교과서 예제 수준, 개념을 직접 적용하는 단순한 문제)",
-      2: "응용 (두 가지 이상의 개념을 결합하거나, 조건이 추가된 문제)",
-      3: "심화 (수학능력시험/경시대회 수준, 여러 단계의 사고가 필요한 고난도 문제)",
-    };
-    const diffLevel = difficultyLabels[difficulty] || difficultyLabels[1];
-
-    const prompt = `당신은 대한민국 초등학교 6학년 ${subject} 튜터입니다.
-
-## 단원 정보
-- ${chapter.chapter}단원: ${chapter.title}
-- 학습 개념: ${chapter.concepts.join(", ")}
-
-## 난이도
-**${diffLevel}**
-
-## 요청사항
-위 단원에서 지정된 난이도에 맞는 **객관식** 문제를 1개 생성해주세요.
-- choices에 5개의 보기를 포함하세요 (정답 1개 + 오답 4개, 순서는 랜덤)
-- answer는 반드시 choices 중 하나와 정확히 일치해야 합니다
-- 분수, 수식 등 타자로 치기 어려운 답도 보기로 제공해주세요
-- 난이도 ${difficulty}에 맞게 문제의 복잡도를 조절하세요
-- 도형이나 그림이 필요한 문제라면 "diagram" 필드에 SVG 코드를 포함하세요
-- 풀이에 단계별 도형 설명이 필요하면 "solutionDiagram" 필드에 SVG 코드를 포함하세요
-
-## SVG 작성 규칙
-- viewBox="0 0 400 300" 사용
-- 한글 텍스트는 font-family="sans-serif" 사용
-- 색상: 도형 선은 #333, 보조선은 #999 점선, 강조는 #2563eb(파란), 각도 표시는 #dc2626(빨간)
-- 텍스트 크기: 숫자/라벨 font-size="14", 꼭짓점 이름 font-size="16" bold
-- 풀이 SVG에서 단계별로 보여주려면 각 단계를 class="step"으로 감싸세요
-
-반드시 아래 JSON 형식으로만 응답하세요.
-
-{
-  "id": "${problemId}",
-  "topicId": "${chapterId}",
-  "question": "문제 내용 (한국어, LaTeX 수식 사용 가능, '아래 그림과 같이' 등 도형 참조 가능)",
-  "diagram": "<svg>...</svg> 또는 null (도형이 필요 없으면 null)",
-  "difficulty": ${difficulty},
-  "hints": ["힌트1", "힌트2"],
-  "choices": ["보기1", "보기2", "보기3", "보기4", "보기5"],
-  "solution": "단계별 정답 풀이 (한국어, LaTeX 수식 사용 가능, 마크다운)",
-  "solutionDiagram": "<svg>...</svg> 또는 null (풀이 도형이 필요 없으면 null)",
-  "answer": "정답 (choices 중 하나와 정확히 일치)",
-  "concepts": ["이 문제에서 다루는 개념1", "개념2"]
-}`;
+    const prompt = loadPrompt("generate-problem", {
+      country: locale.country,
+      gradeLabel: locale.gradeLabel(grade),
+      subject,
+      tutorPrompt: locale.tutorPrompt,
+      conceptAxes,
+      difficulty,
+      problemId,
+      chapterId,
+    });
 
     const response = await askClaude(prompt);
     const problem = parseJsonFromResponse(response) as Problem;

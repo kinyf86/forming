@@ -33,7 +33,7 @@ export function ExcalidrawCanvas({
   height = "400px",
 }: ExcalidrawCanvasProps) {
   const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
-  const [strokeWidth, setStrokeWidth] = useState(1);
+  const [strokeWidth, setStrokeWidth] = useState(0.5);
 
   const handleApiReady = useCallback(
     (api: ExcalidrawImperativeAPI) => {
@@ -81,7 +81,7 @@ export function ExcalidrawCanvas({
           langCode="ko-KR"
           initialData={{
             appState: {
-              currentItemStrokeWidth: 1,
+              currentItemStrokeWidth: 0.5,
               currentItemFontSize: 16,
             },
           }}
@@ -113,8 +113,13 @@ export function ExcalidrawCanvas({
   );
 }
 
+/**
+ * 캔버스를 리사이즈된 WEBP base64로 export합니다.
+ * Claude Vision 토큰 최적화: 768px 이내 = 1타일(~1,600 토큰)
+ */
 export async function exportCanvasAsBase64(
-  api: ExcalidrawImperativeAPI
+  api: ExcalidrawImperativeAPI,
+  maxSize: number = 768
 ): Promise<string | null> {
   const elements = api.getSceneElements().filter((el) => !el.isDeleted);
   if (elements.length === 0) return null;
@@ -128,13 +133,27 @@ export async function exportCanvasAsBase64(
     exportPadding: 20,
   });
 
+  // Resize using canvas for token optimization
   return new Promise((resolve) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const result = reader.result as string;
-      resolve(result.split(",")[1]); // strip data:image/png;base64, prefix
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+      const w = Math.round(img.width * scale);
+      const h = Math.round(img.height * scale);
+
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d")!;
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+
+      // WEBP with 85% quality for smaller size
+      const dataUrl = canvas.toDataURL("image/webp", 0.85);
+      resolve(dataUrl.split(",")[1]);
     };
-    reader.readAsDataURL(blob);
+    img.src = URL.createObjectURL(blob);
   });
 }
 

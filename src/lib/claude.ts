@@ -21,7 +21,7 @@ export async function askClaude(prompt: string): Promise<string> {
     setTimeout(() => {
       proc.kill();
       reject(new Error("Claude CLI timeout"));
-    }, 120_000);
+    }, 180_000);
   });
 }
 
@@ -91,7 +91,7 @@ export async function askClaudeWithImage(
     setTimeout(() => {
       proc.kill();
       reject(new Error("Claude CLI timeout"));
-    }, 120_000);
+    }, 180_000);
   });
 }
 
