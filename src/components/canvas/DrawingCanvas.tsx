@@ -417,26 +417,16 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
           </div>
         </div>
 
-        {/* Canvas — scrollable, resizable */}
+        {/* Canvas — resizable */}
         <div
-          className="relative overflow-auto rounded-lg border bg-white"
+          className="relative overflow-hidden rounded-lg border bg-white"
           style={{ height: canvasHeight }}
         >
           <svg
             ref={svgRef}
-            className="w-full touch-none"
+            className="w-full h-full touch-none"
             style={{
               cursor: tool === "pen" ? "crosshair" : tool === "eraser" ? "cell" : "text",
-              minHeight: canvasHeight,
-              height: Math.max(canvasHeight, /* auto-expand based on content */ (() => {
-                const maxY = Math.max(
-                  ...strokes.flatMap(s => s.points.map(p => p.y)),
-                  ...texts.map(t => t.y),
-                  ...currentPoints.map(p => p.y),
-                  canvasHeight - 50,
-                );
-                return maxY + 100;
-              })()),
             }}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
