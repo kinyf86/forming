@@ -105,9 +105,6 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const [editingText, setEditingText] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const [canvasHeight, setCanvasHeight] = useState(initialHeight);
-    const [isResizing, setIsResizing] = useState(false);
-    const resizeStartY = useRef(0);
-    const resizeStartHeight = useRef(0);
 
     // --- Imperative API ---
     useImperativeHandle(ref, () => ({
@@ -266,33 +263,13 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
       return () => window.removeEventListener("keydown", handler);
     }, []);
 
-    // --- Resize handle ---
-    useEffect(() => {
-      if (!isResizing) return;
+    const growCanvas = useCallback(() => {
+      setCanvasHeight((h) => h + 200);
+    }, []);
 
-      const handleMouseMove = (e: MouseEvent) => {
-        const delta = e.clientY - resizeStartY.current;
-        setCanvasHeight(Math.max(MIN_HEIGHT, resizeStartHeight.current + delta));
-      };
-      const handleMouseUp = () => setIsResizing(false);
-
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("mouseup", handleMouseUp);
-      };
-    }, [isResizing]);
-
-    const handleResizeStart = useCallback(
-      (e: React.MouseEvent) => {
-        e.preventDefault();
-        resizeStartY.current = e.clientY;
-        resizeStartHeight.current = canvasHeight;
-        setIsResizing(true);
-      },
-      [canvasHeight]
-    );
+    const shrinkCanvas = useCallback(() => {
+      setCanvasHeight((h) => Math.max(MIN_HEIGHT, h - 200));
+    }, []);
 
     // --- Render strokes ---
 
@@ -480,13 +457,26 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
           )}
         </div>
 
-        {/* Resize handle */}
-        <div
-          onMouseDown={handleResizeStart}
-          className="flex items-center justify-center h-3 cursor-ns-resize bg-gray-100 hover:bg-gray-200 rounded-b-lg border border-t-0 transition-colors select-none"
-          title="드래그하여 캔버스 크기 조절"
-        >
-          <div className="w-8 h-1 bg-gray-300 rounded-full" />
+        {/* Resize buttons */}
+        <div className="flex items-center justify-center gap-2 py-1 bg-gray-50 rounded-b-lg border border-t-0">
+          <button
+            onClick={shrinkCanvas}
+            disabled={canvasHeight <= MIN_HEIGHT}
+            className="px-3 py-0.5 text-sm text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded disabled:opacity-30"
+            title="캔버스 줄이기"
+          >
+            −
+          </button>
+          <span className="text-xs text-gray-400 select-none">
+            {canvasHeight}px
+          </span>
+          <button
+            onClick={growCanvas}
+            className="px-3 py-0.5 text-sm text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded"
+            title="캔버스 늘리기"
+          >
+            +
+          </button>
         </div>
       </div>
     );
