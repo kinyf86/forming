@@ -13,7 +13,7 @@ export interface Problem {
   question: string;
   questionImage?: string;
   diagram?: string;
-  difficulty: 1 | 2 | 3;
+  difficulty: 1 | 2 | 3 | 4;
   hints: string[];
   choices: string[];
   solution: string;
@@ -46,7 +46,7 @@ export interface NextProblemSuggestion {
   question: string;
   reason: string;
   targetWeakness: string;
-  difficulty: 1 | 2 | 3;
+  difficulty: 1 | 2 | 3 | 4;
 }
 
 export interface LearningSession {

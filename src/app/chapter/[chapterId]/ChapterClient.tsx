@@ -17,7 +17,7 @@ export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientPro
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleGenerateProblem = async (difficulty: 1 | 2 | 3) => {
+  const handleGenerateProblem = async (difficulty: 1 | 2 | 3 | 4) => {
     setLoading(true);
     setError(null);
 
@@ -97,7 +97,7 @@ export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientPro
         </div>
       )}
 
-      <div className="mt-8 grid gap-3 sm:grid-cols-3">
+      <div className="mt-8 grid gap-3 sm:grid-cols-4">
         <button
           onClick={() => handleGenerateProblem(1)}
           disabled={loading}
@@ -118,6 +118,13 @@ export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientPro
           className="rounded-lg bg-purple-600 px-6 py-4 text-lg font-medium text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? "생성 중..." : "심화 문제"}
+        </button>
+        <button
+          onClick={() => handleGenerateProblem(4)}
+          disabled={loading}
+          className="rounded-lg bg-orange-600 px-6 py-4 text-lg font-medium text-white hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {loading ? "생성 중..." : "도전 문제"}
         </button>
       </div>
     </div>
