@@ -24,7 +24,7 @@ export function DynamicProblemLoader({ problemId }: { problemId: string }) {
       problem
         ? buildBreadcrumb({
             chapterId: problem.topicId,
-            problemSummary: problem.question.replace(/\$[^$]*\$/g, "").slice(0, 20) + "...",
+            problemSummary: problem.question.replace(/\$[^$]*\$/g, "").replace(/\\\(.*?\\\)/g, "").replace(/\\\[.*?\\\]/gs, "").slice(0, 20) + "...",
           })
         : [],
     [problem]
