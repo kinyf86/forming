@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import type { Problem, AnalysisResult } from "@/types";
 import { getClientId } from "@/lib/client-id";
-import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { TheoryContent } from "@/components/theory/TheoryContent";
 import { DiagramSvg } from "@/components/ui/DiagramSvg";
 import MultimodalChat from "@/components/chat/MultimodalChat";
@@ -18,24 +18,6 @@ interface StoredResult {
     finalAnswer: string;
     passed: boolean;
   };
-}
-
-function buildResultBreadcrumb(problem: Problem): BreadcrumbItem[] {
-  const isMath = problem.topicId.startsWith("math");
-  const subjectLabel = isMath ? "초등6수학" : problem.topicId.startsWith("sci") ? "초등6과학" : "학습";
-  const question = problem.question.slice(0, 20) + "...";
-
-  const chapterHref =
-    problem.topicId.startsWith("math-") || problem.topicId.startsWith("sci-")
-      ? `/chapter/${problem.topicId}`
-      : `/theory/${problem.topicId}`;
-
-  return [
-    { label: "홈", href: "/" },
-    { label: subjectLabel, href: "/" },
-    { label: problem.topicId.startsWith("math-") || problem.topicId.startsWith("sci-") ? problem.topicId : problem.topicId, href: chapterHref },
-    { label: question },
-  ];
 }
 
 export default function ResultPage() {
@@ -53,7 +35,13 @@ export default function ResultPage() {
   }, [params.submissionId]);
 
   const breadcrumb = useMemo(
-    () => (data ? buildResultBreadcrumb(data.problem) : []),
+    () =>
+      data
+        ? buildBreadcrumb({
+            chapterId: data.problem.topicId,
+            problemSummary: data.problem.question.replace(/\$[^$]*\$/g, "").slice(0, 20) + "...",
+          })
+        : [],
     [data]
   );
 

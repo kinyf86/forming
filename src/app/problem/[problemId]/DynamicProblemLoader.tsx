@@ -2,21 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Problem } from "@/types";
-import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
+import { getChapter } from "@/lib/curriculum";
 import { ProblemClient } from "./ProblemClient";
-
-function buildClientBreadcrumb(problem: Problem): BreadcrumbItem[] {
-  const ismath = problem.topicId.startsWith("math");
-  const subjectLabel = ismath ? "초등6수학" : "초등6과학";
-  const question = problem.question.slice(0, 20) + "...";
-
-  return [
-    { label: "홈", href: "/" },
-    { label: subjectLabel, href: "/" },
-    { label: problem.topicId, href: `/chapter/${problem.topicId}` },
-    { label: question },
-  ];
-}
 
 export function DynamicProblemLoader({ problemId }: { problemId: string }) {
   const [problem, setProblem] = useState<Problem | null>(null);
@@ -32,7 +20,13 @@ export function DynamicProblemLoader({ problemId }: { problemId: string }) {
   }, [problemId]);
 
   const breadcrumb = useMemo(
-    () => (problem ? buildClientBreadcrumb(problem) : []),
+    () =>
+      problem
+        ? buildBreadcrumb({
+            chapterId: problem.topicId,
+            problemSummary: problem.question.replace(/\$[^$]*\$/g, "").slice(0, 20) + "...",
+          })
+        : [],
     [problem]
   );
 
@@ -55,7 +49,7 @@ export function DynamicProblemLoader({ problemId }: { problemId: string }) {
   return (
     <ProblemClient
       problem={problem}
-      topicTitle={problem.topicId}
+      topicTitle={getChapter(problem.topicId)?.title ?? problem.topicId}
       breadcrumb={breadcrumb}
     />
   );
