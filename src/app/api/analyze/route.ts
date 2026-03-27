@@ -5,6 +5,7 @@ import { getProblem } from "@/lib/problems";
 import { askClaude, askClaudeWithImage, parseJsonFromResponse } from "@/lib/claude";
 import { buildAnalysisPrompt } from "@/lib/prompts";
 import { appendRecord } from "@/lib/history";
+import { PathTraversalError } from "@/lib/sanitize";
 import type { AnalysisResult, Problem } from "@/types";
 
 const CANVAS_DIR = path.join(process.cwd(), "src/data/history/canvas");
@@ -85,6 +86,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(analysis);
   } catch (error) {
+    if (error instanceof PathTraversalError) {
+      return NextResponse.json({ error: "Invalid input." }, { status: 400 });
+    }
     console.error("Analysis error:", error);
     return NextResponse.json(
       {

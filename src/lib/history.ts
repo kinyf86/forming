@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { sanitizePathSegment, assertWithinBase } from "./sanitize";
 
 const HISTORY_DIR = path.join(process.cwd(), "src/data/history");
 
@@ -50,7 +51,10 @@ function ensureDir(): void {
 }
 
 function getFilePath(clientId: string, recordType: string): string {
-  return path.join(HISTORY_DIR, `${clientId}_${recordType}.jsonl`);
+  const safeClientId = sanitizePathSegment(clientId);
+  const filePath = path.join(HISTORY_DIR, `${safeClientId}_${recordType}.jsonl`);
+  assertWithinBase(filePath, HISTORY_DIR);
+  return filePath;
 }
 
 /**

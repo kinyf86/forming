@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { sanitizePathSegment, assertWithinBase } from "./sanitize";
 
 export interface LessonContent {
   concept: string;
@@ -22,7 +23,9 @@ export interface ChapterLesson {
 const LESSONS_DIR = path.join(process.cwd(), "src/data/lessons");
 
 export function getChapterLesson(chapterId: string): ChapterLesson | null {
-  const filePath = path.join(LESSONS_DIR, `${chapterId}.json`);
+  const safeChapterId = sanitizePathSegment(chapterId);
+  const filePath = path.join(LESSONS_DIR, `${safeChapterId}.json`);
+  assertWithinBase(filePath, LESSONS_DIR);
   if (!fs.existsSync(filePath)) return null;
 
   try {
@@ -36,7 +39,9 @@ export function saveChapterLesson(lesson: ChapterLesson): void {
   if (!fs.existsSync(LESSONS_DIR)) {
     fs.mkdirSync(LESSONS_DIR, { recursive: true });
   }
-  const filePath = path.join(LESSONS_DIR, `${lesson.chapterId}.json`);
+  const safeChapterId = sanitizePathSegment(lesson.chapterId);
+  const filePath = path.join(LESSONS_DIR, `${safeChapterId}.json`);
+  assertWithinBase(filePath, LESSONS_DIR);
   fs.writeFileSync(filePath, JSON.stringify(lesson, null, 2), "utf-8");
 }
 

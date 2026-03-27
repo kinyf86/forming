@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { askClaude } from "@/lib/claude";
+import { sanitizePathSegment, assertWithinBase, PathTraversalError } from "@/lib/sanitize";
 
 const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
 
@@ -34,7 +35,9 @@ SVG 코드만 출력하세요. 설명 없이 <svg>...</svg> 만 출력하세요.
     }
 
     // Save to problem file if it exists
-    const filePath = path.join(GENERATED_DIR, `${problemId}.json`);
+    const safeProblemId = sanitizePathSegment(problemId);
+    const filePath = path.join(GENERATED_DIR, `${safeProblemId}.json`);
+    assertWithinBase(filePath, GENERATED_DIR);
     if (fs.existsSync(filePath)) {
       const problem = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       problem.diagram = svg;
@@ -43,6 +46,9 @@ SVG 코드만 출력하세요. 설명 없이 <svg>...</svg> 만 출력하세요.
 
     return NextResponse.json({ diagram: svg });
   } catch (error) {
+    if (error instanceof PathTraversalError) {
+      return NextResponse.json({ error: "Invalid input." }, { status: 400 });
+    }
     console.error("Diagram generation error:", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "도형 생성 오류" },

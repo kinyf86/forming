@@ -5,8 +5,9 @@ import path from "path";
 import { getChapter, getConceptAxes, getGradeFromChapterId } from "@/lib/curriculum";
 import { getLocale } from "@/lib/locale";
 import { askClaude, parseJsonFromResponse } from "@/lib/claude";
-import { appendRecord } from "@/lib/history";
+import { appendRecord, getSubmissions } from "@/lib/history";
 import { loadPrompt } from "@/lib/prompt-loader";
+import { PathTraversalError } from "@/lib/sanitize";
 import type { Problem } from "@/types";
 
 const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
@@ -46,23 +47,8 @@ function findExistingProblem(
   if (candidates.length === 0) return null;
 
   // Check which ones the student already solved
-  const historyPath = path.join(
-    process.cwd(),
-    "src/data/history",
-    `${clientId}_submission.jsonl`
-  );
-  const solvedIds = new Set<string>();
-  if (fs.existsSync(historyPath)) {
-    for (const line of fs.readFileSync(historyPath, "utf-8").trim().split("\n")) {
-      if (!line) continue;
-      try {
-        const record = JSON.parse(line);
-        solvedIds.add(record.problemId);
-      } catch {
-        // skip
-      }
-    }
-  }
+  const submissions = getSubmissions(clientId);
+  const solvedIds = new Set<string>(submissions.map((s) => s.problemId));
 
   // Filter out already solved
   const unsolved = candidates.filter((p) => !solvedIds.has(p.id));
@@ -134,6 +120,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(problem);
   } catch (error) {
+    if (error instanceof PathTraversalError) {
+      return NextResponse.json({ error: "Invalid input." }, { status: 400 });
+    }
     console.error("Problem generation error:", error);
     return NextResponse.json(
       {
