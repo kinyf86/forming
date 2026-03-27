@@ -42,7 +42,23 @@ export interface SubmissionRecord {
   encouragement: string;
 }
 
-export type HistoryRecord = ProblemGenerationRecord | SubmissionRecord;
+/**
+ * 튜터 대화 이력
+ */
+export interface TutorRecord {
+  type: "tutor_turn";
+  id: string;
+  timestamp: number;
+  sessionId: string;
+  userMessage: string;
+  assistantResponse: string;
+  action: "push" | "pop" | "stay" | "complete";
+  concept: string;
+  current_concept: string;
+  prerequisite_stack: string[];
+}
+
+export type HistoryRecord = ProblemGenerationRecord | SubmissionRecord | TutorRecord;
 
 function ensureDir(): void {
   if (!fs.existsSync(HISTORY_DIR)) {
@@ -100,6 +116,26 @@ export function getGenerations(clientId: string): ProblemGenerationRecord[] {
  */
 export function getWrongAnswers(clientId: string): SubmissionRecord[] {
   return getSubmissions(clientId).filter((r) => !r.isCorrect);
+}
+
+/**
+ * 튜터 대화 이력 저장
+ */
+export function appendTutorRecord(clientId: string, record: TutorRecord): void {
+  try {
+    ensureDir();
+    const filePath = getFilePath(clientId, "tutor_turn");
+    fs.appendFileSync(filePath, JSON.stringify(record) + "\n", "utf-8");
+  } catch {
+    // Logging failure should not block tutor response
+  }
+}
+
+/**
+ * 튜터 대화 이력 조회
+ */
+export function getTutorHistory(clientId: string): TutorRecord[] {
+  return getRecords(clientId, "tutor_turn") as TutorRecord[];
 }
 
 /**

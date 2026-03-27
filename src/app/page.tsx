@@ -23,9 +23,21 @@ export default function Home() {
   return (
     <div>
       <h1 className="mb-2 text-3xl font-bold">Forming</h1>
-      <p className="mb-8 text-gray-600">
+      <p className="mb-6 text-gray-600">
         학습할 단원을 선택해주세요.
       </p>
+
+      <Link
+        href="/tutor"
+        className="mb-8 flex items-center gap-3 rounded-2xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-5 shadow-sm transition-all hover:shadow-md hover:border-blue-300"
+      >
+        <span className="text-3xl">💬</span>
+        <div>
+          <h2 className="text-lg font-bold text-blue-700">AI 튜터에게 물어보기</h2>
+          <p className="text-sm text-gray-500">수학, 과학 뭐든 자유롭게 질문해보세요</p>
+        </div>
+        <span className="ml-auto text-blue-400 text-xl">&rarr;</span>
+      </Link>
 
       {Object.entries(grouped).map(([subject, grades]) => {
         const config = SUBJECT_CONFIG[subject as keyof typeof SUBJECT_CONFIG];
