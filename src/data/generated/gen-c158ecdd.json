@@ -1,0 +1,26 @@
+{
+  "id": "gen-c158ecdd",
+  "topicId": "math-6-2-05",
+  "question": "아래 그림과 같이 원 모양의 꽃밭이 있습니다. 이 꽃밭의 원주가 18.84 m일 때, 꽃밭의 넓이는 몇 m²입니까? (원주율: 3.14)",
+  "diagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"300\" fill=\"#f9fafb\"/><circle cx=\"200\" cy=\"155\" r=\"108\" fill=\"#d1fae5\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"200\" cy=\"155\" r=\"4\" fill=\"#333\"/><path d=\"M 200 47 A 108 108 0 0 1 308 155\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2.5\"/><polygon points=\"308,155 296,148 302,162\" fill=\"#2563eb\"/><text x=\"295\" y=\"72\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#2563eb\" font-weight=\"bold\">원주 = 18.84 m</text><text x=\"172\" y=\"148\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#15803d\">꽃밭</text><text x=\"160\" y=\"172\" font-family=\"sans-serif\" font-size=\"15\" fill=\"#dc2626\" font-weight=\"bold\">넓이 = ? m²</text><text x=\"152\" y=\"280\" font-family=\"sans-serif\" font-size=\"12\" fill=\"#888\">(원주율 = 3.14)</text></svg>",
+  "difficulty": 2,
+  "hints": [
+    "원주 = 지름 × 원주율이므로, 먼저 지름을 구한 뒤 반지름을 구해 보세요.",
+    "반지름을 구한 후 원의 넓이 공식(반지름 × 반지름 × 원주율)을 적용하세요."
+  ],
+  "choices": [
+    "9.42 m²",
+    "28.26 m²",
+    "56.52 m²",
+    "113.04 m²",
+    "12.56 m²"
+  ],
+  "solution": "**1단계: 지름 구하기**\n\n원주 공식: 원주 = 지름 × 원주율\n\n$$지름 = 원주 ÷ 원주율 = 18.84 ÷ 3.14 = 6 \\text{ (m)}$$\n\n**2단계: 반지름 구하기**\n\n$$반지름 = 지름 ÷ 2 = 6 ÷ 2 = 3 \\text{ (m)}$$\n\n**3단계: 원의 넓이 구하기**\n\n원의 넓이 공식: 넓이 = 반지름 × 반지름 × 원주율\n\n$$넓이 = 3 \\times 3 \\times 3.14 = 9 \\times 3.14 = 28.26 \\text{ (m}^2\\text{)}$$\n\n**정답: 28.26 m²**\n\n> ⚠️ 흔한 실수: 원주를 원주율로만 나누면 지름(6 m)이 나옵니다. 반지름은 지름의 절반(3 m)임을 잊지 마세요!",
+  "solutionDiagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"300\" fill=\"#f9fafb\"/><circle cx=\"195\" cy=\"155\" r=\"105\" fill=\"#d1fae5\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"195\" cy=\"155\" r=\"4\" fill=\"#333\"/><line x1=\"90\" y1=\"155\" x2=\"300\" y2=\"155\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><line x1=\"195\" y1=\"155\" x2=\"300\" y2=\"155\" stroke=\"#dc2626\" stroke-width=\"2.5\"/><text x=\"230\" y=\"143\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#dc2626\" font-weight=\"bold\">반지름 = 3 m</text><text x=\"115\" y=\"183\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#666\">지름 = 6 m</text><rect x=\"52\" y=\"195\" width=\"296\" height=\"50\" rx=\"8\" fill=\"#dbeafe\" stroke=\"#2563eb\" stroke-width=\"1.5\"/><text x=\"200\" y=\"215\" font-family=\"sans-serif\" font-size=\"13\" fill=\"#1e40af\" text-anchor=\"middle\">넓이 = 3 × 3 × 3.14</text><text x=\"200\" y=\"236\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">= 28.26 m²</text></svg>",
+  "answer": "28.26 m²",
+  "concepts": [
+    "원주와 원주율",
+    "원주로 반지름 구하기",
+    "원의 넓이 구하기"
+  ]
+}

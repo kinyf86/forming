@@ -1,0 +1,25 @@
+{
+  "id": "gen-f6a7b8cb",
+  "topicId": "sci-9-1-03",
+  "question": "질량이 $$5\\text{kg}$$인 물체에 $$10\\text{N}$$의 힘을 가했을 때, 물체의 가속도는?",
+  "diagram": null,
+  "difficulty": 2,
+  "hints": [
+    "뉴턴의 운동 제2법칙을 이용하세요: $$F = ma$$",
+    "$$a = \\frac{F}{m}$$에 값을 대입하세요."
+  ],
+  "choices": [
+    "$$0.5\\text{m/s}^2$$",
+    "$$1\\text{m/s}^2$$",
+    "$$2\\text{m/s}^2$$",
+    "$$5\\text{m/s}^2$$",
+    "$$50\\text{m/s}^2$$"
+  ],
+  "solution": "**1단계:** 뉴턴의 운동 제2법칙을 적용합니다.\n$$F = ma$$ → $$a = \\frac{F}{m}$$\n\n**2단계:** 값을 대입합니다.\n$$a = \\frac{10}{5} = 2\\text{m/s}^2$$",
+  "solutionDiagram": null,
+  "answer": "$$2\\text{m/s}^2$$",
+  "concepts": [
+    "뉴턴의 운동 법칙",
+    "가속도"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "gen-b2c3d4e5",
+  "topicId": "math-8-1-01",
+  "question": "순환소수 $$0.\\overline{27}$$을 분수로 나타내면?",
+  "diagram": null,
+  "difficulty": 1,
+  "hints": [
+    "$$x = 0.\\overline{27} = 0.272727...$$로 놓고 $$100x$$를 구해보세요.",
+    "$$100x - x$$를 계산하면 순환하는 부분이 사라져요."
+  ],
+  "choices": [
+    "$$\\frac{3}{11}$$",
+    "$$\\frac{27}{100}$$",
+    "$$\\frac{27}{99}$$",
+    "$$\\frac{9}{33}$$",
+    "$$\\frac{3}{10}$$"
+  ],
+  "solution": "**1단계:** $$x = 0.\\overline{27}$$로 놓으면\n$$100x = 27.\\overline{27}$$\n\n**2단계:** $$100x - x = 27.\\overline{27} - 0.\\overline{27}$$\n$$99x = 27$$\n$$x = \\frac{27}{99} = \\frac{3}{11}$$",
+  "solutionDiagram": null,
+  "answer": "$$\\frac{3}{11}$$",
+  "concepts": [
+    "순환소수",
+    "분수 변환"
+  ]
+}

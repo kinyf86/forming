@@ -1,0 +1,25 @@
+{
+  "id": "gen-a1b2c3d8",
+  "topicId": "math-7-2-05",
+  "question": "정십이각형의 내각의 합은 몇 도인가?",
+  "diagram": null,
+  "difficulty": 3,
+  "hints": [
+    "$$n$$각형의 내각의 합은 $$180^\\circ \\times (n - 2)$$예요.",
+    "정십이각형은 $$n = 12$$인 다각형이에요."
+  ],
+  "choices": [
+    "$$1440^\\circ$$",
+    "$$1620^\\circ$$",
+    "$$1800^\\circ$$",
+    "$$1980^\\circ$$",
+    "$$2160^\\circ$$"
+  ],
+  "solution": "**1단계:** $$n$$각형의 내각의 합 공식을 적용합니다.\n내각의 합 $$= 180^\\circ \\times (n - 2)$$\n\n**2단계:** $$n = 12$$를 대입합니다.\n$$180^\\circ \\times (12 - 2) = 180^\\circ \\times 10 = 1800^\\circ$$",
+  "solutionDiagram": null,
+  "answer": "$$1800^\\circ$$",
+  "concepts": [
+    "다각형의 내각의 합",
+    "정다각형"
+  ]
+}

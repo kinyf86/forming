@@ -1,0 +1,25 @@
+{
+  "id": "gen-c3d4e5f6",
+  "topicId": "math-9-1-01",
+  "question": "$$\\sqrt{48}$$을 가장 간단한 형태로 나타내면?",
+  "diagram": null,
+  "difficulty": 1,
+  "hints": [
+    "48을 소인수분해하여 제곱수를 찾아보세요.",
+    "$$\\sqrt{a^2 \\times b} = a\\sqrt{b}$$를 이용하세요."
+  ],
+  "choices": [
+    "$$2\\sqrt{12}$$",
+    "$$4\\sqrt{3}$$",
+    "$$3\\sqrt{4}$$",
+    "$$6\\sqrt{2}$$",
+    "$$2\\sqrt{6}$$"
+  ],
+  "solution": "**1단계:** $$48$$을 소인수분해합니다.\n$$48 = 2^4 \\times 3 = 16 \\times 3$$\n\n**2단계:** 근호를 간단히 합니다.\n$$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$$",
+  "solutionDiagram": null,
+  "answer": "$$4\\sqrt{3}$$",
+  "concepts": [
+    "제곱근",
+    "근호의 성질"
+  ]
+}

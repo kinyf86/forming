@@ -1,0 +1,25 @@
+{
+  "id": "gen-3f274b6e",
+  "topicId": "math-11-2-01",
+  "question": "$$\\sin 60° + \\cos 30°$$의 값은?",
+  "diagram": null,
+  "difficulty": 2,
+  "hints": [
+    "$$\\sin 60° = \\frac{\\sqrt{3}}{2}$$, $$\\cos 30° = \\frac{\\sqrt{3}}{2}$$입니다.",
+    "두 값을 더하세요."
+  ],
+  "choices": [
+    "$$1$$",
+    "$$\\sqrt{3}$$",
+    "$$\\frac{\\sqrt{3}}{2}$$",
+    "$$\\frac{3}{2}$$",
+    "$$2$$"
+  ],
+  "solution": "**1단계:** 각 삼각비의 값을 구합니다.\n$$\\sin 60° = \\frac{\\sqrt{3}}{2}$$\n$$\\cos 30° = \\frac{\\sqrt{3}}{2}$$\n\n**2단계:** 합을 구합니다.\n$$\\frac{\\sqrt{3}}{2} + \\frac{\\sqrt{3}}{2} = \\sqrt{3}$$",
+  "solutionDiagram": null,
+  "answer": "$$\\sqrt{3}$$",
+  "concepts": [
+    "삼각함수의 값",
+    "특수각의 삼각비"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "gen-d4e5f6a8",
+  "topicId": "sci-7-1-02",
+  "question": "질량이 $$2\\text{kg}$$인 물체에 작용하는 지구에서의 중력의 크기는? (중력가속도 $$g = 9.8\\text{m/s}^2$$)",
+  "diagram": null,
+  "difficulty": 1,
+  "hints": [
+    "중력의 크기 = 질량 × 중력가속도예요.",
+    "$$F = mg$$에 값을 대입하세요."
+  ],
+  "choices": [
+    "$$4.9\\text{N}$$",
+    "$$9.8\\text{N}$$",
+    "$$19.6\\text{N}$$",
+    "$$29.4\\text{N}$$",
+    "$$39.2\\text{N}$$"
+  ],
+  "solution": "**1단계:** 중력 공식을 적용합니다.\n$$F = mg$$\n\n**2단계:** 값을 대입합니다.\n$$F = 2 \\times 9.8 = 19.6\\text{N}$$",
+  "solutionDiagram": null,
+  "answer": "$$19.6\\text{N}$$",
+  "concepts": [
+    "중력",
+    "힘의 크기"
+  ]
+}

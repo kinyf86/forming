@@ -1,0 +1,27 @@
+{
+  "id": "gen-6d661c4c",
+  "topicId": "math-5-1-03",
+  "question": "아래 표는 달걀 농장에서 닭의 수 $x$마리와 하루에 수집하는 달걀의 수 $y$개 사이의 대응 관계입니다.\n\n[다이어그램 참조]\n\n농장 주인은 하루에 달걀을 **96개 이상 288개 이하**로 수집하려 합니다. 이 조건을 만족하는 닭의 수 $x$ 중에서 4와 6의 **공배수**(공배수: 두 수의 배수가 되는 수)인 것을 모두 찾아 더하면 얼마입니까?",
+  "diagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"14\">\n  <text x=\"200\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#1a1a2e\">닭의 수와 달걀 수의 대응 관계</text>\n\n  <!-- 헤더 행 -->\n  <rect x=\"20\" y=\"45\" width=\"155\" height=\"42\" fill=\"#dbeafe\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <text x=\"97\" y=\"71\" text-anchor=\"middle\" fill=\"#1e40af\" font-weight=\"bold\">닭의 수 x (마리)</text>\n  <rect x=\"175\" y=\"45\" width=\"50\" height=\"42\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <text x=\"200\" y=\"71\" text-anchor=\"middle\" fill=\"#1e3a5f\">2</text>\n  <rect x=\"225\" y=\"45\" width=\"50\" height=\"42\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"71\" text-anchor=\"middle\" fill=\"#1e3a5f\">4</text>\n  <rect x=\"275\" y=\"45\" width=\"50\" height=\"42\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"71\" text-anchor=\"middle\" fill=\"#1e3a5f\">6</text>\n  <rect x=\"325\" y=\"45\" width=\"55\" height=\"42\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <text x=\"352\" y=\"71\" text-anchor=\"middle\" fill=\"#1e3a5f\">8</text>\n\n  <!-- 데이터 행 -->\n  <rect x=\"20\" y=\"87\" width=\"155\" height=\"42\" fill=\"#dcfce7\" stroke=\"#16a34a\" stroke-width=\"1.5\"/>\n  <text x=\"97\" y=\"113\" text-anchor=\"middle\" fill=\"#15803d\" font-weight=\"bold\">달걀 수 y (개)</text>\n  <rect x=\"175\" y=\"87\" width=\"50\" height=\"42\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"1.5\"/>\n  <text x=\"200\" y=\"113\" text-anchor=\"middle\" fill=\"#14532d\">12</text>\n  <rect x=\"225\" y=\"87\" width=\"50\" height=\"42\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"113\" text-anchor=\"middle\" fill=\"#14532d\">24</text>\n  <rect x=\"275\" y=\"87\" width=\"50\" height=\"42\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"113\" text-anchor=\"middle\" fill=\"#14532d\">36</text>\n  <rect x=\"325\" y=\"87\" width=\"55\" height=\"42\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"1.5\"/>\n  <text x=\"352\" y=\"113\" text-anchor=\"middle\" fill=\"#14532d\">48</text>\n\n  <!-- 대응 화살표 -->\n  <line x1=\"200\" y1=\"87\" x2=\"200\" y2=\"75\" stroke=\"none\"/>\n  <text x=\"200\" y=\"155\" text-anchor=\"middle\" font-size=\"12\" fill=\"#6b7280\">↕ × 6</text>\n  <text x=\"250\" y=\"155\" text-anchor=\"middle\" font-size=\"12\" fill=\"#6b7280\">↕ × 6</text>\n  <text x=\"300\" y=\"155\" text-anchor=\"middle\" font-size=\"12\" fill=\"#6b7280\">↕ × 6</text>\n  <text x=\"352\" y=\"155\" text-anchor=\"middle\" font-size=\"12\" fill=\"#6b7280\">↕ × 6</text>\n\n  <!-- 조건 박스 -->\n  <rect x=\"20\" y=\"170\" width=\"360\" height=\"52\" rx=\"8\" fill=\"#fef3c7\" stroke=\"#d97706\" stroke-width=\"1.5\"/>\n  <text x=\"200\" y=\"192\" text-anchor=\"middle\" font-size=\"13\" fill=\"#92400e\" font-weight=\"bold\">수집 조건</text>\n  <text x=\"200\" y=\"212\" text-anchor=\"middle\" font-size=\"14\" fill=\"#78350f\">96개 이상 288개 이하</text>\n\n  <text x=\"200\" y=\"260\" text-anchor=\"middle\" font-size=\"12\" fill=\"#374151\">조건을 만족하는 x 중 4와 6의 공배수를 모두 더하면?</text>\n</svg>",
+  "difficulty": 3,
+  "hints": [
+    "표에서 $y \\div x$의 값이 항상 얼마인지 확인해 대응 관계식 $y = \\square \\times x$를 구해 보세요.",
+    "$96 \\leq y \\leq 288$에 $y = 6x$를 대입하면 $x$의 범위가 나와요. '이상'·'이하'는 경계값을 포함한다는 점을 주의하세요."
+  ],
+  "choices": [
+    "① 60",
+    "② 84",
+    "③ 108",
+    "④ 120",
+    "⑤ 132"
+  ],
+  "solution": "## 1단계 — 대응 관계식 구하기 (규칙과 대응)\n\n표에서 $y \\div x$를 계산합니다.\n\n| $x$ | $y$ | $y \\div x$ |\n|:---:|:---:|:----------:|\n| 2 | 12 | **6** |\n| 4 | 24 | **6** |\n| 6 | 36 | **6** |\n| 8 | 48 | **6** |\n\n$y$는 항상 $x$의 6배이므로 대응 관계식:\n$$y = 6x$$\n\n---\n\n## 2단계 — x의 범위 구하기 (수의 범위와 어림하기)\n\n$96 \\leq y \\leq 288$에 $y = 6x$를 대입합니다.\n\n$$96 \\leq 6x \\leq 288$$\n\n각 변을 6으로 나누면:\n\n$$16 \\leq x \\leq 48$$\n\n---\n\n## 3단계 — 4와 6의 공배수 구하기 (약수와 배수)\n\n**최소공배수**(최소공배수: 공배수 중 가장 작은 수)를 이용합니다.\n\n- 4 = 2²,  6 = 2 × 3\n- 4와 6의 최소공배수 = $2^2 \\times 3 = 12$\n\n4와 6의 공배수: 12, 24, 36, 48, 60, …\n\n---\n\n## 4단계 — 범위 안에 있는 공배수 확인\n\n$16 \\leq x \\leq 48$에 속하는 공배수:\n\n| 공배수 | 범위 판정 | 포함 여부 |\n|:------:|:---------:|:---------:|\n| 12 | $12 < 16$ | ✗ 제외 |\n| **24** | $16 \\leq 24 \\leq 48$ | ✓ 포함 |\n| **36** | $16 \\leq 36 \\leq 48$ | ✓ 포함 |\n| **48** | $16 \\leq 48 \\leq 48$ | ✓ 포함 |\n| 60 | $60 > 48$ | ✗ 제외 |\n\n> ⚠️ **핵심 함정**: '$x \\leq 48$'은 **이하**이므로 $x = 48$이 **포함**됩니다.\n> '$x = 48$'을 빠뜨리면 $24 + 36 = 60$이 되어 오답 ①을 고르게 됩니다.\n\n---\n\n## 5단계 — 합산\n\n$$24 + 36 + 48 = \\boxed{108}$$",
+  "solutionDiagram": null,
+  "answer": "③ 108",
+  "concepts": [
+    "축: C(대응관계) × G(수의 범위) × B(공배수·최소공배수)",
+    "조합: 연쇄 — C(관계식 도출) → G(x 범위 산출) → B(범위 내 공배수 합산)",
+    "함정1: 등호 경계 — '이하(≤)'에서 x=48 포함 여부 (빠뜨리면 60으로 오답)",
+    "함정2: 경우 누락 — 범위 밖 공배수 x=12를 실수로 포함하면 합이 120으로 오답"
+  ]
+}

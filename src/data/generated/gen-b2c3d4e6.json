@@ -1,0 +1,25 @@
+{
+  "id": "gen-b2c3d4e6",
+  "topicId": "math-8-1-02",
+  "question": "$$(-2a^3b)^2 \\times 3ab^2$$를 계산하면?",
+  "diagram": null,
+  "difficulty": 1,
+  "hints": [
+    "거듭제곱을 먼저 전개하세요. $$(xy)^n = x^n y^n$$을 이용해요.",
+    "같은 문자끼리 지수법칙을 적용하세요."
+  ],
+  "choices": [
+    "$$12a^7b^4$$",
+    "$$-12a^7b^4$$",
+    "$$12a^6b^4$$",
+    "$$-6a^7b^4$$",
+    "$$6a^6b^3$$"
+  ],
+  "solution": "**1단계:** $$(-2a^3b)^2$$를 전개합니다.\n$$(-2)^2 \\times (a^3)^2 \\times b^2 = 4a^6b^2$$\n\n**2단계:** $$4a^6b^2 \\times 3ab^2$$를 계산합니다.\n$$4 \\times 3 \\times a^{6+1} \\times b^{2+2} = 12a^7b^4$$",
+  "solutionDiagram": null,
+  "answer": "$$12a^7b^4$$",
+  "concepts": [
+    "지수법칙",
+    "단항식의 곱셈"
+  ]
+}

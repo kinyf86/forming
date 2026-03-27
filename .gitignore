@@ -40,8 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Generated problems and student history
-src/data/generated/
+# Student history (runtime data)
 src/data/history/
 .gstack/
 

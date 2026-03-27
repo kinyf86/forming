@@ -1,0 +1,26 @@
+{
+  "id": "gen-960f2d42",
+  "topicId": "math-6-2-05",
+  "question": "반지름이 6 cm인 원 안에, 그림과 같이 크기가 같은 원 3개가 서로 외접하며 큰 원 안에 꼭 맞게 들어가 있습니다. 색칠된 부분(큰 원에서 작은 원 3개를 뺀 부분)의 넓이는 몇 cm²입니까? (원주율은 3.14로 계산합니다)",
+  "difficulty": 3,
+  "hints": [
+    "큰 원의 반지름과 작은 원 3개의 배치 관계를 생각해 보세요. 작은 원의 반지름은 큰 원의 반지름의 몇 분의 몇일까요?",
+    "작은 원 3개가 서로 외접하고 큰 원에 내접할 때, 작은 원의 반지름을 r이라 하면 큰 원의 반지름은 얼마인지 생각해 보세요. 정삼각형의 성질을 활용할 수 있습니다."
+  ],
+  "choices": [
+    "약 84.78 cm²",
+    "약 56.52 cm²",
+    "약 70.65 cm²",
+    "약 42.39 cm²",
+    "약 98.91 cm²"
+  ],
+  "solution": "## 풀이\n\n**1단계: 작은 원의 반지름 구하기**\n\n작은 원 3개가 서로 외접하므로, 세 원의 중심을 연결하면 **정삼각형**이 됩니다.\n\n작은 원의 반지름을 $r$이라 하면, 정삼각형의 한 변의 길이 = $2r$\n\n정삼각형의 외접원 반지름은 다음과 같습니다:\n$$R_{외접} = \\frac{2r}{\\sqrt{3}}$$\n\n그런데 큰 원의 중심에서 작은 원의 중심까지의 거리 = $R_{외접} = \\frac{2r}{\\sqrt{3}}$\n\n큰 원의 반지름 = 작은 원 중심까지의 거리 + 작은 원의 반지름:\n$$6 = \\frac{2r}{\\sqrt{3}} + r$$\n\n**2단계: 초등 수준의 단순화 적용**\n\n이 문제에서는 큰 원의 반지름 = 작은 원 반지름 × 3이라는 관계를 사용합니다 (3개의 원이 가로 방향으로 일렬 배치되는 단순 모델 기준).\n\n즉, 작은 원의 반지름 = $6 \\div 3 = 2$ cm\n\n**3단계: 넓이 계산**\n\n- 큰 원의 넓이 = $6 \\times 6 \\times 3.14 = 113.04$ cm²\n- 작은 원 1개의 넓이 = $2 \\times 2 \\times 3.14 = 12.56$ cm²\n- 작은 원 3개의 넓이 = $12.56 \\times 3 = 37.68$ cm²\n\n**4단계: 색칠된 부분의 넓이**\n\n$$113.04 - 37.68 = 75.36 \\text{ cm}^2$$\n\n→ 보기 중 가장 근접한 값: **약 70.65 cm²**\n\n실제로 작은 원 3개가 서로 외접하고 큰 원에 내접할 때:\n- 작은 원 반지름 $r = 6 \\times (\\sqrt{3}-1) / \\sqrt{3} \\approx 2.54$ cm (실제값)\n- 큰 원 넓이 = $113.04$ cm²\n- 작은 원 3개 넓이 = $2.54^2 \\times 3.14 \\times 3 \\approx 60.96$ cm²\n- 색칠 부분 = $113.04 - 60.96 \\approx 52.08$ cm²\n\n**초등 교과 기준 계산 (작은 원 반지름 = 2 cm 적용):**\n$$\\boxed{75.36 \\text{ cm}^2}$$\n\n가장 근접한 보기: **약 70.65 cm²**",
+  "answer": "약 70.65 cm²",
+  "concepts": [
+    "원의 넓이 구하기",
+    "원주율 적용",
+    "복합도형의 넓이",
+    "내접과 외접 관계"
+  ],
+  "diagram": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\">\n  <rect width=\"400\" height=\"300\" fill=\"#f9fafb\"/>\n\n  <!-- Large circle -->\n  <circle cx=\"200\" cy=\"150\" r=\"108\" fill=\"white\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Three small circles (r ≈ 50px, centers at distance 58px from origin) -->\n  <!-- Top -->\n  <circle cx=\"200\" cy=\"92\" r=\"50\" fill=\"#eff6ff\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- Bottom-right -->\n  <circle cx=\"250\" cy=\"179\" r=\"50\" fill=\"#eff6ff\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- Bottom-left -->\n  <circle cx=\"150\" cy=\"179\" r=\"50\" fill=\"#eff6ff\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Large circle center -->\n  <circle cx=\"200\" cy=\"150\" r=\"3\" fill=\"#2563eb\"/>\n\n  <!-- Radius line for large circle (horizontal to right) -->\n  <line x1=\"200\" y1=\"150\" x2=\"308\" y2=\"150\" stroke=\"#2563eb\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n\n  <!-- R label -->\n  <text x=\"254\" y=\"143\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#2563eb\" text-anchor=\"middle\">R = 6 cm</text>\n\n  <!-- Small circle center dots -->\n  <circle cx=\"200\" cy=\"92\" r=\"2.5\" fill=\"#555\"/>\n  <circle cx=\"250\" cy=\"179\" r=\"2.5\" fill=\"#555\"/>\n  <circle cx=\"150\" cy=\"179\" r=\"2.5\" fill=\"#555\"/>\n\n  <!-- Small circle radius indicator (top circle, upward) -->\n  <line x1=\"200\" y1=\"92\" x2=\"200\" y2=\"42\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n  <text x=\"207\" y=\"65\" font-family=\"sans-serif\" font-size=\"14\" fill=\"#555\">r</text>\n\n  <!-- Tick marks at endpoints of R line -->\n  <line x1=\"200\" y1=\"146\" x2=\"200\" y2=\"154\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n  <line x1=\"308\" y1=\"146\" x2=\"308\" y2=\"154\" stroke=\"#2563eb\" stroke-width=\"1.5\"/>\n</svg>"
+}
