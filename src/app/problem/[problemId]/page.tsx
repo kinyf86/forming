@@ -14,7 +14,7 @@ export default async function ProblemPage({
   const problem = getProblem(problemId);
   if (problem) {
     const topic = getTopic(problem.topicId);
-    const question = problem.question.replace(/\$[^$]*\$/g, "").replace(/\\\(.*?\\\)/g, "").replace(/\\\[.*?\\\]/gs, "").slice(0, 20) + "...";
+    const question = problem.question.replace(/\$[^$]*\$/g, "").replace(/\\\(.*?\\\)/g, "").replace(/\\\[[^]*?\\\]/g, "").slice(0, 20) + "...";
     const breadcrumb = buildBreadcrumb({
       chapterId: problem.topicId,
       problemSummary: question,

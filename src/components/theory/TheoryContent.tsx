@@ -9,7 +9,7 @@ import "katex/dist/katex.min.css";
 function normalizeLatex(text: string): string {
   return text
     .replace(/\\\((.+?)\\\)/g, (_, m) => `$${m}$`)
-    .replace(/\\\[(.+?)\\\]/gs, (_, m) => `$$${m}$$`);
+    .replace(/\\\[([^]*?)\\\]/g, (_, m) => `$$${m}$$`);
 }
 
 export function TheoryContent({ content }: { content: string }) {
