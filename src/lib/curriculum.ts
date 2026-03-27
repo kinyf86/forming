@@ -1,6 +1,23 @@
-import math6Curriculum from "@/data/curriculum/grade6-math.json";
-import science6Curriculum from "@/data/curriculum/grade6-science.json";
+import math3Curriculum from "@/data/curriculum/grade3-math.json";
+import math4Curriculum from "@/data/curriculum/grade4-math.json";
 import math5Curriculum from "@/data/curriculum/grade5-math.json";
+import math6Curriculum from "@/data/curriculum/grade6-math.json";
+import math7Curriculum from "@/data/curriculum/grade7-math.json";
+import math8Curriculum from "@/data/curriculum/grade8-math.json";
+import math9Curriculum from "@/data/curriculum/grade9-math.json";
+import math10Curriculum from "@/data/curriculum/grade10-math.json";
+import math11Curriculum from "@/data/curriculum/grade11-math.json";
+import math12Curriculum from "@/data/curriculum/grade12-math.json";
+import science3Curriculum from "@/data/curriculum/grade3-science.json";
+import science4Curriculum from "@/data/curriculum/grade4-science.json";
+import science5Curriculum from "@/data/curriculum/grade5-science.json";
+import science6Curriculum from "@/data/curriculum/grade6-science.json";
+import science7Curriculum from "@/data/curriculum/grade7-science.json";
+import science8Curriculum from "@/data/curriculum/grade8-science.json";
+import science9Curriculum from "@/data/curriculum/grade9-science.json";
+import science10Curriculum from "@/data/curriculum/grade10-science.json";
+import science11Curriculum from "@/data/curriculum/grade11-science.json";
+import science12Curriculum from "@/data/curriculum/grade12-science.json";
 
 export interface Chapter {
   id: string;
@@ -24,9 +41,26 @@ export interface Curriculum {
 }
 
 const curricula: Curriculum[] = [
+  math3Curriculum as Curriculum,
+  math4Curriculum as Curriculum,
   math5Curriculum as Curriculum,
   math6Curriculum as Curriculum,
+  math7Curriculum as Curriculum,
+  math8Curriculum as Curriculum,
+  math9Curriculum as Curriculum,
+  math10Curriculum as Curriculum,
+  math11Curriculum as Curriculum,
+  math12Curriculum as Curriculum,
+  science3Curriculum as Curriculum,
+  science4Curriculum as Curriculum,
+  science5Curriculum as Curriculum,
   science6Curriculum as Curriculum,
+  science7Curriculum as Curriculum,
+  science8Curriculum as Curriculum,
+  science9Curriculum as Curriculum,
+  science10Curriculum as Curriculum,
+  science11Curriculum as Curriculum,
+  science12Curriculum as Curriculum,
 ];
 
 export function getAllChapters(): Chapter[] {
@@ -65,6 +99,20 @@ export function getCurriculum(
 export function getGradeFromChapterId(chapterId: string): number {
   const match = chapterId.match(/math-(\d+)-|sci-(\d+)-/);
   return match ? parseInt(match[1] || match[2]) : 6;
+}
+
+export function getGradeLabel(grade: number): string {
+  if (grade <= 6) return `초등 ${grade}학년`;
+  if (grade <= 9) return `중${grade - 6}`;
+  return `고${grade - 9}`;
+}
+
+export function getSubjectLabel(chapterId: string, grade: number): string {
+  const isMath = chapterId.startsWith("math");
+  const subject = isMath ? "수학" : "과학";
+  if (grade <= 6) return `초등${grade}${subject}`;
+  if (grade <= 9) return `중${grade - 6}${subject}`;
+  return `고${grade - 9}${subject}`;
 }
 
 /**

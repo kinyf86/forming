@@ -1,11 +1,11 @@
 import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
-import { getChapter, getGradeFromChapterId } from "@/lib/curriculum";
+import { getChapter, getSubjectLabel } from "@/lib/curriculum";
+import { getGradeFromChapterId } from "@/lib/curriculum";
 
 function subjectLabel(chapterId: string): { label: string; subject: string } {
   const grade = getGradeFromChapterId(chapterId);
-  if (chapterId.startsWith("math")) return { label: `초등${grade}수학`, subject: "math" };
-  if (chapterId.startsWith("sci")) return { label: `초등${grade}과학`, subject: "science" };
-  return { label: "학습", subject: "" };
+  const isMath = chapterId.startsWith("math");
+  return { label: getSubjectLabel(chapterId, grade), subject: isMath ? "math" : "science" };
 }
 
 export function buildBreadcrumb(opts: {
