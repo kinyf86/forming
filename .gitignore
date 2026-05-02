@@ -49,3 +49,6 @@ rawdata/
 
 # gstack skills (vendored, large)
 .claude/skills/
+
+# local snapshots / archives
+*.zip

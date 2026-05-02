@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomUUID } from "crypto";
 import { askClaude, askClaudeWithImage } from "@/lib/claude";
 import { buildSocraticPrompt, type TutorSessionState, type TutorResponse } from "@/lib/tutor-prompts";
-import { appendTutorRecord } from "@/lib/history";
+import { appendTutorRecord, appendConversationTurn } from "@/lib/history";
 import { buildCurriculumContext } from "@/lib/curriculum";
 
 function parseTutorResponse(text: string, sessionState: TutorSessionState): TutorResponse {
@@ -71,18 +72,37 @@ export async function POST(req: NextRequest) {
       hasImage: !!canvasImage,
     });
 
+    const logCtx = {
+      clientId,
+      endpoint: "/api/tutor/chat",
+      sessionId,
+    };
+
+    // Log user turn BEFORE the AI call so we capture it even if Claude fails.
+    appendConversationTurn(clientId, {
+      type: "conversation_turn",
+      id: `turn-${randomUUID()}`,
+      timestamp: Date.now(),
+      sessionId,
+      sessionType: "tutor",
+      role: "user",
+      text: message,
+      contextRef: { concept: sessionState.current_concept || undefined },
+      attachments: canvasImage ? [{ type: "canvas_image", path: null }] : [],
+    });
+
     let rawResponse: string;
     try {
       rawResponse = canvasImage
-        ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
-        : await askClaude(prompt);
+        ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
+        : await askClaude(prompt, logCtx);
     } catch (err) {
       // Retry once on timeout
       if (err instanceof Error && err.message.includes("timeout")) {
         try {
           rawResponse = canvasImage
-            ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
-            : await askClaude(prompt);
+            ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
+            : await askClaude(prompt, logCtx);
         } catch {
           return NextResponse.json(
             { error: "잠깐만요, AI가 응답하지 못했습니다. 다시 시도해주세요." },
@@ -108,6 +128,25 @@ export async function POST(req: NextRequest) {
       concept: parsed.concept,
       current_concept: sessionState.current_concept,
       prerequisite_stack: sessionState.prerequisite_stack,
+    });
+
+    // New unified conversation log: assistant turn
+    appendConversationTurn(clientId, {
+      type: "conversation_turn",
+      id: `turn-${randomUUID()}`,
+      timestamp: Date.now(),
+      sessionId,
+      sessionType: "tutor",
+      role: "assistant",
+      text: parsed.response,
+      contextRef: { concept: parsed.concept || sessionState.current_concept || undefined },
+      attachments: [],
+      meta: {
+        action: parsed.action,
+        concept: parsed.concept,
+        prerequisite_stack: sessionState.prerequisite_stack,
+        confirmed_concepts: sessionState.confirmed_concepts,
+      },
     });
 
     return NextResponse.json(parsed);

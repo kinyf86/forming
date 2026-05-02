@@ -1,10 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomUUID } from "crypto";
 import { askClaude, askClaudeWithImage } from "@/lib/claude";
+import { appendConversationTurn } from "@/lib/history";
 import { getLocale } from "@/lib/locale";
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages, problemContext, canvasImage } = await request.json();
+    const {
+      messages,
+      problemContext,
+      canvasImage,
+      sessionId: clientSessionId,
+      clientId = "default",
+    } = await request.json();
 
     const chatHistory = messages
       .map((m: { role: string; content: string }) =>
@@ -47,11 +55,53 @@ ${chatHistory}
   - 색상: 주요 #4A90D9, 보조 #5CB85C, 강조 #E67E22
   - 한국어 레이블, 외부 참조 금지`;
 
-    const response = canvasImage
-      ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
-      : await askClaude(prompt);
+    // Derive a stable-ish session: prefer client-supplied, fall back to per-problem.
+    // Problem-scoped sessions keep follow-up questions on the same problem grouped.
+    const sessionId: string =
+      clientSessionId ||
+      `chat-${problemContext?.problemId || "standalone"}-${new Date().toISOString().slice(0, 10)}`;
+    const logCtx = { clientId, endpoint: "/api/chat", sessionId };
 
-    return NextResponse.json({ content: response });
+    // Last user message in the array is the new one (prior ones are context).
+    const lastUserMsg = [...messages]
+      .reverse()
+      .find((m: { role: string; content: string }) => m.role === "user");
+
+    if (lastUserMsg?.content) {
+      appendConversationTurn(clientId, {
+        type: "conversation_turn",
+        id: `turn-${randomUUID()}`,
+        timestamp: Date.now(),
+        sessionId,
+        sessionType: "feedback_chat",
+        role: "user",
+        text: lastUserMsg.content,
+        contextRef: {
+          problemId: problemContext?.problemId,
+        },
+        attachments: canvasImage ? [{ type: "canvas_image", path: null }] : [],
+      });
+    }
+
+    const response = canvasImage
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
+      : await askClaude(prompt, logCtx);
+
+    appendConversationTurn(clientId, {
+      type: "conversation_turn",
+      id: `turn-${randomUUID()}`,
+      timestamp: Date.now(),
+      sessionId,
+      sessionType: "feedback_chat",
+      role: "assistant",
+      text: response,
+      contextRef: {
+        problemId: problemContext?.problemId,
+      },
+      attachments: [],
+    });
+
+    return NextResponse.json({ content: response, sessionId });
   } catch (error) {
     console.error("Chat error:", error);
     return NextResponse.json(

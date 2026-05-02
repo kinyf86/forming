@@ -8,7 +8,7 @@ const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
 
 export async function POST(request: NextRequest) {
   try {
-    const { problemId, question } = await request.json();
+    const { problemId, question, clientId = "default" } = await request.json();
 
     const prompt = `아래 수학 문제에 필요한 도형을 SVG로 그려주세요.
 
@@ -25,7 +25,11 @@ ${question}
 
 SVG 코드만 출력하세요. 설명 없이 <svg>...</svg> 만 출력하세요.`;
 
-    const response = await askClaude(prompt);
+    const response = await askClaude(prompt, {
+      clientId,
+      endpoint: "/api/generate-diagram",
+      sessionId: `diagram-${problemId}`,
+    });
 
     // Extract SVG from response
     let svg = response.trim();

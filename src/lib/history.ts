@@ -58,7 +58,68 @@ export interface TutorRecord {
   prerequisite_stack: string[];
 }
 
-export type HistoryRecord = ProblemGenerationRecord | SubmissionRecord | TutorRecord;
+/**
+ * 통합 대화 턴 — 학생(user)과 AI(assistant)의 발화를 같은 스키마로 기록.
+ * sessionType으로 튜터/문제피드백/피드백챗 구분. sessionId로 한 세션을 묶음.
+ */
+export type SessionType = "tutor" | "problem_feedback" | "feedback_chat";
+
+export interface ConversationAttachment {
+  type: "canvas_image";
+  path: string | null;
+}
+
+export interface ConversationTurnRecord {
+  type: "conversation_turn";
+  id: string;
+  timestamp: number;
+  sessionId: string;
+  sessionType: SessionType;
+  role: "user" | "assistant";
+  text: string;
+  contextRef: {
+    chapterId?: string;
+    problemId?: string;
+    concept?: string;
+  };
+  attachments: ConversationAttachment[];
+  meta?: {
+    action?: "push" | "pop" | "stay" | "complete";
+    concept?: string;
+    prerequisite_stack?: string[];
+    confirmed_concepts?: string[];
+    isCorrect?: boolean;
+    passed?: boolean;
+    weaknesses?: string[];
+  };
+}
+
+/**
+ * Claude CLI 호출 원문 기록. 프롬프트·응답·지연·토큰·오류를 그대로 보관.
+ * sessionId로 ConversationTurnRecord와 시간 기반 교차 조회.
+ */
+export interface AICallRecord {
+  type: "ai_call";
+  id: string;
+  timestamp: number;
+  sessionId: string | null;
+  endpoint: string;
+  model: string;
+  prompt: string;
+  response: string;
+  latencyMs: number;
+  tokenUsage: { input: number; output: number } | null;
+  totalCostUsd: number | null;
+  hasImage: boolean;
+  error: string | null;
+}
+
+export type HistoryRecord =
+  | ProblemGenerationRecord
+  | SubmissionRecord
+  | TutorRecord
+  | ConversationTurnRecord
+  | AICallRecord;
 
 function ensureDir(): void {
   if (!fs.existsSync(HISTORY_DIR)) {
@@ -150,4 +211,128 @@ export function getWeaknessSummary(clientId: string): Record<string, number> {
     }
   }
   return summary;
+}
+
+/**
+ * 대화 턴 저장 — 실패는 삼켜서 본 응답 흐름을 막지 않음.
+ */
+export function appendConversationTurn(
+  clientId: string,
+  record: ConversationTurnRecord
+): void {
+  try {
+    ensureDir();
+    const filePath = getFilePath(clientId, "conversation");
+    fs.appendFileSync(filePath, JSON.stringify(record) + "\n", "utf-8");
+  } catch {
+    // non-blocking
+  }
+}
+
+/**
+ * AI 호출 로그 저장 — 실패는 삼켜서 실제 API 응답을 막지 않음.
+ */
+export function appendAICall(clientId: string, record: AICallRecord): void {
+  try {
+    ensureDir();
+    const filePath = getFilePath(clientId, "ai_call");
+    fs.appendFileSync(filePath, JSON.stringify(record) + "\n", "utf-8");
+  } catch {
+    // non-blocking
+  }
+}
+
+/**
+ * 세션 하나의 전체 대화 턴 반환 (시간 오름차순).
+ */
+export function getConversation(
+  clientId: string,
+  sessionId: string
+): ConversationTurnRecord[] {
+  const filePath = getFilePath(clientId, "conversation");
+  if (!fs.existsSync(filePath)) return [];
+
+  return fs
+    .readFileSync(filePath, "utf-8")
+    .trim()
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => JSON.parse(line) as ConversationTurnRecord)
+    .filter((r) => r.sessionId === sessionId)
+    .sort((a, b) => a.timestamp - b.timestamp);
+}
+
+/**
+ * 클라이언트의 세션 목록 — 각 세션의 시작/끝 시각, 타입, 턴 수 요약.
+ */
+export interface SessionSummary {
+  sessionId: string;
+  sessionType: SessionType;
+  firstTimestamp: number;
+  lastTimestamp: number;
+  turnCount: number;
+  contextRef: ConversationTurnRecord["contextRef"];
+}
+
+export function listSessions(
+  clientId: string,
+  limit = 50
+): SessionSummary[] {
+  const filePath = getFilePath(clientId, "conversation");
+  if (!fs.existsSync(filePath)) return [];
+
+  const records = fs
+    .readFileSync(filePath, "utf-8")
+    .trim()
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => JSON.parse(line) as ConversationTurnRecord);
+
+  const summaries = new Map<string, SessionSummary>();
+  for (const r of records) {
+    const existing = summaries.get(r.sessionId);
+    if (!existing) {
+      summaries.set(r.sessionId, {
+        sessionId: r.sessionId,
+        sessionType: r.sessionType,
+        firstTimestamp: r.timestamp,
+        lastTimestamp: r.timestamp,
+        turnCount: 1,
+        contextRef: r.contextRef,
+      });
+    } else {
+      existing.lastTimestamp = Math.max(existing.lastTimestamp, r.timestamp);
+      existing.firstTimestamp = Math.min(existing.firstTimestamp, r.timestamp);
+      existing.turnCount += 1;
+      if (!existing.contextRef.chapterId && r.contextRef.chapterId) {
+        existing.contextRef = { ...existing.contextRef, ...r.contextRef };
+      }
+    }
+  }
+
+  return Array.from(summaries.values())
+    .sort((a, b) => b.lastTimestamp - a.lastTimestamp)
+    .slice(0, limit);
+}
+
+/**
+ * 세션에 속한 AI 호출 기록 조회 (프롬프트·응답 원문 확인용).
+ */
+export function getAICalls(
+  clientId: string,
+  sessionId?: string
+): AICallRecord[] {
+  const filePath = getFilePath(clientId, "ai_call");
+  if (!fs.existsSync(filePath)) return [];
+
+  const all = fs
+    .readFileSync(filePath, "utf-8")
+    .trim()
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => JSON.parse(line) as AICallRecord);
+
+  return sessionId
+    ? all.filter((r) => r.sessionId === sessionId).sort((a, b) => a.timestamp - b.timestamp)
+    : all.sort((a, b) => a.timestamp - b.timestamp);
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TheoryContent } from "@/components/theory/TheoryContent";
 import SvgRenderer from "@/components/ui/SvgRenderer";
+import { getClientId } from "@/lib/client-id";
 
 interface Message {
   role: "user" | "assistant";
@@ -10,6 +11,7 @@ interface Message {
 }
 
 interface ProblemContext {
+  problemId?: string;
   question: string;
   answer: string;
   studentAnswer: string;
@@ -32,7 +34,13 @@ export function FeedbackChat({ problemContext }: FeedbackChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [clientId, setClientId] = useState<string>("default");
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setClientId(getClientId());
+  }, []);
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || loading) return;
@@ -50,12 +58,17 @@ export function FeedbackChat({ problemContext }: FeedbackChatProps) {
         body: JSON.stringify({
           messages: newMessages,
           problemContext,
+          clientId,
+          sessionId,
         }),
       });
 
       if (!res.ok) throw new Error();
 
       const data = await res.json();
+      if (data.sessionId && !sessionId) {
+        setSessionId(data.sessionId);
+      }
       setMessages([...newMessages, { role: "assistant", content: data.content }]);
     } catch {
       setMessages([

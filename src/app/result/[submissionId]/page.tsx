@@ -201,6 +201,7 @@ export default function ResultPage() {
       <div className="mb-6">
         <MultimodalChat
           problemContext={{
+            problemId: problem.id,
             question: problem.question,
             answer: problem.answer,
             studentAnswer: data.submission.finalAnswer || "(패스)",

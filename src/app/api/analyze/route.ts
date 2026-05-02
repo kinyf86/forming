@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { getProblem } from "@/lib/problems";
 import { askClaude, askClaudeWithImage, parseJsonFromResponse } from "@/lib/claude";
 import { buildAnalysisPrompt } from "@/lib/prompts";
-import { appendRecord } from "@/lib/history";
+import { appendRecord, appendConversationTurn } from "@/lib/history";
 import { PathTraversalError } from "@/lib/sanitize";
 import type { AnalysisResult, Problem } from "@/types";
 
@@ -51,15 +52,39 @@ export async function POST(request: NextRequest) {
       hasImage: !!canvasImage,
     });
 
+    // One submission = one session. submissionId is pre-allocated so logs link.
+    const submissionId = `sub-${Date.now()}`;
+    const sessionId = submissionId;
+    const logCtx = {
+      clientId,
+      endpoint: "/api/analyze",
+      sessionId,
+    };
+
+    // User turn: student's submission (answer + canvas) recorded first.
+    appendConversationTurn(clientId, {
+      type: "conversation_turn",
+      id: `turn-${randomUUID()}`,
+      timestamp: Date.now(),
+      sessionId,
+      sessionType: "problem_feedback",
+      role: "user",
+      text: finalAnswer || "(패스)",
+      contextRef: {
+        problemId: problem.id,
+        chapterId: problem.topicId,
+      },
+      attachments: canvasImage ? [{ type: "canvas_image", path: null }] : [],
+    });
+
     // Use vision if canvas image is available
     const response = canvasImage
-      ? await askClaudeWithImage(prompt, canvasImage, "image/webp")
-      : await askClaude(prompt);
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
+      : await askClaude(prompt, logCtx);
 
     const analysis = parseJsonFromResponse(response) as AnalysisResult;
 
     // Save canvas image
-    const submissionId = `sub-${Date.now()}`;
     let canvasImagePath: string | null = null;
     if (canvasImage) {
       canvasImagePath = saveCanvasImage(submissionId, canvasImage);
@@ -82,6 +107,29 @@ export async function POST(request: NextRequest) {
       correctSolution: analysis.correctSolution,
       weaknesses: analysis.weaknesses,
       encouragement: analysis.encouragement,
+    });
+
+    // Assistant turn: AI's analysis + solution feedback.
+    appendConversationTurn(clientId, {
+      type: "conversation_turn",
+      id: `turn-${randomUUID()}`,
+      timestamp: Date.now(),
+      sessionId,
+      sessionType: "problem_feedback",
+      role: "assistant",
+      text: analysis.processAnalysis,
+      contextRef: {
+        problemId: problem.id,
+        chapterId: problem.topicId,
+      },
+      attachments: canvasImagePath
+        ? [{ type: "canvas_image", path: canvasImagePath }]
+        : [],
+      meta: {
+        isCorrect: analysis.isCorrect,
+        passed: !!passed,
+        weaknesses: analysis.weaknesses,
+      },
     });
 
     return NextResponse.json(analysis);

@@ -94,7 +94,11 @@ export async function POST(request: NextRequest) {
       chapterId,
     });
 
-    const response = await askClaude(prompt);
+    const response = await askClaude(prompt, {
+      clientId,
+      endpoint: "/api/generate-problem",
+      sessionId: `gen-${problemId}`,
+    });
     const problem = parseJsonFromResponse(response) as Problem;
 
     // Ensure consistent ID

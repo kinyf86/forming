@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getChapter, getGradeFromChapterId } from "@/lib/curriculum";
+import { getChapter, getGradeFromChapterId, getAllChapters } from "@/lib/curriculum";
 import { getLocale } from "@/lib/locale";
 import { askClaude, parseJsonFromResponse } from "@/lib/claude";
 import {
@@ -8,6 +8,8 @@ import {
   type LessonContent,
   type ChapterLesson,
 } from "@/lib/lessons";
+import fs from "fs";
+import path from "path";
 
 /**
  * GET: 사전 생성된 레슨 조회
@@ -63,46 +65,41 @@ export async function POST(request: NextRequest) {
     const locale = getLocale();
     const lessons: LessonContent[] = [];
 
+    // Load the lesson generation skill prompt
+    const skillPath = path.join(process.cwd(), "src/data/prompts/generate-lesson.md");
+    const skillPrompt = fs.readFileSync(skillPath, "utf-8");
+
+    // Build curriculum context for prerequisite identification
+    const allChapters = getAllChapters();
+    const sameSubjectChapters = allChapters
+      .filter((ch) => {
+        const isMath = chapterId.startsWith("math");
+        return isMath ? ch.id.startsWith("math") : ch.id.startsWith("sci");
+      })
+      .map((ch) => `${ch.id}: ${ch.title} (${ch.concepts.join(", ")})`)
+      .join("\n");
+
     // 각 개념별로 레슨 생성
     for (const concept of chapter.concepts) {
-      const prompt = `당신은 ${locale.country} ${locale.gradeLabel(grade)} 학생을 가르치는 수학/과학 튜터입니다.
+      const prompt = `${skillPrompt}
+
+---
+
+## Context for This Lesson
+
 ${locale.tutorPrompt}
 
-## 수업 주제
-- 단원: ${chapter.chapter}단원 - ${chapter.title}
-- 개념: ${concept}
-- 학생 수준: 이 개념을 처음 배우는 ${locale.gradeLabel(grade)} 학생
+- Country: ${locale.country}
+- Student: ${locale.gradeLabel(grade)}
+- Subject: ${chapterId.startsWith("math") ? "수학" : "과학"}
+- Unit: ${chapter.chapter}단원 - ${chapter.title}
+- Concept to teach: ${concept}
+- All concepts in this unit: ${chapter.concepts.join(", ")}
 
-## 요청사항
-아래 3가지를 JSON으로 응답해주세요.
+## Available Curriculum (for prerequisite linking)
+${sameSubjectChapters}
 
-1. **explanation**: 이 개념을 쉽게 설명하는 마크다운 텍스트 (3-5문장). 일상 생활 예시를 포함하세요. LaTeX 수식($...$)을 사용하세요.
-
-2. **visualSvg**: 이 개념을 시각적으로 설명하는 완전한 SVG 코드.
-   - 반드시 <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"> 로 시작
-   - 모든 텍스트는 text-anchor="middle" 사용
-   - 분수 표기 시 분자/분모 간격 24px 고정, 분수선은 분자/분모 사이 정중앙
-   - 색상: 주요 요소는 #4A90D9(파란), 보조 #5CB85C(초록), 강조 #E67E22(주황)
-   - 한국어 레이블 사용
-   - 외부 참조 금지
-   - 이 개념을 시각적으로 이해할 수 있는 다이어그램, 차트, 또는 도형을 그려주세요
-
-3. **checkQuestion**: 학생이 이해했는지 확인하는 객관식 문제
-   - question: 질문 텍스트
-   - options: 2-4개 보기 배열
-   - correctIndex: 정답 보기의 인덱스 (0부터 시작)
-
-반드시 유효한 JSON만 출력하세요. 다른 텍스트 없이 JSON만 출력하세요.
-
-{
-  "explanation": "마크다운 설명",
-  "visualSvg": "<svg ...>...</svg>",
-  "checkQuestion": {
-    "question": "질문",
-    "options": ["보기1", "보기2", "보기3"],
-    "correctIndex": 0
-  }
-}`;
+Return valid JSON only. No other text.`;
 
       const response = await askClaude(prompt);
       const result = parseJsonFromResponse(response) as LessonContent;

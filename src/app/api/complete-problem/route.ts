@@ -44,7 +44,11 @@ ${targetWeakness}
   "concepts": ["${targetWeakness}"]
 }`;
 
-    const response = await askClaude(prompt);
+    const response = await askClaude(prompt, {
+      clientId,
+      endpoint: "/api/complete-problem",
+      sessionId: `gen-${problemId}`,
+    });
     const problem = parseJsonFromResponse(response) as Problem;
     problem.id = problemId;
 

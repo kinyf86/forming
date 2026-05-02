@@ -47,6 +47,26 @@
 - src/lib/history.ts - 학생 풀이 이력 JSONL 저장
 - src/data/curriculum/ - 교육과정 데이터 (학년/단원/개념)
 
+## 세션 로깅 (conversation + ai_call)
+
+모든 학생-AI 대화는 `src/data/history/{clientId}_conversation.jsonl`에 통합 스키마(`ConversationTurnRecord`)로 저장됩니다.
+AI 호출 원문(프롬프트·응답·지연·토큰)은 `src/data/history/{clientId}_ai_call.jsonl`에 별도 저장됩니다.
+
+### sessionType 경계 규칙
+
+- **`tutor`**: localStorage `tutor_session_id` 단위. 사용자가 "대화 초기화" 클릭 전까지 동일 세션.
+- **`problem_feedback`**: `submissionId` 1개 = 세션 1개. 학생 제출(user turn) + AI 분석(assistant turn) 묶음.
+- **`feedback_chat`**: 결과 화면 후속 질의응답. 클라이언트가 sessionId 내려주면 사용, 아니면 `chat-{problemId}-{YYYY-MM-DD}` 자동 파생 (같은 문제에 대한 당일 질의는 묶임).
+
+### AI 호출은 반드시 `logCtx` 전달
+
+`askClaude(prompt, logCtx)` / `askClaudeWithImage(prompt, img, mime, logCtx)` 호출 시 `{ clientId, endpoint, sessionId }` 반드시 전달 — 안 하면 프롬프트·지연 추적 불가.
+
+### 조회 도구
+
+- API: `GET /api/conversation/list?clientId=X` / `GET /api/conversation/[sessionId]?clientId=X&includeAICalls=true`
+- CLI: `bun scripts/view-conversation.ts list <clientId>` / `show <clientId> <sessionId> [--ai]`
+
 ## gstack
 
 Use /browse from gstack for all web browsing. Never use mcp__claude-in-chrome__* tools.
