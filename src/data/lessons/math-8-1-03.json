@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-8-1-03",
+  "chapterTitle": "3단원 - 부등식",
+  "generatedAt": "2026-04-01T14:19:19.231352+00:00",
+  "lessons": [
+    {
+      "explanation": "방정식에서는 양변에 같은 수를 더하거나 곱해도 등호($=$)가 그대로 유지됐던 거 기억하시나요? 그렇다면 **부등식** (두 수 또는 식의 크기를 비교하는 식)도 똑같이 작동할까요?\n\n실험해봅시다. $2 < 5$라는 사실은 분명합니다.\n\n**덧셈·뺄셈 실험**\n\n양변에 3을 더하면: $2 + 3 < 5 + 3$, 즉 $5 < 8$ ✓\n\n양변에 3을 빼면: $2 - 3 < 5 - 3$, 즉 $-1 < 2$ ✓\n\n덧셈과 뺄셈은 부등호 방향이 유지되네요. 곱셈은 어떨까요?\n\n**곱셈 실험**\n\n양변에 양수 $2$를 곱하면: $2 \\times 2 < 5 \\times 2$, 즉 $4 < 10$ ✓\n\n그런데 양변에 음수 $-1$을 곱하면 어떻게 될까요?\n\n$$2 \\times (-1) = -2, \\quad 5 \\times (-1) = -5$$\n\n$-2$와 $-5$ 중 어느 쪽이 더 클까요? 수직선을 떠올리면, $-2$는 $-5$보다 오른쪽에 위치합니다. 즉,\n\n$$-2 > -5$$\n\n부등호 방향이 뒤집혔어요! $2 < 5$였는데, 양변에 $-1$을 곱하니 $-2 > -5$가 됐습니다. 왜일까요?\n\n수직선에서 음수를 곱한다는 건 원점을 기준으로 좌우를 통째로 뒤집는 것과 같아요. 원래 오른쪽에 있던 $5$가 $-5$로 더 왼쪽으로 이동하고, $2$는 $-2$로 덜 왼쪽으로 이동합니다. 그 결과 대소 관계가 역전되는 거예요.\n\n이것이 **부등식의 성질** (부등호의 방향이 어떤 조건에서 유지되거나 바뀌는지에 관한 규칙)의 핵심입니다.\n\n$a < b$일 때,\n\n**① 양변에 같은 수를 더하거나 빼도** 부등호 방향은 변하지 않습니다.\n$$a + c < b + c, \\quad a - c < b - c$$\n\n**② 양변에 같은 양수를 곱하거나 양수로 나누어도** 부등호 방향은 변하지 않습니다. ($c > 0$일 때)\n$$ac < bc, \\quad \\frac{a}{c} < \\frac{b}{c}$$\n\n**③ 양변에 같은 음수를 곱하거나 음수로 나누면** 부등호 방향이 반대로 바뀝니다. ($c < 0$일 때)\n$$ac > bc, \\quad \\frac{a}{c} > \\frac{b}{c}$$\n\n이 성질들은 다음에 배울 **일차부등식의 풀이**에서 핵심 도구로 쓰입니다. 방정식을 풀 듯 양변에 수를 더하고 나누면서 미지수를 분리하는데, 바로 이 성질들을 그대로 활용하게 됩니다.\n\n**꼭 주의할 점**: 양변에 음수를 곱하거나 음수로 나눌 때, 부등호 방향을 바꾸는 걸 빠뜨리는 실수가 매우 흔합니다. 예를 들어 $-2x < 6$에서 양변을 $-2$로 나눌 때 방향을 안 바꾸면 $x < -3$으로 틀린 답이 나와요. 올바른 답은 $x > -3$입니다. 음수 연산 시에는 반드시 부등호를 뒤집는 습관을 들이세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">부등식의 성질</text>\n\n  <!-- ===== TOP ROW: Addition/Subtraction ===== -->\n  <rect x=\"10\" y=\"35\" width=\"230\" height=\"75\" rx=\"8\" fill=\"#E8F4FD\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"125\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#4A90D9\">덧셈·뺄셈</text>\n\n  <!-- Before number line -->\n  <line x1=\"25\" y1=\"75\" x2=\"215\" y2=\"75\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <line x1=\"25\" y1=\"70\" x2=\"25\" y2=\"80\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <line x1=\"215\" y1=\"70\" x2=\"215\" y2=\"80\" stroke=\"#999\" stroke-width=\"1.5\"/>\n\n  <!-- Tick marks for -1,0,1,2,3,4,5,6,7,8 mapped to line -->\n  <!-- Range: -1 to 8, width=190, per unit = 190/9 ≈ 21.1 -->\n  <!-- x = 25 + (val+1)*21.1 -->\n  <!-- 2 → 25 + 3*21.1 = 88.3 -->\n  <!-- 5 → 25 + 6*21.1 = 151.6 -->\n  <!-- +3 → 5+3=8: 25+9*21.1=215 -->\n  <!-- after adding 3: 5→8, 2→5 -->\n\n  <circle cx=\"88\" cy=\"75\" r=\"5\" fill=\"#4A90D9\"/>\n  <text x=\"88\" y=\"68\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\" font-weight=\"bold\">2</text>\n  <circle cx=\"152\" cy=\"75\" r=\"5\" fill=\"#E67E22\"/>\n  <text x=\"152\" y=\"68\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">5</text>\n\n  <text x=\"120\" y=\"90\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">2 &lt; 5</text>\n  <text x=\"120\" y=\"103\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\" font-weight=\"bold\">+3 해도 &lt; 유지 ✓</text>\n\n  <!-- ===== TOP ROW RIGHT: Multiply positive ===== -->\n  <rect x=\"260\" y=\"35\" width=\"230\" height=\"75\" rx=\"8\" fill=\"#E8F4FD\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"375\" y=\"52\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#4A90D9\">양수 곱셈</text>\n\n  <!-- 2 < 5 → ×2 → 4 < 10 -->\n  <text x=\"320\" y=\"72\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">2 &lt; 5</text>\n  <text x=\"375\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">× 2</text>\n  <line x1=\"390\" y1=\"69\" x2=\"415\" y2=\"69\" stroke=\"#5CB85C\" stroke-width=\"1.5\" marker-end=\"url(#arrowGreen)\"/>\n  <text x=\"440\" y=\"72\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">4 &lt; 10</text>\n  <text x=\"375\" y=\"90\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\" font-weight=\"bold\">부등호 방향 유지 ✓</text>\n  <text x=\"375\" y=\"104\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">양수를 곱하면 방향 그대로</text>\n\n  <!-- ===== BOTTOM: Multiply negative (AHA MOMENT) ===== -->\n  <rect x=\"30\" y=\"130\" width=\"440\" height=\"155\" rx=\"10\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2.5\"/>\n  <text x=\"250\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">⚠ 음수를 곱하면? — 부등호 방향이 뒤집힌다!</text>\n\n  <!-- Number line BEFORE -->\n  <text x=\"90\" y=\"175\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\" font-weight=\"bold\">곱하기 전</text>\n\n  <line x1=\"35\" y1=\"195\" x2=\"205\" y2=\"195\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <!-- Range -5 to 5 → 10 units, width 170, per unit 17 -->\n  <!-- x = 35 + (val+5)*17 -->\n  <!-- 0 → 35+5*17=120 -->\n  <!-- 2 → 35+7*17=154 -->\n  <!-- 5 → 35+10*17=205 (right edge) — adjust range to -1 to 6 → 7 units, width 170, per=24.3 -->\n  <!-- Let's use range 0 to 6, width 160, per=26.7 -->\n  <!-- x = 45 + val*26.7 -->\n  <!-- 0→45, 2→98.3, 5→178.3 -->\n  <line x1=\"45\" y1=\"190\" x2=\"45\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <text x=\"45\" y=\"210\" text-anchor=\"middle\" font-size=\"9\" fill=\"#777\">0</text>\n  <line x1=\"98\" y1=\"190\" x2=\"98\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <line x1=\"178\" y1=\"190\" x2=\"178\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n\n  <circle cx=\"98\" cy=\"195\" r=\"6\" fill=\"#4A90D9\"/>\n  <text x=\"98\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">2</text>\n  <circle cx=\"178\" cy=\"195\" r=\"6\" fill=\"#E67E22\"/>\n  <text x=\"178\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">5</text>\n\n  <!-- Arrow left-to-right between 2 and 5 -->\n  <line x1=\"105\" y1=\"195\" x2=\"170\" y2=\"195\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n  <polygon points=\"170,191 178,195 170,199\" fill=\"#5CB85C\"/>\n  <text x=\"137\" y=\"220\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\" font-weight=\"bold\">2 &lt; 5</text>\n\n  <!-- × (-1) arrow in middle -->\n  <text x=\"250\" y=\"185\" text-anchor=\"middle\" font-size=\"18\" fill=\"#E67E22\" font-weight=\"bold\">× (−1)</text>\n  <line x1=\"230\" y1=\"195\" x2=\"270\" y2=\"195\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <text x=\"250\" y=\"220\" text-anchor=\"middle\" font-size=\"20\" fill=\"#E67E22\" font-weight=\"bold\">↕ 뒤집기!</text>\n\n  <!-- Number line AFTER -->\n  <text x=\"390\" y=\"175\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\" font-weight=\"bold\">곱한 후</text>\n\n  <line x1=\"295\" y1=\"195\" x2=\"465\" y2=\"195\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <!-- Range -6 to 0, width 160, per=26.7 -->\n  <!-- x = 455 + val*26.7 (right=0) -->\n  <!-- 0 → 455, -2 → 455-2*26.7=401.7, -5→455-5*26.7=321.7 -->\n  <line x1=\"455\" y1=\"190\" x2=\"455\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <text x=\"455\" y=\"210\" text-anchor=\"middle\" font-size=\"9\" fill=\"#777\">0</text>\n  <line x1=\"401\" y1=\"190\" x2=\"401\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n  <line x1=\"321\" y1=\"190\" x2=\"321\" y2=\"200\" stroke=\"#999\" stroke-width=\"1.5\"/>\n\n  <circle cx=\"401\" cy=\"195\" r=\"6\" fill=\"#4A90D9\"/>\n  <text x=\"401\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">−2</text>\n  <circle cx=\"321\" cy=\"195\" r=\"6\" fill=\"#E67E22\"/>\n  <text x=\"321\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">−5</text>\n\n  <!-- Arrow now right-to-left (reversed) -->\n  <line x1=\"394\" y1=\"195\" x2=\"329\" y2=\"195\" stroke=\"#E74C3C\" stroke-width=\"2.5\"/>\n  <polygon points=\"329,191 321,195 329,199\" fill=\"#E74C3C\"/>\n  <text x=\"361\" y=\"220\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E74C3C\" font-weight=\"bold\">−2 &gt; −5</text>\n\n  <!-- Key rule box -->\n  <rect x=\"60\" y=\"232\" width=\"380\" height=\"42\" rx=\"7\" fill=\"#E74C3C\" opacity=\"0.9\"/>\n  <text x=\"250\" y=\"249\" text-anchor=\"middle\" font-size=\"11\" fill=\"white\" font-weight=\"bold\">핵심 규칙</text>\n  <text x=\"250\" y=\"267\" text-anchor=\"middle\" font-size=\"11\" fill=\"white\">음수를 곱하거나 나누면 부등호 방향이 반대로 바뀐다!</text>\n\n  <!-- Arrowhead marker -->\n  <defs>\n    <marker id=\"arrowGreen\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\">\n      <polygon points=\"0,0 6,3 0,6\" fill=\"#5CB85C\"/>\n    </marker>\n  </defs>\n</svg>",
+      "checkQuestion": {
+        "question": "$3 < 7$의 양변에 $-2$를 곱한 결과로 옳은 것은?",
+        "options": [
+          "$-6 > -14$",
+          "$-6 < -14$",
+          "$6 > 14$",
+          "$6 < 14$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "등식의 성질과 일차방정식의 풀이",
+          "chapterId": "math-7-1-05",
+          "reason": "등식의 성질(양변에 같은 수를 더하거나 곱해도 등호 유지)과 비교해야 부등식의 성질에서 무엇이 다른지 이해할 수 있습니다."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "음수끼리의 곱셈에서 부호가 바뀌는 원리를 이해해야 음수를 곱할 때 부등호 방향이 역전되는 이유를 납득할 수 있습니다."
+        },
+        {
+          "concept": "정수와 유리수의 대소 관계",
+          "chapterId": "math-7-1-02",
+          "reason": "수직선에서 음수의 대소 관계($-2 > -5$ 등)를 알아야 부등식의 성질 예시를 제대로 이해할 수 있습니다."
+        }
+      ],
+      "concept": "부등식의 성질"
+    },
+    {
+      "explanation": "중학교 1학년 때 일차방정식을 배웠을 때를 기억하시나요? 양변에 같은 수를 더하거나 곱해서 $x$의 값을 딱 하나 구했죠. 그런데 오늘 배울 **일차부등식** (미지수의 차수가 1이고 등호 대신 부등호가 있는 식)은 비슷하게 풀리지만, 딱 하나의 결정적인 차이가 있어요. 그 차이를 발견해봅시다.\n\n## 방정식처럼 풀어볼게요\n\n$2x - 3 > 5$를 풀어봅시다.\n\n양변에 3을 더하면: $2x > 8$\n\n양변을 2로 나누면: $x > 4$\n\n방정식과 똑같죠? 해는 4보다 큰 모든 수, 즉 $x > 4$예요.\n\n## 이상한 일이 생겼어요\n\n이번엔 $-2x > 6$을 풀어봅시다. 방정식처럼 양변을 $-2$로 나누면 $x > -3$... 정말 맞을까요?\n\n검증해봅시다. $x = 0$은 $x > -3$을 만족하잖아요. 그런데 원래 식에 넣으면 $-2 \\times 0 = 0 > 6$이에요. **거짓이에요.** 뭔가 잘못됐죠?\n\n수직선을 떠올려봐요. 분명히 $3 > 1$이에요. 그런데 양변에 $-1$을 곱하면 $-3$과 $-1$이 되고, 이제 $-3 < -1$이에요. **큰 수에 음수를 곱하니까 더 작은 수가 된 거예요.** 부등호의 방향이 뒤집혔어요.\n\n이것이 핵심 규칙입니다:\n\n> **음수를 곱하거나 나눌 때는 부등호의 방향이 반드시 바뀐다.**\n\n$-2x > 6$의 양변을 $-2$로 나누면: $x < -3$ (부등호 방향 바뀜!)\n\n검증: $x = -4$를 넣으면 $-2 \\times (-4) = 8 > 6$ ✓\n\n## 풀이 순서 정리\n\n1. 괄호가 있으면 전개한다\n2. 항을 **이항** (한 변의 항을 부호를 바꿔 다른 변으로 옮기는 것)하여 $ax > b$ 꼴로 만든다\n3. $a > 0$이면 부등호 방향 유지, **$a < 0$이면 부등호 방향 반전**\n4. 해를 수직선에 나타낸다\n\n**예시:** $3(x - 1) \\leq 2x + 1$\n\n괄호 전개: $3x - 3 \\leq 2x + 1$\n\n이항: $3x - 2x \\leq 1 + 3$\n\n정리: $x \\leq 4$\n\n## 이 개념의 자리\n\n일차방정식이 \"정확히 하나의 값\"을 찾는 것이라면, 일차부등식은 \"조건을 만족하는 값의 범위\"를 찾는 것이에요. 이 개념은 연립부등식, 나아가 고등학교의 이차부등식으로 이어지는 핵심 기초가 됩니다.\n\n## 가장 흔한 실수\n\n**음수로 나눌 때 부등호 방향을 바꾸지 않는 것**이에요. 방정식 풀이와 거의 똑같아서 \"이번에도 그냥 나누면 되겠지\"라고 자동으로 생각하기 쉽기 때문이에요. $-x > 3$을 풀 때 $x > -3$이라고 하면 틀려요. 반드시 $x < -3$이어야 해요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$-3x + 6 \\geq 0$을 풀면 어떻게 되나요?",
+        "options": [
+          "$x \\geq 2$",
+          "$x \\leq 2$",
+          "$x \\geq -2$",
+          "$x \\leq -2$"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "부등식의 성질",
+          "chapterId": "math-8-1-03",
+          "reason": "양변에 음수를 곱하거나 나눌 때 부등호의 방향이 바뀌는 성질을 이해해야 일차부등식을 올바르게 풀 수 있기 때문입니다."
+        },
+        {
+          "concept": "일차방정식의 풀이",
+          "chapterId": "math-7-1-05",
+          "reason": "이항과 등식의 성질을 이용한 방정식 풀이 방법이 부등식 풀이의 직접적인 기초가 되기 때문입니다."
+        },
+        {
+          "concept": "일차식과 수의 곱셈, 나눗셈",
+          "chapterId": "math-7-1-04",
+          "reason": "일차식을 정리하고 계수로 나누는 계산 능력이 부등식 풀이의 마지막 단계에서 반드시 필요하기 때문입니다."
+        }
+      ],
+      "concept": "일차부등식의 풀이"
+    },
+    {
+      "explanation": "## 조건이 두 개라면?\n\n$x$에 대한 일차부등식을 하나 풀면, 수직선 위에 딱 하나의 범위가 나오죠. 그런데 현실에서는 조건이 하나가 아닌 경우가 훨씬 많아요.\n\n이런 상황을 생각해 보세요. 어떤 수 $x$가 있는데:\n\n- 첫 번째 조건: $2x - 1 > 5$\n- 두 번째 조건: $x < 7$\n\n두 조건을 **동시에** 만족하는 $x$를 찾아야 해요. 어떻게 하면 될까요?\n\n---\n\n### 핵심 아이디어: 각각 풀고, 겹치는 부분을 찾아라\n\n먼저 두 부등식을 따로따로 풀어볼게요.\n\n**첫 번째 부등식:**\n$$2x - 1 > 5 \\implies 2x > 6 \\implies x > 3$$\n\n**두 번째 부등식:**\n$$x < 7$$\n\n이제 수직선 위에 두 범위를 함께 그려보세요. $x > 3$은 3 초과, $x < 7$은 7 미만인 범위예요. 두 범위가 겹치는 구간이 보이시나요?\n\n$$3 < x < 7$$\n\n이것이 두 조건을 동시에 만족하는 $x$의 범위예요.\n\n---\n\n이처럼 **연립부등식** (두 개 이상의 부등식을 동시에 만족시키는 미지수의 범위를 구하는 것)의 해는, 각 부등식의 해가 수직선 위에서 **겹치는 부분**, 즉 **교집합** (두 집합에 공통으로 속하는 원소의 모임)이에요.\n\n$$\\begin{cases} 2x - 1 > 5 \\\\ x < 7 \\end{cases} \\quad \\Longrightarrow \\quad 3 < x < 7$$\n\n---\n\n### 풀이 순서\n\n1. 각 부등식을 따로 풀어 해를 구한다.\n2. 두 해를 수직선 위에 표시한다.\n3. **겹치는 구간**을 찾는다 — 이것이 연립부등식의 해.\n\n---\n\n### 해가 없는 경우도 있어요\n\n$$\\begin{cases} x > 5 \\\\ x < 2 \\end{cases}$$\n\n$x > 5$와 $x < 2$를 수직선에 그려보면 두 범위는 전혀 겹치지 않아요. 이럴 때는 **해가 없다**고 합니다.\n\n---\n\n### 이 개념의 위치\n\n연립부등식은 일차부등식 풀이를 두 번 적용한 뒤, 수직선에서 교집합을 찾는 거예요. 이 방법은 고등학교에서 이차부등식이나 절댓값 부등식을 풀 때도 그대로 사용돼요. 수직선에 범위를 시각화하는 습관이 핵심입니다.\n\n---\n\n### 이것 하나만 조심하세요\n\n두 부등식을 따로 풀지 않고, 두 부등식을 더하거나 빼서 한꺼번에 처리하려는 실수를 자주 해요. 연립**방정식**에서 가감법을 쓰다 보니 혼동하는 거예요. 연립부등식은 **반드시 각각 독립적으로 풀고**, 그 다음에 교집합을 구해야 해요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">연립부등식의 풀이: 겹치는 부분을 찾아라!</text>\n\n  <!-- ===== ROW 1: First inequality ===== -->\n  <text x=\"16\" y=\"62\" text-anchor=\"start\" font-size=\"12\" fill=\"#4A90D9\" font-weight=\"bold\">① 2x − 1 &gt; 5  →  x &gt; 3</text>\n\n  <!-- number line 1 -->\n  <line x1=\"60\" y1=\"82\" x2=\"440\" y2=\"82\" stroke=\"#ccc\" stroke-width=\"2\"/>\n  <!-- ticks -->\n  <line x1=\"140\" y1=\"76\" x2=\"140\" y2=\"88\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"76\" x2=\"220\" y2=\"88\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"300\" y1=\"76\" x2=\"300\" y2=\"88\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"380\" y1=\"76\" x2=\"380\" y2=\"88\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <text x=\"140\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">1</text>\n  <text x=\"220\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">3</text>\n  <text x=\"300\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">5</text>\n  <text x=\"380\" y=\"100\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">7</text>\n  <!-- arrow right -->\n  <polygon points=\"440,82 433,78 433,86\" fill=\"#ccc\"/>\n  <!-- x>3 highlight -->\n  <line x1=\"220\" y1=\"82\" x2=\"436\" y2=\"82\" stroke=\"#4A90D9\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n  <!-- open circle at 3 -->\n  <circle cx=\"220\" cy=\"82\" r=\"5\" fill=\"#F8F9FA\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <!-- label -->\n  <text x=\"330\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">x &gt; 3</text>\n\n  <!-- ===== ROW 2: Second inequality ===== -->\n  <text x=\"16\" y=\"126\" text-anchor=\"start\" font-size=\"12\" fill=\"#5CB85C\" font-weight=\"bold\">② x &lt; 7</text>\n\n  <!-- number line 2 -->\n  <line x1=\"60\" y1=\"146\" x2=\"440\" y2=\"146\" stroke=\"#ccc\" stroke-width=\"2\"/>\n  <line x1=\"140\" y1=\"140\" x2=\"140\" y2=\"152\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"140\" x2=\"220\" y2=\"152\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"300\" y1=\"140\" x2=\"300\" y2=\"152\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"380\" y1=\"140\" x2=\"380\" y2=\"152\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <text x=\"140\" y=\"164\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">1</text>\n  <text x=\"220\" y=\"164\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">3</text>\n  <text x=\"300\" y=\"164\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">5</text>\n  <text x=\"380\" y=\"164\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">7</text>\n  <polygon points=\"440,146 433,142 433,150\" fill=\"#ccc\"/>\n  <!-- x<7 highlight -->\n  <line x1=\"64\" y1=\"146\" x2=\"380\" y2=\"146\" stroke=\"#5CB85C\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n  <!-- open circle at 7 -->\n  <circle cx=\"380\" cy=\"146\" r=\"5\" fill=\"#F8F9FA\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n  <text x=\"210\" y=\"136\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\" font-weight=\"bold\">x &lt; 7</text>\n\n  <!-- ===== Divider + arrow ===== -->\n  <text x=\"250\" y=\"196\" text-anchor=\"middle\" font-size=\"20\" fill=\"#888\">↓</text>\n  <text x=\"250\" y=\"212\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">두 범위가 겹치는 구간</text>\n\n  <!-- ===== ROW 3: Solution ===== -->\n  <!-- Highlight box -->\n  <rect x=\"30\" y=\"222\" width=\"440\" height=\"62\" rx=\"10\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n\n  <!-- number line 3 -->\n  <line x1=\"60\" y1=\"253\" x2=\"440\" y2=\"253\" stroke=\"#ccc\" stroke-width=\"2\"/>\n  <line x1=\"140\" y1=\"247\" x2=\"140\" y2=\"259\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"220\" y1=\"247\" x2=\"220\" y2=\"259\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"300\" y1=\"247\" x2=\"300\" y2=\"259\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <line x1=\"380\" y1=\"247\" x2=\"380\" y2=\"259\" stroke=\"#555\" stroke-width=\"1.5\"/>\n  <text x=\"140\" y=\"271\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">1</text>\n  <text x=\"220\" y=\"271\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">3</text>\n  <text x=\"300\" y=\"271\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">5</text>\n  <text x=\"380\" y=\"271\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">7</text>\n  <polygon points=\"440,253 433,249 433,257\" fill=\"#ccc\"/>\n\n  <!-- faded blue (x>3) -->\n  <line x1=\"220\" y1=\"253\" x2=\"436\" y2=\"253\" stroke=\"#4A90D9\" stroke-width=\"3\" stroke-opacity=\"0.25\" stroke-linecap=\"round\"/>\n  <!-- faded green (x<7) -->\n  <line x1=\"64\" y1=\"253\" x2=\"380\" y2=\"253\" stroke=\"#5CB85C\" stroke-width=\"3\" stroke-opacity=\"0.25\" stroke-linecap=\"round\"/>\n  <!-- overlap region filled orange -->\n  <line x1=\"220\" y1=\"253\" x2=\"380\" y2=\"253\" stroke=\"#E67E22\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n  <!-- open circles -->\n  <circle cx=\"220\" cy=\"253\" r=\"5\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2.5\"/>\n  <circle cx=\"380\" cy=\"253\" r=\"5\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2.5\"/>\n\n  <!-- Solution label -->\n  <text x=\"300\" y=\"240\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\" font-weight=\"bold\">3 &lt; x &lt; 7  ✓</text>\n</svg>",
+      "checkQuestion": {
+        "question": "다음 연립부등식의 해를 구하시오.\n$$\\begin{cases} x + 1 > 4 \\\\ 2x \\leq 12 \\end{cases}$$",
+        "options": [
+          "$3 < x \\leq 6$",
+          "$x > 3$",
+          "$x \\leq 6$",
+          "해가 없다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "일차부등식의 풀이",
+          "chapterId": "math-8-1-03",
+          "reason": "연립부등식을 풀 때 각 부등식을 따로 풀어야 하므로, 일차부등식의 풀이를 먼저 익혀야 합니다."
+        },
+        {
+          "concept": "부등식의 성질",
+          "chapterId": "math-8-1-03",
+          "reason": "부등식을 변형할 때 양변에 음수를 곱하면 부등호 방향이 바뀌는 등의 성질을 알아야 정확하게 풀 수 있습니다."
+        },
+        {
+          "concept": "수직선과 절댓값",
+          "chapterId": "math-7-1-02",
+          "reason": "두 부등식의 해를 수직선 위에 표시하고 겹치는 구간을 찾는 방법을 이해하려면 수직선 개념이 필요합니다."
+        }
+      ],
+      "concept": "연립부등식의 풀이"
+    },
+    {
+      "explanation": "## 말을 수식으로 번역하는 기술\n\n수학 시험에서 이런 문제를 본 적 있으실 거예요:\n\n> \"한 개에 800원인 사탕을 몇 개 사면 5000원으로 살 수 있을까?\"\n\n이건 **방정식**으로 풀었죠. 그런데 실생활에서는 딱 맞는 답보다, **범위**가 필요한 상황이 훨씬 많습니다.\n\n> \"5000원으로 사탕을 최대 몇 개 살 수 있을까?\"\n\n이 두 질문의 차이가 느껴지시나요? 첫 번째는 \"정확히 얼마\", 두 번째는 \"몇 개까지\". 두 번째가 바로 **일차부등식의 활용** (일차부등식을 현실 문제에 적용하는 것)의 영역입니다.\n\n---\n\n## 한국어를 수학어로 번역하기\n\n부등식 활용 문제의 핵심은 **국어 해석**입니다. 문장 속 표현이 어떤 부등호로 바뀌는지 감을 잡으면, 절반은 끝난 거예요.\n\n| 한국어 표현 | 수학 기호 |\n|---|---|\n| ~이상, 적어도, 최소한 | $\\geq$ |\n| ~이하, 최대, 넘지 않게 | $\\leq$ |\n| ~초과, ~보다 크다 | $>$ |\n| ~미만, ~보다 작다 | $<$ |\n\n예를 들어볼게요:\n- \"5000원 **이내**로\" → $\\leq 5000$\n- \"10점 **이상** 받아야\" → $\\geq 10$\n- \"30명을 **넘지 않도록**\" → $\\leq 30$\n\n---\n\n## 문제 풀이 3단계\n\n**실전 예제:** 한 개에 1200원인 귤을 사고, 3000원짜리 바구니에 담아 선물하려 합니다. 예산이 15000원 이하라면, 귤을 최대 몇 개까지 살 수 있을까요?\n\n**1단계 — 미지수 설정하기**\n\n구하고 싶은 것을 $x$로 놓습니다. \"귤의 개수\"가 궁금하니까:\n\n$$x = \\text{귤의 개수}$$\n\n**2단계 — 부등식 세우기**\n\n전체 비용 = 귤값 + 바구니값 = $1200x + 3000$\n\n이게 15000원 이하여야 하므로:\n\n$$1200x + 3000 \\leq 15000$$\n\n**3단계 — 풀고 해석하기**\n\n$$1200x \\leq 12000$$\n$$x \\leq 10$$\n\n$x$는 귤의 **개수**이므로 자연수여야 합니다. $x \\leq 10$을 만족하는 자연수 중 최댓값은 **10**.\n\n$$\\therefore \\text{최대 10개}$$\n\n---\n\n## 두 조건이 동시에 있을 때\n\n**예제:** 어떤 학생이 세 번의 수학 시험에서 85점, 79점을 받았습니다. 세 번의 평균이 80점 이상이 되려면, 세 번째 시험에서 몇 점 이상 받아야 할까요?\n\n$$\\frac{85 + 79 + x}{3} \\geq 80$$\n\n$$164 + x \\geq 240$$\n\n$$x \\geq 76$$\n\n따라서 **76점 이상** 받아야 합니다.\n\n---\n\n## 이 개념의 자리\n\n일차방정식의 활용에서 \"딱 맞는 값\"을 구했다면, 일차부등식의 활용은 \"가능한 범위\"를 구합니다. 이 사고방식은 앞으로 **이차부등식**, **연립부등식**의 활용으로 이어지며, 실생활에서 예산 계획, 속도 제한, 용량 계산 등 수많은 결정 문제의 수학적 기반이 됩니다.\n\n---\n\n## 자주 하는 실수 하나\n\n부등식을 풀고 $x \\leq 10.5$ 같은 결과가 나왔을 때, 답을 \"10.5\"로 쓰는 경우가 있습니다. 하지만 $x$가 \"개수\" \"명수\" \"층수\" 같은 **자연수**를 나타낼 때는 반드시 자연수 조건을 적용해야 합니다. $x \\leq 10.5$이면 최댓값은 **10**, $x \\geq 3.2$이면 최솟값은 **4**입니다. 부등식을 푸는 것과 \"문제의 답\"을 구하는 것은 한 단계 더 있다는 걸 잊지 마세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "한 권에 1500원인 공책을 몇 권 사고, 2000원짜리 펜을 1개 샀습니다. 전체 금액이 11000원 이하가 되려면 공책을 최대 몇 권까지 살 수 있을까요?",
+        "options": [
+          "5권",
+          "6권",
+          "7권",
+          "8권"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "일차부등식의 풀이",
+          "chapterId": "math-8-1-03",
+          "reason": "활용 문제에서 세운 부등식을 풀어 해를 구하는 능력이 필수적입니다."
+        },
+        {
+          "concept": "일차방정식의 활용",
+          "chapterId": "math-7-1-05",
+          "reason": "미지수를 설정하고 조건을 식으로 번역하는 문제 해결 절차가 동일한 구조를 공유합니다."
+        },
+        {
+          "concept": "수의 범위와 어림하기",
+          "chapterId": "math-5-2-01",
+          "reason": "이상·이하·초과·미만의 정확한 의미를 알아야 부등호 방향을 올바르게 설정할 수 있습니다."
+        }
+      ],
+      "concept": "일차부등식의 활용"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "chapterId": "math-9-2-05",
+  "chapterTitle": "5단원 - 원의 성질",
+  "generatedAt": "2026-04-01T19:00:21.929332+00:00",
+  "lessons": [
+    {
+      "explanation": "## 원 위의 두 점을 이으면?\n\n원을 하나 그리고, 원 위에 두 점을 찍어 선분으로 이어 보세요. 이 선분을 **현** (chord, 원 위의 두 점을 잇는 선분)이라고 합니다.\n\n현은 무수히 많이 그릴 수 있어요. 짧은 것도, 긴 것도. 그런데 여기서 질문이 생깁니다.\n\n> 원의 중심에서 현까지의 거리가 같으면, 현의 길이도 같을까요?\n\n직관적으로는 '그럴 것 같다'는 느낌이 드는데, 왜 그런지는 잘 모르겠죠. 지금부터 그 이유를 함께 파헤쳐 봅시다.\n\n---\n\n## 핵심 성질 1: 중심에서 현에 내린 수선\n\n원의 중심 $O$에서 현 $AB$에 **수선** (perpendicular, 직각을 이루는 선)을 내려 발을 $M$이라 해봅시다.\n\n$\\triangle OAM$과 $\\triangle OBM$을 비교해 보면:\n- $OA = OB$ (같은 원의 반지름)\n- $OM$은 공통\n- $\\angle OMA = \\angle OMB = 90°$\n\n직각삼각형의 합동 조건(빗변과 다른 한 변)에 의해 $\\triangle OAM \\equiv \\triangle OBM$이므로:\n\n$$AM = BM$$\n\n**원의 중심에서 현에 내린 수선은 그 현을 이등분합니다.**\n\n반대도 성립해요. 현의 중점과 원의 중심을 이으면, 그 선분은 현과 수직입니다. 즉, **현의 수직이등분선은 반드시 원의 중심을 지납니다.** 이 성질은 실용적으로 매우 유용한데, 원의 일부분(호)만 주어졌을 때 원의 중심을 찾는 데 쓸 수 있습니다.\n\n---\n\n## 핵심 성질 2: 거리가 같으면 현도 같다\n\n이제 원의 중심 $O$에서 두 현 $AB$와 $CD$까지의 거리가 같은 경우를 생각해봅시다. 거리를 각각 $OM = ON = d$라 하면:\n\n피타고라스 정리를 이용하면:\n$$AM = \\sqrt{r^2 - d^2}, \\quad CN = \\sqrt{r^2 - d^2}$$\n\n$AM = CN$이므로 $AB = 2AM = 2CN = CD$\n\n$$\\boxed{\\text{원의 중심에서 같은 거리에 있는 두 현의 길이는 서로 같습니다.}}$$\n\n반대도 성립합니다. 길이가 같은 두 현은 원의 중심에서 같은 거리에 있어요.\n\n---\n\n## 이 개념이 놓인 위치\n\n이 단원은 원에 관한 성질들의 시작점입니다. 현의 성질을 이해하면, 이후에 배울 원과 접선, 원주각, 그리고 원에 내접하는 사각형의 성질들이 모두 하나의 일관된 흐름으로 연결됩니다. 도형의 닮음과 합동, 피타고라스 정리가 이 증명들의 뼈대가 됩니다.\n\n---\n\n## 자주 하는 실수 하나\n\n\"현의 수직이등분선이 원의 중심을 지난다\"는 성질을 뒤집어서, **\"원의 중심을 지나는 모든 선이 현을 이등분한다\"고 잘못 외우는 경우**가 많습니다. 중심을 지나더라도 현과 수직이 아니면 이등분하지 않아요. 수직이라는 조건이 반드시 있어야 합니다.",
+      "checkQuestion": {
+        "question": "반지름이 10인 원에서, 원의 중심으로부터 거리가 6인 현의 길이는?",
+        "options": [
+          "8",
+          "12",
+          "16",
+          "20"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "원과 부채꼴",
+          "chapterId": "math-7-2-05",
+          "reason": "원의 중심, 반지름, 호 등 기본 용어와 원의 기본 성질을 알아야 현의 성질을 이해할 수 있습니다."
+        },
+        {
+          "concept": "피타고라스 정리",
+          "chapterId": "math-9-2-03",
+          "reason": "중심에서 현까지의 거리와 반지름, 현의 길이 사이의 관계를 계산할 때 피타고라스 정리가 필요합니다."
+        },
+        {
+          "concept": "삼각형의 합동 조건",
+          "chapterId": "math-7-2-04",
+          "reason": "수선이 현을 이등분함을 증명할 때 직각삼각형의 합동 조건(RHS)을 사용합니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">원의 중심에서 현에 내린 수선은 현을 이등분한다</text>\n\n  <!-- === CIRCLE DIAGRAM === -->\n\n  <!-- Triangle OAM (blue fill) -->\n  <polygon points=\"98,88 180,88 180,158\" fill=\"#4A90D9\" fill-opacity=\"0.15\" stroke=\"none\"/>\n  <!-- Triangle OBM (green fill) -->\n  <polygon points=\"262,88 180,88 180,158\" fill=\"#5CB85C\" fill-opacity=\"0.15\" stroke=\"none\"/>\n\n  <!-- Circle -->\n  <circle cx=\"180\" cy=\"158\" r=\"108\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n\n  <!-- Radii OA and OB -->\n  <line x1=\"180\" y1=\"158\" x2=\"98\" y2=\"88\" stroke=\"#4A90D9\" stroke-width=\"2\" stroke-dasharray=\"5,3\"/>\n  <line x1=\"180\" y1=\"158\" x2=\"262\" y2=\"88\" stroke=\"#5CB85C\" stroke-width=\"2\" stroke-dasharray=\"5,3\"/>\n\n  <!-- Triangle borders -->\n  <line x1=\"98\" y1=\"88\" x2=\"180\" y2=\"158\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <line x1=\"262\" y1=\"88\" x2=\"180\" y2=\"158\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n\n  <!-- Chord AB -->\n  <line x1=\"98\" y1=\"88\" x2=\"262\" y2=\"88\" stroke=\"#333\" stroke-width=\"2.5\"/>\n\n  <!-- Perpendicular OM (orange dashed) -->\n  <line x1=\"180\" y1=\"88\" x2=\"180\" y2=\"158\" stroke=\"#E67E22\" stroke-width=\"2.2\" stroke-dasharray=\"6,3\"/>\n\n  <!-- Right angle marker at M -->\n  <path d=\"M 170,88 L 170,98 L 180,98\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"1.8\"/>\n\n  <!-- Tick marks: OA = OB (single tick, showing equal radii) -->\n  <!-- On OA at midpoint (139, 123): perp direction ≈ (0.65, -0.76) -->\n  <line x1=\"136\" y1=\"126\" x2=\"142\" y2=\"120\" stroke=\"#4A90D9\" stroke-width=\"2.2\"/>\n  <!-- On OB at midpoint (221, 123): perp direction ≈ (0.65, 0.76) -->\n  <line x1=\"218\" y1=\"120\" x2=\"224\" y2=\"126\" stroke=\"#5CB85C\" stroke-width=\"2.2\"/>\n\n  <!-- Double tick marks: AM = BM (conclusion) -->\n  <!-- On AM at midpoint x=139 -->\n  <line x1=\"137\" y1=\"83\" x2=\"137\" y2=\"93\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"141\" y1=\"83\" x2=\"141\" y2=\"93\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- On BM at midpoint x=221 -->\n  <line x1=\"219\" y1=\"83\" x2=\"219\" y2=\"93\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"223\" y1=\"83\" x2=\"223\" y2=\"93\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Points -->\n  <circle cx=\"98\" cy=\"88\" r=\"4\" fill=\"#333\"/>\n  <circle cx=\"262\" cy=\"88\" r=\"4\" fill=\"#333\"/>\n  <circle cx=\"180\" cy=\"88\" r=\"5\" fill=\"#E67E22\"/>\n  <circle cx=\"180\" cy=\"158\" r=\"4.5\" fill=\"#333\"/>\n\n  <!-- Labels -->\n  <text x=\"85\" y=\"78\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#4A90D9\">A</text>\n  <text x=\"275\" y=\"78\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#5CB85C\">B</text>\n  <text x=\"180\" y=\"74\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">M</text>\n  <text x=\"193\" y=\"170\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#333\">O</text>\n\n  <!-- 90° label -->\n  <text x=\"157\" y=\"108\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">90°</text>\n\n  <!-- AM=BM annotation -->\n  <text x=\"139\" y=\"107\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">AM</text>\n  <text x=\"221\" y=\"107\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">BM</text>\n\n  <!-- === PROOF CARD (right) === -->\n  <rect x=\"308\" y=\"36\" width=\"182\" height=\"230\" rx=\"10\" fill=\"white\" stroke=\"#ddd\" stroke-width=\"1.5\"/>\n\n  <!-- Card title -->\n  <text x=\"399\" y=\"60\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">합동 조건 (RHS)</text>\n  <line x1=\"318\" y1=\"67\" x2=\"480\" y2=\"67\" stroke=\"#eee\" stroke-width=\"1.2\"/>\n\n  <!-- Triangle congruence statement -->\n  <text x=\"399\" y=\"87\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">△OAM ≅ △OBM</text>\n  <line x1=\"318\" y1=\"94\" x2=\"480\" y2=\"94\" stroke=\"#eee\" stroke-width=\"1\"/>\n\n  <!-- Step 1 -->\n  <circle cx=\"328\" cy=\"113\" r=\"9\" fill=\"#4A90D9\"/>\n  <text x=\"328\" y=\"117\" text-anchor=\"middle\" font-size=\"10\" fill=\"white\" font-weight=\"bold\">1</text>\n  <text x=\"343\" y=\"110\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">OA = OB</text>\n  <text x=\"343\" y=\"123\" font-size=\"10\" fill=\"#888\">(반지름으로 같음)</text>\n\n  <!-- Step 2 -->\n  <circle cx=\"328\" cy=\"145\" r=\"9\" fill=\"#E67E22\"/>\n  <text x=\"328\" y=\"149\" text-anchor=\"middle\" font-size=\"10\" fill=\"white\" font-weight=\"bold\">2</text>\n  <text x=\"343\" y=\"142\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">OM = OM</text>\n  <text x=\"343\" y=\"155\" font-size=\"10\" fill=\"#888\">(공통변)</text>\n\n  <!-- Step 3 -->\n  <circle cx=\"328\" cy=\"177\" r=\"9\" fill=\"#5CB85C\"/>\n  <text x=\"328\" y=\"181\" text-anchor=\"middle\" font-size=\"10\" fill=\"white\" font-weight=\"bold\">3</text>\n  <text x=\"343\" y=\"174\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">∠OMA = ∠OMB = 90°</text>\n  <text x=\"343\" y=\"187\" font-size=\"10\" fill=\"#888\">(수선의 정의)</text>\n\n  <!-- Divider before conclusion -->\n  <line x1=\"318\" y1=\"198\" x2=\"480\" y2=\"198\" stroke=\"#eee\" stroke-width=\"1.2\"/>\n\n  <!-- Conclusion -->\n  <rect x=\"318\" y=\"205\" width=\"162\" height=\"50\" rx=\"6\" fill=\"#FFF3E0\"/>\n  <text x=\"399\" y=\"223\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">∴ AM = BM</text>\n  <text x=\"399\" y=\"241\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">수선은 현을 이등분한다!</text>\n\n  <!-- Arrow pointing to double ticks on chord -->\n  <path d=\"M 308,215 Q 278,190 245,105\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"1.2\" stroke-dasharray=\"3,2\" marker-end=\"url(#arr)\"/>\n  <defs>\n    <marker id=\"arr\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\">\n      <polygon points=\"0 0, 7 3.5, 0 7\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n</svg>",
+      "concept": "원과 현"
+    },
+    {
+      "explanation": "자전거 바퀴가 도로 위를 굴러가는 장면을 떠올려 보세요. 바퀴(원)는 땅(직선)과 **딱 한 점**에서만 닿아 있습니다. 만약 두 점에서 닿는다면 바퀴는 땅속으로 파고들겠죠. 이 \"딱 한 점에서만 만나는 직선\"이 오늘의 주인공입니다.\n\n### 직선과 원이 만나는 방법, 세 가지뿐\n\n원과 직선의 관계는 정확히 세 가지로 나뉩니다.\n\n- 두 점에서 만난다 → **할선** (secant, 원을 가로지르는 직선)\n- 한 점에서 정확히 만난다 → **접선** (tangent, 원에 접하는 직선)\n- 전혀 만나지 않는다\n\n이 중 접선만이 \"스치듯 지나가는\" 특별한 직선입니다. 그 한 점을 **접점** (point of tangency)이라 합니다.\n\n### 핵심 성질 1: 접선과 반지름은 수직\n\n원의 중심 $O$에서 접점 $T$를 이은 반지름 $OT$와 접선 $l$은 어떤 관계일까요?\n\n증명해 봅시다. 만약 $OT \\perp l$이 아니라고 가정해 보세요. 그러면 $O$에서 $l$에 내린 수선의 발을 $H$라 할 때, $OH < OT$(수선의 발이 가장 짧은 거리이므로)가 됩니다. $OH < OT = r$이면 $H$는 원의 **안쪽**에 있다는 뜻이고, 직선 $l$이 원의 내부를 지나가므로 두 점에서 만나게 됩니다. 이건 접선이 아니죠.\n\n결론: 접선은 반드시 접점에서 반지름과 수직입니다.\n\n$$OT \\perp l$$\n\n### 핵심 성질 2: 원 밖의 점에서 그은 두 접선의 길이는 같다\n\n원 밖의 점 $P$에서 원에 두 접선을 그어 접점을 각각 $A$, $B$라 하면, 이런 관계가 성립합니다.\n\n$$PA = PB$$\n\n왜 같을까요? 삼각형 $OAP$와 $OBP$를 비교해 봅시다.\n\n- $OA = OB$ (같은 원의 반지름)\n- $OP = OP$ (공통변)\n- $\\angle OAP = \\angle OBP = 90°$ (접선 $\\perp$ 반지름)\n\n직각삼각형의 합동 조건(RHS)에 의해 $\\triangle OAP \\equiv \\triangle OBP$. 따라서 $PA = PB$입니다.\n\n이 $PA$의 길이를 **접선의 길이**라고 하며, 원 밖의 한 점에서 그은 두 접선의 길이는 항상 같습니다.\n\n### 큰 그림에서의 위치\n\n앞서 배운 '원과 현'이 원 내부의 선분을 다뤘다면, '원과 접선'은 원 바깥에서 원을 다루는 관점입니다. 이 두 가지 성질(수직 관계, 접선의 길이)은 이 단원의 마지막 주제인 **접선과 현이 이루는 각**에서 핵심 도구로 활용됩니다.\n\n### 꼭 기억할 한 가지 주의사항\n\n\"접점이 정해지면 접선도 하나\"라는 사실을 놓치기 쉽습니다. 접점 $T$가 결정되는 순간, 접선의 방향은 이미 정해집니다—반지름 $OT$에 수직인 방향 **단 하나**입니다. 반면 원 밖의 점 $P$가 주어지면, 접선은 두 개 그을 수 있습니다. 주어진 조건이 \"접점\"인지 \"외부의 점\"인지에 따라 접선의 개수가 달라진다는 점을 혼동하지 마세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "원 밖의 점 $P$에서 원에 그은 두 접선의 접점을 각각 $A$, $B$라 하자. $PA = 8\\text{cm}$이고 원의 반지름이 $6\\text{cm}$일 때, $PB$의 길이는?",
+        "options": [
+          "4cm",
+          "6cm",
+          "8cm",
+          "10cm"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "직각삼각형의 합동 조건 (RHS 합동)",
+          "chapterId": "math-8-2-02",
+          "reason": "원 밖의 점에서 두 접선의 길이가 같음을 증명할 때 RHS 합동 조건을 사용합니다."
+        },
+        {
+          "concept": "피타고라스 정리",
+          "chapterId": "math-9-2-03",
+          "reason": "접선의 길이를 계산하거나 수직 관계를 이용한 문제 풀이에 직각삼각형의 변의 관계가 필요합니다."
+        },
+        {
+          "concept": "원과 현",
+          "chapterId": "math-9-2-05",
+          "reason": "원의 중심, 반지름, 현의 기본 성질을 알아야 접선과의 관계를 이해할 수 있습니다."
+        }
+      ],
+      "concept": "원과 접선"
+    },
+    {
+      "explanation": "원 위에 점 P가 하나 있다고 상상해 보세요. 그 점에서 원 위의 다른 두 점 A, B를 바라볼 때 생기는 각도 $\\angle APB$가 있습니다. 그런데 원의 중심 O에서 같은 두 점 A, B를 바라본다면, 각도 $\\angle AOB$는 얼마나 될까요? 같을까요, 아니면 다를까요?\n\n실제로 재어보면 놀라운 사실을 발견합니다. 중심에서 본 각도가 정확히 **2배**입니다. 어디서 바라보든 이 비율이 항상 유지되는 이유는 무엇일까요?\n\n### 용어 정의\n\n원 위에 세 점 A, B, P가 있을 때:\n- **중심각** (원의 중심 O에서 호 AB를 바라보는 각): $\\angle AOB$\n- **원주각** (원 위의 점 P에서 같은 호 AB를 바라보는 각): $\\angle APB$\n\n두 각이 같은 호를 공유한다는 것이 핵심입니다.\n\n### 왜 중심각 = 2 × 원주각일까요?\n\n증명은 생각보다 우아합니다. 선분 PO를 연장하여 원과 만나는 점을 C라 하겠습니다.\n\n이제 핵심 관찰: OA, OB, OP는 모두 반지름이므로 **길이가 같습니다.**\n\n**삼각형 OAP에서:** $OA = OP$ (반지름) → 이등변삼각형  \n두 밑각이 같으므로 $\\angle OAP = \\angle OPA = \\alpha$라 하면,  \n삼각형의 외각의 성질에 의해: $\\angle AOC = \\alpha + \\alpha = 2\\alpha$\n\n**삼각형 OBP에서:** $OB = OP$ (반지름) → 이등변삼각형  \n마찬가지로 $\\angle OBP = \\angle OPB = \\beta$라 하면,  \n$\\angle BOC = 2\\beta$\n\n따라서:\n$$\\angle AOB = \\angle AOC + \\angle BOC = 2\\alpha + 2\\beta = 2(\\alpha + \\beta) = 2\\angle APB$$\n\n이것을 **원주각의 정리** (한 호에 대한 원주각은 그 호에 대한 중심각의 절반)라고 합니다.\n\n### 이 정리에서 바로 나오는 두 가지 결론\n\n**1. 같은 호에 대한 원주각은 모두 같다**  \n원 위 어느 점에 서 있든, 같은 호 AB를 바라보는 원주각은 항상 $\\dfrac{\\angle AOB}{2}$로 같습니다. P를 원주 위에서 마음대로 움직여도 각도는 변하지 않는다는 것이 핵심 직관입니다.\n\n**2. 반원에 대한 원주각은 항상 90°**  \nAB가 지름(반원)이면 중심각 $\\angle AOB = 180°$이므로:\n$$\\angle APB = \\frac{180°}{2} = 90°$$\n지름 위에서 바라본 원주각은 반드시 직각입니다. 이 사실은 직각을 찾거나 만드는 데 실제로 활용됩니다.\n\n### 개념 지도에서의 위치\n\n이 정리는 이등변삼각형의 성질과 삼각형 외각의 정리라는 기초 위에 세워집니다. 여기서 한 걸음 더 나아가면 원에 내접하는 사각형(대각의 합 = 180°)과 접선·현이 이루는 각도 자연스럽게 이해할 수 있게 됩니다.\n\n### 흔히 하는 실수 하나\n\n\"같은 호를 바라보는 원주각이 여러 개 있으면 서로 다를 것\"이라고 생각하는 경우가 많습니다. 하지만 원주각의 크기는 점 P의 위치가 아니라 **호의 크기**에만 의존합니다. 단, P가 호 AB 위에 올라가면 원주각이 정의되지 않으므로, P는 반드시 호 AB가 아닌 쪽의 원 위에 있어야 한다는 조건을 놓치지 마세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "원 O에서 호 AB에 대한 원주각 ∠APB = 35°일 때, 같은 호 AB에 대한 중심각 ∠AOB의 크기는?",
+        "options": [
+          "17.5°",
+          "35°",
+          "70°",
+          "140°"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "이등변삼각형의 성질",
+          "chapterId": "math-8-2-02",
+          "reason": "반지름이 모두 같으므로 생기는 이등변삼각형의 두 밑각이 같다는 성질이 원주각 증명의 핵심입니다."
+        },
+        {
+          "concept": "원과 부채꼴",
+          "chapterId": "math-7-2-05",
+          "reason": "중심각, 호, 부채꼴의 개념을 이해해야 원주각과 중심각의 관계를 파악할 수 있습니다."
+        },
+        {
+          "concept": "기본 도형 (삼각형의 외각의 성질)",
+          "chapterId": "math-7-2-03",
+          "reason": "삼각형의 외각 = 두 내각의 합이라는 성질이 원주각 = 중심각의 절반임을 증명하는 과정에서 직접 사용됩니다."
+        }
+      ],
+      "concept": "원주각과 중심각"
+    },
+    {
+      "explanation": "## 원에 꼭 맞게 들어가는 사각형의 비밀\n\n원 위에 점 4개를 찍고, 그 점들을 연결해서 사각형을 만들면 어떤 일이 벌어질까요?\n\n일단 직접 생각해 봅시다. 아무 사각형이나 원 안에 넣으려고 하면, 꼭짓점 4개가 원 위에 딱 맞게 올라가지 않는 경우가 대부분이에요. 그런데 어떤 특별한 사각형은 네 꼭짓점이 모두 하나의 원 위에 놓여요. 이런 사각형을 **원에 내접하는 사각형** (원의 내부에 꼭짓점이 접하는 사각형)이라고 해요.\n\n---\n\n### 뭔가 규칙이 보이지 않나요?\n\n원에 내접하는 사각형 $ABCD$를 하나 그려 봅시다. 네 꼭짓점 $A, B, C, D$가 모두 원 위에 있는 상태예요.\n\n이제 각도를 재 보면... 신기한 일이 생겨요.\n\n$$\\angle A + \\angle C = 180°$$\n$$\\angle B + \\angle D = 180°$$\n\n마주 보는 두 각의 합이 항상 $180°$예요! 왜 그럴까요?\n\n---\n\n### 원주각으로 설명해 봅시다\n\n지난 시간에 배운 **원주각의 성질**을 기억하시나요? 같은 호에 대한 원주각의 크기는 모두 같고, 중심각의 절반이라는 것이요.\n\n$\\angle A$를 생각해 보면, 이 각은 호 $BCD$ (점 $B$에서 $D$까지 $C$를 지나는 쪽 호)에 대한 원주각이에요. 그래서:\n\n$$\\angle A = \\frac{1}{2} \\times (\\text{호 } BCD \\text{에 대한 중심각})$$\n\n마찬가지로 $\\angle C$는 호 $BAD$에 대한 원주각이므로:\n\n$$\\angle C = \\frac{1}{2} \\times (\\text{호 } BAD \\text{에 대한 중심각})$$\n\n그런데 호 $BCD$와 호 $BAD$를 합치면 원 전체, 즉 $360°$가 되죠. 그러니:\n\n$$\\angle A + \\angle C = \\frac{1}{2} \\times 360° = 180°$$\n\n이렇게 되는 거예요. 원을 딱 반씩 나눠 갖는 거라고 생각하면 돼요.\n\n---\n\n### 이름 붙이기\n\n이 성질을 정리하면:\n\n> **원에 내접하는 사각형에서 대각(마주 보는 두 각)의 합은 $180°$이다.**\n> $$\\angle A + \\angle C = 180°, \\quad \\angle B + \\angle D = 180°$$\n\n역도 성립해요. 사각형의 대각의 합이 $180°$이면, 그 사각형은 반드시 어떤 원에 내접합니다.\n\n---\n\n### 지도에서 이 개념의 위치\n\n이 개념은 원주각의 성질에서 직접 이어져요. 원주각을 알아야 대각의 합이 왜 $180°$인지 증명할 수 있어요. 그리고 이 성질은 이후에 배울 **접선과 현이 이루는 각** 문제에서도 도형을 분석하는 강력한 도구가 됩니다.\n\n---\n\n### 딱 하나, 이것만 조심하세요\n\n\"사각형의 내각의 합은 $360°$니까 대각의 합도 $360° \\div 2 = 180°$ 아닌가요?\"라고 생각하기 쉬워요. 맞는 말 같지만, 이건 원에 내접하지 않는 사각형에서는 성립하지 않아요. 예를 들어 한 각이 $100°$, 마주 보는 각이 $110°$인 사각형도 내각의 합이 $360°$가 되지만, 이 사각형은 원에 내접하지 않아요. 대각의 합이 $180°$가 되는 것은 원에 내접하는 사각형만의 특별한 성질이에요.",
+      "checkQuestion": {
+        "question": "원에 내접하는 사각형 $ABCD$에서 $\\angle A = 115°$일 때, $\\angle C$의 크기는?",
+        "options": [
+          "$55°$",
+          "$65°$",
+          "$75°$",
+          "$115°$"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "원주각과 중심각",
+          "chapterId": "math-9-2-05",
+          "reason": "대각의 합이 180°임을 증명하려면 원주각이 중심각의 절반이라는 성질을 반드시 알아야 합니다."
+        },
+        {
+          "concept": "사각형의 네 각의 크기의 합",
+          "chapterId": "math-4-1-02",
+          "reason": "사각형의 내각의 합이 360°라는 사실이 대각의 합 계산의 기초가 됩니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "원에 내접하는 사각형"
+    },
+    {
+      "explanation": "원 위의 한 점에서 접선과 현이 동시에 출발합니다. 이 두 선이 이루는 각도는 얼마일까요? 언뜻 보면 임의의 값처럼 느껴지지만, 사실 이 각도는 원의 반대편 호를 바라보는 **원주각**과 정확히 같습니다. 어떻게 그럴 수 있을까요?\n\n## 지름 하나로 모든 것이 풀린다\n\n원 위의 점 A에서 접선 $t$가 있고, A에서 원 위의 다른 점 B까지 현 AB를 그었습니다. 접선과 현이 이루는 각을 $\\angle TAB = \\alpha$라 하겠습니다.\n\n여기서 핵심 전략: **A에서 지름 AD를 긋습니다.**\n\n원과 접선의 성질에 의해, 반지름 OA는 접선 $t$에 수직입니다:\n$$\\angle TAD = 90°$$\n\n따라서 $\\angle DAB = 90° - \\alpha$ 입니다.\n\n## 삼각형 ABD에서 발견하기\n\nAD는 지름이므로, 호 AD에 대한 원주각 $\\angle ABD = 90°$ (반원에 대한 원주각은 항상 직각).\n\n삼각형 ABD의 내각의 합은 $180°$이므로:\n$$\\angle ABD + \\angle DAB + \\angle ADB = 180°$$\n$$90° + (90° - \\alpha) + \\angle ADB = 180°$$\n$$\\therefore\\ \\angle ADB = \\alpha$$\n\n그런데 $\\angle ADB$는 호 AB에 대한 원주각입니다. 원주각의 성질에 따라, 같은 호 AB에 대한 원주각은 어느 점에서 보아도 모두 $\\alpha$로 같습니다. 즉, 원 위의 어느 점 C를 잡아도 $\\angle ACB = \\alpha$가 됩니다.\n\n## 정리: 접선과 현이 이루는 각\n\n이렇게 증명된 성질을 **접선과 현이 이루는 각** (접선-현의 각도 정리)이라고 합니다.\n\n$$\\boxed{\\text{접선과 현이 이루는 각} = \\text{그 현에 대한 원주각}}$$\n\n접선은 현의 양쪽으로 두 각을 만든다는 것도 기억하세요. 한쪽 각 $\\alpha$는 **작은 호** AB에 대한 원주각과 같고, 반대편 각 $180° - \\alpha$는 **큰 호** AB에 대한 원주각과 같습니다.\n\n## 원의 성질 지도에서의 위치\n\n이 성질은 원주각의 심화 버전입니다. 원주각이 \"원 위의 점\"에서 호를 바라보는 각도라면, 접선과 현이 이루는 각은 그 점이 원에 접하는 극한으로 이동했을 때에도 성질이 그대로 유지된다는 것을 보여줍니다. 원에 내접하는 사각형의 각도 계산, 접선이 등장하는 복합 도형 문제에서 이 성질이 핵심 열쇠가 됩니다.\n\n## 이런 실수를 조심하세요\n\n가장 흔한 실수는 \"어느 호의 원주각인가\"를 헷갈리는 것입니다. 접선과 현이 이루는 각은 **그 각도가 품고 있는 호**에 대한 원주각과 같습니다. 그림을 그려서 각도 안에 작은 호가 있는지, 큰 호가 있는지 먼저 확인하는 습관을 들이세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "직선 $t$가 점 P에서 원에 접하고, 현 PQ가 있습니다. 접선 $t$와 현 PQ가 이루는 각이 $55°$일 때, 호 PQ에 대한 중심각의 크기는 얼마입니까?",
+        "options": [
+          "55°",
+          "110°",
+          "125°",
+          "70°"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "원주각과 중심각",
+          "chapterId": "math-9-2-05",
+          "reason": "증명에서 '반원에 대한 원주각 = 90°'와 '같은 호에 대한 원주각은 모두 같다'는 성질을 직접 사용합니다."
+        },
+        {
+          "concept": "원과 접선",
+          "chapterId": "math-9-2-05",
+          "reason": "'반지름 ⊥ 접선' 성질이 증명의 첫 번째 단계에서 반드시 필요합니다."
+        },
+        {
+          "concept": "평면도형의 성질",
+          "chapterId": "math-7-2-05",
+          "reason": "삼각형의 내각의 합(180°)을 이용하여 각도를 계산하는 과정이 증명의 핵심 단계에 포함됩니다."
+        }
+      ],
+      "concept": "접선과 현이 이루는 각"
+    }
+  ]
+}

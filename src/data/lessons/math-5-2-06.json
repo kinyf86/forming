@@ -1,0 +1,115 @@
+{
+  "chapterId": "math-5-2-06",
+  "chapterTitle": "6단원 - 평균과 가능성",
+  "generatedAt": "2026-04-01T06:50:56.595888+00:00",
+  "lessons": [
+    {
+      "explanation": "어느 날, 축구 선수 두 명이 이런 대화를 했어.\n\n지민: \"나 이번 주에 골을 5개 넣었어!\"\n서윤: \"나는 4개밖에 못 넣었는데... 근데 나는 경기를 2번만 했고, 너는 4번 했잖아?\"\n\n지민이 더 잘한 걸까, 서윤이 더 잘한 걸까?\n\n총 골 수만 보면 지민(5개) > 서윤(4개)야. 하지만 뭔가 불공평하지 않아? 서윤은 절반만 경기했는데!\n\n이럴 때는 **경기 한 번당 몇 골**을 넣었는지 비교해야 해.\n\n- 지민: $5 \\div 4 = 1.25$골/경기\n- 서윤: $4 \\div 2 = 2$골/경기\n\n경기당 골 수로 보니 서윤이 더 잘했네! 이렇게 **자료를 고르게 나누어 하나의 값으로 나타낸 것**을 **평균** (여러 자료를 대표하는 고른 하나의 값)이라고 해.\n\n## 평균 구하는 방법\n\n$$\\text{평균} = \\frac{\\text{자료의 값을 모두 더한 수}}{\\text{자료의 수}}$$\n\n예를 들어, 4일 동안 읽은 책 쪽수가 2쪽, 4쪽, 6쪽, 8쪽이라면:\n\n$$\\text{평균} = \\frac{2 + 4 + 6 + 8}{4} = \\frac{20}{4} = 5\\text{쪽}$$\n\n이건 \"매일 5쪽씩 읽은 것과 같다\"는 뜻이야. 높낮이가 다른 막대들을 깎고 채워서 모두 같은 높이로 맞춘 것처럼!\n\n## 평균이 왜 쓸모 있을까?\n\n자료의 수가 달라도 공평하게 비교할 수 있어. \"우리 반 평균 점수\", \"하루 평균 기온\", \"경기당 평균 득점\" — 일상에서 정말 많이 쓰이지? 이 평균 개념은 나중에 배울 **자료 분석**과 **통계**의 가장 기본이 돼.\n\n## 딱 하나만 조심해!\n\n자료 중에 0이 있으면 \"이건 의미 없으니 빼야지\"라고 생각하기 쉬워. 예를 들어 5일 중 하루를 0쪽 읽었다면, 0을 빼고 4로 나누면 안 돼. **0도 엄연한 자료야.** 그날 읽지 않았다는 사실도 정보이므로, 반드시 전체 자료의 수(5)로 나눠야 해.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"115\" y=\"20\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">4일 동안 읽은 쪽수</text><text x=\"115\" y=\"34\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">(단위: 쪽)</text><line x1=\"18\" y1=\"240\" x2=\"222\" y2=\"240\" stroke=\"#ccc\" stroke-width=\"1.5\"/><line x1=\"18\" y1=\"140\" x2=\"222\" y2=\"140\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/><text x=\"5\" y=\"143\" font-size=\"10\" fill=\"#E67E22\">5</text><rect x=\"25\" y=\"200\" width=\"38\" height=\"40\" fill=\"#4A90D9\" rx=\"3\" opacity=\"0.85\"/><text x=\"44\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">2</text><text x=\"44\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">1일</text><rect x=\"73\" y=\"160\" width=\"38\" height=\"80\" fill=\"#4A90D9\" rx=\"3\" opacity=\"0.85\"/><text x=\"92\" y=\"156\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">4</text><text x=\"92\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">2일</text><rect x=\"121\" y=\"120\" width=\"38\" height=\"120\" fill=\"#4A90D9\" rx=\"3\" opacity=\"0.85\"/><text x=\"140\" y=\"116\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">6</text><text x=\"140\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">3일</text><rect x=\"169\" y=\"80\" width=\"38\" height=\"160\" fill=\"#4A90D9\" rx=\"3\" opacity=\"0.85\"/><text x=\"188\" y=\"76\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">8</text><text x=\"188\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">4일</text><text x=\"248\" y=\"150\" text-anchor=\"middle\" font-size=\"22\" fill=\"#aaa\">→</text><text x=\"248\" y=\"164\" text-anchor=\"middle\" font-size=\"9\" fill=\"#aaa\">고르게</text><text x=\"383\" y=\"20\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">평균으로 고르면?</text><line x1=\"270\" y1=\"240\" x2=\"482\" y2=\"240\" stroke=\"#ccc\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"140\" x2=\"482\" y2=\"140\" stroke=\"#E67E22\" stroke-width=\"2\"/><rect x=\"280\" y=\"140\" width=\"38\" height=\"100\" fill=\"#5CB85C\" rx=\"3\" opacity=\"0.85\"/><text x=\"299\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">5</text><text x=\"299\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">1일</text><rect x=\"328\" y=\"140\" width=\"38\" height=\"100\" fill=\"#5CB85C\" rx=\"3\" opacity=\"0.85\"/><text x=\"347\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">5</text><text x=\"347\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">2일</text><rect x=\"376\" y=\"140\" width=\"38\" height=\"100\" fill=\"#5CB85C\" rx=\"3\" opacity=\"0.85\"/><text x=\"395\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">5</text><text x=\"395\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">3일</text><rect x=\"424\" y=\"140\" width=\"38\" height=\"100\" fill=\"#5CB85C\" rx=\"3\" opacity=\"0.85\"/><text x=\"443\" y=\"135\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">5</text><text x=\"443\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">4일</text><text x=\"376\" y=\"279\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#E67E22\">평균 = 5쪽</text></svg>",
+      "checkQuestion": {
+        "question": "어떤 학생이 5일 동안 운동한 시간이 30분, 40분, 50분, 60분, 70분이야. 하루 평균 운동 시간은 몇 분일까?",
+        "options": [
+          "40분",
+          "45분",
+          "50분",
+          "55분"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "자연수의 혼합 계산",
+          "chapterId": "math-5-1-01",
+          "reason": "평균을 구할 때 여러 수의 합을 구한 뒤 나눗셈을 해야 하므로, 덧셈과 나눗셈이 섞인 계산을 할 수 있어야 해."
+        },
+        {
+          "concept": "나눗셈",
+          "chapterId": "math-4-1-03",
+          "reason": "평균은 전체 합을 자료의 수로 나누어 구하므로, (두·세 자리 수)÷(두 자리 수) 나눗셈을 정확히 알아야 해."
+        }
+      ],
+      "concept": "평균의 뜻과 구하기"
+    },
+    {
+      "explanation": "## 평균, 어디에 쓸 수 있을까?\n\n두 모둠이 수학 시험을 봤어.\n\n- **가 모둠** (5명): 총점 **425점**\n- **나 모둠** (4명): 총점 **360점**\n\n\"총점이 더 높은 가 모둠이 잘했다!\"... 정말 그럴까?\n\n잠깐, 가 모둠은 5명이고 나 모둠은 4명이야. **사람 수가 다른데 총점만 비교하는 건 공평하지 않아.** 가 모둠은 사람이 한 명 더 많으니까 당연히 총점이 높을 수도 있잖아?\n\n이럴 때 **평균** (자료를 고르게 나눈 값)이 진짜 힘을 발휘해.\n\n$$\\text{가 모둠 평균} = 425 \\div 5 = 85\\text{점}$$\n$$\\text{나 모둠 평균} = 360 \\div 4 = 90\\text{점}$$\n\n총점은 가 모둠이 높았는데, 1인당 평균은 나 모둠이 더 높아! 평균으로 비교하니까 **인원 수에 상관없이 진짜 실력**을 볼 수 있지.\n\n---\n\n### 목표 점수 거꾸로 계산하기\n\n이번엔 다른 상황이야. 민준이가 수학 시험을 세 번 봤어: **70점, 80점, 75점**.\n\n지금 평균은 $(70 + 80 + 75) \\div 3 = 75$점이야.\n\n그런데 민준이가 목표가 생겼어. **\"4번 시험까지의 평균을 80점으로 만들고 싶어!\"**\n\n여기서 뭔가 규칙이 보이지 않아? 평균이 80점이 되려면, 4번 시험의 **총합**이 얼마가 되어야 할까?\n\n$$80 \\times 4 = 320\\text{점}$$\n\n지금까지 세 번의 합은 $70 + 80 + 75 = 225$점. 그러면 네 번째 시험에서 필요한 점수는:\n\n$$320 - 225 = 95\\text{점}$$\n\n95점을 받으면 평균이 딱 80점이 돼! 이렇게 평균은 **목표를 세울 때**도 쓸 수 있어.\n\n---\n\n### 이름 붙이기\n\n이렇게 평균을 이용해서 집단을 비교하거나, 필요한 값을 역으로 구하는 것을 **평균 활용** (평균을 실제 문제에 적용하기)이라고 해.\n\n두 공식을 함께 기억해 두면 돼:\n\n$$\\text{평균} = \\frac{\\text{자료의 합}}{\\text{자료의 수}}$$\n$$\\text{자료의 합} = \\text{평균} \\times \\text{자료의 수}$$\n\n두 번째 식이 바로 목표 계산할 때 쓰는 거야!\n\n---\n\n### 평균이 있는 자리\n\n평균의 뜻을 배웠다면, 이제 그걸 **비교, 예측, 목표 설정**에 적용하는 거야. 나중에 중학교에서 배우는 **대푯값** (여러 데이터를 하나의 값으로 대표하는 것)의 기초가 바로 여기서 시작돼.\n\n---\n\n### 자주 하는 실수 하나\n\n**인원 수가 다른 두 집단을 합칠 때, 각 집단의 평균을 더해서 2로 나누면 안 돼.** 5명 집단 평균 85점, 4명 집단 평균 90점이라면, 전체 평균은 $(85 + 90) \\div 2 = 87.5$점이 아니야! 전체 합 $(425 + 360 = 785)$을 전체 인원 $(9)$으로 나눠야 해: $785 \\div 9 \\approx 87.2$점. 집단 크기가 다르면 \"평균의 평균\"은 틀린 답이 나와.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">어느 모둠이 더 잘했을까?</text><line x1=\"250\" y1=\"36\" x2=\"250\" y2=\"272\" stroke=\"#CCC\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><text x=\"125\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" fill=\"#C0392B\" font-weight=\"bold\">총점으로만 보면...</text><rect x=\"50\" y=\"90\" width=\"55\" height=\"150\" fill=\"#4A90D9\" opacity=\"0.85\" rx=\"4\"/><text x=\"77\" y=\"84\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#2C6FAC\">425점</text><text x=\"77\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#444\">가 모둠</text><text x=\"77\" y=\"269\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">5명</text><rect x=\"148\" y=\"113\" width=\"55\" height=\"127\" fill=\"#E67E22\" opacity=\"0.85\" rx=\"4\"/><text x=\"175\" y=\"107\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#B8600E\">360점</text><text x=\"175\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#444\">나 모둠</text><text x=\"175\" y=\"269\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">4명</text><text x=\"125\" y=\"287\" text-anchor=\"middle\" font-size=\"11\" fill=\"#C0392B\">가 모둠이 더 잘한 것 같은데?</text><text x=\"375\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" fill=\"#27AE60\" font-weight=\"bold\">평균으로 비교하면!</text><rect x=\"300\" y=\"98\" width=\"55\" height=\"142\" fill=\"#4A90D9\" opacity=\"0.85\" rx=\"4\"/><text x=\"327\" y=\"92\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#2C6FAC\">85점</text><text x=\"327\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#444\">가 모둠</text><text x=\"327\" y=\"269\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">1인당 평균</text><rect x=\"398\" y=\"90\" width=\"55\" height=\"150\" fill=\"#E67E22\" opacity=\"0.85\" rx=\"4\"/><text x=\"425\" y=\"84\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#B8600E\">90점</text><text x=\"425\" y=\"256\" text-anchor=\"middle\" font-size=\"11\" fill=\"#444\">나 모둠</text><text x=\"425\" y=\"269\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">1인당 평균</text><text x=\"414\" y=\"74\" text-anchor=\"middle\" font-size=\"16\">★</text><text x=\"375\" y=\"287\" text-anchor=\"middle\" font-size=\"11\" fill=\"#27AE60\">나 모둠이 실제로 더 잘했어!</text></svg>",
+      "checkQuestion": {
+        "question": "지수네 모둠 4명이 윗몸 일으키기를 총 112개 했고, 현아네 모둠 3명이 총 90개를 했어. 어느 모둠의 1인당 평균이 더 높을까?",
+        "options": [
+          "지수네 모둠 (평균 28개)",
+          "현아네 모둠 (평균 30개)",
+          "두 모둠이 같아",
+          "총개수가 많은 지수네 모둠"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "평균의 뜻과 구하기",
+          "chapterId": "math-5-2-06",
+          "reason": "평균을 활용하려면 먼저 평균이 무엇이고 어떻게 계산하는지 알아야 해요."
+        },
+        {
+          "concept": "자연수의 혼합 계산",
+          "chapterId": "math-5-1-01",
+          "reason": "합계를 구한 뒤 나눗셈으로 평균을 계산하거나, 평균×자료 수로 목표 합계를 구하는 과정에 혼합 계산이 필요해요."
+        }
+      ],
+      "concept": "평균 활용"
+    },
+    {
+      "explanation": "동전을 손에 쥐고 던진다고 상상해봐. 앞면이 나올까, 뒷면이 나올까?\n\n아무도 미리 알 수 없어. 그런데 이런 건 어때?\n\n**상황 1**: 주머니에 파란 공만 5개 들어 있어. 눈 감고 하나 꺼내면 빨간 공이 나올 수 있을까?\n\n**상황 2**: 주머니에 빨간 공 3개, 파란 공 3개 들어 있어. 빨간 공이 나올까?\n\n**상황 3**: 주머니에 빨간 공만 5개 들어 있어. 빨간 공이 나올까?\n\n상황 1은 어떻게 해도 빨간 공이 나올 수 없어. 상황 3은 반드시 빨간 공이 나오고. 상황 2는... 나올 수도 있고 안 나올 수도 있어. 딱 반반이지.\n\n그런데 여기서 뭔가 규칙이 보이지 않아? 가능성에는 **단계**가 있어. \"절대 안 된다\"부터 \"반드시 된다\"까지 이어지는 띠처럼 생각할 수 있거든.\n\n이렇게 어떤 일이 일어날 **가능성**(일이 얼마나 일어날 것 같은지의 정도)은 수직선 위에 나타낼 수 있어.\n\n- **불가능하다**: 가능성 = $0$ → 절대로 일어나지 않아\n- **~아닐 것 같다**: $0$보다 크고 $\\frac{1}{2}$보다 작아\n- **반반이다**: 가능성 = $\\frac{1}{2}$ → 일어날 수도, 안 일어날 수도 있어\n- **~일 것 같다**: $\\frac{1}{2}$보다 크고 $1$보다 작아\n- **확실하다**: 가능성 = $1$ → 반드시 일어나\n\n$$0 \\leq \\text{가능성} \\leq 1$$\n\n몇 가지 예를 더 살펴볼까?\n\n- 동전을 던져 앞면이 나올 가능성 → **반반이다** $\\left(\\frac{1}{2}\\right)$\n- 1~6 주사위를 던져 7 이상의 수가 나올 가능성 → **불가능하다** $(0)$\n- 내일 해가 동쪽에서 뜰 가능성 → **확실하다** $(1)$\n- 빨간 공 4개, 파란 공 1개인 주머니에서 빨간 공이 나올 가능성 → **~일 것 같다** (빨간 공이 훨씬 많으니까)\n\n이 개념은 나중에 **확률**(어떤 일이 일어나는 수학적 비율)로 발전해. 중학교에서 확률을 배울 때 \"가능성 $\\frac{1}{2}$\"이 \"확률 $\\frac{1}{2}$\"이 되는 거야. 백분율로 나타내면 50%가 되지 — 일기예보에서 \"비 올 확률 50%\"라는 말이 바로 이 뜻이야.\n\n**가장 흔한 실수 하나**: 가능성이 반반이면 10번 중 꼭 5번 나온다고 생각하는 거야. 실제로 동전을 10번 던지면 앞면이 6번, 7번, 또는 3번 나올 수도 있어. 가능성이 $\\frac{1}{2}$이라는 건 \"딱 절반이 보장된다\"는 게 아니라 \"기대되는 경향\"이야. 던지는 횟수가 아주 많아질수록 절반에 가까워지지만, 몇 번 해볼 때는 들쑥날쑥할 수 있어.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\" rx=\"8\"/><text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#2C3E50\">가능성의 크기</text><defs><linearGradient id=\"specGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\"><stop offset=\"0%\" stop-color=\"#E74C3C\"/><stop offset=\"50%\" stop-color=\"#F1C40F\"/><stop offset=\"100%\" stop-color=\"#27AE60\"/></linearGradient></defs><rect x=\"50\" y=\"78\" width=\"400\" height=\"22\" rx=\"11\" fill=\"url(#specGrad)\"/><line x1=\"50\" y1=\"72\" x2=\"50\" y2=\"108\" stroke=\"#555\" stroke-width=\"2\"/><line x1=\"250\" y1=\"72\" x2=\"250\" y2=\"108\" stroke=\"#555\" stroke-width=\"2\"/><line x1=\"450\" y1=\"72\" x2=\"450\" y2=\"108\" stroke=\"#555\" stroke-width=\"2\"/><text x=\"50\" y=\"124\" text-anchor=\"middle\" font-size=\"13\" fill=\"#555\">0</text><text x=\"250\" y=\"124\" text-anchor=\"middle\" font-size=\"13\" fill=\"#555\">½</text><text x=\"450\" y=\"124\" text-anchor=\"middle\" font-size=\"13\" fill=\"#555\">1</text><text x=\"50\" y=\"64\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E74C3C\" font-weight=\"bold\">불가능</text><text x=\"150\" y=\"64\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">~아닐 것 같다</text><text x=\"250\" y=\"64\" text-anchor=\"middle\" font-size=\"11\" fill=\"#8B7500\" font-weight=\"bold\">반반이다</text><text x=\"350\" y=\"64\" text-anchor=\"middle\" font-size=\"10\" fill=\"#27AE60\">~일 것 같다</text><text x=\"450\" y=\"64\" text-anchor=\"middle\" font-size=\"11\" fill=\"#27AE60\" font-weight=\"bold\">확실하다</text><rect x=\"15\" y=\"148\" width=\"130\" height=\"135\" rx=\"8\" fill=\"white\" stroke=\"#E74C3C\" stroke-width=\"1.5\"/><text x=\"80\" y=\"170\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">파란 공만 5개</text><circle cx=\"55\" cy=\"192\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"78\" cy=\"188\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"101\" cy=\"192\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"64\" cy=\"212\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"90\" cy=\"212\" r=\"11\" fill=\"#4A90D9\"/><text x=\"80\" y=\"238\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E74C3C\">→ 빨간 공 꺼내기?</text><text x=\"80\" y=\"258\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#E74C3C\">가능성 = 0</text><text x=\"80\" y=\"274\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E74C3C\">불가능하다</text><line x1=\"80\" y1=\"147\" x2=\"50\" y2=\"110\" stroke=\"#E74C3C\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><rect x=\"185\" y=\"148\" width=\"130\" height=\"135\" rx=\"8\" fill=\"white\" stroke=\"#F1C40F\" stroke-width=\"1.5\"/><text x=\"250\" y=\"170\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">빨간 3개 + 파란 3개</text><circle cx=\"218\" cy=\"192\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"241\" cy=\"188\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"264\" cy=\"192\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"228\" cy=\"212\" r=\"11\" fill=\"#4A90D9\"/><circle cx=\"254\" cy=\"212\" r=\"11\" fill=\"#E74C3C\"/><text x=\"250\" y=\"238\" text-anchor=\"middle\" font-size=\"10\" fill=\"#8B7500\">→ 빨간 공 꺼내기?</text><text x=\"250\" y=\"258\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#8B7500\">가능성 = ½</text><text x=\"250\" y=\"274\" text-anchor=\"middle\" font-size=\"11\" fill=\"#8B7500\">반반이다</text><line x1=\"250\" y1=\"147\" x2=\"250\" y2=\"110\" stroke=\"#8B7500\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><rect x=\"355\" y=\"148\" width=\"130\" height=\"135\" rx=\"8\" fill=\"white\" stroke=\"#27AE60\" stroke-width=\"1.5\"/><text x=\"420\" y=\"170\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\" font-weight=\"bold\">빨간 공만 5개</text><circle cx=\"388\" cy=\"192\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"411\" cy=\"188\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"434\" cy=\"192\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"398\" cy=\"212\" r=\"11\" fill=\"#E74C3C\"/><circle cx=\"424\" cy=\"212\" r=\"11\" fill=\"#E74C3C\"/><text x=\"420\" y=\"238\" text-anchor=\"middle\" font-size=\"10\" fill=\"#27AE60\">→ 빨간 공 꺼내기?</text><text x=\"420\" y=\"258\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#27AE60\">가능성 = 1</text><text x=\"420\" y=\"274\" text-anchor=\"middle\" font-size=\"11\" fill=\"#27AE60\">확실하다</text><line x1=\"420\" y1=\"147\" x2=\"450\" y2=\"110\" stroke=\"#27AE60\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/></svg>",
+      "checkQuestion": {
+        "question": "빨간 공 4개, 파란 공 1개가 들어 있는 주머니에서 눈 감고 공을 하나 꺼낼 때, 빨간 공이 나올 가능성은?",
+        "options": [
+          "불가능하다",
+          "반반이다",
+          "~일 것 같다",
+          "확실하다"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "약분과 기약분수, 분수의 크기 비교",
+          "chapterId": "math-5-1-04",
+          "reason": "가능성을 $\\frac{1}{2}$, $\\frac{3}{5}$ 같은 분수로 나타내고 크기를 비교할 때 필요해."
+        },
+        {
+          "concept": "자료를 표로 정리하기",
+          "chapterId": "math-3-2-06",
+          "reason": "공이 몇 개인지 세고 전체 중 몇 개가 해당하는지 파악하는 기초 자료 감각이 필요해."
+        }
+      ],
+      "concept": "일이 일어날 가능성"
+    },
+    {
+      "explanation": "## 어떤 일이 일어날까, 아닐까?\n\n주사위를 던졌을 때, 7이 나올 수 있을까?\n\n절대 안 나와. 주사위에 7은 없거든.\n\n그럼 1~6 중 하나가 나올 수 있을까?\n\n반드시 나와. 다른 숫자는 없으니까.\n\n그런데 동전을 던졌을 때 앞면이 나올까? 이건… 모르겠지? 나올 수도 있고, 아닐 수도 있어. 딱 반반인 느낌이야.\n\n이렇게 어떤 일이 \"일어날지 안 일어날지\"의 정도를 **가능성** (어떤 일이 일어날 수 있는 정도)이라고 해.\n\n---\n\n## 가능성을 눈금으로 표현하면?\n\n가능성은 크게 다섯 단계로 나눌 수 있어.\n\n| 단계 | 설명 | 예 |\n|---|---|---|\n| **불가능하다** | 절대 일어나지 않아 | 주사위에서 7이 나온다 |\n| **~아닐 것 같다** | 일어날 확률이 낮아 | 맑은 날 번개가 친다 |\n| **반반이다** | 일어날 수도, 아닐 수도 | 동전을 던져 앞면이 나온다 |\n| **~일 것 같다** | 일어날 확률이 높아 | 내일 해가 뜬다 |\n| **확실하다** | 반드시 일어나 | 1~6 주사위에서 6 이하가 나온다 |\n\n이 가능성을 수로 나타내면 $0$부터 $1$ 사이의 숫자가 돼.\n\n$$\\text{불가능} = 0 \\quad \\cdots \\quad \\text{반반} = \\frac{1}{2} \\quad \\cdots \\quad \\text{확실} = 1$$\n\n\"절대 안 일어난다\"면 $0$, \"반드시 일어난다\"면 $1$, 그 사이는 상황에 따라 분수로 나타낼 수 있어.\n\n예를 들어, 파란 공 1개, 빨간 공 3개가 든 주머니에서 공을 하나 꺼낼 때 파란 공이 나올 가능성은?\n\n전체 4개 중 파란 공이 1개니까 → $\\frac{1}{4}$\n\n0보다 크고 $\\frac{1}{2}$보다 작으니까 \"아닐 것 같다\" 쪽이야.\n\n---\n\n## 이 개념은 어디에 쓰일까?\n\n가능성은 수학에서 **확률** (어떤 일이 일어날 수도를 수로 나타낸 것)의 기초야. 중학교에 가면 확률을 정확하게 계산하는 법을 배울 거야. 지금은 \"이 일이 얼마나 일어나기 쉬운가\"를 감 잡는 연습을 하는 거야.\n\n날씨 예보에서 \"비 올 확률 30%\"라고 하잖아? 그게 바로 가능성을 수로 표현한 거야.\n\n---\n\n## 헷갈리기 쉬운 것 한 가지\n\n\"반반이다\"를 $\\frac{1}{2}$로 쓰는 건 맞아. 그런데 많은 친구들이 **\"동전을 2번 던지면 앞면이 꼭 1번 나온다\"고 착각해.** 그건 틀려.\n\n가능성이 $\\frac{1}{2}$이라는 건 \"두 번 중 한 번 반드시 나온다\"는 뜻이 아니라, \"앞면이 나올 가능성과 뒷면이 나올 가능성이 똑같다\"는 뜻이야. 실제로 동전을 던지면 앞면이 연속 5번 나올 수도 있어!",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "주머니 안에 빨간 공 2개, 파란 공 2개가 들어 있어. 눈을 감고 공을 하나 꺼낼 때, 빨간 공이 나올 가능성을 수로 바르게 나타낸 것은?",
+        "options": [
+          "$0$",
+          "$\\frac{1}{4}$",
+          "$\\frac{1}{2}$",
+          "$1$"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "분수의 크기 비교와 기약분수",
+          "chapterId": "math-5-1-04",
+          "reason": "가능성을 0과 1 사이의 분수로 나타내고 비교하려면 분수의 의미와 크기 비교를 알아야 해."
+        },
+        {
+          "concept": "전체와 부분의 관계, 진분수",
+          "chapterId": "math-3-2-04",
+          "reason": "전체 중 해당하는 경우가 몇 개인지 분수로 표현하는 것이 가능성의 핵심 아이디어야."
+        }
+      ],
+      "concept": "일이 일어날 가능성"
+    }
+  ]
+}

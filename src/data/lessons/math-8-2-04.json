@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-8-2-04",
+  "chapterTitle": "4단원 - 도형의 닮음",
+  "generatedAt": "2026-04-01T19:51:43.554757+00:00",
+  "lessons": [
+    {
+      "explanation": "## 모양은 같은데 크기가 다르다면?\n\n복사기로 A4 용지를 141% 확대 복사하면 어떻게 될까요? 모든 글자와 그림의 **모양은 그대로**지만, **크기는 커집니다.** 가로도 1.41배, 세로도 1.41배 — 모든 길이가 똑같은 비율로 늘어나죠.\n\n수학에서도 이런 관계를 다룹니다. 두 도형이 **모양은 같고 크기만 다를 때** (또는 크기까지 같을 때), 이 두 도형을 서로 **닮음** (similarity, 두 도형이 같은 모양인 관계)이라고 하고, 닮음인 두 도형을 **닮은 도형**이라고 합니다.\n\n---\n\n## 닮은 도형을 겹쳐보면?\n\n아래 두 삼각형 $\\triangle ABC$와 $\\triangle DEF$가 닮은 도형이라고 해 봅시다.\n\n$$\\triangle ABC \\sim \\triangle DEF$$\n\n($\\sim$ 기호가 닮음을 나타냅니다)\n\n두 도형을 포개듯이 비교해 볼게요. 꼭짓점 $A$와 $D$, $B$와 $E$, $C$와 $F$처럼 서로 대응하는 꼭짓점이 있을 겁니다. 이때 서로 짝을 이루는 변을 **대응변**, 짝을 이루는 각을 **대응각**이라고 해요.\n\n여기서 핵심 질문입니다: 대응변의 길이와 대응각의 크기는 어떤 관계일까요?\n\n예를 들어, $\\overline{AB} = 3$, $\\overline{BC} = 4$, $\\overline{CA} = 5$이고, $\\overline{DE} = 6$, $\\overline{EF} = 8$, $\\overline{FD} = 10$이라고 해봅시다.\n\n$$\\frac{\\overline{DE}}{\\overline{AB}} = \\frac{6}{3} = 2, \\quad \\frac{\\overline{EF}}{\\overline{BC}} = \\frac{8}{4} = 2, \\quad \\frac{\\overline{FD}}{\\overline{CA}} = \\frac{10}{5} = 2$$\n\n모두 2! 우연일까요? 아닙니다. 닮은 도형이라면 **반드시** 이 비율이 일정합니다.\n\n---\n\n## 닮은 도형의 두 가지 성질\n\n닮은 두 도형에는 항상 성립하는 두 가지 성질이 있습니다.\n\n**성질 1.** 대응변의 길이의 비가 모두 같습니다.\n\n$$\\frac{\\overline{DE}}{\\overline{AB}} = \\frac{\\overline{EF}}{\\overline{BC}} = \\frac{\\overline{FD}}{\\overline{CA}}$$\n\n이 공통된 비를 **닮음비** (ratio of similarity, 닮은 두 도형의 대응변 길이의 비)라고 합니다. 위 예시에서 닮음비는 $2:1$ 또는 간단히 $2$라고 표현합니다.\n\n**성질 2.** 대응각의 크기가 모두 같습니다.\n\n$$\\angle A = \\angle D, \\quad \\angle B = \\angle E, \\quad \\angle C = \\angle F$$\n\n모양이 같다는 건 결국 각도가 같다는 뜻이니 직관적으로도 이해가 되죠?\n\n---\n\n## 합동과의 차이\n\n이전에 배운 **합동**도 대응각의 크기가 같고 대응변의 길이가 같았습니다. 닮음과 뭐가 다를까요?\n\n합동은 닮음의 특별한 경우입니다 — 닮음비가 $1:1$인 닮음이죠. 즉, **합동 $\\subset$ 닮음**입니다.\n\n닮음은 크기까지 같지 않아도 되므로, 합동보다 훨씬 더 많은 도형 쌍을 설명할 수 있습니다.\n\n---\n\n## 이 개념이 왜 중요할까요?\n\n닮음은 축척 지도, 건축 설계도, 사진 확대 등 실생활 곳곳에 쓰입니다. 직접 잴 수 없는 거리나 높이를 닮음비로 계산할 수도 있어요. 이 단원에서 배울 삼각형의 닮음 조건과 평행선 사이의 비도 모두 이 두 가지 성질에서 출발합니다.\n\n---\n\n## 자주 하는 실수\n\n닮음비를 구할 때, **대응변끼리** 비교해야 하는데 엉뚱한 변끼리 비교하는 경우가 많습니다. $\\triangle ABC \\sim \\triangle DEF$라고 적혀 있으면 꼭짓점의 순서 자체가 대응 관계를 알려줍니다 — $A ↔ D$, $B ↔ E$, $C ↔ F$. 기호에 적힌 순서를 무시하고 눈에 보이는 대로 짝을 맞추면 틀린 닮음비가 나옵니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\triangle ABC \\sim \\triangle DEF$이고, $\\overline{AB} = 4$, $\\overline{BC} = 6$, $\\overline{DE} = 6$일 때, $\\overline{EF}$의 길이는 얼마입니까?",
+        "options": [
+          "9",
+          "8",
+          "4",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "합동인 도형의 성질",
+          "chapterId": "math-5-2-03",
+          "reason": "닮음은 합동의 확장 개념이므로, 대응변과 대응각이 무엇인지 합동에서 먼저 이해해야 합니다."
+        },
+        {
+          "concept": "비와 비율",
+          "chapterId": "math-6-1-04",
+          "reason": "닮음비는 두 대응변의 길이의 비이므로, 비율의 개념과 계산을 알아야 합니다."
+        },
+        {
+          "concept": "삼각형의 합동 조건",
+          "chapterId": "math-7-2-04",
+          "reason": "삼각형의 합동 조건을 알면 닮음 조건과 비교하며 차이를 명확히 이해할 수 있습니다."
+        }
+      ],
+      "concept": "닮은 도형의 성질"
+    },
+    {
+      "explanation": "## 삼각형의 닮음 조건\n\n여기 흥미로운 질문이 있어요. 두 삼각형이 닮음인지 확인하려면 여섯 가지를 모두 재야 할까요? 세 변의 길이, 세 각의 크기 — 총 여섯 개. 그런데 실제로는 그 중 **세 가지만** 알아도 충분해요. 왜 그럴까요?\n\n### 합동 조건과 비교해 보기\n\n중학교 1학년 때 **삼각형의 합동 조건** (두 삼각형이 완전히 같기 위한 최소 조건)을 배웠죠. SSS, SAS, ASA — 이 세 가지가 있었어요. 닮음 조건도 구조가 비슷해요. 다만 합동은 \"같다\"이고, 닮음은 \"비율이 같다\"는 차이가 있을 뿐이에요.\n\n닮음을 판단할 때 핵심은 이거예요: **변의 비율**이 맞거나, **각도**가 맞거나, 아니면 둘 다 섞여 있거나.\n\n---\n\n### 조건 1: SSS 닮음\n\n세 쌍의 **대응변** (서로 대응하는 변)의 길이의 비가 모두 같으면 두 삼각형은 닮음입니다.\n\n$$\\frac{a}{a'} = \\frac{b}{b'} = \\frac{c}{c'}$$\n\n예를 들어 한 삼각형의 변이 3, 4, 5이고 다른 삼각형이 6, 8, 10이라면, 비율이 모두 $\\frac{1}{2}$이므로 닮음이에요. 각도를 전혀 재지 않아도요. 왜냐고요? 비율이 일정하면 모양 자체가 결정되기 때문이에요.\n\n**SSS 닮음** (세 쌍의 대응변의 비가 같을 때 닮음임을 판단하는 조건)을 기호로 쓰면:\n$$\\triangle ABC \\sim \\triangle DEF \\quad (SSS \\text{ 닮음})$$\n\n---\n\n### 조건 2: SAS 닮음\n\n두 쌍의 대응변의 비가 같고, 그 사이에 끼인 각의 크기가 같으면 닮음입니다.\n\n$$\\frac{a}{a'} = \\frac{b}{b'}, \\quad \\angle C = \\angle C'$$\n\n\"끼인 각\"이 중요해요. 변 두 개의 비율이 맞더라도, 각도가 그 사이에 끼어 있지 않으면 이 조건은 쓸 수 없어요. 예를 들어 변 AB : DE = AC : DF이고 ∠A = ∠D라면, 이 각은 AB와 AC 사이에 끼어 있으니 **SAS 닮음** (두 변의 비와 끼인각으로 닮음을 판단하는 조건)이 성립해요.\n\n---\n\n### 조건 3: AA 닮음\n\n두 쌍의 **대응각** (서로 대응하는 각)의 크기가 같으면 닮음입니다.\n\n$$\\angle A = \\angle D, \\quad \\angle B = \\angle E$$\n\n\"잠깐, 세 각 중 두 개만 같아도 되나요?\" — 네, 맞아요. 삼각형의 세 내각의 합은 항상 $180°$이니까, 두 각이 같으면 나머지 한 각도 자동으로 같아져요. 변의 길이는 전혀 몰라도 돼요.\n\n**AA 닮음** (두 각이 같을 때 닮음을 판단하는 조건)은 실전에서 가장 많이 쓰이는 조건이에요. 각도는 자로 잴 필요 없이 도형의 구조에서 읽어낼 수 있거든요.\n\n$$\\triangle ABC \\sim \\triangle DEF \\quad (AA \\text{ 닮음})$$\n\n---\n\n### 세 조건 정리\n\n| 조건 | 필요한 정보 |\n|------|-------------|\n| SSS 닮음 | 세 쌍의 변의 비가 모두 같다 |\n| SAS 닮음 | 두 쌍의 변의 비가 같고, 끼인각이 같다 |\n| AA 닮음 | 두 쌍의 각이 같다 |\n\n---\n\n### 이 개념이 연결되는 곳\n\n삼각형의 닮음 조건은 이 단원의 핵심 도구예요. 이후에 배울 **평행선 사이의 선분의 길이의 비**나 **닮음의 활용** (지도, 측량, 피타고라스 정리의 증명 등)은 모두 이 세 조건 중 하나를 사용해서 삼각형이 닮음임을 먼저 확인하는 것에서 출발해요.\n\n---\n\n### 흔한 실수 하나\n\nSAS 닮음에서 가장 많이 하는 실수는 **끼인각 조건을 놓치는 것**이에요. 변의 비율 두 개가 맞는다고 무조건 닮음이 되는 게 아니에요. 비율이 같은 두 변 사이에 있는 각이어야 해요. 변 AB, BC의 비율이 맞는다면, 그 끼인각은 ∠B여야 하고 ∠A나 ∠C가 아니에요.",
+      "checkQuestion": {
+        "question": "두 삼각형 △ABC와 △DEF에서 ∠A = ∠D = 50°, ∠B = ∠E = 70°일 때, 두 삼각형의 관계로 옳은 것은?",
+        "options": [
+          "AA 닮음이므로 △ABC ∽ △DEF이다",
+          "변의 길이도 같아야 닮음이라고 할 수 있다",
+          "각이 두 개만 같으면 닮음이 되지 않는다",
+          "SSS 닮음 조건을 확인해야 한다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "닮은 도형의 성질",
+          "chapterId": "math-8-2-04",
+          "reason": "닮음 조건을 적용하려면 대응변, 대응각, 닮음비 등 닮음의 기본 개념을 먼저 알아야 해요."
+        },
+        {
+          "concept": "삼각형의 합동 조건",
+          "chapterId": "math-7-2-04",
+          "reason": "닮음 조건(SSS, SAS, AA)은 합동 조건과 구조가 유사하므로, 합동 조건을 이미 알고 있으면 훨씬 빠르게 이해할 수 있어요."
+        },
+        {
+          "concept": "평면도형의 성질",
+          "chapterId": "math-7-2-05",
+          "reason": "삼각형의 내각의 합이 180°라는 성질을 알아야 AA 닮음에서 두 각만으로 충분한 이유를 이해할 수 있어요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "삼각형의 닮음 조건"
+    },
+    {
+      "explanation": "## 평행선 사이의 선분의 길이의 비\n\n두 직선이 평행하면 어떤 일이 생길까요?\n\n도로를 생각해 보세요. 고속도로 두 개가 나란히 달리고 있고, 그 사이를 비스듬히 가로지르는 도로 두 개가 있어요. 신기하게도, 두 가로지르는 도로가 평행선 사이를 지날 때 **비율이 똑같이 나뉜다**는 사실을 알고 있었나요?\n\n### 삼각형에서 먼저 살펴보기\n\n삼각형 ABC에서 BC에 평행한 직선을 그었을 때, 그 직선이 AB를 점 D에서, AC를 점 E에서 만난다고 합시다.\n\n그러면 놀랍게도:\n\n$$\\frac{AD}{DB} = \\frac{AE}{EC}$$\n\n가 성립해요. 왜 그럴까요?\n\n삼각형 ABС와 삼각형 ADE를 비교해 보면, DE∥BC이므로 동위각이 같아서 **AA 닮음** 조건이 성립해요. 두 삼각형이 닮음이면 대응변의 비가 모두 같기 때문에:\n\n$$\\frac{AD}{AB} = \\frac{AE}{AC}$$\n\n이 식을 살짝 변형하면 $\\frac{AD}{DB} = \\frac{AE}{EC}$ 가 나와요. 즉, **DE가 BC에 평행하면 DE는 두 변을 같은 비율로 나눈다**는 거예요.\n\n### 이제 평행선 두 개로 확장\n\n세 직선 $l$, $m$, $n$이 모두 평행하고, 두 직선(사선)이 이 세 평행선과 만날 때, 각 사선이 잘리는 선분의 비가 같아져요.\n\n즉, 세 평행선이 한 직선 위에서 만들어 내는 선분의 비가 $a : b$ 라면, 다른 어떤 직선과 만나도 **반드시 $a : b$ 로 잘린다**는 거예요.\n\n$$\\frac{AB}{BC} = \\frac{A'B'}{B'C'}$$\n\n이것을 **평행선 사이의 선분의 길이의 비** 라고 해요.\n\n### 핵심을 한 줄로\n\n> 평행한 선들 사이를 비스듬히 지나는 직선들은, 평행선 사이에서 항상 같은 비율로 잘린다.\n\n### 개념이 어디서 왔는지, 어디로 가는지\n\n이 개념은 앞에서 배운 **삼각형의 닮음 조건**에서 출발해요. 평행선이 만들어 내는 동위각, 엇각 덕분에 삼각형의 닮음을 적용할 수 있거든요. 앞으로는 이 비율 개념을 이용해서 **닮음의 활용** — 지도에서의 실제 거리 계산, 높이 측정 등 현실 문제를 풀 수 있게 됩니다.\n\n### 이것만 주의하세요\n\n가장 흔한 실수는 비율을 잘못 설정하는 거예요. $\\frac{AD}{DB}$ 와 $\\frac{AD}{AB}$ 는 **달라요**. 전체 변에 대한 비인지, 나머지 부분에 대한 비인지 항상 먼저 확인하세요. 특히 문제에서 \"몇 대 몇\"으로 물어볼 때, $AD:DB$ 인지 $AD:AB$ 인지를 먼저 파악하는 습관을 들이면 실수를 크게 줄일 수 있어요.",
+      "checkQuestion": {
+        "question": "삼각형 ABC에서 DE∥BC이고, AD=4, DB=6일 때, AE:EC의 값은?",
+        "options": [
+          "2:3",
+          "3:2",
+          "4:3",
+          "2:5"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각형의 닮음 조건",
+          "chapterId": "math-8-2-04",
+          "reason": "평행선이 만드는 동위각을 이용해 AA 닮음을 적용해야 이 개념을 증명할 수 있기 때문이에요."
+        },
+        {
+          "concept": "평행선의 성질",
+          "chapterId": "math-7-2-03",
+          "reason": "평행선에서 동위각과 엇각이 같다는 성질이 닮음 조건을 세우는 출발점이에요."
+        },
+        {
+          "concept": "비와 비율",
+          "chapterId": "math-6-1-04",
+          "reason": "선분의 길이를 비로 표현하고 비례식을 세워 계산하는 능력이 필요해요."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"20\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">평행선 사이의 선분의 길이의 비</text>\n\n  <!-- AD segment (blue) A(250,42) -> D(180,134) -->\n  <line x1=\"250\" y1=\"42\" x2=\"180\" y2=\"134\" stroke=\"#4A90D9\" stroke-width=\"4.5\" stroke-linecap=\"round\"/>\n  <!-- DB segment (green) D(180,134) -> B(75,262) -->\n  <line x1=\"180\" y1=\"134\" x2=\"75\" y2=\"262\" stroke=\"#5CB85C\" stroke-width=\"4.5\" stroke-linecap=\"round\"/>\n  <!-- AE segment (blue) A(250,42) -> E(320,134) -->\n  <line x1=\"250\" y1=\"42\" x2=\"320\" y2=\"134\" stroke=\"#4A90D9\" stroke-width=\"4.5\" stroke-linecap=\"round\"/>\n  <!-- EC segment (green) E(320,134) -> C(425,262) -->\n  <line x1=\"320\" y1=\"134\" x2=\"425\" y2=\"262\" stroke=\"#5CB85C\" stroke-width=\"4.5\" stroke-linecap=\"round\"/>\n  <!-- BC dashed -->\n  <line x1=\"75\" y1=\"262\" x2=\"425\" y2=\"262\" stroke=\"#888\" stroke-width=\"2.5\" stroke-dasharray=\"7,4\"/>\n  <!-- DE orange parallel line -->\n  <line x1=\"180\" y1=\"134\" x2=\"320\" y2=\"134\" stroke=\"#E67E22\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n\n  <!-- Parallel marks on BC -->\n  <line x1=\"246\" y1=\"255\" x2=\"246\" y2=\"269\" stroke=\"#888\" stroke-width=\"2\"/>\n  <line x1=\"254\" y1=\"255\" x2=\"254\" y2=\"269\" stroke=\"#888\" stroke-width=\"2\"/>\n  <!-- Parallel marks on DE -->\n  <line x1=\"246\" y1=\"127\" x2=\"246\" y2=\"141\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <line x1=\"254\" y1=\"127\" x2=\"254\" y2=\"141\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n\n  <!-- Tick marks on AD (2 ticks) -->\n  <line x1=\"221\" y1=\"82\" x2=\"214\" y2=\"92\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <line x1=\"226\" y1=\"88\" x2=\"219\" y2=\"98\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <!-- Tick marks on AE (2 ticks) -->\n  <line x1=\"279\" y1=\"82\" x2=\"286\" y2=\"92\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <line x1=\"274\" y1=\"88\" x2=\"281\" y2=\"98\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <!-- Tick marks on DB (3 ticks) -->\n  <line x1=\"133\" y1=\"188\" x2=\"126\" y2=\"198\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <line x1=\"138\" y1=\"194\" x2=\"131\" y2=\"204\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <line x1=\"143\" y1=\"200\" x2=\"136\" y2=\"210\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <!-- Tick marks on EC (3 ticks) -->\n  <line x1=\"367\" y1=\"188\" x2=\"374\" y2=\"198\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <line x1=\"362\" y1=\"194\" x2=\"369\" y2=\"204\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <line x1=\"357\" y1=\"200\" x2=\"364\" y2=\"210\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n\n  <!-- Vertices -->\n  <circle cx=\"250\" cy=\"42\" r=\"5\" fill=\"#333\"/>\n  <circle cx=\"75\" cy=\"262\" r=\"5\" fill=\"#333\"/>\n  <circle cx=\"425\" cy=\"262\" r=\"5\" fill=\"#333\"/>\n  <circle cx=\"180\" cy=\"134\" r=\"5\" fill=\"#E67E22\"/>\n  <circle cx=\"320\" cy=\"134\" r=\"5\" fill=\"#E67E22\"/>\n\n  <!-- Labels -->\n  <text x=\"250\" y=\"36\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#333\">A</text>\n  <text x=\"60\" y=\"274\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#333\">B</text>\n  <text x=\"440\" y=\"274\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#333\">C</text>\n  <text x=\"164\" y=\"132\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\" fill=\"#E67E22\">D</text>\n  <text x=\"336\" y=\"132\" text-anchor=\"start\" font-size=\"16\" font-weight=\"bold\" fill=\"#E67E22\">E</text>\n  <text x=\"250\" y=\"155\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-style=\"italic\">DE ∥ BC</text>\n\n  <!-- Ratio labels beside segments -->\n  <text x=\"204\" y=\"86\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#4A90D9\">2</text>\n  <text x=\"117\" y=\"205\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#5CB85C\">3</text>\n  <text x=\"296\" y=\"86\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#4A90D9\">2</text>\n  <text x=\"383\" y=\"205\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#5CB85C\">3</text>\n\n  <!-- Aha moment formula box -->\n  <rect x=\"105\" y=\"278\" width=\"290\" height=\"18\" rx=\"6\" fill=\"#fff\" stroke=\"#ddd\" stroke-width=\"1.2\"/>\n  <text x=\"250\" y=\"291\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#333\">\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">AD</tspan><tspan> ÷ </tspan><tspan font-weight=\"bold\" fill=\"#5CB85C\">DB</tspan>\n    <tspan>  =  </tspan>\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">AE</tspan><tspan> ÷ </tspan><tspan font-weight=\"bold\" fill=\"#5CB85C\">EC</tspan>\n    <tspan>  ⟹  </tspan>\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">2</tspan><tspan> : </tspan><tspan font-weight=\"bold\" fill=\"#5CB85C\">3</tspan>\n    <tspan>  =  </tspan>\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">2</tspan><tspan> : </tspan><tspan font-weight=\"bold\" fill=\"#5CB85C\">3</tspan>\n  </text>\n</svg>",
+      "concept": "평행선 사이의 선분의 길이의 비"
+    },
+    {
+      "explanation": "## 그림자만으로 건물 높이를 잴 수 있을까요?\n\n피라미드의 높이는 어떻게 쟀을까요? 고대 그리스 수학자 탈레스(Thales)는 자신의 그림자 길이와 키를 이용해 피라미드의 높이를 계산했다고 합니다. 직접 올라가거나 줄을 늘어뜨리지 않고요. 도대체 어떻게 한 걸까요?\n\n비밀은 바로 지금까지 배운 **닮음의 활용** (닮음 관계를 이용해 직접 측정하기 어려운 길이나 거리를 간접적으로 구하는 것)에 있습니다.\n\n---\n\n### 그림자와 닮음\n\n맑은 날 햇빛은 평행하게 내리쬡니다. 그 순간, 땅 위에 서 있는 모든 물체는 같은 방향으로 그림자를 만들죠.\n\n키가 $1.5\\text{m}$인 사람의 그림자 길이가 $2\\text{m}$라고 해봅시다. 같은 시각, 근처 나무의 그림자가 $10\\text{m}$라면 나무의 높이는 얼마일까요?\n\n사람과 그림자가 이루는 삼각형, 나무와 그림자가 이루는 삼각형을 그려보면 두 삼각형은 닮음입니다. 햇빛의 각도가 같으므로 AA 닮음 조건이 성립하거든요.\n\n$$\\frac{\\text{나무 높이}}{1.5} = \\frac{10}{2}$$\n\n$$\\text{나무 높이} = 1.5 \\times 5 = 7.5\\text{m}$$\n\n줄자 한 번 안 대고, 나무 위로 올라가지 않고도 높이를 구했습니다.\n\n---\n\n### 닮음비를 활용하는 공식 패턴\n\n닮음의 활용 문제는 거의 항상 이 구조를 따릅니다:\n\n1. **어떤 두 삼각형이 닮음인지 찾는다** — AA, SAS, SSS 닮음 조건 중 하나로 확인\n2. **닮음비를 세운다** — 대응하는 변끼리 비를 만든다\n3. **비례식을 풀어 모르는 값을 구한다**\n\n$$\\frac{a}{a'} = \\frac{b}{b'} = \\frac{c}{c'} \\quad (\\text{닮음비})$$\n\n예를 들어, 강 건너 두 지점 사이의 거리를 구하거나, 지도 위의 거리로 실제 거리를 구하는 것도 모두 같은 원리입니다.\n\n---\n\n### 지도와 축척\n\n지도에서 $1\\text{cm}$가 실제 $50\\text{km}$를 나타낸다면, 이 지도의 **축척** (실제 거리와 지도 거리의 비율)은 $\\dfrac{1}{5{,}000{,}000}$입니다.\n\n지도에서 두 도시 사이가 $3.2\\text{cm}$라면 실제 거리는:\n\n$$3.2 \\times 5{,}000{,}000 = 16{,}000{,}000\\text{cm} = 160\\text{km}$$\n\n지도 자체가 실제 세계와 닮음 관계에 있는 거죠.\n\n---\n\n### 이 개념이 어디서 왔고, 어디로 이어지나요?\n\n닮음의 활용은 이 단원에서 배운 닮은 도형의 성질, 삼각형의 닮음 조건, 평행선과 선분의 비를 모두 종합하는 마무리입니다. 나아가 고등학교에서 배울 삼각비와 삼각함수의 기초가 되기도 합니다 — 결국 삼각비도 직각삼각형의 닮음에서 나오니까요.\n\n---\n\n### 자주 하는 실수 한 가지\n\n닮음비를 세울 때 **대응하지 않는 변끼리 비교하는 실수**가 많습니다. 두 삼각형이 닮음이라도, 어느 꼭짓점이 어느 꼭짓점과 대응하는지 먼저 확인하지 않으면 완전히 다른 비례식이 만들어집니다. 항상 닮음 조건을 확인하면서 대응 관계를 먼저 정리하는 습관을 들이세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Sky gradient area -->\n  <rect width=\"500\" height=\"250\" fill=\"#EEF6FF\"/>\n\n  <!-- Ground -->\n  <rect x=\"0\" y=\"248\" width=\"500\" height=\"52\" fill=\"#D9C9A3\"/>\n  <line x1=\"0\" y1=\"248\" x2=\"500\" y2=\"248\" stroke=\"#A0845C\" stroke-width=\"2\"/>\n\n  <!-- Sun upper-left -->\n  <circle cx=\"45\" cy=\"38\" r=\"22\" fill=\"#F5A623\" opacity=\"0.95\"/>\n  <circle cx=\"45\" cy=\"38\" r=\"30\" fill=\"#F5A623\" opacity=\"0.2\"/>\n\n  <!-- Parallel sun rays (same angle, going lower-right) -->\n  <!-- Direction: dx=80, dy=60 normalized -->\n  <line x1=\"70\" y1=\"20\" x2=\"230\" y2=\"140\" stroke=\"#F5A623\" stroke-width=\"1.5\" opacity=\"0.5\"/>\n  <line x1=\"80\" y1=\"5\"  x2=\"280\" y2=\"155\" stroke=\"#F5A623\" stroke-width=\"1.5\" opacity=\"0.5\"/>\n  <line x1=\"60\" y1=\"38\" x2=\"180\" y2=\"128\" stroke=\"#F5A623\" stroke-width=\"1.5\" opacity=\"0.5\"/>\n\n  <!-- === PERSON TRIANGLE === -->\n  <!-- Person base: (130,248), head: (130,188) [60px=1.5m], shadow tip: (210,248) [80px=2m] -->\n  <!-- Light ray: (130,188) → (210,248) same direction (80,60) ✓ -->\n\n  <!-- Triangle fill -->\n  <polygon points=\"130,248 130,188 210,248\" fill=\"#4A90D9\" opacity=\"0.15\"/>\n  <!-- Triangle outline -->\n  <line x1=\"130\" y1=\"188\" x2=\"210\" y2=\"248\" stroke=\"#4A90D9\" stroke-width=\"1.8\" stroke-dasharray=\"5,3\"/>\n\n  <!-- Person stick figure -->\n  <!-- Shadow line -->\n  <line x1=\"130\" y1=\"248\" x2=\"210\" y2=\"248\" stroke=\"#4A90D9\" stroke-width=\"3\"/>\n  <!-- Body -->\n  <line x1=\"130\" y1=\"208\" x2=\"130\" y2=\"235\" stroke=\"#333\" stroke-width=\"2.5\"/>\n  <!-- Head -->\n  <circle cx=\"130\" cy=\"202\" r=\"8\" fill=\"#F5D0A9\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- Arms -->\n  <line x1=\"118\" y1=\"218\" x2=\"142\" y2=\"218\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- Legs -->\n  <line x1=\"130\" y1=\"235\" x2=\"122\" y2=\"248\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"130\" y1=\"235\" x2=\"138\" y2=\"248\" stroke=\"#333\" stroke-width=\"2\"/>\n\n  <!-- Right angle marker person -->\n  <rect x=\"130\" y=\"237\" width=\"8\" height=\"8\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n\n  <!-- Person height label -->\n  <line x1=\"115\" y1=\"188\" x2=\"115\" y2=\"248\" stroke=\"#4A90D9\" stroke-width=\"1.2\"/>\n  <line x1=\"110\" y1=\"188\" x2=\"120\" y2=\"188\" stroke=\"#4A90D9\" stroke-width=\"1.2\"/>\n  <line x1=\"110\" y1=\"248\" x2=\"120\" y2=\"248\" stroke=\"#4A90D9\" stroke-width=\"1.2\"/>\n  <text x=\"104\" y=\"222\" font-size=\"11\" fill=\"#4A90D9\" text-anchor=\"middle\" font-weight=\"bold\">1.5m</text>\n\n  <!-- Person shadow label -->\n  <text x=\"170\" y=\"263\" font-size=\"11\" fill=\"#4A90D9\" text-anchor=\"middle\">2m</text>\n\n  <!-- === TREE TRIANGLE === -->\n  <!-- Tree base: (320,248), top: (320,148) [100px], shadow tip: (453,248) [133px ≈ same angle 100/133≈0.75] -->\n\n  <!-- Triangle fill -->\n  <polygon points=\"320,248 320,148 453,248\" fill=\"#5CB85C\" opacity=\"0.15\"/>\n  <!-- Triangle outline -->\n  <line x1=\"320\" y1=\"148\" x2=\"453\" y2=\"248\" stroke=\"#5CB85C\" stroke-width=\"1.8\" stroke-dasharray=\"5,3\"/>\n\n  <!-- Shadow line -->\n  <line x1=\"320\" y1=\"248\" x2=\"453\" y2=\"248\" stroke=\"#5CB85C\" stroke-width=\"3\"/>\n\n  <!-- Tree trunk -->\n  <rect x=\"315\" y=\"205\" width=\"10\" height=\"43\" fill=\"#8B5E3C\"/>\n  <!-- Tree crown layers -->\n  <polygon points=\"320,148 296,195 344,195\" fill=\"#4CAF50\"/>\n  <polygon points=\"320,160 300,202 340,202\" fill=\"#5CB85C\"/>\n  <polygon points=\"320,172 302,210 338,210\" fill=\"#66BB6A\"/>\n\n  <!-- Right angle marker tree -->\n  <rect x=\"320\" y=\"237\" width=\"8\" height=\"8\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n\n  <!-- Tree height label -->\n  <line x1=\"472\" y1=\"148\" x2=\"472\" y2=\"248\" stroke=\"#5CB85C\" stroke-width=\"1.2\"/>\n  <line x1=\"467\" y1=\"148\" x2=\"477\" y2=\"148\" stroke=\"#5CB85C\" stroke-width=\"1.2\"/>\n  <line x1=\"467\" y1=\"248\" x2=\"477\" y2=\"248\" stroke=\"#5CB85C\" stroke-width=\"1.2\"/>\n  <text x=\"488\" y=\"203\" font-size=\"13\" fill=\"#5CB85C\" text-anchor=\"middle\" font-weight=\"bold\">?</text>\n\n  <!-- Tree shadow label -->\n  <text x=\"386\" y=\"263\" font-size=\"11\" fill=\"#5CB85C\" text-anchor=\"middle\">10m</text>\n\n  <!-- AA similarity angle markers -->\n  <!-- Sun angle at person head -->\n  <path d=\"M 130,188 L 145,188 A 15,15 0 0 1 142,197\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"1.8\"/>\n  <!-- Sun angle at tree top -->\n  <path d=\"M 320,148 L 335,148 A 15,15 0 0 1 332,157\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"1.8\"/>\n\n  <!-- AA label on angles -->\n  <text x=\"152\" y=\"194\" font-size=\"9\" fill=\"#E67E22\" font-weight=\"bold\">α</text>\n  <text x=\"342\" y=\"156\" font-size=\"9\" fill=\"#E67E22\" font-weight=\"bold\">α</text>\n\n  <!-- ≅ similar symbol between triangles -->\n  <text x=\"270\" y=\"215\" font-size=\"18\" fill=\"#E67E22\" text-anchor=\"middle\" font-weight=\"bold\">∽</text>\n  <text x=\"270\" y=\"232\" font-size=\"9\" fill=\"#E67E22\" text-anchor=\"middle\">AA 닮음</text>\n\n  <!-- Proportion formula box -->\n  <rect x=\"140\" y=\"275\" width=\"220\" height=\"22\" rx=\"11\" fill=\"#4A90D9\" opacity=\"0.12\"/>\n  <text x=\"250\" y=\"290\" font-size=\"11.5\" fill=\"#333\" text-anchor=\"middle\">\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">1.5</tspan>\n    <tspan fill=\"#555\"> : </tspan>\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">2</tspan>\n    <tspan fill=\"#555\"> = </tspan>\n    <tspan font-weight=\"bold\" fill=\"#5CB85C\">?</tspan>\n    <tspan fill=\"#555\"> : </tspan>\n    <tspan font-weight=\"bold\" fill=\"#5CB85C\">10</tspan>\n    <tspan fill=\"#555\">  →  </tspan>\n    <tspan font-weight=\"bold\" fill=\"#E67E22\">? = 7.5m</tspan>\n  </text>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"18\" font-size=\"13\" fill=\"#2C3E50\" text-anchor=\"middle\" font-weight=\"bold\">햇빛이 평행하므로 두 삼각형은 닮음!</text>\n</svg>",
+      "checkQuestion": {
+        "question": "키가 $1.8\\text{m}$인 학생의 그림자 길이가 $2.4\\text{m}$입니다. 같은 시각, 전봇대의 그림자 길이가 $8\\text{m}$라면 전봇대의 높이는 몇 m인가요?",
+        "options": [
+          "5 m",
+          "6 m",
+          "8 m",
+          "10 m"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각형의 닮음 조건",
+          "chapterId": "math-8-2-04",
+          "reason": "두 삼각형이 닮음임을 AA·SAS·SSS 조건으로 확인해야 비례식을 세울 수 있습니다."
+        },
+        {
+          "concept": "비례식과 비례배분",
+          "chapterId": "math-6-2-04",
+          "reason": "닮음비로 세운 비례식을 풀어 모르는 변의 길이를 구하는 데 필요합니다."
+        },
+        {
+          "concept": "평행선 사이의 선분의 길이의 비",
+          "chapterId": "math-8-2-04",
+          "reason": "실생활 닮음 문제에서 평행선 조건을 이용해 닮음 삼각형을 찾는 경우가 많습니다."
+        }
+      ],
+      "concept": "닮음의 활용"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "chapterId": "math-7-2-04",
+  "chapterTitle": "4단원 - 작도와 합동",
+  "generatedAt": "2026-04-01T11:56:21.534980+00:00",
+  "lessons": [
+    {
+      "explanation": "## 눈금 없는 자와 컴퍼스만으로 — 기본 작도\n\n잠깐, 이상한 조건을 상상해 보세요.\n\n자가 있는데, 눈금이 **없습니다**. 길이를 잴 수 없어요. 컴퍼스만 있고, 각도기도 없습니다. 이 도구만으로 선분을 정확히 복사하거나 각을 정확히 이등분할 수 있을까요?\n\n놀랍게도 — 가능합니다. 이것이 바로 **작도(作圖, 눈금 없는 자와 컴퍼스만으로 도형을 그리는 것)**입니다.\n\n---\n\n### 왜 눈금을 쓰면 안 될까요?\n\n\"그냥 자로 재면 되는 거 아닌가요?\"라는 생각이 드는 건 자연스럽습니다. 하지만 고대 그리스 수학자들은 이런 질문을 던졌어요:\n\n> \"측정 오차 없이, 오직 논리만으로 완벽하게 정확한 도형을 만들 수 있는가?\"\n\n자로 재는 건 항상 오차가 있습니다. 하지만 컴퍼스는 **같은 거리를 완벽하게 옮기는** 도구예요. 작도는 측정이 아니라 **관계와 논리**로 도형을 만드는 방식입니다.\n\n---\n\n### 기본 작도 세 가지\n\n#### 1. 선분의 길이 옮기기\n\n선분 $\\overline{AB}$가 있을 때, 다른 곳에 똑같은 길이를 그리고 싶습니다.\n\n- 컴퍼스 끝을 $A$에, 다른 끝을 $B$에 놓아 간격을 고정합니다.\n- 새 점 $P$에 컴퍼스 끝을 놓고 호를 그리면, 호 위의 점 $Q$에 대해 $\\overline{PQ} = \\overline{AB}$가 됩니다.\n\n핵심은 컴퍼스가 \"길이 정보를 기억\"한다는 것입니다.\n\n#### 2. 수직이등분선 그리기\n\n선분 $\\overline{AB}$의 **수직이등분선(垂直二等分線, 선분을 정확히 반으로 나누면서 수직으로 만나는 직선)**을 작도합니다.\n\n- 점 $A$를 중심으로, $\\overline{AB}$ 절반보다 큰 반지름으로 원을 그립니다.\n- 점 $B$를 중심으로 같은 반지름으로 원을 그립니다.\n- 두 원이 만나는 점 $P$, $Q$를 이으면 — 이 직선이 $\\overline{AB}$의 수직이등분선입니다.\n\n\"왜 이게 작동하는가?\"를 생각해 보세요. $P$에서 $A$까지와 $B$까지의 거리가 같고, $Q$도 마찬가지입니다. 두 점이 모두 $A$, $B$로부터 같은 거리에 있으니, 그 두 점을 잇는 직선은 반드시 $\\overline{AB}$의 중점을 지나고 수직이 됩니다.\n\n#### 3. 각의 이등분선 그리기\n\n각 $\\angle AOB$의 **각의 이등분선(角의 二等分線, 각을 정확히 두 등분하는 반직선)**을 작도합니다.\n\n- 꼭짓점 $O$를 중심으로 호를 그려 두 변 위에 각각 점 $C$, $D$를 잡습니다.\n- $C$, $D$ 각각을 중심으로 같은 반지름으로 호를 그려 교점 $E$를 구합니다.\n- $\\overrightarrow{OE}$가 각의 이등분선입니다.\n\n---\n\n### 작도의 언어로 생각하기\n\n작도에서 허용되는 것은 딱 두 가지입니다:\n\n- **자**: 두 점을 지나는 직선(또는 선분)을 그린다.\n- **컴퍼스**: 한 점을 중심으로 일정한 반지름의 원(또는 호)을 그린다.\n\n이 두 도구만으로 무수히 많은 도형을 완벽하게 그릴 수 있다는 사실이 작도의 아름다움입니다. 이후 삼각형의 작도와 합동 조건도 모두 이 기본 위에서 쌓입니다.\n\n---\n\n### 자주 하는 실수 하나\n\n수직이등분선을 그릴 때 \"두 원의 반지름이 같아야 하는가?\"를 헷갈리는 경우가 많습니다. 두 반지름이 **반드시 같을 필요는 없지만**, 두 원이 반드시 **두 점에서 만나야 합니다**. 반지름이 너무 작으면 원이 아예 만나지 않아 작도가 실패합니다. 반지름은 $\\overline{AB}$ 길이의 절반보다 크게 잡으세요.",
+      "checkQuestion": {
+        "question": "선분 $\\overline{AB}$의 수직이등분선을 작도할 때, 점 $A$와 점 $B$를 각각 중심으로 같은 반지름의 두 원을 그려 교점 $P$, $Q$를 구했습니다. $\\overline{PQ}$가 $\\overline{AB}$의 수직이등분선이 되는 이유로 가장 적절한 것은?",
+        "options": [
+          "$P$와 $Q$는 각각 $A$, $B$로부터 같은 거리에 있으므로, 두 점을 잇는 직선은 $\\overline{AB}$의 중점을 지나고 수직이다.",
+          "두 원의 반지름이 같으므로, 두 원의 교점을 이은 직선은 항상 수평이다.",
+          "컴퍼스로 그린 호는 항상 직선과 수직으로 만나기 때문이다.",
+          "$P$와 $Q$ 사이의 거리가 $\\overline{AB}$의 길이와 같기 때문이다."
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "기본 도형 (점, 선, 면의 관계, 각의 종류와 성질)",
+          "chapterId": "math-7-2-03",
+          "reason": "작도는 점, 선분, 반직선, 직선, 각 등 기본 도형 개념을 전제로 하므로 이를 먼저 이해해야 합니다."
+        },
+        {
+          "concept": "원의 중심, 반지름, 지름 (컴퍼스를 이용한 원 그리기)",
+          "chapterId": "math-3-2-03",
+          "reason": "컴퍼스로 호와 원을 그리는 작도의 핵심 도구이므로, 원의 반지름 개념을 알아야 합니다."
+        },
+        {
+          "concept": "각도의 뜻과 재기",
+          "chapterId": "math-4-1-02",
+          "reason": "각의 이등분선 작도를 이해하려면 각의 크기와 이등분의 의미를 알아야 합니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "기본 작도"
+    },
+    {
+      "explanation": "## 삼각형은 언제 딱 하나로 정해질까요?\n\n직선 하나를 그려보세요. 그 위에 점 두 개를 찍으면, 선분이 생기죠. 이 선분을 한 변으로 하는 삼각형을 그리려고 합니다. 나머지 꼭짓점은 어디에 있을까요?\n\n… 사실, 무한히 많은 곳에 있을 수 있어요. 위로도, 아래로도, 가깝게도, 멀리도. 그렇다면 **어떤 조건이 주어져야 삼각형이 딱 하나로 결정될까요?** 이것이 오늘의 핵심 질문입니다.\n\n---\n\n## 세 가지 경우를 직접 따라가 봅시다\n\n### 경우 1: 세 변의 길이가 주어졌을 때\n\n변의 길이 $a$, $b$, $c$가 주어졌다고 해봅시다.\n\n1. 선분 $\\overline{BC}$를 길이 $a$로 그립니다.\n2. 점 B를 중심으로 반지름 $c$인 원을 그립니다.\n3. 점 C를 중심으로 반지름 $b$인 원을 그립니다.\n4. 두 원의 교점이 꼭짓점 A입니다.\n\n두 원이 만나는 점은 (위아래 각각 하나씩) 정확히 두 곳인데, 이 두 삼각형은 서로 뒤집으면 완전히 같은 모양이에요. 즉, **삼각형의 모양과 크기가 하나로 결정**됩니다.\n\n이것을 **세 변의 길이로 작도 (SSS 조건)** 라고 해요. ($S$는 Side, 즉 변을 뜻합니다.)\n\n> 단, 세 변이 아무 길이나 되는 건 아닙니다. 가장 긴 변의 길이가 나머지 두 변의 합보다 작아야 두 원이 만날 수 있어요. 즉, $b + c > a$ 이어야 합니다.\n\n### 경우 2: 두 변의 길이와 그 끼인각이 주어졌을 때\n\n변의 길이 $b$, $c$와 그 사이에 끼인 각 $\\angle A$가 주어졌다고 해봅시다.\n\n**끼인각 (included angle)** 이란 두 변 사이에 낀 각을 말해요.\n\n1. 점 A를 잡고, 각도 $\\angle A$를 작도합니다.\n2. 각의 두 변 위에 각각 길이 $b$, $c$를 재어 점 C, B를 잡습니다.\n3. B와 C를 연결하면 완성!\n\n각을 정했고, 두 변의 길이도 정했으니 나머지 변 $\\overline{BC}$는 자동으로 결정됩니다. 역시 삼각형이 하나로 결정돼요.\n\n이것을 **두 변과 끼인각으로 작도 (SAS 조건)** 라고 합니다.\n\n### 경우 3: 한 변의 길이와 그 양 끝 각이 주어졌을 때\n\n변의 길이 $a$와 그 양쪽 끝각 $\\angle B$, $\\angle C$가 주어졌다고 합시다.\n\n1. 선분 $\\overline{BC}$를 길이 $a$로 그립니다.\n2. 점 B에서 각도 $\\angle B$를 작도합니다.\n3. 점 C에서 각도 $\\angle C$를 작도합니다.\n4. 두 반직선이 만나는 점이 A입니다.\n\n두 반직선은 반드시 한 점에서 만나고 (단, $\\angle B + \\angle C < 180°$이어야 합니다), 그 점이 꼭짓점 A가 됩니다.\n\n이것을 **한 변과 양 끝각으로 작도 (ASA 조건)** 라고 합니다. ($A$는 Angle, 각을 뜻합니다.)\n\n---\n\n## 정리: 삼각형의 작도\n\n**삼각형의 작도 (construction of triangle)** 란 컴퍼스와 눈금 없는 자만으로 조건에 맞는 삼각형을 그리는 것입니다. 삼각형이 하나로 결정되는 조건은 세 가지입니다:\n\n| 조건 | 주어지는 것 |\n|------|-------------|\n| SSS | 세 변의 길이 |\n| SAS | 두 변의 길이와 그 **끼인각** |\n| ASA | 한 변의 길이와 그 **양 끝각** |\n\n---\n\n## 이 개념이 있는 곳\n\n삼각형의 작도 조건은 바로 다음에 배울 **삼각형의 합동 조건**의 기초가 됩니다. \"두 삼각형이 합동\"이라는 것은 결국 \"같은 조건으로 작도하면 똑같은 삼각형이 나온다\"는 뜻이거든요. 작도를 이해하면 합동 조건이 왜 그 세 가지인지 자연스럽게 납득할 수 있습니다.\n\n---\n\n## 자주 하는 실수 하나\n\n**\"두 변과 한 각\"이 주어지면 항상 삼각형이 하나로 결정된다**고 생각하는 경우가 많아요. 그런데 조심하세요: 그 각이 **끼인각이 아닐 경우** (즉, 두 변 사이에 낀 각이 아닌 경우), 삼각형이 두 개 만들어질 수도 있어요. SAS 조건에서 \"끼인각\"이라는 조건이 왜 중요한지 바로 여기에 있습니다.",
+      "checkQuestion": {
+        "question": "변의 길이가 5cm, 7cm이고, 두 변 사이의 끼인각이 60°인 삼각형을 작도할 때, 이 조건은 어떤 작도 조건에 해당하나요?",
+        "options": [
+          "SAS 조건 (두 변과 끼인각)",
+          "SSS 조건 (세 변의 길이)",
+          "ASA 조건 (한 변과 양 끝각)",
+          "조건이 부족해서 작도할 수 없다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "기본 작도",
+          "chapterId": "math-7-2-04",
+          "reason": "컴퍼스와 자를 사용해 선분과 각을 작도하는 방법을 알아야 삼각형 작도의 각 단계를 수행할 수 있기 때문입니다."
+        },
+        {
+          "concept": "각도의 뜻과 재기",
+          "chapterId": "math-4-1-02",
+          "reason": "끼인각, 양 끝각 등 각의 개념과 크기를 이해해야 작도 조건을 올바르게 적용할 수 있기 때문입니다."
+        },
+        {
+          "concept": "이등변삼각형과 정삼각형의 성질",
+          "chapterId": "math-4-2-02",
+          "reason": "삼각형의 변과 각의 관계에 대한 기본 감각이 있어야 세 변의 조건(삼각부등식)이 왜 필요한지 이해할 수 있기 때문입니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#2c3e50\">세 변의 길이로 삼각형 작도하기 (SSS)</text>\n\n  <!-- Step legend (left panel) -->\n  <rect x=\"8\" y=\"34\" width=\"128\" height=\"100\" rx=\"6\" fill=\"white\" stroke=\"#ddd\" stroke-width=\"1\"/>\n  <text x=\"72\" y=\"51\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#555\">작도 순서</text>\n  <text x=\"16\" y=\"67\" font-size=\"10\" fill=\"#2c3e50\">① 선분 BC = a 그리기</text>\n  <text x=\"16\" y=\"83\" font-size=\"10\" fill=\"#4A90D9\">② B 중심, 반지름 c 원</text>\n  <text x=\"16\" y=\"99\" font-size=\"10\" fill=\"#5CB85C\">③ C 중심, 반지름 b 원</text>\n  <text x=\"16\" y=\"115\" font-size=\"10\" fill=\"#E67E22\">④ 교점 = 꼭짓점 A, A′</text>\n\n  <!-- Circle from B (radius = c = 140) -->\n  <circle cx=\"185\" cy=\"195\" r=\"140\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\" opacity=\"0.65\"/>\n\n  <!-- Circle from C (radius = b = 120) -->\n  <circle cx=\"365\" cy=\"195\" r=\"120\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\" opacity=\"0.65\"/>\n\n  <!-- Symmetry axis -->\n  <line x1=\"289\" y1=\"88\" x2=\"289\" y2=\"285\" stroke=\"#ccc\" stroke-width=\"1\" stroke-dasharray=\"4,4\"/>\n  <text x=\"302\" y=\"200\" font-size=\"9\" fill=\"#bbb\" text-anchor=\"middle\">대칭</text>\n\n  <!-- Lower (mirror) triangle — dashed orange -->\n  <polygon points=\"289,288 185,195 365,195\"\n           fill=\"#E67E22\" fill-opacity=\"0.08\"\n           stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n\n  <!-- Upper triangle — solid blue fill -->\n  <polygon points=\"289,102 185,195 365,195\"\n           fill=\"#4A90D9\" fill-opacity=\"0.15\"\n           stroke=\"#4A90D9\" stroke-width=\"2\"/>\n\n  <!-- Base segment BC (drawn on top for clarity) -->\n  <line x1=\"185\" y1=\"195\" x2=\"365\" y2=\"195\" stroke=\"#2c3e50\" stroke-width=\"2.5\"/>\n\n  <!-- Double-headed flip arrow between A and A' -->\n  <defs>\n    <marker id=\"ah\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3.5\" orient=\"auto\">\n      <path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#E67E22\"/>\n    </marker>\n    <marker id=\"ah2\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3.5\" orient=\"auto-start-reverse\">\n      <path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n  <line x1=\"289\" y1=\"120\" x2=\"289\" y2=\"272\"\n        stroke=\"#E67E22\" stroke-width=\"1.2\" stroke-dasharray=\"3,3\"\n        marker-start=\"url(#ah2)\" marker-end=\"url(#ah)\" opacity=\"0.7\"/>\n\n  <!-- Intersection point A (above) -->\n  <circle cx=\"289\" cy=\"102\" r=\"6\" fill=\"#E67E22\" stroke=\"white\" stroke-width=\"2\"/>\n\n  <!-- Intersection point A' (below) -->\n  <circle cx=\"289\" cy=\"288\" r=\"6\" fill=\"#E67E22\" stroke=\"white\" stroke-width=\"2\" opacity=\"0.85\"/>\n\n  <!-- B and C points -->\n  <circle cx=\"185\" cy=\"195\" r=\"5\" fill=\"#2c3e50\"/>\n  <circle cx=\"365\" cy=\"195\" r=\"5\" fill=\"#2c3e50\"/>\n\n  <!-- Vertex labels -->\n  <text x=\"289\" y=\"94\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#E67E22\">A</text>\n  <text x=\"172\" y=\"210\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#2c3e50\">B</text>\n  <text x=\"378\" y=\"210\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#2c3e50\">C</text>\n  <text x=\"289\" y=\"283\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">A′</text>\n\n  <!-- Side length labels -->\n  <!-- a: midpoint of BC -->\n  <text x=\"275\" y=\"213\" text-anchor=\"middle\" font-size=\"12\" font-style=\"italic\" fill=\"#555\">a</text>\n  <!-- c: midpoint of BA -->\n  <text x=\"229\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" font-style=\"italic\" fill=\"#4A90D9\">c</text>\n  <!-- b: midpoint of CA -->\n  <text x=\"333\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" font-style=\"italic\" fill=\"#5CB85C\">b</text>\n\n  <!-- Circle radius labels -->\n  <text x=\"108\" y=\"178\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">반지름 c</text>\n  <text x=\"450\" y=\"192\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">반지름 b</text>\n\n  <!-- Congruent note at bottom -->\n  <rect x=\"120\" y=\"268\" width=\"260\" height=\"26\" rx=\"5\" fill=\"#fff8e1\" stroke=\"#f0c040\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"285\" text-anchor=\"middle\" font-size=\"10\" fill=\"#7a5800\">\n    두 삼각형(△ABC, △A′BC)은 뒤집으면 완전히 같은 모양!\n  </text>\n</svg>",
+      "concept": "삼각형의 작도"
+    },
+    {
+      "explanation": "## 삼각형, 몇 가지를 알면 '똑같다'고 할 수 있을까요?\n\n친구에게 문자로 삼각형 하나를 전달해야 한다고 상상해 보세요. 그림을 보낼 수 없고, 숫자만 보낼 수 있어요. 어떤 숫자들을 보내야 친구가 **정확히 같은** 삼각형을 그릴 수 있을까요?\n\n삼각형에는 세 변의 길이와 세 각의 크기, 총 6가지 정보가 있어요. 그런데 6가지를 다 보내야 할까요? 혹시 3가지만 보내도 충분할 수 있지 않을까요?\n\n---\n\n### 실험 1: 세 각의 크기만 알면?\n\n세 각이 $60°, 60°, 60°$인 삼각형을 그려보세요. 그릴 수 있죠. 그런데 변의 길이를 1cm로도, 5cm로도, 10cm로도 그릴 수 있어요. 세 각만 알면 모양은 같지만 크기가 달라질 수 있어요. 이건 **합동**(겹쳤을 때 완전히 일치하는 것)이 아니라 **닮음**이 되는 거예요. 그러니까 세 각만으로는 부족해요.\n\n### 실험 2: 세 변의 길이를 알면?\n\n변의 길이가 $3\\text{cm}, 4\\text{cm}, 5\\text{cm}$인 삼각형을 그려보세요. 직접 그려보면 신기한 걸 발견해요. 어떻게 그려도 결국 **딱 하나의 삼각형**만 만들어져요! 삼각형의 작도를 생각해보면 이해가 돼요. 세 변의 길이가 정해지면, 꼭짓점의 위치가 하나로 결정되거든요.\n\n이게 첫 번째 합동 조건이에요.\n\n> **SSS 합동 조건**: 세 변의 길이가 각각 같으면 두 삼각형은 합동입니다. ($\\overline{AB}=\\overline{DE},\\ \\overline{BC}=\\overline{EF},\\ \\overline{CA}=\\overline{FD}$)\n\n### 실험 3: 두 변과 그 끼인각을 알면?\n\n$\\overline{AB}=4\\text{cm}$, $\\overline{AC}=3\\text{cm}$이고 그 사이의 각 $\\angle A = 50°$라고 해봐요. A에서 두 변의 방향이 정해지고, 끝점 B와 C가 고정되니까 나머지 변 BC도 딱 하나로 결정돼요.\n\n> **SAS 합동 조건**: 두 변의 길이와 그 **끼인각**(두 변 사이에 끼어 있는 각)이 각각 같으면 합동입니다.\n\n여기서 '끼인각'이 중요해요. 두 변과 **임의의 각**이 같은 것과는 달라요. 두 변 사이에 있는 각이어야만 해요.\n\n### 실험 4: 한 변과 그 양 끝 각을 알면?\n\n$\\overline{BC}=5\\text{cm}$이고, B에서의 각이 $40°$, C에서의 각이 $70°$라면? B에서 $40°$ 방향으로 선을 긋고, C에서 $70°$ 방향으로 선을 그으면 만나는 점 A가 딱 하나로 정해져요.\n\n> **ASA 합동 조건**: 한 변의 길이와 그 **양 끝 각**(변의 양쪽 꼭짓점에서의 각)이 각각 같으면 합동입니다.\n\n---\n\n### 정리하면\n\n두 삼각형이 **합동**(기호: $\\triangle ABC \\equiv \\triangle DEF$)이 되려면, 다음 세 가지 중 하나를 만족하면 돼요.\n\n| 조건 | 이름 | 의미 |\n|------|------|------|\n| $SSS$ | 세 변 | 세 변의 길이가 각각 같다 |\n| $SAS$ | 두 변 끼인각 | 두 변과 그 끼인각이 각각 같다 |\n| $ASA$ | 한 변 양 끝 각 | 한 변과 그 양 끝 각이 각각 같다 |\n\n이 조건들이 중요한 이유는, 증명에서 \"두 삼각형이 완전히 같다\"는 걸 보일 때 항상 이 세 가지 중 하나를 근거로 써야 하기 때문이에요. 앞으로 배울 이등변삼각형의 성질, 평행사변형의 성질 증명이 모두 여기서 시작돼요.\n\n---\n\n### 자주 하는 실수 하나\n\n**SSA**(두 변과 끼인각이 아닌 다른 각)는 합동 조건이 아니에요. $\\overline{AB}=\\overline{DE}$, $\\overline{BC}=\\overline{EF}$이고 $\\angle A = \\angle D$인 두 삼각형을 그려보면, 경우에 따라 두 가지 모양이 나올 수 있거든요. SAS와 헷갈리기 쉬운데, **'끼인각'인지 아닌지**를 항상 확인하세요.",
+      "checkQuestion": {
+        "question": "다음 중 두 삼각형이 합동임을 판단할 수 있는 경우가 아닌 것은?",
+        "options": [
+          "세 변의 길이가 각각 같다.",
+          "두 변의 길이와 그 사이에 끼인 각의 크기가 각각 같다.",
+          "한 변의 길이와 그 양 끝 각의 크기가 각각 같다.",
+          "세 각의 크기가 각각 같다."
+        ],
+        "correctIndex": 3
+      },
+      "prerequisites": [
+        {
+          "concept": "합동인 도형의 성질",
+          "chapterId": "math-5-2-03",
+          "reason": "합동의 의미(완전히 겹치는 도형)를 알아야 삼각형의 합동 조건을 이해할 수 있어요."
+        },
+        {
+          "concept": "삼각형의 작도",
+          "chapterId": "math-7-2-04",
+          "reason": "작도 과정에서 어떤 조건이 주어졌을 때 삼각형이 하나로 결정되는지를 직접 경험해야 합동 조건의 의미가 납득돼요."
+        },
+        {
+          "concept": "각의 종류와 성질",
+          "chapterId": "math-7-2-03",
+          "reason": "끼인각과 양 끝 각 등 각도 관련 개념을 정확히 알아야 합동 조건을 올바르게 적용할 수 있어요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "삼각형의 합동 조건"
+    }
+  ]
+}

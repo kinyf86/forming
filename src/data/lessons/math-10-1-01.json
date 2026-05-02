@@ -1,0 +1,125 @@
+{
+  "chapterId": "math-10-1-01",
+  "chapterTitle": "1단원 - 다항식",
+  "generatedAt": "2026-04-05T06:36:28.177106+00:00",
+  "lessons": [
+    {
+      "explanation": "## 다항식의 덧셈과 뺄셈\n\n중학교에서 $2x + 3x = 5x$처럼 **동류항** (차수와 문자가 완전히 같은 항)끼리 더하는 방법은 이미 알고 있을 거예요. 그런데 고등학교에서 다루는 다항식은 훨씬 복잡합니다. 이런 식을 만났다고 해봅시다:\n\n$$\n(3x^3 - 2x^2 + 5x - 1) + (-x^3 + 4x^2 - 3x + 7)\n$$\n\n어디서부터 시작해야 할까요?\n\n### 동류항을 찾아 모으기\n\n$3x^3$과 $-x^3$은 둘 다 $x^3$ 항이므로 동류항, $-2x^2$와 $4x^2$도 동류항입니다. 같은 차수끼리 모아서 계산하면:\n\n$$\n(3-1)x^3 + (-2+4)x^2 + (5-3)x + (-1+7) = 2x^3 + 2x^2 + 2x + 6\n$$\n\n이처럼 다항식을 **내림차순** (차수가 높은 항부터 낮은 항 순서로 정렬)으로 써두면, 동류항끼리 자연스럽게 세로로 정렬되어 실수가 줄어듭니다.\n\n### 뺄셈 — 부호를 전부 바꿔서 덧셈으로\n\n뺄셈은 한 단계가 더 있습니다:\n\n$$\n(3x^3 - 2x^2 + 5x - 1) - (-x^3 + 4x^2 - 3x + 7)\n$$\n\n빼는 다항식의 **모든 항의 부호를 바꾼 뒤** 더합니다:\n\n$$\n= 3x^3 - 2x^2 + 5x - 1 + x^3 - 4x^2 + 3x - 7\n$$\n$$\n= (3+1)x^3 + (-2-4)x^2 + (5+3)x + (-1-7)\n$$\n$$\n= 4x^3 - 6x^2 + 8x - 8\n$$\n\n이렇게 동류항끼리 묶어 계산하는 것을 **다항식의 덧셈과 뺄셈**이라고 합니다.\n\n핵심은 두 가지예요:\n1. 동류항끼리 모아 계수를 더하거나 뺀다\n2. 뺄셈은 빼는 식의 **모든 항의 부호를 바꿔** 덧셈으로 변환한다\n\n### 수학의 지도에서 이 개념의 위치\n\n다항식의 덧셈과 뺄셈은 이 단원의 출발점입니다. 이것을 정확히 다루지 못하면 이어지는 다항식의 곱셈, 나머지정리, 인수분해 전체가 흔들립니다. 식을 깔끔하게 정리하는 습관을 지금 잡아두세요.\n\n### 자주 하는 실수\n\n뺄셈에서 괄호를 푸는 순간, 빼는 식의 **첫 번째 항만 부호를 바꾸고** 나머지 항은 그냥 두는 경우가 많습니다. 예를 들어 $-(x^2 - 3x + 2)$를 $-x^2 - 3x + 2$로 쓰는 실수입니다. 올바른 결과는 $-x^2 + 3x - 2$입니다. 마이너스 부호는 괄호 안 **모든 항에** 분배된다는 것을 꼭 기억하세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$(2x^2 - 3x + 1) - (x^2 + 2x - 4)$를 계산하면?",
+        "options": [
+          "$x^2 - 5x + 5$",
+          "$x^2 - 5x - 3$",
+          "$3x^2 - x - 3$",
+          "$x^2 + 5x - 5$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "다항식의 덧셈과 뺄셈 (중학교 수준)",
+          "chapterId": "math-8-1-02",
+          "reason": "중학교에서 배운 동류항 정리와 다항식 연산이 이 개념의 직접적인 기반이 됩니다."
+        },
+        {
+          "concept": "문자를 사용한 식과 일차식의 계산",
+          "chapterId": "math-7-1-04",
+          "reason": "문자식에서 동류항의 의미와 계수 개념을 이해해야 다항식 연산이 가능합니다."
+        }
+      ],
+      "concept": "다항식의 덧셈과 뺄셈"
+    },
+    {
+      "explanation": "## 다항식의 곱셈 — 분배하고 모으기\n\n잠깐, 질문 하나 드릴게요.\n\n$(x+2)^2$을 계산하면 $x^2 + 4$일까요?\n\n많은 학생들이 그렇게 생각합니다. 하지만 실제로 해보면 $x^2 + 4x + 4$가 나와요. 왜 갑자기 $4x$가 나타났을까요? 이게 오늘 수업의 핵심입니다.\n\n---\n\n### 분배법칙이 전부다\n\n숫자로 먼저 생각해 볼게요. $3 \\times (4 + 5)$를 계산할 때, 두 가지 방법이 있죠.\n\n- 방법 1: $3 \\times 9 = 27$\n- 방법 2: $3 \\times 4 + 3 \\times 5 = 12 + 15 = 27$\n\n두 방법 모두 같은 답이 나옵니다. 이게 **분배법칙** (곱셈을 괄호 안의 각 항에 하나씩 나눠서 곱하는 성질)이에요.\n\n다항식의 곱셈도 정확히 같은 원리입니다. 다만 항이 여러 개일 뿐이에요.\n\n$(x+2)(x+3)$을 계산해 볼까요?\n\n$(x+2)$를 하나의 덩어리로 보고, $x+3$ 안의 각 항에 나눠서 곱해보세요.\n\n$$\n(x+2)(x+3) = (x+2) \\cdot x + (x+2) \\cdot 3\n$$\n\n이제 다시 한 번 분배하면:\n\n$$\n= x \\cdot x + 2 \\cdot x + x \\cdot 3 + 2 \\cdot 3\n$$\n\n$$\n= x^2 + 2x + 3x + 6 = x^2 + 5x + 6\n$$\n\n앞 항과 뒤 항을 각각 교차해서 곱하고, **동류항** (문자와 차수가 같은 항)끼리 모은 것뿐입니다.\n\n---\n\n### 자주 나오는 곱셈 공식들\n\n이 원리를 특정 패턴에 적용하면, 반복해서 등장하는 공식들이 생깁니다.\n\n**합의 제곱:**\n$$\n(a+b)^2 = (a+b)(a+b) = a^2 + ab + ab + b^2 = a^2 + 2ab + b^2\n$$\n\n**차의 제곱:**\n$$\n(a-b)^2 = a^2 - 2ab + b^2\n$$\n\n**합차 공식** (두 수의 합과 차를 곱하면):\n$$\n(a+b)(a-b) = a^2 - ab + ab - b^2 = a^2 - b^2\n$$\n\n중간 항 $-ab$와 $+ab$가 서로 소거되면서 $a^2 - b^2$만 남습니다. 이게 바로 처음 질문의 답이기도 해요. $(x+2)^2$에서 중간 항 $2 \\cdot x \\cdot 2 = 4x$가 사라지지 않고 남기 때문에 $x^2 + 4x + 4$가 되는 거예요.\n\n---\n\n### 이 개념의 위치\n\n다항식의 곱셈은 이 단원에서 배울 **나머지정리, 인수분해**의 직접적인 기반입니다. 인수분해는 곱셈 공식을 '거꾸로' 읽는 것이고, 나머지정리는 다항식을 나눌 때 나머지를 다항식 곱셈의 구조로 파악하는 것이거든요. 지금 다항식의 곱셈을 확실히 익혀두면, 뒤 내용이 훨씬 자연스럽게 연결됩니다.\n\n---\n\n### 흔한 실수 하나\n\n$(a+b)^2 = a^2 + b^2$로 계산하는 실수가 매우 많습니다. '제곱은 각각에 넣으면 되지 않나?'라는 직관 때문인데요, 이것은 **곱셈에서만** 성립합니다 — $(ab)^2 = a^2b^2$는 맞아요. 하지만 덧셈에서는 절대 성립하지 않아요. $(a+b)^2$는 $(a+b)$ 전체를 두 번 곱하는 것이기 때문에, 반드시 분배법칙을 거쳐야 중간 항 $2ab$가 보입니다.",
+      "checkQuestion": {
+        "question": "$(2x+3)(x-1)$을 전개하면?",
+        "options": [
+          "$2x^2 + x - 3$",
+          "$2x^2 - x - 3$",
+          "$2x^2 + x + 3$",
+          "$2x^2 - 5x - 3$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "다항식의 덧셈과 뺄셈 (동류항 정리)",
+          "chapterId": "math-10-1-01",
+          "reason": "곱셈을 전개한 후 동류항끼리 묶어 정리하는 능력이 반드시 필요합니다."
+        },
+        {
+          "concept": "단항식의 곱셈과 나눗셈",
+          "chapterId": "math-8-1-02",
+          "reason": "다항식 곱셈의 각 단계는 단항식끼리의 곱 ($x \\cdot x = x^2$ 등)으로 이루어지기 때문입니다."
+        },
+        {
+          "concept": "일차식의 덧셈과 뺄셈 (분배법칙 기초)",
+          "chapterId": "math-7-1-04",
+          "reason": "다항식 곱셈의 핵심 원리인 분배법칙을 문자식에서 처음 익히는 단계입니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "다항식의 곱셈"
+    },
+    {
+      "explanation": "## 나머지를 구하는 더 빠른 방법이 있을까요?\n\n다항식 $f(x) = x^3 - 2x^2 + 5x - 1$을 $(x-2)$로 나누면 나머지가 얼마일까요?\n\n직접 나눗셈을 해도 되지만, 계산이 꽤 번거롭습니다. 그런데 만약 나머지를 나눗셈 없이 **단 한 번의 대입**으로 구할 수 있다면 어떨까요?\n\n---\n\n### 나눗셈을 식으로 표현해 보기\n\n다항식 $f(x)$를 일차식 $(x-a)$로 나누면 몫 $Q(x)$와 나머지 $R$이 생깁니다. 이때 나머지 $R$은 상수($(x-a)$보다 차수가 낮으므로)입니다.\n\n이 관계를 식으로 쓰면:\n$$f(x) = Q(x) \\cdot (x-a) + R$$\n\n여기서 핵심 질문입니다. **$x = a$를 대입하면 어떻게 될까요?**\n\n$$f(a) = Q(a) \\cdot (a - a) + R = Q(a) \\cdot 0 + R = R$$\n\n$Q(a) \\cdot 0$이 사라지면서 $f(a) = R$이 됩니다.\n\n즉, **나머지 $R$은 $f(a)$와 같습니다.** 긴 나눗셈을 할 필요 없이, $x = a$를 그냥 대입하면 끝이에요.\n\n이것이 **나머지정리** (Remainder Theorem)입니다.\n\n> **나머지정리**: 다항식 $f(x)$를 일차식 $(x-a)$로 나눈 나머지는 $f(a)$이다.\n\n앞의 예시로 확인해 볼까요?\n$$f(2) = 2^3 - 2 \\cdot 2^2 + 5 \\cdot 2 - 1 = 8 - 8 + 10 - 1 = 9$$\n\n직접 나눗셈을 해봐도 나머지가 9임을 확인할 수 있습니다.\n\n---\n\n### 한 걸음 더: 나머지가 0이라면?\n\n나머지가 $R = 0$이면 $f(x) = Q(x) \\cdot (x-a)$, 즉 $(x-a)$가 $f(x)$를 나누어 떨어지게 합니다.\n\n이때 나머지정리에 의해 $f(a) = 0$이 성립합니다. 반대로 $f(a) = 0$이면 나머지가 0이므로 $(x-a)$로 나누어 떨어집니다.\n\n이것이 **인수정리** (Factor Theorem)입니다.\n\n> **인수정리**: 다항식 $f(x)$에서 $f(a) = 0$이면 $f(x)$는 $(x-a)$를 **인수** (factor, 곱해서 만들어지는 구성요소)로 가진다. 역도 성립한다.\n\n예를 들어 $f(x) = x^3 - 7x + 6$에서:\n- $f(1) = 1 - 7 + 6 = 0$ → $(x-1)$은 인수!\n- $f(2) = 8 - 14 + 6 = 0$ → $(x-2)$도 인수!\n- $f(-3) = -27 + 21 + 6 = 0$ → $(x+3)$도 인수!\n\n따라서 $f(x) = (x-1)(x-2)(x+3)$으로 인수분해됩니다.\n\n인수정리는 다음 단원에서 배울 **인수분해**의 강력한 도구가 됩니다. 어디서 인수를 '찾아야' 할지 알려주기 때문이에요.\n\n---\n\n### 자주 하는 실수 하나\n\n$(x + a)$로 나눌 때 $f(a)$를 대입하는 실수를 조심하세요. $(x + a) = (x - (-a))$이므로 대입해야 할 값은 $-a$입니다. 예를 들어 $(x+3)$으로 나누는 나머지는 $f(-3)$입니다.",
+      "checkQuestion": {
+        "question": "다항식 $f(x) = x^3 + 2x^2 - x + k$를 $(x-2)$로 나누었을 때 나머지가 5라면, 상수 $k$의 값은?",
+        "options": [
+          "$k = -9$",
+          "$k = -5$",
+          "$k = 5$",
+          "$k = 9$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "다항식의 곱셈",
+          "chapterId": "math-10-1-01",
+          "reason": "$f(x) = Q(x)(x-a) + R$로 표현하고 $x=a$를 대입하는 과정에서 다항식 곱셈 전개를 이해해야 합니다."
+        },
+        {
+          "concept": "인수분해 공식",
+          "chapterId": "math-9-1-02",
+          "reason": "인수정리로 인수를 찾은 후 조립제법이나 인수분해 공식으로 완전히 분해할 때 필요합니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">나머지정리: x=a 대입 한 번으로 나머지를!</text>\n\n  <!-- Step 1: Division equation box -->\n  <rect x=\"20\" y=\"48\" width=\"460\" height=\"44\" rx=\"8\" fill=\"#E8F4FF\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"64\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">나눗셈을 식으로 나타내면</text>\n  <text x=\"250\" y=\"83\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#4A90D9\">f(x)  =  Q(x) · (x − a)  +  R</text>\n\n  <!-- Arrow down -->\n  <line x1=\"250\" y1=\"92\" x2=\"250\" y2=\"112\" stroke=\"#888\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"270\" y=\"106\" font-size=\"10\" fill=\"#888\">x = a 대입</text>\n\n  <!-- Step 2: Substitution -->\n  <rect x=\"20\" y=\"112\" width=\"460\" height=\"44\" rx=\"8\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"128\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">x 자리에 a를 넣으면</text>\n  <text x=\"250\" y=\"147\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#E67E22\">f(a)  =  Q(a) · (a − a)  +  R</text>\n\n  <!-- Arrow down -->\n  <line x1=\"250\" y1=\"156\" x2=\"250\" y2=\"176\" stroke=\"#888\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n  <text x=\"296\" y=\"170\" font-size=\"10\" fill=\"#888\">(a−a) = 0 이므로</text>\n\n  <!-- Step 3: Cancellation highlight -->\n  <rect x=\"20\" y=\"176\" width=\"460\" height=\"44\" rx=\"8\" fill=\"#FFEAEA\" stroke=\"#E05555\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"192\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">Q(a) · 0 은 사라집니다!</text>\n  <!-- strikethrough part -->\n  <text x=\"170\" y=\"212\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#CCC\">Q(a) · 0  +</text>\n  <line x1=\"105\" y1=\"208\" x2=\"238\" y2=\"208\" stroke=\"#E05555\" stroke-width=\"2\"/>\n  <text x=\"310\" y=\"212\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#E05555\">R</text>\n  <text x=\"260\" y=\"212\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#555\">f(a) =</text>\n\n  <!-- Arrow down -->\n  <line x1=\"250\" y1=\"220\" x2=\"250\" y2=\"238\" stroke=\"#888\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\"/>\n\n  <!-- Step 4: Result — aha moment -->\n  <rect x=\"60\" y=\"238\" width=\"380\" height=\"48\" rx=\"12\" fill=\"#5CB85C\" stroke=\"#3e8e3e\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"258\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">💡 나머지정리</text>\n  <text x=\"250\" y=\"278\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#fff\">f(a) = R  (나머지!)</text>\n\n  <!-- Arrow marker -->\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\">\n      <path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#888\"/>\n    </marker>\n  </defs>\n</svg>",
+      "concept": "나머지정리와 인수정리"
+    },
+    {
+      "explanation": "## 분해할 수 없을 것 같은 식도 분해할 수 있을까?\n\n중학교에서 배운 인수분해를 기억하시나요? $x^2 - 5x + 6 = (x-2)(x-3)$처럼, 이차식을 두 일차식의 곱으로 나타냈죠. 그런데 이런 식은 어떻게 할까요?\n\n$$x^3 - 6x^2 + 11x - 6$$\n\n이건 삼차식입니다. 중학교 공식이 바로 적용되지 않습니다. 막막하지 않으세요?\n\n하지만 잠깐, 이렇게 생각해 봅시다. 만약 이 식이 $(x - a) \\cdot (\\text{나머지})$ 형태로 인수분해된다면, $x = a$를 대입했을 때 결과가 **반드시 0**이 되어야 합니다. 왜냐하면 $(a - a) = 0$이 되어 전체 곱이 0이 되니까요.\n\n## 0이 되는 값을 찾아라\n\n그렇다면 $f(x) = x^3 - 6x^2 + 11x - 6$에서 $f(a) = 0$이 되는 $a$를 찾으면 됩니다.\n\n어디서부터 시도해야 할까요? 사실 상수항 $-6$의 약수인 $\\pm 1, \\pm 2, \\pm 3, \\pm 6$ 중에 답이 있습니다 (이유는 나중에 더 깊이 배우게 됩니다). 하나씩 넣어 봅시다.\n\n- $f(1) = 1 - 6 + 11 - 6 = 0$ ✓\n\n$f(1) = 0$이므로, **인수정리**에 의해 $(x - 1)$은 이 다항식의 인수입니다.\n\n이제 $f(x)$를 $(x-1)$로 나누면 나머지가 0이고, 몫을 구할 수 있습니다. 조립제법을 쓰면:\n\n$$x^3 - 6x^2 + 11x - 6 = (x-1)(x^2 - 5x + 6)$$\n\n그리고 $x^2 - 5x + 6$은 중학교에서 배운 방법으로:\n\n$$= (x-1)(x-2)(x-3)$$\n\n삼차식이 세 일차식의 곱으로 깔끔하게 분해되었습니다.\n\n## 인수분해란 무엇인가\n\n이처럼 하나의 다항식을 **두 개 이상의 다항식의 곱**으로 나타내는 것을 **인수분해** (因數分解, factoring — 다항식을 곱해진 인수들로 쪼개는 것)라고 합니다. 각각의 곱해진 식을 **인수** (因數, factor)라고 하죠.\n\n고등학교에서는 중학교 공식들 외에 다음 도구들이 추가됩니다.\n\n**① 인수정리 활용**: $f(a) = 0 \\Rightarrow (x-a)$는 인수\n\n**② 세제곱 공식**:\n$$a^3 + b^3 = (a+b)(a^2 - ab + b^2)$$\n$$a^3 - b^3 = (a-b)(a^2 + ab + b^2)$$\n\n**③ 치환법**: 복잡한 식에서 반복되는 부분을 $t$로 놓고 단순화\n\n예: $(x^2 + x)^2 - 8(x^2 + x) + 12$에서 $t = x^2 + x$로 치환하면 $t^2 - 8t + 12 = (t-2)(t-6)$\n\n## 큰 그림 속에서\n\n인수분해는 다항식의 곱셈을 **거꾸로** 하는 과정입니다. 곱셈이 확장이라면, 인수분해는 압축이죠. 이 기술은 뒤에 배울 이차방정식, 고차방정식의 풀이에서 핵심 무기가 됩니다. 방정식 $f(x) = 0$의 해를 구할 때, $f(x)$를 인수분해하면 각 인수를 0으로 만드는 값이 곧 해이기 때문입니다.\n\n## 이것만은 조심하세요\n\n인수정리로 하나의 인수 $(x - a)$를 찾은 뒤, **몫을 다시 인수분해할 수 있는지 반드시 확인**해야 합니다. 한 번 나눴다고 끝이 아닙니다. $x^3 - 6x^2 + 11x - 6$에서 $(x-1)$만 찾고 $(x^2 - 5x + 6)$을 그대로 두면 인수분해가 완성되지 않습니다. 더 이상 인수분해가 안 될 때까지 계속 시도하는 것이 **완전한 인수분해**입니다.",
+      "checkQuestion": {
+        "question": "$f(x) = x^3 + x^2 - 4x - 4$를 완전히 인수분해한 것은?",
+        "options": [
+          "$(x-2)(x+2)(x+1)$",
+          "$(x-2)(x+2)(x-1)$",
+          "$(x-1)(x+2)^2$",
+          "$(x+1)(x^2 - 4)$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "나머지정리와 인수정리",
+          "chapterId": "math-10-1-01",
+          "reason": "인수정리($f(a)=0$이면 $(x-a)$가 인수)를 알아야 고차식의 인수를 찾을 수 있습니다."
+        },
+        {
+          "concept": "다항식의 곱셈",
+          "chapterId": "math-10-1-01",
+          "reason": "인수분해는 곱셈의 역과정이므로, 곱셈 공식과 전개를 정확히 알고 있어야 역방향으로 추론할 수 있습니다."
+        },
+        {
+          "concept": "인수분해 공식",
+          "chapterId": "math-9-1-02",
+          "reason": "중학교에서 배운 기본 인수분해 공식($a^2-b^2$, $x^2+(a+b)x+ab$ 등)이 고차식 분해 후 몫을 처리할 때 계속 사용됩니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#4A90D9\">인수분해 전략: 0이 되는 값을 찾아라</text>\n\n  <!-- Original expression box -->\n  <rect x=\"110\" y=\"30\" width=\"280\" height=\"32\" rx=\"8\" fill=\"#EAF2FB\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"51\" text-anchor=\"middle\" font-size=\"13\" fill=\"#1a1a1a\">f(x) = x³ − 6x² + 11x − 6</text>\n\n  <!-- Arrow down -->\n  <line x1=\"250\" y1=\"62\" x2=\"250\" y2=\"75\" stroke=\"#888\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\">\n      <path d=\"M1,1 L7,4 L1,7 Z\" fill=\"#888\"/>\n    </marker>\n    <marker id=\"arr2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\">\n      <path d=\"M1,1 L7,4 L1,7 Z\" fill=\"#4A90D9\"/>\n    </marker>\n  </defs>\n\n  <!-- Hint label -->\n  <text x=\"250\" y=\"87\" text-anchor=\"middle\" font-size=\"10.5\" fill=\"#555\">상수항 −6의 약수를 x에 대입해보자</text>\n\n  <!-- Trial boxes row -->\n  <!-- x = 1 -->\n  <rect x=\"20\" y=\"95\" width=\"88\" height=\"60\" rx=\"6\" fill=\"#FFF9F0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"64\" y=\"111\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#E67E22\">x = 1 대입</text>\n  <text x=\"64\" y=\"126\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#555\">1−6+11−6</text>\n  <text x=\"64\" y=\"141\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">= 0</text>\n  <text x=\"64\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\">✓</text>\n\n  <!-- x = 2 -->\n  <rect x=\"118\" y=\"95\" width=\"88\" height=\"60\" rx=\"6\" fill=\"#FFF9F0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"162\" y=\"111\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#E67E22\">x = 2 대입</text>\n  <text x=\"162\" y=\"126\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#555\">8−24+22−6</text>\n  <text x=\"162\" y=\"141\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">= 0</text>\n  <text x=\"162\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\">✓</text>\n\n  <!-- x = 3 -->\n  <rect x=\"216\" y=\"95\" width=\"88\" height=\"60\" rx=\"6\" fill=\"#FFF9F0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"111\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#E67E22\">x = 3 대입</text>\n  <text x=\"260\" y=\"126\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#555\">27−54+33−6</text>\n  <text x=\"260\" y=\"141\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">= 0</text>\n  <text x=\"260\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\">✓</text>\n\n  <!-- x = -1 (fail) -->\n  <rect x=\"314\" y=\"95\" width=\"80\" height=\"60\" rx=\"6\" fill=\"#F5F5F5\" stroke=\"#ccc\" stroke-width=\"1.5\"/>\n  <text x=\"354\" y=\"111\" text-anchor=\"middle\" font-size=\"11\" fill=\"#aaa\">x = −1 대입</text>\n  <text x=\"354\" y=\"126\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#bbb\">−1−6−11−6</text>\n  <text x=\"354\" y=\"141\" text-anchor=\"middle\" font-size=\"11\" fill=\"#bbb\">= −24</text>\n  <text x=\"354\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" fill=\"#ccc\">✗</text>\n\n  <!-- x = 6 (fail) -->\n  <rect x=\"404\" y=\"95\" width=\"80\" height=\"60\" rx=\"6\" fill=\"#F5F5F5\" stroke=\"#ccc\" stroke-width=\"1.5\"/>\n  <text x=\"444\" y=\"111\" text-anchor=\"middle\" font-size=\"11\" fill=\"#aaa\">x = 6 대입</text>\n  <text x=\"444\" y=\"126\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#bbb\">216−216+66−6</text>\n  <text x=\"444\" y=\"141\" text-anchor=\"middle\" font-size=\"11\" fill=\"#bbb\">= 60</text>\n  <text x=\"444\" y=\"152\" text-anchor=\"middle\" font-size=\"13\" fill=\"#ccc\">✗</text>\n\n  <!-- Key insight box -->\n  <rect x=\"25\" y=\"166\" width=\"275\" height=\"30\" rx=\"6\" fill=\"#FEF5EC\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"162\" y=\"186\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#E67E22\">f(1)=0, f(2)=0, f(3)=0 → 인수: (x−1)(x−2)(x−3)</text>\n\n  <!-- Arrow down to result -->\n  <line x1=\"162\" y1=\"196\" x2=\"162\" y2=\"210\" stroke=\"#4A90D9\" stroke-width=\"1.5\" marker-end=\"url(#arr2)\"/>\n\n  <!-- Final factored form -->\n  <rect x=\"25\" y=\"211\" width=\"275\" height=\"38\" rx=\"8\" fill=\"#4A90D9\" stroke=\"none\"/>\n  <text x=\"162\" y=\"227\" text-anchor=\"middle\" font-size=\"11\" fill=\"white\" opacity=\"0.9\">x³ − 6x² + 11x − 6</text>\n  <text x=\"162\" y=\"243\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"white\">= (x−1)(x−2)(x−3)</text>\n\n  <!-- Why box -->\n  <rect x=\"315\" y=\"166\" width=\"169\" height=\"83\" rx=\"8\" fill=\"#EAF5EA\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <text x=\"399\" y=\"183\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#5CB85C\">왜 약수에서 찾을까?</text>\n  <text x=\"399\" y=\"199\" text-anchor=\"middle\" font-size=\"10\" fill=\"#444\">만약 (x−a)가 인수라면</text>\n  <text x=\"399\" y=\"214\" text-anchor=\"middle\" font-size=\"10\" fill=\"#444\">상수항 = (−a) × (나머지상수)</text>\n  <text x=\"399\" y=\"229\" text-anchor=\"middle\" font-size=\"10\" fill=\"#444\">∴ a는 상수항의 약수!</text>\n  <text x=\"399\" y=\"244\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">−6의 약수: ±1,±2,±3,±6</text>\n\n  <!-- Bottom note -->\n  <text x=\"250\" y=\"273\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">f(a)=0 이면 (x−a)는 반드시 인수  |  이것이 나머지정리의 핵심</text>\n</svg>",
+      "concept": "인수분해"
+    }
+  ]
+}

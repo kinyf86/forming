@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-11-2-02",
+  "chapterTitle": "2단원 - 등차수열과 등비수열",
+  "generatedAt": "2026-04-03T15:09:09.117734+00:00",
+  "lessons": [
+    {
+      "explanation": "## 수열의 뜻과 일반항\n\n다음 수들을 보세요.\n\n$$1, \\ 4, \\ 9, \\ 16, \\ 25, \\ \\ldots$$\n\n10번째 수는 얼마일까요? 아마 금방 답이 보일 거예요. 그런데 **100번째 수**는? **1000번째 수**는?\n\n하나씩 세어가면 언젠가는 구할 수 있지만, 그렇게 하고 싶지는 않겠죠. 이 수들에는 분명히 규칙이 있고, 그 규칙을 수식 하나로 표현할 수 있다면 — $n$번째 수를 즉시 계산할 수 있을 거예요.\n\n바로 이것이 수열을 공부하는 이유입니다.\n\n---\n\n### 수열이란?\n\n**수열(數列, sequence)**이란 수를 일정한 순서로 나열한 것을 말합니다. 수열을 이루는 각각의 수를 **항(項, term)**이라 하고, 앞에서부터 순서대로 **제1항, 제2항, 제3항, …** 이라 부릅니다.\n\n예를 들어 수열 $1, 4, 9, 16, 25, \\ldots$에서\n- 제1항: $1$\n- 제2항: $4$\n- 제3항: $9$\n- 제$n$항: $n^2$\n\n이때 제$n$항을 **일반항(一般項, general term)**이라 하고, 기호로 $a_n$으로 씁니다. 즉, 이 수열의 일반항은\n\n$$a_n = n^2$$\n\n입니다. $n$에 100을 넣으면 $a_{100} = 100^2 = 10000$. 1000번째도 즉시 구할 수 있습니다.\n\n---\n\n### 수열을 보는 두 가지 눈\n\n수열 $\\{a_n\\}$을 표현하는 방법은 두 가지예요.\n\n**① 나열로 표현**: $1, \\ 4, \\ 9, \\ 16, \\ 25, \\ \\ldots$\n\n**② 일반항으로 표현**: $a_n = n^2 \\quad (n = 1, 2, 3, \\ldots)$\n\n사실 수열은 **자연수 전체의 집합을 정의역으로 하는 함수**입니다. $n$을 입력하면 $a_n$을 출력하는 기계라고 생각하면 이해가 쉬워요. 일차함수가 $f(x) = 2x+1$이라는 규칙을 가지듯, 수열도 일반항이라는 규칙을 가집니다.\n\n수열의 일반항을 알면 어떤 항이든 바로 계산할 수 있고, 두 수열이 같은지 비교할 수 있으며, 이 단원 이후에 배울 **합(시그마, Σ)**도 계산할 수 있습니다.\n\n---\n\n### 수열의 표기\n\n수열 전체를 나타낼 때는 $\\{a_n\\}$으로 씁니다. 수열에서 $n$은 항상 **자연수**입니다 — $n = 0$이나 $n = -1$같은 경우는 특별한 언급이 없는 한 다루지 않습니다.\n\n유한한 항으로 끝나는 수열은 **유한수열(finite sequence)**, 끝없이 이어지는 수열은 **무한수열(infinite sequence)**이라고 합니다.\n\n---\n\n### 자주 하는 실수 한 가지\n\n$a_n = n^2 + 1$이라는 수열에서 $a_3$을 구할 때, $a_3 = 3^2 + 1 = 10$이 맞습니다. 그런데 **$a_{n+1}$을 구할 때** 실수가 많이 나옵니다. $a_{n+1}$은 $a_n + 1$이 *아니라*, 일반항의 $n$ 자리에 $(n+1)$을 대입한 값이에요:\n\n$$a_{n+1} = (n+1)^2 + 1 = n^2 + 2n + 2$$\n\n$a_{n+1} \\neq a_n + 1$. 일반항의 $n$은 **항의 번호**이지, 더해지는 수가 아닙니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "수열 $\\{a_n\\}$의 일반항이 $a_n = 2n - 1$일 때, $a_5$의 값은?",
+        "options": [
+          "7",
+          "9",
+          "11",
+          "13"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "함수의 뜻과 함숫값",
+          "chapterId": "math-8-1-05",
+          "reason": "수열은 자연수를 정의역으로 하는 함수이므로, 함수의 뜻과 입력·출력 관계를 이해하고 있어야 합니다."
+        },
+        {
+          "concept": "문자를 사용한 식과 식의 값",
+          "chapterId": "math-7-1-04",
+          "reason": "$a_n = n^2$처럼 문자 $n$이 포함된 식을 세우고, 특정 값을 대입해 계산하는 능력이 필요합니다."
+        },
+        {
+          "concept": "지수법칙과 식의 계산",
+          "chapterId": "math-8-1-02",
+          "reason": "$a_n = 2^n$이나 $a_n = n^3$ 같은 지수가 포함된 일반항을 다루기 위해 지수법칙을 알아야 합니다."
+        }
+      ],
+      "concept": "수열의 뜻과 일반항"
+    },
+    {
+      "explanation": "## 100번째 항을 어떻게 찾을까요?\n\n수열 $3, 7, 11, 15, 19, \\ldots$를 보세요. 항이 하나씩 늘어날 때마다 4씩 커지고 있습니다. 그렇다면 이 수열의 **100번째 항**은 얼마일까요?\n\n일일이 더해 나가면 100번째에 도달하기까지 99번을 더해야 합니다. 분명히 더 영리한 방법이 있을 것 같지 않나요?\n\n---\n\n## 패턴 속에 숨은 규칙\n\n첫째 항부터 차례로 써 보겠습니다.\n\n$$a_1 = 3$$\n$$a_2 = 3 + 4 = 3 + 1 \\times 4$$\n$$a_3 = 3 + 4 + 4 = 3 + 2 \\times 4$$\n$$a_4 = 3 + 4 + 4 + 4 = 3 + 3 \\times 4$$\n\n$n$번째 항을 보면, 첫째 항 $3$에 공차 $4$가 정확히 $(n-1)$번 더해지고 있습니다. 즉:\n\n$$a_n = 3 + (n-1) \\times 4$$\n\n그러니까 100번째 항은:\n\n$$a_{100} = 3 + 99 \\times 4 = 3 + 396 = 399$$\n\n이처럼 각 항의 차이가 일정한 수열을 **등차수열** (arithmetic sequence, 等差數列)이라고 합니다. 그 일정한 차이를 **공차** (common difference) $d$라 하고, 첫째 항을 $a_1$이라 하면 **일반항** (general term)은 다음과 같습니다.\n\n$$\\boxed{a_n = a_1 + (n-1)d}$$\n\n---\n\n## 가우스의 아이디어 — 합을 두 번 써봐요\n\n이제 더 흥미로운 문제입니다. $1, 2, 3, \\ldots, 100$ — 이 등차수열의 합은 얼마일까요?\n\n수학자 가우스가 어린 시절, 선생님이 이 문제를 내자 단 몇 초 만에 답을 구했다고 합니다. 그의 비결은 이것이었습니다.\n\n합 $S$를 정방향과 역방향으로 두 줄을 나란히 씁니다:\n\n$$S = 1 + 2 + 3 + \\cdots + 99 + 100$$\n$$S = 100 + 99 + 98 + \\cdots + 2 + 1$$\n\n두 줄을 세로로 더하면, 각 열마다 합이 $101$이 되고, 그런 열이 $100$개 있습니다:\n\n$$2S = 101 \\times 100 = 10100$$\n$$S = 5050$$\n\n이 아이디어를 일반화해 봅시다. 첫째 항 $a_1$, 공차 $d$인 등차수열의 첫 $n$항의 합 $S_n$에 같은 방법을 적용하면:\n\n$$2S_n = (a_1 + a_n) \\times n$$\n\n따라서:\n\n$$\\boxed{S_n = \\frac{n(a_1 + a_n)}{2}}$$\n\n$a_n = a_1 + (n-1)d$를 대입하면:\n\n$$\\boxed{S_n = \\frac{n\\{2a_1 + (n-1)d\\}}{2}}$$\n\n---\n\n## 이 개념의 위치\n\n등차수열의 일반항과 합은 수열 단원의 핵심 기반입니다. 이 공식을 이해하면 등비수열의 합으로 자연스럽게 이어지고, 나중에 $\\Sigma$(시그마) 기호를 배울 때도 등차수열의 합 공식이 핵심 도구로 등장합니다. 수열의 극한, 급수까지 이어지는 긴 여정의 출발점이 바로 여기입니다.\n\n---\n\n## 자주 하는 실수 하나\n\n일반항 공식에서 $(n-1)$을 $n$으로 혼동하는 경우가 많습니다. \"$n$번째 항에 공차가 $n$번 더해진다\"고 착각하기 때문인데요 — 첫째 항 자체는 공차가 **0번** 더해진 상태입니다. $a_1 = a_1 + 0 \\cdot d$임을 항상 확인하세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "첫째 항이 $5$이고 공차가 $3$인 등차수열에서 첫 $10$항의 합 $S_{10}$은 얼마인가요?",
+        "options": [
+          "$185$",
+          "$230$",
+          "$95$",
+          "$170$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "수열의 뜻과 일반항",
+          "chapterId": "math-11-2-02",
+          "reason": "등차수열이 무엇인지 이해하려면 수열과 일반항의 개념을 먼저 알아야 합니다."
+        },
+        {
+          "concept": "문자를 사용한 식과 일차식의 계산",
+          "chapterId": "math-7-1-04",
+          "reason": "일반항 공식 $a_n = a_1 + (n-1)d$를 다루려면 문자식의 계산에 익숙해야 합니다."
+        },
+        {
+          "concept": "자연수의 혼합 계산",
+          "chapterId": "math-5-1-01",
+          "reason": "합의 공식을 적용할 때 덧셈·곱셈·나눗셈이 섞인 계산을 정확히 처리할 수 있어야 합니다."
+        }
+      ],
+      "concept": "등차수열의 일반항과 합"
+    },
+    {
+      "explanation": "## 2를 계속 곱하면 어떻게 될까?\n\n1, 2, 4, 8, 16, 32...\n\n뭔가 규칙이 보이지 않나요? 앞 항에 2를 곱하면 다음 항이 나옵니다. 이렇게 **일정한 수를 곱해서** 만들어지는 수열, 혹시 이름이 있지 않을까요?\n\n---\n\n### 등비수열이란\n\n수열에서 이웃한 두 항의 비(ratio)가 항상 일정할 때, 이 수열을 **등비수열(geometric sequence, 각 항의 비가 같은 수열)**이라고 합니다. 이때 그 일정한 비를 **공비(common ratio)** $r$이라고 부릅니다.\n\n$$\\frac{a_2}{a_1} = \\frac{a_3}{a_2} = \\frac{a_4}{a_3} = \\cdots = r$$\n\n등차수열이 \"더하기\"의 수열이라면, 등비수열은 \"곱하기\"의 수열입니다.\n\n---\n\n### 일반항 공식: 패턴을 따라가 보면\n\n첫째 항이 $a$, 공비가 $r$인 등비수열을 직접 써 봅시다.\n\n| 항 | 값 | 패턴 |\n|---|---|---|\n| $a_1$ | $a$ | $a \\cdot r^0$ |\n| $a_2$ | $ar$ | $a \\cdot r^1$ |\n| $a_3$ | $ar^2$ | $a \\cdot r^2$ |\n| $a_n$ | ? | $a \\cdot r^{n-1}$ |\n\n$n$번째 항은 첫째 항 $a$에 공비 $r$을 정확히 $(n-1)$번 곱한 값입니다.\n\n$$\\boxed{a_n = a \\cdot r^{n-1}}$$\n\n---\n\n### 합 공식: 왜 두 가지 경우가 있을까?\n\n첫째 항부터 $n$항까지의 합을 $S_n$이라 하면:\n\n$$S_n = a + ar + ar^2 + \\cdots + ar^{n-1}$$\n\n양변에 $r$을 곱하면:\n\n$$rS_n = ar + ar^2 + ar^3 + \\cdots + ar^n$$\n\n$S_n - rS_n$을 계산하면 중간 항들이 모두 사라집니다. 이것이 핵심 아이디어입니다.\n\n$$S_n - rS_n = a - ar^n$$\n$$S_n(1 - r) = a(1 - r^n)$$\n\n**$r \\neq 1$일 때:**\n$$\\boxed{S_n = \\frac{a(1 - r^n)}{1 - r} = \\frac{a(r^n - 1)}{r - 1}}$$\n\n**$r = 1$일 때:** 모든 항이 $a$로 같으므로\n$$\\boxed{S_n = na}$$\n\n$r = 1$이면 나눗셈 공식의 분모가 $0$이 되기 때문에 반드시 따로 처리해야 합니다.\n\n---\n\n### 개념의 위치\n\n등비수열은 등차수열(더하기)과 함께 수열 단원의 두 기둥입니다. 이 둘을 마스터하면, 이후 **시그마(Σ) 기호**로 복잡한 합을 계산하거나, **등비급수**(무한히 더하는 합)까지 이어집니다. 복리 계산, 인구 증가 모델 등 실생활에서도 등비수열의 구조가 자주 등장합니다.\n\n---\n\n### 자주 하는 실수 하나\n\n일반항 공식에서 지수를 $r^n$으로 쓰는 경우가 많습니다. 하지만 정확한 식은 $a \\cdot r^{n-1}$입니다. $n = 1$을 대입해 보면 바로 확인됩니다: $a_1 = a \\cdot r^{1-1} = a \\cdot r^0 = a$ — 첫째 항이 $a$로 나와야 맞습니다. $r^n$으로 쓰면 $a_1 = ar$이 되어 첫째 항부터 틀려 버립니다.",
+      "checkQuestion": {
+        "question": "첫째 항이 3, 공비가 2인 등비수열에서 처음 5항까지의 합 $S_5$는?",
+        "options": [
+          "93",
+          "96",
+          "62",
+          "48"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "등차수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "등비수열은 '더하기' 대신 '곱하기'로 만들어진다는 대비 구조를 이해해야 혼동 없이 학습할 수 있습니다."
+        },
+        {
+          "concept": "지수의 확장 (유리수 지수, 실수 지수)",
+          "chapterId": "math-11-1-01",
+          "reason": "일반항 $a_n = ar^{n-1}$과 합 공식에서 $r^n$ 형태의 지수 표현을 정확히 다뤄야 하기 때문입니다."
+        },
+        {
+          "concept": "수열의 뜻과 일반항",
+          "chapterId": "math-11-2-02",
+          "reason": "수열, 항, 일반항의 개념을 알아야 등비수열의 정의와 표기를 이해할 수 있습니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "등비수열의 일반항과 합"
+    },
+    {
+      "explanation": "## 수열의 '가운데 항'에는 뭔가 특별한 게 있지 않을까요?\n\n등차수열과 등비수열을 배웠으니, 이제 한 가지 질문을 드려볼게요.\n\n세 수 **2, 5, 8**을 보세요. 이 수들은 공차가 3인 등차수열이죠. 그런데 가운데 있는 5는 2와 8과 어떤 관계일까요?\n\n$$\\frac{2 + 8}{2} = 5$$\n\n바로 **산술평균**(두 수의 합을 2로 나눈 값)입니다! 이게 우연일까요? 아니면 등차수열이라면 항상 성립하는 규칙일까요?\n\n---\n\n## 등차중항\n\n세 수 $a, b, c$가 이 순서대로 **등차수열**을 이룬다고 해봅시다. 그러면 공차가 일정해야 하므로:\n\n$$b - a = c - b$$\n\n양변을 정리하면:\n\n$$2b = a + c$$\n\n즉, $b = \\dfrac{a+c}{2}$ 입니다.\n\n이처럼 세 수 $a, b, c$가 등차수열을 이룰 때, $b$를 $a$와 $c$의 **등차중항** (等差中項, arithmetic mean term — 등차수열에서 두 항 사이의 가운데 항)이라고 합니다.\n\n조건을 정리하면: **$2b = a + c$** ↔ $a, b, c$는 등차수열.\n\n예를 들어, $a = 3$, $c = 11$이면 등차중항은 $b = \\dfrac{3 + 11}{2} = 7$이고, 실제로 3, 7, 11은 공차 4의 등차수열이죠.\n\n---\n\n## 등비중항\n\n이번엔 등비수열로 넘어가 봅시다. 세 수 **2, 6, 18**을 보세요. 공비가 3인 등비수열인데, 가운데 항 6은 2와 18과 어떤 관계일까요?\n\n$$\\frac{6}{2} = \\frac{18}{6} = 3$$\n\n공비가 같아야 하므로 $\\dfrac{b}{a} = \\dfrac{c}{b}$, 즉:\n\n$$b^2 = ac$$\n\n이때 $b$를 $a$와 $c$의 **등비중항** (等比中項, geometric mean term — 등비수열에서 두 항 사이의 가운데 항)이라고 합니다.\n\n확인해 볼까요? $6^2 = 36 = 2 \\times 18$ ✓\n\n$b^2 = ac$를 풀면 $b = \\pm\\sqrt{ac}$ 입니다. 단, 등비수열에서 $a \\neq 0$이고 $ac > 0$이어야 $b$가 실수로 존재합니다.\n\n---\n\n## 두 개념의 핵심 차이\n\n| | 조건 | 가운데 항 |\n|---|---|---|\n| 등차중항 | $2b = a + c$ | 두 수의 **합**으로 정의 |\n| 등비중항 | $b^2 = ac$ | 두 수의 **곱**으로 정의 |\n\n등차는 '더하기'의 평균, 등비는 '곱하기'의 평균이라고 기억하면 좋습니다. 실제로 등비중항 $\\sqrt{ac}$는 기하평균이라고 불리기도 합니다.\n\n---\n\n## 이 개념은 어디로 연결되나요?\n\n등차중항과 등비중항은 단순히 수열의 성질을 넘어, 이후 수열의 합($\\sum$)이나 수열의 극한을 다룰 때 세 수 사이의 관계를 빠르게 파악하는 도구로 쓰입니다. 또한 두 양수의 산술평균과 기하평균 사이의 부등식($\\dfrac{a+c}{2} \\geq \\sqrt{ac}$)과도 깊게 연결되어 있습니다.\n\n---\n\n## 꼭 주의하세요\n\n등비중항에서 $b^2 = ac$를 풀면 **$b = +\\sqrt{ac}$만 있는 게 아니라 $b = -\\sqrt{ac}$도 성립**합니다. 예를 들어 $a = 2$, $c = 8$이면 $b = \\pm 4$인데, 2, **4**, 8은 공비 2의 등비수열이고, 2, **−4**, 8은 공비 −2의 등비수열로 둘 다 유효합니다. 양수 해만 챙기다가 절반의 정답을 잃지 않도록 주의하세요.",
+      "visualSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 300\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">등차중항 vs 등비중항</text>\n\n  <!-- ===== LEFT: 등차중항 ===== -->\n  <rect x=\"20\" y=\"42\" width=\"220\" height=\"248\" rx=\"12\" fill=\"#EAF4FF\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"130\" y=\"62\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#4A90D9\">등차중항</text>\n  <text x=\"130\" y=\"78\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">Arithmetic Mean Term</text>\n\n  <!-- Number line visualization -->\n  <line x1=\"50\" y1=\"115\" x2=\"210\" y2=\"115\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <!-- Arrows -->\n  <polygon points=\"210,112 218,115 210,118\" fill=\"#4A90D9\"/>\n\n  <!-- Three dots -->\n  <circle cx=\"68\" cy=\"115\" r=\"18\" fill=\"#4A90D9\"/>\n  <text x=\"68\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">a</text>\n\n  <circle cx=\"130\" cy=\"115\" r=\"18\" fill=\"#E67E22\"/>\n  <text x=\"130\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">b</text>\n\n  <circle cx=\"192\" cy=\"115\" r=\"18\" fill=\"#4A90D9\"/>\n  <text x=\"192\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">c</text>\n\n  <!-- Equal spacing arrows -->\n  <line x1=\"86\" y1=\"108\" x2=\"112\" y2=\"108\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <polygon points=\"112,105 118,108 112,111\" fill=\"#E67E22\"/>\n  <line x1=\"148\" y1=\"108\" x2=\"174\" y2=\"108\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <polygon points=\"174,105 180,108 174,111\" fill=\"#E67E22\"/>\n  <text x=\"99\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"#E67E22\">+d</text>\n  <text x=\"161\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"#E67E22\">+d</text>\n\n  <!-- Example numbers -->\n  <text x=\"68\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#4A90D9\">2</text>\n  <text x=\"130\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#E67E22\">5</text>\n  <text x=\"192\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#4A90D9\">8</text>\n  <text x=\"99\" y=\"143\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">+3</text>\n  <text x=\"161\" y=\"143\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">+3</text>\n\n  <!-- Formula box -->\n  <rect x=\"40\" y=\"160\" width=\"180\" height=\"52\" rx=\"8\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n  <text x=\"130\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">b − a = c − b</text>\n  <line x1=\"55\" y1=\"185\" x2=\"205\" y2=\"185\" stroke=\"#ccc\" stroke-width=\"0.8\"/>\n  <text x=\"130\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">b = (a + c) / 2</text>\n\n  <!-- Verification -->\n  <rect x=\"40\" y=\"222\" width=\"180\" height=\"52\" rx=\"8\" fill=\"#D6EAFF\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n  <text x=\"130\" y=\"240\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">확인:</text>\n  <text x=\"130\" y=\"257\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">(2 + 8) ÷ 2 = 5 ✓</text>\n  <text x=\"130\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">가운데 = 두 수의 산술평균</text>\n\n  <!-- ===== RIGHT: 등비중항 ===== -->\n  <rect x=\"260\" y=\"42\" width=\"220\" height=\"248\" rx=\"12\" fill=\"#EAFBEA\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <text x=\"370\" y=\"62\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#5CB85C\">등비중항</text>\n  <text x=\"370\" y=\"78\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">Geometric Mean Term</text>\n\n  <!-- Multiplicative visualization -->\n  <line x1=\"290\" y1=\"115\" x2=\"450\" y2=\"115\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <polygon points=\"450,112 458,115 450,118\" fill=\"#5CB85C\"/>\n\n  <!-- Three dots -->\n  <circle cx=\"308\" cy=\"115\" r=\"18\" fill=\"#5CB85C\"/>\n  <text x=\"308\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">a</text>\n\n  <circle cx=\"370\" cy=\"115\" r=\"18\" fill=\"#E67E22\"/>\n  <text x=\"370\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">b</text>\n\n  <circle cx=\"432\" cy=\"115\" r=\"18\" fill=\"#5CB85C\"/>\n  <text x=\"432\" y=\"119\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">c</text>\n\n  <!-- Ratio arrows -->\n  <line x1=\"326\" y1=\"108\" x2=\"352\" y2=\"108\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <polygon points=\"352,105 358,108 352,111\" fill=\"#E67E22\"/>\n  <line x1=\"388\" y1=\"108\" x2=\"414\" y2=\"108\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <polygon points=\"414,105 420,108 414,111\" fill=\"#E67E22\"/>\n  <text x=\"339\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"#E67E22\">×r</text>\n  <text x=\"401\" y=\"102\" text-anchor=\"middle\" font-size=\"9\" fill=\"#E67E22\">×r</text>\n\n  <!-- Example numbers -->\n  <text x=\"308\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#5CB85C\">2</text>\n  <text x=\"370\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#E67E22\">4</text>\n  <text x=\"432\" y=\"148\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#5CB85C\">8</text>\n  <text x=\"339\" y=\"143\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">×2</text>\n  <text x=\"401\" y=\"143\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">×2</text>\n\n  <!-- Formula box -->\n  <rect x=\"280\" y=\"160\" width=\"180\" height=\"52\" rx=\"8\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"1\"/>\n  <text x=\"370\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">b / a = c / b</text>\n  <line x1=\"295\" y1=\"185\" x2=\"445\" y2=\"185\" stroke=\"#ccc\" stroke-width=\"0.8\"/>\n  <text x=\"370\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">b² = a × c</text>\n\n  <!-- Verification -->\n  <rect x=\"280\" y=\"222\" width=\"180\" height=\"52\" rx=\"8\" fill=\"#D5F5D5\" stroke=\"#5CB85C\" stroke-width=\"1\"/>\n  <text x=\"370\" y=\"240\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">확인:</text>\n  <text x=\"370\" y=\"257\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">4² = 2 × 8 = 16 ✓</text>\n  <text x=\"370\" y=\"272\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">가운데 = 두 수의 기하평균</text>\n\n  <!-- Center divider label -->\n  <text x=\"250\" y=\"180\" text-anchor=\"middle\" font-size=\"18\" fill=\"#ccc\">│</text>\n  <text x=\"250\" y=\"200\" text-anchor=\"middle\" font-size=\"18\" fill=\"#ccc\">│</text>\n  <text x=\"250\" y=\"220\" text-anchor=\"middle\" font-size=\"18\" fill=\"#ccc\">│</text>\n</svg>",
+      "checkQuestion": {
+        "question": "세 수 $2,\\ x,\\ 8$이 이 순서대로 등비수열을 이룰 때, $x$의 값을 모두 구하면?",
+        "options": [
+          "$x = 4$",
+          "$x = \\pm 4$",
+          "$x = 5$",
+          "$x = \\pm\\sqrt{10}$"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "등차수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "등차중항의 조건 $2b = a+c$는 등차수열의 공차 개념에서 직접 유도되므로 먼저 이해해야 합니다."
+        },
+        {
+          "concept": "등비수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "등비중항의 조건 $b^2 = ac$는 등비수열의 공비 개념에서 유도되므로 선행 이해가 필요합니다."
+        },
+        {
+          "concept": "이차방정식",
+          "chapterId": "math-9-1-03",
+          "reason": "등비중항 문제에서 $b^2 = ac$ 형태의 이차방정식을 풀어야 하는 경우가 많습니다."
+        }
+      ],
+      "concept": "등차중항과 등비중항"
+    }
+  ]
+}

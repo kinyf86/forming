@@ -52,3 +52,7 @@ rawdata/
 
 # local snapshots / archives
 *.zip
+
+# Python
+__pycache__/
+*.pyc

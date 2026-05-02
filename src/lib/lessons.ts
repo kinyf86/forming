@@ -2,6 +2,12 @@ import fs from "fs";
 import path from "path";
 import { sanitizePathSegment, assertWithinBase } from "./sanitize";
 
+export interface Prerequisite {
+  concept: string;
+  chapterId: string;
+  reason: string;
+}
+
 export interface LessonContent {
   concept: string;
   explanation: string;
@@ -11,6 +17,7 @@ export interface LessonContent {
     options: string[];
     correctIndex: number;
   };
+  prerequisites?: Prerequisite[];
 }
 
 export interface ChapterLesson {

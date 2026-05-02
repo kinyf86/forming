@@ -1,0 +1,130 @@
+{
+  "chapterId": "math-7-1-03",
+  "chapterTitle": "3단원 - 정수와 유리수의 계산",
+  "generatedAt": "2026-04-01T09:39:46.365351+00:00",
+  "lessons": [
+    {
+      "explanation": "겨울 아침, 기온이 $-3°C$였는데 낮 동안 $5°C$가 올라갔습니다. 최고 기온은 얼마일까요?\n\n직관적으로 $2°C$라는 걸 알 수 있죠. 그런데 수식으로는 $(-3) + 5 = 2$라고 씁니다. 이건 어떻게 계산한 걸까요? 규칙이 있을까요?\n\n## 수직선으로 덧셈 발견하기\n\n수직선을 떠올려 보세요. **덧셈**은 오른쪽으로, **음수만큼 더하는 것**은 왼쪽으로 이동하는 것입니다.\n\n- $(-3) + 5$: $-3$에서 오른쪽으로 5칸 → $+2$\n- $(-3) + (-5)$: $-3$에서 왼쪽으로 5칸 → $-8$\n- $3 + (-5)$: $+3$에서 왼쪽으로 5칸 → $-2$\n\n여기서 패턴이 보이시나요?\n\n**부호가 같을 때**: 두 수의 **절댓값** (수직선에서 원점까지의 거리)을 더하고, 공통 부호를 붙입니다.\n$$(-3) + (-5) = -(3+5) = -8$$\n\n**부호가 다를 때**: 두 수의 절댓값의 차를 구하고, 절댓값이 큰 쪽의 부호를 붙입니다.\n$$(-3) + 5 = +(5-3) = +2$$\n$$3 + (-5) = -(5-3) = -2$$\n\n이것을 **정수의 덧셈** 규칙이라고 합니다.\n\n## 뺄셈은 사실 덧셈이다\n\n이제 $5 - 8$을 생각해 봅시다. 결과는 $-3$이죠. 그런데 이걸 다르게 쓰면:\n$$5 - 8 = 5 + (-8) = -3$$\n\n**빼는 것 = 반대 부호를 더하는 것**입니다.\n\n이것이 핵심입니다. 어떤 뺄셈도 덧셈으로 바꿀 수 있어요.\n$$(-3) - (-7) = (-3) + (+7) = +4$$\n\n$-$를 $-$로 빼는 건 $+$로 더하는 것과 같습니다. 이렇게 **뺄셈을 덧셈으로 변환**하면, 결국 덧셈 규칙 하나만 알면 모든 계산이 됩니다.\n\n## 유리수로 확장하기\n\n정수가 아닌 분수나 소수도 똑같은 규칙이 적용됩니다. 다만 분수끼리는 **통분**이 먼저 필요하죠.\n\n$$\\left(-\\frac{1}{2}\\right) + \\frac{3}{4} = \\left(-\\frac{2}{4}\\right) + \\frac{3}{4} = +\\frac{1}{4}$$\n\n부호 규칙은 그대로, 분수의 계산 방법은 이미 알고 있는 것을 그대로 씁니다.\n\n이렇게 **정수와 유리수의 덧셈과 뺄셈** 규칙은 수의 범위가 넓어져도 같은 원리 위에서 작동합니다. 이 규칙은 이후 배울 곱셈, 나눗셈, 그리고 문자를 이용한 식의 계산에서도 계속 쓰입니다.\n\n## 자주 하는 실수 하나\n\n$(-3) - (-5)$를 계산할 때, 마이너스가 두 개니까 $-8$이라고 쓰는 경우가 많습니다. 하지만 뺄셈을 먼저 덧셈으로 바꿔야 해요: $(-3) + (+5) = +2$입니다. **부호 두 개를 무조건 곱하는 게 아니라, 뺄셈을 반대 부호 덧셈으로 바꾸는 것**이 핵심입니다.",
+      "checkQuestion": {
+        "question": "다음을 계산하면 얼마인가요? $\\left(-\\frac{2}{3}\\right) - \\left(-\\frac{1}{6}\\right)$",
+        "options": [
+          "$-\\frac{1}{2}$",
+          "$-\\frac{5}{6}$",
+          "$+\\frac{5}{6}$",
+          "$+\\frac{1}{2}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "정수와 유리수 (수직선과 절댓값)",
+          "chapterId": "math-7-1-02",
+          "reason": "덧셈 규칙이 절댓값의 합과 차를 기반으로 하므로, 절댓값의 의미를 먼저 알아야 합니다."
+        },
+        {
+          "concept": "분수의 덧셈과 뺄셈 (통분)",
+          "chapterId": "math-5-1-05",
+          "reason": "유리수의 덧셈과 뺄셈에서 분모가 다른 분수를 통분하는 과정이 필요합니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "정수와 유리수의 덧셈과 뺄셈"
+    },
+    {
+      "explanation": "## 음수끼리 곱하면 왜 양수가 될까요?\n\n먼저 이미 알고 있는 것에서 시작해 봅시다.\n\n$$3 \\times 3 = 9, \\quad 3 \\times 2 = 6, \\quad 3 \\times 1 = 3, \\quad 3 \\times 0 = 0$$\n\n1씩 줄어들 때마다 결과가 **3씩 줄어드는** 패턴이 보이시나요? 이 패턴을 음수까지 이어가면 어떻게 될까요?\n\n$$3 \\times (-1) = -3, \\quad 3 \\times (-2) = -6, \\quad 3 \\times (-3) = -9$$\n\n자연스럽게 이어집니다. 양수 × 음수 = 음수입니다.\n\n이번엔 더 흥미로운 질문입니다. $(-3) \\times (-1)$은 얼마일까요?\n\n같은 방식으로 패턴을 써 봅시다.\n\n$$(-3) \\times 3 = -9, \\quad (-3) \\times 2 = -6, \\quad (-3) \\times 1 = -3, \\quad (-3) \\times 0 = 0$$\n\n1씩 줄어들 때마다 결과가 **3씩 늘어나고** 있어요. 그러면?\n\n$$(-3) \\times (-1) = 3, \\quad (-3) \\times (-2) = 6, \\quad (-3) \\times (-3) = 9$$\n\n**음수 × 음수 = 양수**! 억지로 외운 규칙이 아니라, 수의 패턴이 자연스럽게 이끌어 낸 결론입니다.\n\n### 부호 규칙 정리\n\n이렇게 하는 것을 **정수의 곱셈** (정수끼리 곱하는 연산)이라고 합니다. 부호 결정 방법은 단순합니다.\n\n- 부호가 **같으면** → 결과는 $+$ (양수)\n- 부호가 **다르면** → 결과는 $-$ (음수)\n\n크기는 각 수의 절댓값의 곱으로 구합니다.\n\n$$(-5) \\times 3 = -(5 \\times 3) = -15 \\qquad (-4) \\times (-6) = +(4 \\times 6) = 24$$\n\n### 유리수의 곱셈으로 확장\n\n이 규칙은 **유리수의 곱셈** (분수와 음수가 섞인 곱셈)에도 그대로 적용됩니다. 부호를 먼저 결정하고, 크기는 분수의 곱셈으로 계산하면 됩니다.\n\n$$\\left(-\\frac{2}{3}\\right) \\times \\frac{3}{4} = -\\left(\\frac{2}{3} \\times \\frac{3}{4}\\right) = -\\frac{1}{2}$$\n\n$$\\left(-\\frac{3}{5}\\right) \\times \\left(-\\frac{10}{9}\\right) = +\\left(\\frac{3}{5} \\times \\frac{10}{9}\\right) = \\frac{2}{3}$$\n\n### 여러 수의 곱셈\n\n음수가 여러 개 곱해질 때는 음수의 개수만 세어보세요.\n\n- 음수가 **홀수** 개 → 결과는 $-$\n- 음수가 **짝수** 개 → 결과는 $+$\n\n$$(-1) \\times (-2) \\times (-3) = -(1 \\times 2 \\times 3) = -6 \\quad \\text{(음수 3개 → 홀수 → 음수)}$$\n\n### 지금까지 배운 것과의 연결\n\n음수와 절댓값(math-7-1-02)의 개념, 그리고 분수의 곱셈(초등)을 합쳐서 만든 것이 유리수의 곱셈입니다. 이 개념은 이어서 배울 나눗셈, 혼합 계산, 나아가 일차방정식과 함수의 기초가 됩니다.\n\n### 꼭 조심해야 할 실수 하나\n\n$(-3)^2$과 $-3^2$은 다릅니다!\n\n$$(-3)^2 = (-3) \\times (-3) = 9 \\qquad -3^2 = -(3 \\times 3) = -9$$\n\n괄호가 있으면 음수 자체를 두 번 곱하고, 괄호가 없으면 $3^2$을 먼저 계산한 뒤 음수를 붙입니다. 결과가 완전히 달라지니 항상 괄호를 확인하세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\left(-\\dfrac{2}{3}\\right) \\times \\left(-\\dfrac{9}{4}\\right)$의 값은?",
+        "options": [
+          "$\\dfrac{3}{2}$",
+          "$-\\dfrac{3}{2}$",
+          "$\\dfrac{1}{6}$",
+          "$-\\dfrac{6}{7}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "정수와 유리수",
+          "chapterId": "math-7-1-02",
+          "reason": "양수·음수의 뜻과 절댓값을 알아야 곱셈의 부호 규칙과 크기 계산을 이해할 수 있습니다."
+        },
+        {
+          "concept": "분수의 곱셈",
+          "chapterId": "math-5-2-02",
+          "reason": "유리수 곱셈에서 크기(절댓값) 계산은 초등에서 배운 분수의 곱셈 방법을 그대로 사용하기 때문입니다."
+        },
+        {
+          "concept": "정수와 유리수의 덧셈과 뺄셈",
+          "chapterId": "math-7-1-03",
+          "reason": "같은 단원에서 먼저 다루는 개념으로, 음수 연산의 감각을 익혀야 곱셈의 부호 패턴을 자연스럽게 받아들일 수 있습니다."
+        }
+      ],
+      "concept": "정수와 유리수의 곱셈"
+    },
+    {
+      "explanation": "## 나눗셈, 사실 곱셈이었어?\n\n질문 하나. $12 ÷ 3 = 4$ 라는 건 알지? 그런데 왜 4일까?\n\n\"3을 4번 더하면 12가 되니까요\" — 맞아. 그런데 이렇게도 생각할 수 있어: $12 × \\frac{1}{3} = 4$. 신기하지 않아? 3으로 나누는 게 $\\frac{1}{3}$을 곱하는 것과 똑같아.\n\n이건 우연이 아니야. 나눗셈은 **역수** (어떤 수와 곱했을 때 1이 되는 수)를 곱하는 것과 항상 같거든.\n\n$$a ÷ b = a × \\frac{1}{b}$$\n\n이 원리를 정수와 유리수의 세계로 가져오면 어떻게 될까?\n\n---\n\n### 부호는 어떻게 결정될까?\n\n이미 배웠지: 곱셈에서 부호 규칙은\n- 같은 부호끼리 곱하면 → $+$\n- 다른 부호끼리 곱하면 → $-$\n\n나눗셈은 역수를 곱하는 거니까, **부호 규칙은 곱셈과 똑같아**.\n\n예를 들어볼게:\n\n$(-12) ÷ 3$을 계산해 봐. 3의 역수는 $\\frac{1}{3}$이니까:\n$$(-12) ÷ 3 = (-12) × \\frac{1}{3} = -4$$\n\n다른 부호 → 결과는 $-4$. 맞지?\n\n이번엔 $(-12) ÷ (-3)$:\n$$(-12) ÷ (-3) = (-12) × \\left(-\\frac{1}{3}\\right) = +4$$\n\n같은 부호 → 결과는 $+4$.\n\n---\n\n### 유리수도 똑같이\n\n분수를 나눌 때도 역수를 곱하면 돼. **역수** 는 분자와 분모를 뒤집은 수야.\n\n$$\\left(-\\frac{2}{3}\\right) ÷ \\frac{4}{5} = \\left(-\\frac{2}{3}\\right) × \\frac{5}{4} = -\\frac{10}{12} = -\\frac{5}{6}$$\n\n순서를 정리하면:\n1. 나누는 수의 역수를 구한다\n2. 부호를 결정한다 (같은 부호 → +, 다른 부호 → −)\n3. 절댓값끼리 계산한다\n\n---\n\n### 나눗셈이 곱셈인 이유 — 한 번 더 깊이\n\n왜 역수를 곱하는 게 나누는 것과 같을까? 잠깐 생각해봐.\n\n$\\frac{2}{3}$으로 나눈다는 건 \"$\\frac{2}{3}$이 몇 번 들어가냐\"는 질문이야. 피자를 $\\frac{2}{3}$ 조각씩 나눠줄 때 6조각이면 몇 명한테 줄 수 있을까? $6 ÷ \\frac{2}{3}$. 이게 $6 × \\frac{3}{2} = 9$명인 건, 분수를 뒤집어야 \"몇 묶음\"인지 나오기 때문이야. **나누는 크기가 작아질수록 나오는 묶음은 많아지고**, 역수를 곱하는 게 바로 그 관계를 표현해.\n\n이렇게 이해하면: **정수와 유리수의 나눗셈** 은 새로운 연산이 아니라, 곱셈의 다른 표현이야.\n\n$$a ÷ b = a × \\frac{1}{b} \\quad (b \\neq 0)$$\n\n---\n\n### 어디로 연결되나?\n\n이 개념은 곧 배울 **일차방정식** 에서 바로 쓰여. $3x = -12$에서 $x$를 구할 때, 양변을 3으로 나누는 대신 $\\frac{1}{3}$을 곱하는 방식으로 생각하면 훨씬 자연스러워.\n\n---\n\n### 자주 하는 실수 하나\n\n$(-\\frac{3}{4}) ÷ (-\\frac{3}{4})$를 계산할 때 \"나누는 수에만 역수를 취하는 게 아니라 둘 다 뒤집어야 한다\"고 착각하는 경우가 있어. **역수를 취하는 건 나누는 수(뒤에 오는 수)뿐이야.** 앞의 수는 그대로 두고:\n\n$$\\left(-\\frac{3}{4}\\right) ÷ \\left(-\\frac{3}{4}\\right) = \\left(-\\frac{3}{4}\\right) × \\left(-\\frac{4}{3}\\right) = +1$$\n\n결과가 1인 이유? 같은 수끼리 나누면 항상 1이거든.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\left(-\\frac{3}{5}\\right) ÷ \\frac{9}{10}$을 계산하면?",
+        "options": [
+          "$-\\frac{2}{3}$",
+          "$+\\frac{2}{3}$",
+          "$-\\frac{27}{50}$",
+          "$+\\frac{27}{50}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "정수와 유리수의 곱셈",
+          "chapterId": "math-7-1-03",
+          "reason": "나눗셈은 역수를 곱하는 연산이므로, 곱셈의 부호 규칙과 계산 방법을 반드시 알고 있어야 해요."
+        },
+        {
+          "concept": "정수와 유리수의 분류, 수직선과 절댓값",
+          "chapterId": "math-7-1-02",
+          "reason": "음수와 양수의 개념, 그리고 절댓값을 알아야 부호를 분리해서 계산하는 방식을 이해할 수 있어요."
+        },
+        {
+          "concept": "분수의 나눗셈 — (분수) ÷ (분수)",
+          "chapterId": "math-6-2-01",
+          "reason": "역수를 이용해 분수를 나누는 방법을 초등학교에서 배웠으며, 이 원리가 유리수 나눗셈의 핵심이에요."
+        }
+      ],
+      "concept": "정수와 유리수의 나눗셈"
+    },
+    {
+      "explanation": "## 혼합 계산 — 여러 연산이 섞이면 누가 먼저일까?\n\n### 규칙이 없으면 어떻게 될까?\n\n다음 식을 계산해 보세요.\n\n$$(-2) + 3 \\times (-4)$$\n\n이 식을 왼쪽에서 오른쪽으로 그냥 계산하면:\n$$(-2) + 3 = 1 \\quad \\Rightarrow \\quad 1 \\times (-4) = -4$$\n\n곱셈을 먼저 하면:\n$$3 \\times (-4) = -12 \\quad \\Rightarrow \\quad (-2) + (-12) = -14$$\n\n**같은 식인데 답이 두 개입니다.** 수학에서 이런 일이 생기면 안 되죠. 그래서 전 세계가 약속을 정했어요. 바로 **계산 순서** 입니다.\n\n---\n\n### 약속: 계산 순서\n\n혼합 계산에서 지켜야 할 순서는 다음과 같습니다.\n\n1. **괄호** 안을 가장 먼저 계산합니다.\n2. **거듭제곱**을 계산합니다.\n3. **곱셈과 나눗셈**을 왼쪽에서 오른쪽으로 계산합니다.\n4. **덧셈과 뺄셈**을 왼쪽에서 오른쪽으로 계산합니다.\n\n이 순서를 지키면 위 식의 정답은 $-14$입니다.\n\n---\n\n### 정수·유리수가 섞이면?\n\n초등학교 때도 혼합 계산을 배웠어요. 달라진 점은 이제 음수와 분수가 등장한다는 것입니다. 계산 순서 자체는 똑같지만, **부호 실수**가 훨씬 잦아집니다. 예제로 연습해 봅시다.\n\n**예제 1**\n$$(-6) \\div 2 + (-3) \\times (-4)$$\n\n곱셈·나눗셈 먼저 (왼쪽부터):\n$$(-6) \\div 2 = -3$$\n$$(-3) \\times (-4) = +12$$\n\n덧셈·뺄셈:\n$$(-3) + 12 = 9$$\n\n**예제 2** (괄호 포함)\n$$\\left(-\\frac{1}{2} + \\frac{3}{4}\\right) \\times (-8)$$\n\n괄호 먼저:\n$$-\\frac{1}{2} + \\frac{3}{4} = -\\frac{2}{4} + \\frac{3}{4} = \\frac{1}{4}$$\n\n곱셈:\n$$\\frac{1}{4} \\times (-8) = -2$$\n\n---\n\n### 여기서 잠깐 — 왜 곱셈이 덧셈보다 먼저일까?\n\n$2 + 3 \\times 4$를 생각해 보세요. $3 \\times 4$는 \"4를 3번 더한 것\"입니다. 즉 덧셈을 묶어 놓은 것이 곱셈이에요. **더 \"압축된\" 연산을 먼저 풀어야** 전체 의미가 맞습니다. 이건 자연수일 때도, 음수와 분수가 섞일 때도 변하지 않는 이유입니다.\n\n---\n\n### 이 개념의 위치\n\n혼합 계산은 정수·유리수의 네 가지 연산(덧셈, 뺄셈, 곱셈, 나눗셈)을 하나로 통합합니다. 이후 **문자식**, **방정식**, **함수** 등 중학교 수학 전반에서 식을 정리할 때마다 이 순서를 매번 사용하게 됩니다. 지금 확실히 익혀 두면 앞으로 모든 계산의 기반이 됩니다.\n\n---\n\n### 자주 하는 실수 하나\n\n$(-2)^2$을 $-4$라고 계산하는 경우입니다. $(-2)^2 = (-2) \\times (-2) = +4$인데, 괄호를 무시하고 $-(2^2) = -4$로 잘못 읽는 것이죠. 거듭제곱 앞의 괄호는 **부호까지 함께 제곱한다**는 신호입니다. 괄호가 있는지 없는지 반드시 확인하세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#2C3E50\">(-2) + 3 × (-4) 를 어떻게 계산할까?</text>\n\n  <!-- Divider line between two paths -->\n  <line x1=\"250\" y1=\"30\" x2=\"250\" y2=\"155\" stroke=\"#CCC\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n\n  <!-- === LEFT SIDE: WRONG (left to right) === -->\n  <text x=\"125\" y=\"46\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E74C3C\" font-weight=\"bold\">❌ 왼쪽부터 순서대로</text>\n\n  <!-- Step 1 box -->\n  <rect x=\"30\" y=\"54\" width=\"190\" height=\"28\" rx=\"6\" fill=\"#FADBD8\"/>\n  <text x=\"125\" y=\"65\" text-anchor=\"middle\" font-size=\"10\" fill=\"#922B21\">(-2) + 3 = 1</text>\n  <text x=\"125\" y=\"78\" text-anchor=\"middle\" font-size=\"10\" fill=\"#922B21\">→ 1 × (-4) = <tspan font-weight=\"bold\">-4</tspan></text>\n\n  <!-- Arrow down -->\n  <line x1=\"125\" y1=\"82\" x2=\"125\" y2=\"100\" stroke=\"#E74C3C\" stroke-width=\"1.5\" marker-end=\"url(#arrowRed)\"/>\n\n  <!-- Result box -->\n  <rect x=\"65\" y=\"100\" width=\"120\" height=\"30\" rx=\"8\" fill=\"#E74C3C\"/>\n  <text x=\"125\" y=\"120\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">답: -4</text>\n\n  <!-- Wrong stamp -->\n  <text x=\"125\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E74C3C\">⚠ 틀린 계산!</text>\n\n  <!-- === RIGHT SIDE: CORRECT (multiply first) === -->\n  <text x=\"375\" y=\"46\" text-anchor=\"middle\" font-size=\"11\" fill=\"#27AE60\" font-weight=\"bold\">✓ 곱셈 먼저!</text>\n\n  <!-- Step 1: multiply highlighted -->\n  <rect x=\"280\" y=\"54\" width=\"190\" height=\"28\" rx=\"6\" fill=\"#D5F5E3\"/>\n  <!-- Highlight the multiplication part -->\n  <rect x=\"320\" y=\"56\" width=\"72\" height=\"22\" rx=\"4\" fill=\"#5CB85C\" opacity=\"0.3\"/>\n  <text x=\"375\" y=\"65\" text-anchor=\"middle\" font-size=\"10\" fill=\"#1E8449\">3 × (-4) = -12  먼저!</text>\n  <text x=\"375\" y=\"78\" text-anchor=\"middle\" font-size=\"10\" fill=\"#1E8449\">→ (-2) + (-12) = <tspan font-weight=\"bold\">-14</tspan></text>\n\n  <!-- Arrow down -->\n  <line x1=\"375\" y1=\"82\" x2=\"375\" y2=\"100\" stroke=\"#27AE60\" stroke-width=\"1.5\" marker-end=\"url(#arrowGreen)\"/>\n\n  <!-- Result box -->\n  <rect x=\"315\" y=\"100\" width=\"120\" height=\"30\" rx=\"8\" fill=\"#5CB85C\"/>\n  <text x=\"375\" y=\"120\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">답: -14</text>\n\n  <!-- Correct stamp -->\n  <text x=\"375\" y=\"148\" text-anchor=\"middle\" font-size=\"10\" fill=\"#27AE60\">✔ 올바른 계산!</text>\n\n  <!-- === BOTTOM: Order of Operations pyramid === -->\n  <rect x=\"10\" y=\"162\" width=\"480\" height=\"130\" rx=\"10\" fill=\"#EBF5FB\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"178\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">계산 순서 약속</text>\n\n  <!-- Step boxes -->\n  <!-- Box 1: Parentheses -->\n  <rect x=\"20\" y=\"185\" width=\"100\" height=\"44\" rx=\"8\" fill=\"#4A90D9\"/>\n  <text x=\"70\" y=\"203\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\">① 괄호</text>\n  <text x=\"70\" y=\"221\" text-anchor=\"middle\" font-size=\"10\" fill=\"#D6EAF8\">( ) 안을 먼저</text>\n\n  <!-- Arrow -->\n  <polygon points=\"128,207 138,202 138,212\" fill=\"#7F8C8D\"/>\n\n  <!-- Box 2: Exponents -->\n  <rect x=\"142\" y=\"185\" width=\"100\" height=\"44\" rx=\"8\" fill=\"#8E44AD\"/>\n  <text x=\"192\" y=\"203\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\">② 거듭제곱</text>\n  <text x=\"192\" y=\"221\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E8DAEF\">2³ 등</text>\n\n  <!-- Arrow -->\n  <polygon points=\"250,207 260,202 260,212\" fill=\"#7F8C8D\"/>\n\n  <!-- Box 3: Multiply/Divide -->\n  <rect x=\"264\" y=\"185\" width=\"110\" height=\"44\" rx=\"8\" fill=\"#E67E22\"/>\n  <text x=\"319\" y=\"203\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\">③ ×, ÷</text>\n  <text x=\"319\" y=\"221\" text-anchor=\"middle\" font-size=\"10\" fill=\"#FDEBD0\">왼쪽→오른쪽</text>\n\n  <!-- Arrow -->\n  <polygon points=\"382,207 392,202 392,212\" fill=\"#7F8C8D\"/>\n\n  <!-- Box 4: Add/Subtract -->\n  <rect x=\"396\" y=\"185\" width=\"90\" height=\"44\" rx=\"8\" fill=\"#16A085\"/>\n  <text x=\"441\" y=\"203\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\">④ +, −</text>\n  <text x=\"441\" y=\"221\" text-anchor=\"middle\" font-size=\"10\" fill=\"#D1F2EB\">왼쪽→오른쪽</text>\n\n  <!-- Priority label -->\n  <text x=\"250\" y=\"252\" text-anchor=\"middle\" font-size=\"10\" fill=\"#7F8C8D\">↑ 높은 우선순위</text>\n  <line x1=\"60\" y1=\"248\" x2=\"160\" y2=\"248\" stroke=\"#7F8C8D\" stroke-width=\"1\" marker-start=\"url(#arrowLeftGray)\"/>\n  <line x1=\"340\" y1=\"248\" x2=\"450\" y2=\"248\" stroke=\"#7F8C8D\" stroke-width=\"1\" marker-end=\"url(#arrowRightGray)\"/>\n  <text x=\"70\" y=\"260\" text-anchor=\"middle\" font-size=\"9\" fill=\"#4A90D9\" font-weight=\"bold\">먼저</text>\n  <text x=\"430\" y=\"260\" text-anchor=\"middle\" font-size=\"9\" fill=\"#16A085\" font-weight=\"bold\">나중</text>\n\n  <!-- Key insight callout -->\n  <rect x=\"60\" y=\"268\" width=\"380\" height=\"22\" rx=\"6\" fill=\"#FEF9E7\" stroke=\"#F39C12\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"283\" text-anchor=\"middle\" font-size=\"10\" fill=\"#784212\">💡 이 순서를 지키면 누가 계산해도 답이 하나!</text>\n\n  <!-- Arrow markers -->\n  <defs>\n    <marker id=\"arrowRed\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L6,3 z\" fill=\"#E74C3C\"/>\n    </marker>\n    <marker id=\"arrowGreen\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L6,3 z\" fill=\"#27AE60\"/>\n    </marker>\n  </defs>\n</svg>",
+      "checkQuestion": {
+        "question": "다음을 계산하면 얼마입니까?\n$$(-4) + 2 \\times (-3) \\div (-2)$$",
+        "options": [
+          "-1",
+          "3",
+          "-7",
+          "1"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "자연수의 혼합 계산",
+          "chapterId": "math-5-1-01",
+          "reason": "괄호, 곱셈/나눗셈 우선 원칙 등 혼합 계산의 기본 순서를 이미 알고 있어야 정수·유리수로 확장할 수 있습니다."
+        },
+        {
+          "concept": "정수와 유리수의 곱셈",
+          "chapterId": "math-7-1-03",
+          "reason": "혼합 계산에서 가장 먼저 처리해야 할 곱셈의 부호 규칙을 정확히 알고 있어야 합니다."
+        },
+        {
+          "concept": "정수와 유리수의 나눗셈",
+          "chapterId": "math-7-1-03",
+          "reason": "나눗셈을 역수 곱셈으로 변환하는 방법을 모르면 혼합 계산 도중 나눗셈 단계에서 막힙니다."
+        }
+      ],
+      "concept": "혼합 계산"
+    }
+  ]
+}

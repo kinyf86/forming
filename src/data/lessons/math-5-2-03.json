@@ -1,0 +1,130 @@
+{
+  "chapterId": "math-5-2-03",
+  "chapterTitle": "3단원 - 합동과 대칭",
+  "generatedAt": "2026-04-01T06:20:24.744840+00:00",
+  "lessons": [
+    {
+      "explanation": "종이 인형을 여러 장 겹쳐서 한 번에 오려본 적 있어? 그렇게 만들면 모두 모양과 크기가 똑같지. 이렇게 **두 도형을 포개었을 때 완전히 겹치는** 관계를 **합동** (모양과 크기가 완전히 같은 것)이라고 해.\n\n그런데 '완전히 겹친다'는 게 구체적으로 어떤 뜻일까? 삼각형 ABC와 삼각형 A'B'C'이 합동이라고 해보자. 포개면 꼭짓점 A는 A'에, B는 B'에, C는 C'에 딱 맞아. 이렇게 **포갰을 때 겹치는 꼭짓점**을 **대응점** (서로 짝이 되는 점)이라고 해.\n\n대응점이 정해지면 자연스럽게 두 가지가 따라와:\n- 대응점을 잇는 변 → **대응변** (서로 짝이 되는 변)\n- 대응점에서 만나는 각 → **대응각** (서로 짝이 되는 각)\n\n자, 핵심이야. 두 도형이 합동이면 — 즉, 포갰을 때 완전히 겹치면 — 당연히 아래가 성립해:\n\n**합동인 도형의 성질 ①** 대응변의 길이는 서로 같아.\n$$\\overline{AB} = \\overline{A'B'}, \\quad \\overline{BC} = \\overline{B'C'}, \\quad \\overline{CA} = \\overline{C'A'}$$\n\n**합동인 도형의 성질 ②** 대응각의 크기는 서로 같아.\n$$\\angle A = \\angle A', \\quad \\angle B = \\angle B', \\quad \\angle C = \\angle C'$$\n\n'포갰을 때 겹치니까 당연한 거 아니야?'라고 생각했다면 정확히 맞아! 합동의 뜻이 '완전히 겹친다'는 거니까, 대응변과 대응각이 같다는 건 그 뜻에서 바로 나오는 거야.\n\n이 성질은 반대로도 써. 두 삼각형에서 대응하는 세 변의 길이가 모두 같고 대응하는 세 각의 크기가 모두 같으면, 그 두 삼각형은 합동이야.\n\n**어디서 왔고, 어디로 가나?** 4학년 때 배운 뒤집기와 돌리기를 떠올려봐. 도형을 뒤집거나 돌려도 모양과 크기는 변하지 않잖아? 그래서 뒤집거나 돌린 도형은 원래 도형과 합동이야. 나중에 배울 닮음(모양만 같고 크기는 달라도 되는 관계)은 합동을 포함하는 더 넓은 개념이야.\n\n**조심해!** 도형이 뒤집히거나 돌아가 있으면 어떤 꼭짓점과 어떤 꼭짓점이 대응하는지 헷갈리기 쉬워. A가 A'에 대응하는지 B'에 대응하는지 잘못 짚으면 대응변, 대응각 모두 틀려버려. 항상 **포갰을 때 어떤 점이 어떤 점과 겹치는지**를 먼저 확인해봐.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"24\" font-size=\"13\" fill=\"#555\" text-anchor=\"middle\">포개면 완전히 겹치는 두 도형 → 합동!</text><polygon points=\"60,245 135,75 215,245\" fill=\"#4A90D9\" fill-opacity=\"0.15\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/><polygon points=\"285,245 370,75 445,245\" fill=\"#5CB85C\" fill-opacity=\"0.15\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/><text x=\"46\" y=\"263\" font-size=\"15\" fill=\"#4A90D9\" text-anchor=\"middle\" font-weight=\"bold\">A</text><text x=\"135\" y=\"63\" font-size=\"15\" fill=\"#4A90D9\" text-anchor=\"middle\" font-weight=\"bold\">B</text><text x=\"229\" y=\"263\" font-size=\"15\" fill=\"#4A90D9\" text-anchor=\"middle\" font-weight=\"bold\">C</text><text x=\"271\" y=\"263\" font-size=\"15\" fill=\"#5CB85C\" text-anchor=\"middle\" font-weight=\"bold\">C&#39;</text><text x=\"370\" y=\"63\" font-size=\"15\" fill=\"#5CB85C\" text-anchor=\"middle\" font-weight=\"bold\">B&#39;</text><text x=\"459\" y=\"263\" font-size=\"15\" fill=\"#5CB85C\" text-anchor=\"middle\" font-weight=\"bold\">A&#39;</text><line x1=\"92\" y1=\"163\" x2=\"103\" y2=\"157\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"402\" y1=\"157\" x2=\"413\" y2=\"163\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"170\" y1=\"164\" x2=\"181\" y2=\"158\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"173\" y1=\"169\" x2=\"184\" y2=\"163\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"322\" y1=\"158\" x2=\"333\" y2=\"164\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"319\" y1=\"163\" x2=\"330\" y2=\"169\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"133\" y1=\"238\" x2=\"133\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"138\" y1=\"238\" x2=\"138\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"143\" y1=\"238\" x2=\"143\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"360\" y1=\"238\" x2=\"360\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"365\" y1=\"238\" x2=\"365\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"370\" y1=\"238\" x2=\"370\" y2=\"253\" stroke=\"#333\" stroke-width=\"2\"/><path d=\"M 82,245 A 23,23 0 0,0 73,224\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><path d=\"M 423,245 A 23,23 0 0,1 432,224\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><path d=\"M 114,83 A 23,23 0 0,1 156,83\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><path d=\"M 111,89 A 28,28 0 0,1 159,89\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><path d=\"M 349,83 A 23,23 0 0,0 391,83\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><path d=\"M 346,89 A 28,28 0 0,0 394,89\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><text x=\"250\" y=\"172\" font-size=\"28\" fill=\"#E67E22\" text-anchor=\"middle\">&#8773;</text><text x=\"137\" y=\"285\" font-size=\"13\" fill=\"#4A90D9\" text-anchor=\"middle\">△ABC</text><text x=\"365\" y=\"285\" font-size=\"13\" fill=\"#5CB85C\" text-anchor=\"middle\">△A&#39;B&#39;C&#39;</text><text x=\"250\" y=\"300\" font-size=\"11\" fill=\"#888\" text-anchor=\"middle\">눈금 수가 같은 변끼리 = 대응변 (길이 같음) / 호 수가 같은 각끼리 = 대응각 (크기 같음)</text></svg>",
+      "checkQuestion": {
+        "question": "삼각형 ABC와 삼각형 DEF가 합동이고, A↔D, B↔E, C↔F로 대응해. 다음 중 옳은 것은?",
+        "options": [
+          "$\\overline{AB} = \\overline{DE}$ 이고 $\\angle B = \\angle E$ 야.",
+          "$\\overline{AB} = \\overline{EF}$ 야.",
+          "$\\angle A = \\angle F$ 야.",
+          "합동인 두 삼각형의 넓이는 다를 수 있어."
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "평면도형의 이동 (밀기, 뒤집기, 돌리기)",
+          "chapterId": "math-4-1-04",
+          "reason": "도형을 뒤집거나 돌려도 모양과 크기가 변하지 않는다는 경험이 합동 개념의 직관적 토대가 되기 때문이야."
+        },
+        {
+          "concept": "각도의 뜻과 재기",
+          "chapterId": "math-4-1-02",
+          "reason": "대응각의 크기가 같다는 성질을 이해하고 활용하려면 각도를 읽고 비교할 수 있어야 하기 때문이야."
+        },
+        {
+          "concept": "다각형과 정다각형, 대각선",
+          "chapterId": "math-4-2-06",
+          "reason": "꼭짓점, 변, 각 등 다각형의 구성 요소를 알아야 대응점·대응변·대응각의 개념을 제대로 이해할 수 있기 때문이야."
+        }
+      ],
+      "concept": "합동인 도형의 성질"
+    },
+    {
+      "explanation": "종이를 반으로 딱 접었을 때 양쪽이 완전히 겹치는 도형, 본 적 있어? 나비 날개, 하트, 나뭇잎... 뭔가 공통점이 느껴지지?\n\n직접 해봐. 종이에 집 모양을 그리고 세로 중심선을 따라 접어봐. 왼쪽이랑 오른쪽이 딱 겹치지? 그런데 직사각형을 대각선으로 접으면? 두 삼각형이 생기는데 겹치지 않아.\n\n이렇게 **어떤 직선을 기준으로 접었을 때 두 부분이 완전히 겹치는 도형**을 **선대칭 도형** (선을 중심으로 양쪽이 대칭인 도형)이라고 해. 그리고 기준이 되는 그 직선을 **대칭축** (대칭의 기준이 되는 선)이라고 해.\n\n$$\\text{대칭축을 따라 접기} \\Rightarrow \\text{두 부분이 완전히 겹침}$$\n\n**선대칭 도형의 성질**을 더 자세히 살펴보자.\n\n대칭축으로 접으면 점 $A$는 점 $A'$에 겹쳐. 이렇게 서로 겹쳐지는 점을 **대응점** (서로 대칭이 되어 겹쳐지는 점)이라고 해. 대응점 사이에는 두 가지 규칙이 있어:\n\n1. $A$와 $A'$를 이은 선분은 대칭축과 **수직** ($\\perp$)으로 만나.\n2. $A$에서 대칭축까지의 거리 $=$ $A'$에서 대칭축까지의 거리\n\n이걸 반대로 생각해도 돼: 대칭축으로부터 같은 거리에 있고, 대칭축과 수직으로 만나는 두 점이 바로 대응점이야.\n\n**대칭축은 몇 개일까?**\n\n도형마다 달라. 이등변삼각형은 1개, 직사각형은 2개, 정삼각형은 3개, 정사각형은 4개야. 원은 어느 방향으로 접어도 겹치니까 대칭축이 무한히 많아!\n\n**이게 왜 중요할까?**\n\n앞에서 배운 합동과 연결돼 있어. 선대칭 도형을 대칭축으로 나누면 두 부분은 항상 서로 합동이거든. 이걸 잘 이해하면 이번 단원에서 다음에 배울 점대칭 도형의 성질도 훨씬 쉽게 파악할 수 있어.\n\n**많이 하는 실수:** 직사각형의 대각선이 대칭축이라고 착각하는 거야. 대각선으로 접으면 두 삼각형이 합동이라서 헷갈리기 쉬워. 하지만 직접 접어보면 두 삼각형이 **완전히 겹치지 않아**. 직사각형의 대칭축은 가로 방향과 세로 방향의 중심선, 딱 2개야!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">선대칭 도형의 성질</text><polygon points=\"250,48 160,122 160,242 340,242 340,122\" fill=\"#4A90D9\" fill-opacity=\"0.2\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/><line x1=\"250\" y1=\"30\" x2=\"250\" y2=\"268\" stroke=\"#E67E22\" stroke-width=\"2.5\" stroke-dasharray=\"10,6\"/><text x=\"250\" y=\"282\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\" font-weight=\"bold\">대칭축</text><circle cx=\"160\" cy=\"122\" r=\"5\" fill=\"#5CB85C\"/><circle cx=\"340\" cy=\"122\" r=\"5\" fill=\"#5CB85C\"/><text x=\"143\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" fill=\"#5CB85C\" font-weight=\"bold\">A</text><text x=\"357\" y=\"118\" text-anchor=\"middle\" font-size=\"13\" fill=\"#5CB85C\" font-weight=\"bold\">A'</text><line x1=\"160\" y1=\"122\" x2=\"250\" y2=\"122\" stroke=\"#5CB85C\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/><line x1=\"340\" y1=\"122\" x2=\"250\" y2=\"122\" stroke=\"#5CB85C\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/><rect x=\"244\" y=\"116\" width=\"6\" height=\"6\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/><text x=\"205\" y=\"114\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">90</text><text x=\"295\" y=\"114\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">90</text><text x=\"140\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">거리=d</text><text x=\"360\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">거리=d</text><circle cx=\"160\" cy=\"242\" r=\"5\" fill=\"#9B59B6\"/><circle cx=\"340\" cy=\"242\" r=\"5\" fill=\"#9B59B6\"/><text x=\"143\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" fill=\"#9B59B6\" font-weight=\"bold\">B</text><text x=\"357\" y=\"238\" text-anchor=\"middle\" font-size=\"13\" fill=\"#9B59B6\" font-weight=\"bold\">B'</text><line x1=\"160\" y1=\"242\" x2=\"250\" y2=\"242\" stroke=\"#9B59B6\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/><line x1=\"340\" y1=\"242\" x2=\"250\" y2=\"242\" stroke=\"#9B59B6\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/><rect x=\"244\" y=\"236\" width=\"6\" height=\"6\" fill=\"none\" stroke=\"#9B59B6\" stroke-width=\"1.5\"/><text x=\"205\" y=\"234\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9B59B6\">90</text><text x=\"295\" y=\"234\" text-anchor=\"middle\" font-size=\"11\" fill=\"#9B59B6\">90</text><text x=\"138\" y=\"260\" text-anchor=\"middle\" font-size=\"10\" fill=\"#9B59B6\">거리=d'</text><text x=\"362\" y=\"260\" text-anchor=\"middle\" font-size=\"10\" fill=\"#9B59B6\">거리=d'</text><text x=\"80\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">① AA'⊥대칭축</text><text x=\"80\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">② 거리 같음</text></svg>",
+      "checkQuestion": {
+        "question": "선대칭 도형에서 점 P에서 대칭축까지의 거리가 5cm야. P의 대응점 P'에서 대칭축까지의 거리는?",
+        "options": [
+          "2.5cm",
+          "5cm",
+          "10cm",
+          "도형마다 달라서 알 수 없어"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "합동인 도형의 성질",
+          "chapterId": "math-5-2-03",
+          "reason": "선대칭 도형은 대칭축을 기준으로 나뉜 두 부분이 서로 합동이기 때문에, 합동의 뜻과 성질을 먼저 이해해야 해."
+        },
+        {
+          "concept": "평면도형의 이동 (뒤집기)",
+          "chapterId": "math-4-1-04",
+          "reason": "선대칭 도형의 대칭은 도형을 '뒤집는 것'과 같은 원리이기 때문에, 뒤집기(대칭이동)의 개념이 바탕이 돼."
+        }
+      ],
+      "concept": "선대칭 도형과 대칭축"
+    },
+    {
+      "explanation": "잠깐, 이 평행사변형을 봐봐.\n\n거울에 비춰도 원래랑 달라 보여 — 대칭축이 없거든. 그런데 뭔가 균형이 잡혀 보이지 않아? 왜 그럴까?\n\n비밀은 **돌리기**에 있어.\n\n이 도형을 정중앙의 점을 중심으로 딱 **180도 돌려봐**. 신기하게도 원래 도형에 완전히 겹쳐! 접는 게 아니라 돌렸는데 겹치는 거야.\n\n이렇게 **한 점을 중심으로 180° 돌렸을 때 원래 도형과 완전히 겹치는 도형**을 **점대칭 도형** (점을 기준으로 대칭인 도형)이라고 해.\n\n---\n\n그럼 그 \"중심이 되는 점\"은 어떻게 찾을까?\n\n점대칭 도형에서 대응하는 두 점, 예를 들어 꼭짓점 A와 A′을 선으로 이어봐. 그리고 B와 B′도 이어봐.\n\n여기서 뭔가 규칙이 보이지 않아?\n\n두 선분이 **딱 한 점에서 만나**! 그 점이 바로 **대칭의 중심** O야.\n\n더 중요한 건 이거야: A에서 O까지의 거리와, O에서 A′까지의 거리가 **완전히 같아**. 수식으로 쓰면 $\\overline{AO} = \\overline{A'O}$ 이야. O는 선분 AA′의 **정가운데**에 있는 거지.\n\n이걸 정리하면:\n\n> **점대칭 도형의 성질**\n> - 대응하는 두 점을 이은 선분은 모두 **대칭의 중심을 지나**\n> - 대칭의 중심에서 대응하는 두 점까지의 거리는 **서로 같아** ($\\overline{AO} = \\overline{A'O}$)\n> - 대응하는 변의 길이와 각의 크기는 서로 같아\n\n---\n\n선대칭 도형이랑 어떻게 다른지 비교해 볼까?\n\n선대칭 도형은 **직선 (대칭축)** 을 기준으로 **접었을 때** 겹치지만, 점대칭 도형은 **점 (대칭의 중심)** 을 기준으로 **180° 돌렸을 때** 겹쳐. 기준이 선이냐 점이냐의 차이야.\n\n어떤 도형은 둘 다 해당돼 — 정사각형, 원은 선대칭이면서 동시에 점대칭이야. 하지만 평행사변형은 점대칭이지만 선대칭은 아니야.\n\n---\n\n주의할 점이 하나 있어: 점대칭 도형인지 확인할 때 \"대칭축이 있는가\"로 판단하면 안 돼. 반드시 **\"대칭의 중심을 기준으로 180° 돌렸을 때 원래 도형과 겹치는가\"** 로 확인해야 해. 이 기준을 헷갈려서 평행사변형이 점대칭이 아니라고 틀리게 판단하는 경우가 많으니 조심해!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"25\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">대응점을 잇는 선분은 모두 대칭의 중심 O를 지나!</text><line x1=\"110\" y1=\"100\" x2=\"390\" y2=\"210\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/><line x1=\"310\" y1=\"100\" x2=\"190\" y2=\"210\" stroke=\"#5CB85C\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/><polygon points=\"110,100 310,100 390,210 190,210\" fill=\"#4A90D9\" fill-opacity=\"0.18\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/><line x1=\"177\" y1=\"123\" x2=\"183\" y2=\"132\" stroke=\"#E67E22\" stroke-width=\"2.5\"/><line x1=\"317\" y1=\"178\" x2=\"323\" y2=\"187\" stroke=\"#E67E22\" stroke-width=\"2.5\"/><line x1=\"284\" y1=\"131\" x2=\"276\" y2=\"123\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/><line x1=\"224\" y1=\"186\" x2=\"216\" y2=\"178\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/><circle cx=\"250\" cy=\"155\" r=\"7\" fill=\"#E67E22\" stroke=\"white\" stroke-width=\"2\"/><text x=\"260\" y=\"147\" font-size=\"14\" font-weight=\"bold\" fill=\"#E67E22\">O</text><circle cx=\"110\" cy=\"100\" r=\"5\" fill=\"#4A90D9\"/><text x=\"90\" y=\"97\" font-size=\"15\" font-weight=\"bold\" fill=\"#4A90D9\">A</text><circle cx=\"310\" cy=\"100\" r=\"5\" fill=\"#5CB85C\"/><text x=\"315\" y=\"93\" font-size=\"15\" font-weight=\"bold\" fill=\"#5CB85C\">B</text><circle cx=\"390\" cy=\"210\" r=\"5\" fill=\"#4A90D9\"/><text x=\"396\" y=\"217\" font-size=\"15\" font-weight=\"bold\" fill=\"#4A90D9\">A'</text><circle cx=\"190\" cy=\"210\" r=\"5\" fill=\"#5CB85C\"/><text x=\"164\" y=\"225\" font-size=\"15\" font-weight=\"bold\" fill=\"#5CB85C\">B'</text><rect x=\"25\" y=\"242\" width=\"450\" height=\"50\" rx=\"6\" fill=\"white\" stroke=\"#ddd\" stroke-width=\"1\"/><line x1=\"40\" y1=\"256\" x2=\"60\" y2=\"256\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"4,3\"/><text x=\"68\" y=\"260\" font-size=\"12\" fill=\"#555\">AO = OA'  (O는 선분 AA'의 정가운데)</text><line x1=\"40\" y1=\"278\" x2=\"60\" y2=\"278\" stroke=\"#5CB85C\" stroke-width=\"2\" stroke-dasharray=\"4,3\"/><text x=\"68\" y=\"282\" font-size=\"12\" fill=\"#555\">BO = OB'  (O는 선분 BB'의 정가운데)</text></svg>",
+      "checkQuestion": {
+        "question": "점대칭 도형에서 꼭짓점 A와 대응점 A'에 대한 설명으로 옳은 것은?",
+        "options": [
+          "선분 AA'은 대칭의 중심 O를 지나며, AO = OA'이다.",
+          "A에서 대칭의 중심까지의 거리가 A'에서 대칭의 중심까지의 거리보다 항상 크다.",
+          "점대칭 도형은 반드시 선대칭 도형이기도 하다.",
+          "점대칭 도형을 90° 돌리면 항상 원래 도형과 겹친다."
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "선대칭 도형과 대칭축",
+          "chapterId": "math-5-2-03",
+          "reason": "선대칭과 점대칭의 차이(기준이 선이냐 점이냐)를 비교하려면 선대칭의 개념을 먼저 알아야 해요."
+        },
+        {
+          "concept": "합동인 도형의 성질",
+          "chapterId": "math-5-2-03",
+          "reason": "점대칭 도형에서 대응변의 길이와 대응각의 크기가 같다는 성질은 합동의 개념을 기반으로 해요."
+        },
+        {
+          "concept": "평면도형의 이동 (돌리기)",
+          "chapterId": "math-4-1-04",
+          "reason": "점대칭의 핵심 아이디어인 180° 회전 개념을 4학년 돌리기에서 배웠기 때문이에요."
+        }
+      ],
+      "concept": "점대칭 도형과 대칭의 중심"
+    },
+    {
+      "explanation": "## 어, 이 도형... 돌리면 똑같아?\n\n이런 도형을 본 적 있어?\n\n카드 게임에서 쓰는 트럼프 카드의 숫자 부분, 바람개비, 혹은 도로 표지판의 S자 곡선 — 이런 모양들에는 재밌는 비밀이 숨어 있어.\n\n가운데를 손가락으로 꾹 누르고 180° 돌려보면 **정확히 똑같은 모양**이 나와!\n\n선대칭은 알지? 거울처럼 접었을 때 딱 겹치는 것. 그런데 오늘 배울 건 달라. 접는 게 아니라 **돌리는** 거야.\n\n---\n\n## 점을 중심으로 빙글~\n\n정사각형을 상상해봐. 정중앙에 점을 하나 찍어.\n\n그 점을 고정한 채로 정사각형을 **딱 180°** 돌리면? 원래 모양이랑 완전히 겹쳐!\n\n이렇게 **어떤 점을 중심으로 180° 돌렸을 때 처음 도형과 완전히 겹치는 도형**을 **점대칭 도형** (어떤 점을 중심으로 돌려서 겹쳐지는 특별한 도형)이라고 해.\n\n그리고 그 고정된 점을 **대칭의 중심** (도형을 돌릴 때 고정되는 기준 점)이라고 불러.\n\n수학으로 쓰면: 점 O를 중심으로 $180°$ 회전했을 때 도형이 자기 자신과 겹치면 **점대칭 도형**!\n\n---\n\n## 규칙을 발견해볼까?\n\n점대칭 도형에는 신기한 규칙이 있어. 대칭의 중심 O에서 도형 위의 어느 한 점 A까지의 거리를 재봐.\n\n그 거리만큼 **반대 방향**으로 쭉 뻗으면 — 거기에도 항상 도형 위의 점이 있어!\n\n즉, 점 A와 점 A'(A에 대응하는 점)을 이으면 항상 대칭의 중심 O를 지나고, 게다가:\n\n$$\\overline{AO} = \\overline{A'O}$$\n\n대칭의 중심이 두 대응점의 **정가운데**에 있는 거야!\n\n이걸 이용하면 대칭의 중심을 직접 찾을 수 있어. 대응하는 두 꼭짓점을 선으로 이어봐. 그 선의 한가운데가 바로 대칭의 중심이야!\n\n---\n\n## 점대칭 ≠ 선대칭\n\n직사각형을 생각해봐. 선대칭이기도 하고 점대칭이기도 해.\n\n그런데 정삼각형은? 선대칭은 맞아. 하지만 $180°$ 돌리면... 겹치지 않아! **점대칭이 아니야.**\n\n반대로, 평행사변형은? $180°$ 돌리면 겹쳐! 점대칭 도형이야. 근데 접어서 겹칠 수 있는 선이 없어 — **선대칭은 아니야.**\n\n점대칭과 선대칭은 **서로 다른 개념**이야. 둘 다인 도형도 있고, 하나만인 도형도 있어!\n\n---\n\n## 이 개념은 어디에 쓰일까?\n\n점대칭은 4학년에서 배운 **돌리기(회전이동)** 위에 쌓인 개념이야. $90°$, $180°$, $270°$ 돌리기 중에서 $180°$ 돌렸을 때 원래와 겹치는 특별한 경우가 바로 점대칭이야.\n\n나중에 중학교에서 **도형의 대칭이동**과 **좌표**를 배울 때 이 개념이 다시 나와. \"점 $(x, y)$를 원점에 대해 대칭이동하면 $(-x, -y)$\" — 그게 바로 점대칭이거든!\n\n---\n\n## 조심해!\n\n가장 흔한 실수: **$90°$ 돌렸을 때 겹치면 점대칭이라고 생각하는 것.**\n\n정사각형은 $90°$만 돌려도 겹쳐. 근데 점대칭의 기준은 무조건 **$180°$**야. $90°$도 겹치고 $180°$도 겹치는 건 점대칭 맞아 — 하지만 기준은 $90°$가 아니라 $180°$인 거야. 항상 $180°$ 기준으로만 판단해!",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "점대칭 도형에서 대응하는 두 꼭짓점 A와 A'를 선분으로 이었을 때, 대칭의 중심 O와의 관계로 옳은 것은?",
+        "options": [
+          "선분 AA'의 한가운데에 점 O가 있다",
+          "점 A에서 O까지의 거리가 O에서 A'까지의 거리보다 길다",
+          "선분 AA'가 점 O를 지나지 않을 수도 있다",
+          "점 O는 도형의 바깥쪽에 있다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "합동인 도형의 성질",
+          "chapterId": "math-5-2-03",
+          "reason": "점대칭 도형은 180° 회전 후 원래 도형과 완전히 합동이 되어야 하므로, 합동의 의미를 먼저 알아야 해."
+        },
+        {
+          "concept": "선대칭 도형과 대칭축",
+          "chapterId": "math-5-2-03",
+          "reason": "점대칭과 선대칭의 차이를 구분하려면 선대칭 개념을 먼저 이해해야 해."
+        },
+        {
+          "concept": "밀기, 뒤집기, 돌리기 (이동을 이용한 무늬 만들기)",
+          "chapterId": "math-4-1-04",
+          "reason": "점대칭은 180° 돌리기(회전이동)가 핵심이므로, 4학년에서 배운 돌리기 개념이 필요해."
+        }
+      ],
+      "concept": "점대칭 도형과 대칭의 중심"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-8-2-03",
+  "chapterTitle": "3단원 - 사각형의 성질",
+  "generatedAt": "2026-04-01T19:41:27.545164+00:00",
+  "lessons": [
+    {
+      "explanation": "## 평행사변형, 그냥 기울어진 직사각형일까?\n\n직사각형을 옆으로 밀면 어떻게 될까요? 각도는 바뀌지만, 뭔가 규칙은 그대로 남는 것 같지 않나요? 오늘은 그 규칙을 직접 찾아봅시다.\n\n### 성질 탐구: 무엇이 변하지 않을까?\n\n**평행사변형** (두 쌍의 대변이 각각 평행한 사각형)을 하나 그려봅시다. $\\overline{AB} \\parallel \\overline{DC}$, $\\overline{AD} \\parallel \\overline{BC}$인 사각형 $ABCD$예요.\n\n이제 질문입니다: 마주 보는 변의 길이는 같을까요?\n\n증명해봅시다. 대각선 $\\overline{AC}$를 하나 그으면 삼각형 $ABC$와 삼각형 $CDA$가 생깁니다. $\\overline{AB} \\parallel \\overline{DC}$이니까 **엇각** (평행선과 한 직선이 만날 때 생기는 Z자 모양의 같은 각도)이 같고, $\\overline{AD} \\parallel \\overline{BC}$이니까 또 엇각이 같습니다. 그리고 두 삼각형은 $\\overline{AC}$를 공유하죠. ASA 합동! 따라서:\n\n$$\\overline{AB} = \\overline{DC}, \\quad \\overline{AD} = \\overline{BC}$$\n\n**성질 1**: 평행사변형에서 두 쌍의 대변의 길이는 각각 같습니다.\n\n같은 합동 관계에서 대각도 비교할 수 있어요. 합동이므로:\n\n$$\\angle A = \\angle C, \\quad \\angle B = \\angle D$$\n\n**성질 2**: 평행사변형에서 두 쌍의 대각의 크기는 각각 같습니다.\n\n그럼 이웃하는 각끼리는요? $\\angle A + \\angle B = 180°$인데, 이건 $\\overline{AB} \\parallel \\overline{DC}$에서 **동측내각** (평행선 사이 같은 쪽에 있는 각의 합)의 성질 때문이에요. 이웃하는 두 각의 합은 항상 $180°$입니다.\n\n마지막으로 대각선을 두 개 다 그어볼까요? 대각선 $\\overline{AC}$와 $\\overline{BD}$가 만나는 점을 $O$라 하면, 삼각형 $AOB$와 삼각형 $COD$가 ASA 합동이 됩니다. 따라서:\n\n$$\\overline{AO} = \\overline{CO}, \\quad \\overline{BO} = \\overline{DO}$$\n\n**성질 3**: 평행사변형의 두 대각선은 서로를 이등분합니다 (각각의 중점에서 교차).\n\n### 거꾸로 생각하기: 조건\n\n이제 흥미로운 질문. 어떤 사각형이 \"평행사변형이다\"라는 걸 어떻게 확인할 수 있을까요? 정의처럼 평행한지 직접 재지 않아도, 다음 중 하나만 만족하면 충분합니다:\n\n- 두 쌍의 대변이 각각 평행하다 (정의)\n- 두 쌍의 대변의 길이가 각각 같다\n- 두 쌍의 대각의 크기가 각각 같다\n- 두 대각선이 서로를 이등분한다\n- 한 쌍의 대변이 평행하고 그 길이가 같다 ← 이거 주의!\n\n이 다섯 가지가 **평행사변형이 되는 조건** (사각형을 평행사변형으로 만들기에 충분한 조건)입니다.\n\n### 개념의 위치\n\n이 단원은 중학교 도형의 핵심 연결 고리예요. 초등학교에서 평행사변형을 \"그냥 모양\"으로 봤다면, 지금은 왜 그런 성질이 성립하는지 증명으로 이해합니다. 이 성질들은 다음에 배울 직사각형, 마름모, 정사각형 같은 특수한 사각형들이 \"왜 특수한가\"를 설명하는 기반이 됩니다.\n\n### 꼭 조심할 것 하나\n\n\"한 쌍의 대변이 평행하고, 다른 한 쌍의 대변의 길이가 같다\"는 평행사변형의 조건이 아닙니다. 사다리꼴처럼 생긴 도형도 이를 만족할 수 있거든요. 평행하거나 같은 길이가 **같은 한 쌍**이어야 합니다.",
+      "checkQuestion": {
+        "question": "사각형 $ABCD$에서 두 대각선이 서로를 이등분한다는 것이 확인되었습니다. 이 사각형에 대해 반드시 참인 것은?",
+        "options": [
+          "사각형 $ABCD$는 평행사변형이다",
+          "사각형 $ABCD$는 직사각형이다",
+          "네 변의 길이가 모두 같다",
+          "네 각의 크기가 모두 같다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각형의 합동 조건",
+          "chapterId": "math-7-2-04",
+          "reason": "평행사변형의 성질을 증명할 때 ASA, SAS 합동을 직접 사용하기 때문이에요."
+        },
+        {
+          "concept": "평행선의 성질",
+          "chapterId": "math-7-2-03",
+          "reason": "엇각과 동측내각의 성질이 대변의 평행 조건에서 핵심적으로 사용됩니다."
+        },
+        {
+          "concept": "사다리꼴, 평행사변형 개념 (초등)",
+          "chapterId": "math-4-2-04",
+          "reason": "평행사변형이 어떤 모양인지 직관적으로 알고 있어야 증명의 방향을 이해할 수 있어요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "평행사변형의 성질과 조건"
+    },
+    {
+      "explanation": "## 평행사변형에 조건을 하나씩 더 붙이면?\n\n지난 시간에 **평행사변형** (두 쌍의 대변이 서로 평행한 사각형)의 성질을 배웠어요. 그런데 여기서 질문이 하나 생깁니다.\n\n> \"평행사변형인데, 네 각이 *모두 직각*이면 어떻게 될까요?\"\n\n뭔가 특별한 사각형이 될 것 같지 않나요? 실제로, 평행사변형에 조건을 하나씩 추가할 때마다 새로운 도형이 태어납니다. 오늘은 그 도형들이 어떤 성질을 갖는지 직접 추론해 봅시다.\n\n---\n\n### 직사각형 — 네 각이 직각인 평행사변형\n\n평행사변형의 네 각이 모두 $90°$가 되면, 이것을 **직사각형** (rectangle)이라고 합니다.\n\n평행사변형에서는 대각선의 길이가 달라도 됐어요. 그런데 네 각이 $90°$로 고정되면 어떻게 될까요? 대각선 두 개를 그어보면, 두 대각선은 서로를 이등분하는 성질(평행사변형의 성질)은 그대로이고, 여기에 **대각선의 길이까지 같아집니다**.\n\n> 직사각형의 두 대각선은 길이가 서로 같고, 서로를 이등분합니다.\n\n왜 길이가 같을까요? 직사각형을 대각선 하나로 나누면 두 직각삼각형이 생기는데, 이 삼각형들은 합동($RHS$ 또는 $SAS$)이기 때문에 대각선의 길이가 같아지는 거예요.\n\n$$\\overline{AC} = \\overline{BD}, \\quad \\overline{AO} = \\overline{BO} = \\overline{CO} = \\overline{DO}$$\n\n---\n\n### 마름모 — 네 변의 길이가 같은 평행사변형\n\n이번엔 다른 조건을 추가해 봅시다. 평행사변형의 **네 변의 길이가 모두 같으면**, 이것을 **마름모** (rhombus)라고 합니다.\n\n마름모의 대각선은 어떻게 될까요? 두 대각선이 만나는 점 $O$에서, 삼각형 $AOB$와 삼각형 $COB$를 비교해 보면 세 변이 모두 같아서 합동이에요. 그러면 각 $AOB$와 각 $COB$는 서로 같은데, 합쳐서 $180°$가 되니까 각각 $90°$입니다.\n\n> 마름모의 두 대각선은 서로를 **수직이등분**하고, 각 꼭짓점의 각도를 이등분합니다.\n\n$$\\overline{AC} \\perp \\overline{BD}, \\quad \\overline{AO} = \\overline{CO},\\ \\overline{BO} = \\overline{DO}$$\n\n---\n\n### 정사각형 — 직사각형이면서 마름모\n\n네 각이 직각이고 **동시에** 네 변의 길이도 같다면? 그게 바로 **정사각형** (square)이에요.\n\n정사각형은 직사각형의 성질(대각선 길이가 같음)과 마름모의 성질(대각선이 수직이등분)을 **모두** 가집니다.\n\n$$\\overline{AC} = \\overline{BD}, \\quad \\overline{AC} \\perp \\overline{BD}, \\quad \\overline{AO} = \\overline{BO} = \\overline{CO} = \\overline{DO}$$\n\n---\n\n### 등변사다리꼴 — 대칭이 있는 사다리꼴\n\n마지막으로, 사다리꼴(한 쌍의 대변이 평행)인데 **평행하지 않은 두 변의 길이가 같은** 도형을 **등변사다리꼴** (isosceles trapezoid)이라고 합니다.\n\n등변사다형꼴은 아랫변을 축으로 좌우 대칭이에요. 그래서:\n- **아랫변의 양 끝각의 크기가 같습니다** (윗변의 양 끝각도 같아요)\n- **대각선의 길이가 같습니다**\n\n$$\\angle A = \\angle B, \\quad \\angle C = \\angle D, \\quad \\overline{AC} = \\overline{BD}$$\n\n---\n\n### 이 개념의 위치\n\n이 도형들은 다음 단원에서 배울 **사각형 사이의 포함 관계**(정사각형 ⊂ 직사각형 ⊂ 평행사변형)의 토대가 됩니다. 또한 피타고라스 정리, 닮음, 넓이 계산에서 이 성질들이 반복적으로 활용돼요.\n\n---\n\n### 자주 하는 실수 하나\n\n\"마름모는 네 변이 같으니까 대각선도 같겠지\"라고 생각하기 쉬운데, **마름모의 대각선 길이는 일반적으로 다릅니다**. 대각선이 같아지려면 직사각형의 조건(네 각이 직각)이 추가되어야 해요. 즉, 대각선 길이가 같은 마름모 = 정사각형입니다.",
+      "checkQuestion": {
+        "question": "직사각형의 두 대각선에 대한 설명으로 옳은 것은?",
+        "options": [
+          "길이가 같고 서로를 수직이등분한다.",
+          "길이가 같고 서로를 이등분하지만, 수직으로 만나지는 않는다.",
+          "길이는 다르지만 서로를 수직이등분한다.",
+          "길이가 같고 한 대각선이 다른 대각선을 이등분한다."
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "평행사변형의 성질과 조건",
+          "chapterId": "math-8-2-03",
+          "reason": "직사각형, 마름모, 정사각형은 모두 평행사변형의 특수한 경우이므로 평행사변형의 기본 성질을 알아야 각 도형의 추가 성질을 추론할 수 있습니다."
+        },
+        {
+          "concept": "직각삼각형의 합동 조건",
+          "chapterId": "math-8-2-02",
+          "reason": "직사각형과 마름모의 대각선 성질을 증명할 때 직각삼각형의 합동 조건(RHS 등)을 사용합니다."
+        },
+        {
+          "concept": "사각형 (수직, 평행, 사다리꼴, 평행사변형, 마름모)",
+          "chapterId": "math-4-2-04",
+          "reason": "각 사각형의 기본 정의(수직, 평행, 변의 관계)를 알아야 성질 학습의 출발점이 됩니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">평행사변형에 조건을 추가하면?</text>\n\n  <!-- Arrow from parallelogram to rectangle -->\n  <defs>\n    <marker id=\"arrowhead\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\">\n      <polygon points=\"0 0, 8 3, 0 6\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n\n  <!-- ===== LEFT: Parallelogram ===== -->\n  <g transform=\"translate(30, 50)\">\n    <text x=\"80\" y=\"0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">평행사변형</text>\n    <!-- Parallelogram shape -->\n    <polygon points=\"20,130 140,130 120,40 0,40\" fill=\"#E8F4FD\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n    <!-- Parallel arrows top -->\n    <text x=\"60\" y=\"33\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">→→</text>\n    <!-- Parallel arrows bottom -->\n    <text x=\"80\" y=\"148\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">→→</text>\n    <!-- Side parallel arrows -->\n    <text x=\"-8\" y=\"92\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" transform=\"rotate(-90,-8,92)\">→→</text>\n    <text x=\"148\" y=\"92\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" transform=\"rotate(-90,148,92)\">→→</text>\n\n    <!-- Diagonals (different colors to show they're different lengths) -->\n    <line x1=\"20\" y1=\"130\" x2=\"120\" y2=\"40\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n    <line x1=\"140\" y1=\"130\" x2=\"0\" y2=\"40\" stroke=\"#9B59B6\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/>\n\n    <!-- Intersection point -->\n    <circle cx=\"70\" cy=\"85\" r=\"4\" fill=\"#E67E22\"/>\n\n    <!-- Label: diagonals not equal -->\n    <text x=\"80\" y=\"175\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">대각선 길이가 달라도 됨</text>\n\n    <!-- Angle labels (not right angles) -->\n    <text x=\"28\" y=\"122\" font-size=\"10\" fill=\"#555\">≠90°</text>\n  </g>\n\n  <!-- Arrow in middle -->\n  <g transform=\"translate(185, 130)\">\n    <line x1=\"0\" y1=\"0\" x2=\"55\" y2=\"0\" stroke=\"#E67E22\" stroke-width=\"2.5\" marker-end=\"url(#arrowhead)\"/>\n    <rect x=\"3\" y=\"-24\" width=\"50\" height=\"20\" rx=\"4\" fill=\"#FFF3E0\"/>\n    <text x=\"28\" y=\"-10\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">+ 네 각</text>\n    <text x=\"28\" y=\"-1\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">= 90°</text>\n  </g>\n\n  <!-- ===== RIGHT: Rectangle ===== -->\n  <g transform=\"translate(265, 50)\">\n    <text x=\"100\" y=\"0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">직사각형</text>\n\n    <!-- Rectangle shape -->\n    <rect x=\"20\" y=\"40\" width=\"160\" height=\"90\" fill=\"#EBF7EE\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n\n    <!-- Right angle markers -->\n    <rect x=\"20\" y=\"40\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n    <rect x=\"170\" y=\"40\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n    <rect x=\"20\" y=\"120\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n    <rect x=\"170\" y=\"120\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n\n    <!-- 90° labels -->\n    <text x=\"13\" y=\"37\" font-size=\"9\" fill=\"#5CB85C\">90°</text>\n    <text x=\"175\" y=\"37\" font-size=\"9\" fill=\"#5CB85C\">90°</text>\n    <text x=\"13\" y=\"145\" font-size=\"9\" fill=\"#5CB85C\">90°</text>\n    <text x=\"175\" y=\"145\" font-size=\"9\" fill=\"#5CB85C\">90°</text>\n\n    <!-- Diagonals — SAME COLOR to show equal length -->\n    <line x1=\"20\" y1=\"40\" x2=\"180\" y2=\"130\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/>\n    <line x1=\"180\" y1=\"40\" x2=\"20\" y2=\"130\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/>\n\n    <!-- Center intersection -->\n    <circle cx=\"100\" cy=\"85\" r=\"5\" fill=\"#E67E22\"/>\n\n    <!-- Equal length marks on diagonals -->\n    <line x1=\"66\" y1=\"55\" x2=\"70\" y2=\"63\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"70\" y1=\"55\" x2=\"74\" y2=\"63\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"126\" y1=\"107\" x2=\"130\" y2=\"115\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"130\" y1=\"107\" x2=\"134\" y2=\"115\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"126\" y1=\"55\" x2=\"130\" y2=\"63\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"130\" y1=\"55\" x2=\"134\" y2=\"63\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"66\" y1=\"107\" x2=\"70\" y2=\"115\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n    <line x1=\"70\" y1=\"107\" x2=\"74\" y2=\"115\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n\n    <!-- Bisect marks (equal halves) -->\n    <line x1=\"97\" y1=\"80\" x2=\"103\" y2=\"80\" stroke=\"#9B59B6\" stroke-width=\"2\"/>\n    <line x1=\"97\" y1=\"90\" x2=\"103\" y2=\"90\" stroke=\"#9B59B6\" stroke-width=\"2\"/>\n  </g>\n\n  <!-- ===== Bottom: Key property box ===== -->\n  <rect x=\"60\" y=\"225\" width=\"380\" height=\"65\" rx=\"10\" fill=\"#FFF\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"244\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#E67E22\">✦ 핵심 성질</text>\n  <text x=\"250\" y=\"262\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">직사각형의 두 대각선은</text>\n  <text x=\"250\" y=\"278\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">\n    <tspan font-weight=\"bold\" fill=\"#E67E22\">길이가 서로 같고</tspan>\n    <tspan fill=\"#555\">,  서로를 </tspan>\n    <tspan font-weight=\"bold\" fill=\"#9B59B6\">이등분</tspan>\n    <tspan fill=\"#555\">합니다</tspan>\n  </text>\n</svg>",
+      "concept": "여러 가지 사각형의 성질"
+    },
+    {
+      "explanation": "**정사각형은 직사각형일까요, 아닐까요?**\n\n\"당연히 다른 도형이죠!\" 라고 생각하셨나요? 잠깐, 함께 확인해 봅시다.\n\n직사각형의 성질을 기억해 보세요.\n- 네 각이 모두 직각이다.\n- 마주 보는 두 쌍의 변이 평행하고 길이가 같다.\n\n이제 정사각형을 같은 기준으로 살펴볼게요.\n- 네 각이 모두 직각인가요? **예.**\n- 마주 보는 두 쌍의 변이 평행하고 길이가 같나요? **예.**\n- 거기에 더해, 네 변의 길이가 모두 같다는 조건도 만족합니다.\n\n정사각형은 직사각형의 모든 성질을 만족하고 있어요. 즉, **정사각형은 직사각형의 특별한 경우**입니다. 이처럼 한 도형이 다른 도형의 조건을 모두 만족할 때, 두 도형 사이에 **포함 관계** (한 도형의 집합이 다른 도형의 집합 안에 들어가는 관계)가 있다고 말합니다.\n\n**단계적으로 관계 쌓아보기**\n\n가장 넓은 범주부터 시작해 조건을 하나씩 추가해 봅시다.\n\n먼저 \"한 쌍의 대변이 평행한 사각형\"이 **사다리꼴**입니다.\n\n여기서 조건을 하나 더 추가하면 어떻게 될까요? \"두 쌍의 대변이 모두 평행하면?\" → **평행사변형**. 평행사변형은 사다리꼴의 특별한 경우입니다.\n\n평행사변형에서 조건을 추가하면 두 갈래로 나뉩니다.\n- \"네 각이 모두 직각이면?\" → **직사각형**\n- \"네 변의 길이가 모두 같으면?\" → **마름모**\n\n그리고 두 조건을 **동시에** 만족하면?\n- \"네 각이 모두 직각이고, 네 변의 길이도 모두 같으면?\" → **정사각형**\n\n정사각형은 직사각형이면서 동시에 마름모이기도 합니다. 이 관계를 기호로 쓰면 다음과 같습니다.\n\n$$\\text{정사각형} \\subset \\text{직사각형} \\subset \\text{평행사변형} \\subset \\text{사다리꼴}$$\n$$\\text{정사각형} \\subset \\text{마름모} \\subset \\text{평행사변형}$$\n\n($\\subset$은 \"~의 특별한 경우이다\" 혹은 \"~에 포함된다\"를 뜻합니다.)\n\n**포함 관계가 왜 유용한가요?**\n\n이 관계를 이해하면 증명이 훨씬 쉬워집니다. \"평행사변형에서 성립하는 성질은 직사각형, 마름모, 정사각형에서도 모두 성립한다\"는 사실을 바로 알 수 있거든요. 더 좁은 범주의 도형은 더 넓은 범주 도형의 모든 성질을 그대로 이어받습니다. 이 개념은 이후 닮음, 벡터, 좌표기하 등에서도 계속 활용됩니다.\n\n**자주 하는 실수**\n\n포함 관계의 방향을 반대로 적용하는 경우가 많습니다. \"정사각형은 직사각형이다\"는 참이지만, \"직사각형은 정사각형이다\"는 거짓입니다. 직사각형 중에서 네 변의 길이가 모두 같다는 조건을 추가로 만족할 때만 정사각형이 됩니다. 포함 관계는 항상 **한 방향만** 성립한다는 점을 꼭 기억하세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#2c3e50\">여러 가지 사각형 사이의 관계</text>\n\n  <!-- 사각형 (outermost) -->\n  <rect x=\"18\" y=\"32\" width=\"464\" height=\"250\" rx=\"14\" fill=\"#EAF4FB\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <text x=\"62\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">사각형</text>\n\n  <!-- 사다리꼴 -->\n  <rect x=\"30\" y=\"58\" width=\"300\" height=\"214\" rx=\"12\" fill=\"#D6EAF8\" stroke=\"#4A90D9\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/>\n  <text x=\"76\" y=\"76\" text-anchor=\"middle\" font-size=\"11.5\" font-weight=\"bold\" fill=\"#2980B9\">사다리꼴</text>\n  <text x=\"76\" y=\"89\" text-anchor=\"middle\" font-size=\"9\" fill=\"#2980B9\">(한 쌍의 대변 평행)</text>\n\n  <!-- 평행사변형 -->\n  <rect x=\"42\" y=\"96\" width=\"200\" height=\"166\" rx=\"10\" fill=\"#C8E6C9\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <text x=\"96\" y=\"113\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#388E3C\">평행사변형</text>\n  <text x=\"96\" y=\"125\" text-anchor=\"middle\" font-size=\"9\" fill=\"#388E3C\">(두 쌍의 대변 평행)</text>\n\n  <!-- 직사각형 -->\n  <rect x=\"54\" y=\"136\" width=\"176\" height=\"116\" rx=\"9\" fill=\"#FFF9C4\" stroke=\"#F9A825\" stroke-width=\"2\"/>\n  <text x=\"96\" y=\"153\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#F57F17\">직사각형</text>\n  <text x=\"96\" y=\"165\" text-anchor=\"middle\" font-size=\"9\" fill=\"#F57F17\">(네 각이 직각)</text>\n\n  <!-- 정사각형 (innermost) -->\n  <rect x=\"66\" y=\"178\" width=\"120\" height=\"64\" rx=\"8\" fill=\"#FFCCBC\" stroke=\"#E67E22\" stroke-width=\"2.5\"/>\n  <text x=\"126\" y=\"198\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#BF360C\">정사각형</text>\n  <text x=\"126\" y=\"212\" text-anchor=\"middle\" font-size=\"9\" fill=\"#BF360C\">(네 변의 길이 같음)</text>\n  <text x=\"126\" y=\"225\" text-anchor=\"middle\" font-size=\"9\" fill=\"#BF360C\">+ 네 각이 직각</text>\n\n  <!-- 마름모 (sibling of 직사각형, inside 평행사변형) -->\n  <rect x=\"244\" y=\"136\" width=\"86\" height=\"116\" rx=\"9\" fill=\"#E1BEE7\" stroke=\"#8E24AA\" stroke-width=\"2\"/>\n  <text x=\"287\" y=\"189\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#6A1B9A\">마름모</text>\n  <text x=\"287\" y=\"203\" text-anchor=\"middle\" font-size=\"9\" fill=\"#6A1B9A\">(네 변 같음)</text>\n\n  <!-- Arrow and aha-moment callout -->\n  <line x1=\"186\" y1=\"209\" x2=\"210\" y2=\"209\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <text x=\"288\" y=\"209\" text-anchor=\"middle\" font-size=\"9\" fill=\"#6A1B9A\"></text>\n\n  <!-- Aha moment box -->\n  <rect x=\"346\" y=\"90\" width=\"140\" height=\"150\" rx=\"10\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <text x=\"416\" y=\"109\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#E67E22\">💡 포함 관계</text>\n  <line x1=\"366\" y1=\"116\" x2=\"466\" y2=\"116\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n  <text x=\"416\" y=\"132\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5D4037\">정사각형은</text>\n  <text x=\"416\" y=\"147\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5D4037\">직사각형의 조건을</text>\n  <text x=\"416\" y=\"162\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5D4037\">모두 만족!</text>\n  <text x=\"416\" y=\"180\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#E67E22\">∴ 정사각형 ⊂ 직사각형</text>\n  <text x=\"416\" y=\"198\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#388E3C\">∴ 직사각형 ⊂ 평행사변형</text>\n  <text x=\"416\" y=\"216\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\" fill=\"#2980B9\">∴ 평행사변형 ⊂ 사다리꼴</text>\n  <text x=\"416\" y=\"232\" text-anchor=\"middle\" font-size=\"9\" fill=\"#888\">⊂ = 포함된다</text>\n\n  <!-- Arrow from callout to diagram -->\n  <line x1=\"346\" y1=\"200\" x2=\"246\" y2=\"200\" stroke=\"#E67E22\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\" stroke-dasharray=\"4,2\"/>\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n</svg>",
+      "checkQuestion": {
+        "question": "다음 중 항상 옳은 것은?",
+        "options": [
+          "직사각형은 항상 마름모이다.",
+          "마름모는 항상 직사각형이다.",
+          "정사각형은 항상 직사각형이다.",
+          "평행사변형은 항상 직사각형이다."
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "평행사변형의 성질과 조건",
+          "chapterId": "math-8-2-03",
+          "reason": "포함 관계의 중심축인 평행사변형의 정의와 성질을 알아야 다른 사각형들과의 위계를 이해할 수 있습니다."
+        },
+        {
+          "concept": "여러 가지 사각형의 성질",
+          "chapterId": "math-8-2-03",
+          "reason": "직사각형, 마름모, 정사각형 각각의 성질을 알아야 어떤 도형이 어떤 도형의 특별한 경우인지 판단할 수 있습니다."
+        },
+        {
+          "concept": "사각형 (사다리꼴, 평행사변형, 마름모의 기본 개념)",
+          "chapterId": "math-4-2-04",
+          "reason": "초등학교에서 배운 각 사각형의 기본 정의가 중학교 포함 관계 학습의 출발점이 됩니다."
+        }
+      ],
+      "concept": "여러 가지 사각형 사이의 관계"
+    },
+    {
+      "explanation": "## 넓이가 같은 삼각형을 찾아낼 수 있을까요?\n\n그림을 하나 상상해 보세요. 직선 $l$ 위에 선분 AB가 놓여 있고, $l$에 평행한 직선 $m$ 위에 점 P, Q, R이 흩어져 있어요. 이 점들을 꼭짓점으로 삼아 삼각형 PAB, QAB, RAB를 그리면 어떻게 될까요?\n\n세 삼각형의 모양은 전혀 달라 보여요. 근데 넓이는요?\n\n놀랍게도 **세 삼각형의 넓이는 모두 같습니다.**\n\n---\n\n### 왜 그럴까요? 넓이 공식에서 답을 찾아봐요\n\n삼각형의 넓이 공식을 떠올려 보세요.\n\n$$\\text{넓이} = \\frac{1}{2} \\times \\text{밑변} \\times \\text{높이}$$\n\n삼각형 PAB, QAB, RAB는 모두 밑변이 AB로 **똑같습니다**.\n\n그렇다면 높이는요? 높이는 꼭짓점에서 밑변까지의 거리예요. P, Q, R은 모두 직선 $m$ 위에 있고, 직선 $m$은 직선 $l$과 평행합니다. 평행한 두 직선 사이의 거리는 어디서 재도 항상 같죠. 그러니 P, Q, R 어느 점에서 재도 AB까지의 수직 거리는 **모두 동일**합니다.\n\n밑변이 같고, 높이도 같으니 → 넓이가 같을 수밖에 없어요.\n\n이것이 **평행선과 넓이 원리**입니다.\n\n> **원리 (정리)**: 밑변이 같고, 꼭짓점이 밑변과 평행한 직선 위에 있는 삼각형들은 모두 **넓이가 같다**.\n\n수식으로 정리하면, 직선 $l \\ \\parallel \\ m$이고 점 P, Q가 $m$ 위의 점일 때:\n\n$$\\triangle PAB = \\triangle QAB$$\n\n(여기서 등호는 넓이가 같다는 의미로 쓰인 것이에요.)\n\n---\n\n### 뒤집어 생각하기: 역도 성립해요\n\n이 원리의 역도 중요합니다. 밑변 AB가 같고 $\\triangle PAB = \\triangle QAB$라면, P와 Q는 AB에 평행한 같은 직선 위에 있어야 해요. 넓이가 같다 → 꼭짓점이 평행선 위에 있다는 거죠.\n\n---\n\n### 사각형에도 적용할 수 있어요\n\n이 원리를 사각형으로 확장할 수 있습니다. 예를 들어 평행사변형 ABCD에서 대각선 AC를 그으면 $\\triangle ABC$와 $\\triangle ACD$의 넓이는 같아요. 그런데 이 단원에서 배운 것처럼, 점 D를 BC에 평행한 직선 위에서 이동시켜도 삼각형 ABD의 넓이는 변하지 않아요.\n\n이 성질은 **사각형의 넓이를 변환하거나 증명할 때** 핵심 도구로 사용됩니다. 앞으로 도형의 닮음, 넓이 관련 증명 문제에서 이 원리가 계속 등장할 거예요.\n\n---\n\n### 자주 하는 실수 한 가지\n\n\"높이가 같으면 넓이가 같다\"는 말을 듣고, **밑변의 길이는 확인하지 않는** 경우가 많아요. 넓이가 같으려면 밑변도 같아야 합니다. 밑변이 다른데 높이만 같으면 넓이는 달라요. 반드시 **밑변과 높이, 둘 다** 같은지 확인하세요.",
+      "checkQuestion": {
+        "question": "직선 $l$ 위에 $\\overline{AB} = 6$인 선분 AB가 있고, $l$에 평행한 직선 $m$ 위에 점 P와 점 Q가 있습니다. 이때 $\\triangle PAB$와 $\\triangle QAB$의 넓이에 대한 설명으로 옳은 것은?",
+        "options": [
+          "P와 Q의 위치에 관계없이 두 삼각형의 넓이는 항상 같다",
+          "P와 Q가 직선 m 위의 같은 점일 때만 넓이가 같다",
+          "두 삼각형의 모양이 같을 때만 넓이가 같다",
+          "P와 Q 사이의 거리가 6일 때만 넓이가 같다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각형의 넓이",
+          "chapterId": "math-5-1-06",
+          "reason": "넓이 = ½ × 밑변 × 높이 공식을 이해해야 평행선과 넓이의 원리를 유도할 수 있어요."
+        },
+        {
+          "concept": "평행선의 성질 (평행선 사이의 거리)",
+          "chapterId": "math-7-2-03",
+          "reason": "평행한 두 직선 사이의 거리가 어디서나 일정하다는 성질이 이 원리의 핵심 근거예요."
+        },
+        {
+          "concept": "평행사변형의 성질과 조건",
+          "chapterId": "math-8-2-03",
+          "reason": "같은 단원에서 앞서 배운 평행사변형의 성질을 넓이 관점에서 확장 적용하게 돼요."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Parallel line m (top) -->\n  <line x1=\"20\" y1=\"80\" x2=\"480\" y2=\"80\" stroke=\"#4A90D9\" stroke-width=\"2.5\" stroke-dasharray=\"none\"/>\n  <text x=\"468\" y=\"74\" font-size=\"16\" fill=\"#4A90D9\" font-style=\"italic\" font-weight=\"bold\">m</text>\n\n  <!-- Parallel line l (bottom) -->\n  <line x1=\"20\" y1=\"220\" x2=\"480\" y2=\"220\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <text x=\"468\" y=\"238\" font-size=\"16\" fill=\"#4A90D9\" font-style=\"italic\" font-weight=\"bold\">l</text>\n\n  <!-- Height indicator (double arrow between lines) -->\n  <line x1=\"460\" y1=\"85\" x2=\"460\" y2=\"215\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <polygon points=\"460,80 456,90 464,90\" fill=\"#E67E22\"/>\n  <polygon points=\"460,220 456,210 464,210\" fill=\"#E67E22\"/>\n  <text x=\"475\" y=\"155\" font-size=\"11\" fill=\"#E67E22\" text-anchor=\"middle\" transform=\"rotate(90,475,155)\">높이 (h)</text>\n\n  <!-- Base AB on line l -->\n  <line x1=\"160\" y1=\"220\" x2=\"320\" y2=\"220\" stroke=\"#333\" stroke-width=\"3\"/>\n  <circle cx=\"160\" cy=\"220\" r=\"5\" fill=\"#333\"/>\n  <circle cx=\"320\" cy=\"220\" r=\"5\" fill=\"#333\"/>\n  <text x=\"160\" y=\"244\" font-size=\"14\" fill=\"#333\" text-anchor=\"middle\" font-weight=\"bold\">A</text>\n  <text x=\"320\" y=\"244\" font-size=\"14\" fill=\"#333\" text-anchor=\"middle\" font-weight=\"bold\">B</text>\n  <!-- Base label -->\n  <text x=\"240\" y=\"258\" font-size=\"12\" fill=\"#555\" text-anchor=\"middle\">밑변 AB (공통)</text>\n\n  <!-- Point P on line m (left) -->\n  <circle cx=\"110\" cy=\"80\" r=\"5\" fill=\"#5CB85C\"/>\n  <text x=\"110\" y=\"68\" font-size=\"14\" fill=\"#5CB85C\" text-anchor=\"middle\" font-weight=\"bold\">P</text>\n  <!-- Triangle PAB - filled lightly -->\n  <polygon points=\"110,80 160,220 320,220\" fill=\"#5CB85C\" fill-opacity=\"0.15\" stroke=\"#5CB85C\" stroke-width=\"1.8\" stroke-dasharray=\"6,3\"/>\n\n  <!-- Point Q on line m (middle) -->\n  <circle cx=\"240\" cy=\"80\" r=\"5\" fill=\"#E67E22\"/>\n  <text x=\"240\" y=\"68\" font-size=\"14\" fill=\"#E67E22\" text-anchor=\"middle\" font-weight=\"bold\">Q</text>\n  <!-- Triangle QAB - filled lightly -->\n  <polygon points=\"240,80 160,220 320,220\" fill=\"#E67E22\" fill-opacity=\"0.18\" stroke=\"#E67E22\" stroke-width=\"1.8\"/>\n\n  <!-- Point R on line m (right) -->\n  <circle cx=\"370\" cy=\"80\" r=\"5\" fill=\"#9B59B6\"/>\n  <text x=\"370\" y=\"68\" font-size=\"14\" fill=\"#9B59B6\" text-anchor=\"middle\" font-weight=\"bold\">R</text>\n  <!-- Triangle RAB - filled lightly -->\n  <polygon points=\"370,80 160,220 320,220\" fill=\"#9B59B6\" fill-opacity=\"0.15\" stroke=\"#9B59B6\" stroke-width=\"1.8\" stroke-dasharray=\"4,3\"/>\n\n  <!-- Height dashed lines from each vertex to base line -->\n  <line x1=\"110\" y1=\"85\" x2=\"110\" y2=\"215\" stroke=\"#5CB85C\" stroke-width=\"1\" stroke-dasharray=\"3,3\" opacity=\"0.6\"/>\n  <line x1=\"240\" y1=\"85\" x2=\"240\" y2=\"215\" stroke=\"#E67E22\" stroke-width=\"1\" stroke-dasharray=\"3,3\" opacity=\"0.6\"/>\n  <line x1=\"370\" y1=\"85\" x2=\"370\" y2=\"215\" stroke=\"#9B59B6\" stroke-width=\"1\" stroke-dasharray=\"3,3\" opacity=\"0.6\"/>\n\n  <!-- Area equality callout box -->\n  <rect x=\"100\" y=\"268\" width=\"300\" height=\"26\" rx=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.12\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"285\" font-size=\"13\" fill=\"#4A90D9\" text-anchor=\"middle\" font-weight=\"bold\">\n    △PAB = △QAB = △RAB (넓이 같음!)\n  </text>\n</svg>",
+      "concept": "평행선과 넓이"
+    }
+  ]
+}

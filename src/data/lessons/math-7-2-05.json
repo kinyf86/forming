@@ -1,0 +1,103 @@
+{
+  "chapterId": "math-7-2-05",
+  "chapterTitle": "5단원 - 평면도형의 성질",
+  "generatedAt": "2026-04-01T12:17:38.653735+00:00",
+  "lessons": [
+    {
+      "explanation": "## 다각형 안의 각도엔 비밀이 숨어 있어요\n\n삼각형의 세 각을 모두 더하면 얼마일까요? 180°죠. 그런데 사각형은요? 360°예요. 오각형은? 540°? 혹시 여기서 규칙이 보이지 않나요?\n\n| 도형 | 내각의 합 |\n|------|----------|\n| 삼각형 (3각) | 180° |\n| 사각형 (4각) | 360° |\n| 오각형 (5각) | 540° |\n| 육각형 (6각) | 720° |\n\n180, 360, 540, 720… 180씩 늘어나고 있어요. 왜 그럴까요?\n\n### 삼각형으로 쪼개기\n\n사각형 안의 한 꼭짓점에서 대각선을 그어보세요. 사각형이 삼각형 **2개**로 나뉩니다. 오각형은요? 삼각형 **3개**. 육각형은 삼각형 **4개**.\n\n$n$각형에서 한 꼭짓점에서 대각선을 모두 그으면 항상 $(n-2)$개의 삼각형으로 나뉩니다. 삼각형 하나의 내각의 합이 180°이므로:\n\n$$\\text{(}n\\text{각형의 내각의 합)} = (n-2) \\times 180°$$\n\n이렇게 각도의 합을 한 공식으로 표현할 수 있다는 게 멋지지 않나요?\n\n**내각** (interior angle, 다각형 안쪽의 각)의 합이 이렇게 결정됩니다.\n\n### 외각은 전혀 다른 이야기\n\n이번엔 **외각** (exterior angle, 각 꼭짓점에서 한 변을 연장했을 때 내각과 이웃하는 각)을 생각해봐요.\n\n상상해보세요: 여러분이 다각형의 둘레를 따라 걷고 있어요. 꼭짓점에 도달할 때마다 방향을 바꿉니다. 출발점으로 돌아왔을 때, 총 몇 도를 회전한 걸까요?\n\n정확히 한 바퀴, 즉 **360°** 입니다. 삼각형이든, 사각형이든, 100각형이든 상관없이요.\n\n$$\\text{(}n\\text{각형의 외각의 합)} = 360°$$\n\n이 결과는 놀랍도록 단순합니다. 변의 수가 아무리 많아져도 외각의 합은 항상 360°로 고정되어 있어요.\n\n### 내각과 외각의 관계\n\n한 꼭짓점에서 내각과 외각은 **직선** 위에 있으므로 두 각의 합이 180°입니다.\n\n$$\\text{(내각)} + \\text{(외각)} = 180°$$\n\n따라서 정$n$각형처럼 모든 각이 같을 때, 한 내각의 크기는:\n\n$$\\text{(한 내각)} = \\frac{(n-2) \\times 180°}{n}$$\n\n### 이 개념의 위치\n\n다각형의 내각과 외각 공식은 삼각형의 각도 합(180°)을 출발점으로 하여, 이후 배울 원과 부채꼴의 각도 문제, 그리고 고등학교에서 다룰 도형의 다양한 각도 계산의 기초가 됩니다.\n\n### 자주 하는 실수 하나\n\n외각을 구할 때 \"내각의 반대편 각\" 이라고 막연히 생각해서 잘못 표시하는 경우가 많아요. 외각은 반드시 **한 변의 연장선**과 다른 한 변이 이루는 각입니다. 꼭짓점 바깥쪽에 두 개의 각이 생기는데, 그 중 내각과 이웃한(맞닿은) 각이 외각이에요. 맞꼭지각처럼 보이는 반대편 각은 외각이 아닙니다.",
+      "checkQuestion": {
+        "question": "오각형의 내각의 합과 외각의 합을 각각 구하면?",
+        "options": [
+          "내각의 합: 540°, 외각의 합: 360°",
+          "내각의 합: 540°, 외각의 합: 540°",
+          "내각의 합: 720°, 외각의 합: 360°",
+          "내각의 합: 360°, 외각의 합: 360°"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각형의 세 각의 크기의 합",
+          "chapterId": "math-4-1-02",
+          "reason": "내각의 합 공식이 '삼각형으로 분할'하는 아이디어에 기반하므로, 삼각형의 내각의 합이 180°임을 반드시 알아야 합니다."
+        },
+        {
+          "concept": "다각형과 정다각형",
+          "chapterId": "math-4-2-06",
+          "reason": "다각형의 꼭짓점, 변, 대각선 등 기본 구성 요소를 알아야 삼각형 분할 방법을 이해할 수 있습니다."
+        },
+        {
+          "concept": "각의 종류와 성질",
+          "chapterId": "math-7-2-03",
+          "reason": "외각의 정의와 내각+외각=180° 관계를 이해하려면 직선각, 맞꼭지각 등 각의 기본 성질을 알아야 합니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "다각형의 내각과 외각"
+    },
+    {
+      "explanation": "피자 한 판을 8등분하면 한 조각의 크기가 4등분할 때보다 작아지는 건 당연해 보이죠. 그런데 \"얼마나 작아지는가\"를 정확히 설명할 수 있나요? 오늘 배울 **원과 부채꼴**은 바로 그 질문에 답하는 언어입니다.\n\n---\n\n### 원의 구성 요소 다시 보기\n\n초등학교에서 원을 배웠지만, 이제는 좀 더 정확한 용어로 정리해 봅시다.\n\n원은 하나의 점으로부터 **같은 거리**에 있는 점들의 집합입니다. 그 기준점을 **중심(center)**, 중심에서 원 위의 한 점까지의 거리를 **반지름(radius, $r$)**이라고 해요. 반지름 두 개를 합친 길이, 즉 중심을 지나는 가장 긴 선분이 **지름(diameter, $d = 2r$)**입니다.\n\n이제 원 위에 두 점 A, B를 찍어봅시다. 이 두 점을 잇는 방법이 두 가지 있어요.\n\n- **현(chord)**: 두 점을 직선으로 연결한 선분 $\\overline{AB}$\n- **호(arc)**: 원의 둘레를 따라 두 점 사이를 이동하는 굽은 선 $\\widehat{AB}$\n\n현과 호는 같은 두 점에서 출발하지만 전혀 다른 선입니다. 현은 곧고, 호는 굽어 있어요.\n\n---\n\n### 부채꼴이란 무엇인가\n\n중심 O에서 두 반지름 OA, OB를 그으면, 두 반지름과 그 사이의 호 $\\widehat{AB}$가 하나의 도형을 만들어냅니다. 이것이 **부채꼴(sector)**입니다. 부채처럼 생겼다고 해서 붙은 이름이에요.\n\n부채꼴에서 핵심 요소는 **중심각(central angle)**입니다. 두 반지름 OA와 OB가 중심 O에서 이루는 각 $\\angle AOB$를 말해요. 기호로는 $\\theta$로 나타내기도 합니다.\n\n이제 다시 피자 이야기로 돌아가볼게요.\n\n- 8등분: 한 조각의 중심각 $= 360° \\div 8 = 45°$\n- 4등분: 한 조각의 중심각 $= 360° \\div 4 = 90°$\n\n중심각이 $45°$에서 $90°$로 2배가 되면, 조각의 크기도 정확히 2배가 됩니다. **중심각이 클수록 호도 길고, 부채꼴의 넓이도 넓어진다**는 것이 이 단원 전체를 관통하는 핵심 원리예요. 다음에 배울 호의 길이와 넓이 공식은 모두 이 비례 관계에서 나옵니다.\n\n---\n\n### 용어 한눈에 정리\n\n| 용어 | 설명 | 표기 |\n|------|------|------|\n| 중심 | 원의 기준점 | $O$ |\n| 반지름 | 중심에서 원 위까지의 거리 | $r$ |\n| 지름 | 중심을 지나는 현 | $d = 2r$ |\n| 호 | 원 위 두 점 사이의 굽은 선 | $\\widehat{AB}$ |\n| 현 | 원 위 두 점을 잇는 직선 | $\\overline{AB}$ |\n| 부채꼴 | 두 반지름과 호로 둘러싸인 도형 | — |\n| 중심각 | 두 반지름이 이루는 각 | $\\angle AOB$ |\n\n---\n\n### 이 개념이 연결되는 곳\n\n원의 구조는 이번 단원의 **호의 길이와 넓이** 계산의 기초가 되고, 고등학교에서는 각도를 새로운 단위(호도법, radian)로 나타내는 방법과 연결됩니다. 삼각함수도 결국 원 위에서 출발하죠.\n\n---\n\n### 꼭 주의할 것 하나\n\n**\"호\"와 \"현\"을 혼동하지 마세요.** 둘 다 원 위의 두 점 A, B를 연결하지만, 호는 원의 둘레를 따라가는 **곡선**이고 현은 두 점을 곧게 잇는 **직선**입니다. 문제에서 \"호 AB\"라고 하면 굽은 선, \"현 AB\"라고 하면 직선을 떠올려야 해요. 익숙해질 때까지 직접 그림을 그려보며 확인하는 것이 가장 좋습니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "반지름이 $6\\,\\text{cm}$인 원에서 중심각이 $120°$인 부채꼴이 있습니다. 이 부채꼴의 호의 길이는 원 전체 둘레의 몇 분의 몇인가요?",
+        "options": [
+          "$\\dfrac{1}{3}$",
+          "$\\dfrac{1}{4}$",
+          "$\\dfrac{1}{6}$",
+          "$\\dfrac{2}{3}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "원의 중심, 반지름, 지름",
+          "chapterId": "math-3-2-03",
+          "reason": "부채꼴은 두 반지름과 호로 정의되므로, 반지름과 원의 기본 구성 요소를 먼저 알아야 합니다."
+        },
+        {
+          "concept": "각도의 뜻과 재기",
+          "chapterId": "math-4-1-02",
+          "reason": "중심각의 크기를 이해하고 비교하려면 각도의 개념과 측정 방법이 필요합니다."
+        },
+        {
+          "concept": "비와 비율",
+          "chapterId": "math-6-1-04",
+          "reason": "중심각과 호·넓이의 비례 관계를 직관적으로 이해하는 데 비율 개념이 바탕이 됩니다."
+        }
+      ],
+      "concept": "원과 부채꼴"
+    },
+    {
+      "explanation": "피자 한 조각을 떠올려 보세요. 똑같이 6등분된 피자에서 한 조각을 가져왔다면, 그 조각은 전체 피자의 $\\frac{1}{6}$이죠. 그렇다면 그 조각의 바깥 테두리 길이는요? 전체 둘레의 $\\frac{1}{6}$. 조각의 넓이는요? 전체 넓이의 $\\frac{1}{6}$.\n\n여기에 오늘의 핵심이 숨어 있습니다.\n\n**부채꼴** (원에서 두 반지름과 그 사이의 호로 이루어진 도형)은 원 전체에서 **중심각** (두 반지름이 이루는 각)의 비율만큼을 차지합니다. 중심각이 $x°$라면, 부채꼴이 전체 원에서 차지하는 비율은 $\\frac{x}{360}$이에요.\n\n### 호의 길이 공식 유도\n\n**호** (arc, 부채꼴에서 활처럼 휜 곡선 부분)의 길이는 원주에 그 비율을 곱하면 됩니다.\n\n원의 둘레는 $2\\pi r$이고, 부채꼴이 전체의 $\\frac{x}{360}$을 차지하므로:\n\n$$l = 2\\pi r \\times \\frac{x}{360}$$\n\n### 부채꼴의 넓이 공식 유도\n\n**부채꼴의 넓이** (sector area)도 같은 원리입니다. 원의 넓이 $\\pi r^2$에 비율을 곱하면:\n\n$$S = \\pi r^2 \\times \\frac{x}{360}$$\n\n예를 들어, 반지름이 6 cm이고 중심각이 120°인 부채꼴이라면:\n\n$$l = 2\\pi \\times 6 \\times \\frac{120}{360} = 12\\pi \\times \\frac{1}{3} = 4\\pi \\text{ (cm)}$$\n\n$$S = \\pi \\times 36 \\times \\frac{120}{360} = 36\\pi \\times \\frac{1}{3} = 12\\pi \\text{ (cm}^2\\text{)}$$\n\n### 호의 길이로 넓이 구하기\n\n흥미로운 사실이 하나 더 있습니다. 중심각을 몰라도 호의 길이 $l$과 반지름 $r$만 있으면 넓이를 바로 구할 수 있어요:\n\n$$S = \\frac{1}{2} l r$$\n\n왜 그럴까요? $l = 2\\pi r \\cdot \\frac{x}{360}$을 대입하면:\n\n$$\\frac{1}{2} l r = \\frac{1}{2} \\times 2\\pi r \\times \\frac{x}{360} \\times r = \\pi r^2 \\times \\frac{x}{360} = S$$\n\n두 공식이 정확히 같아집니다. 이 $S = \\frac{1}{2}lr$ 공식은 고등학교에서 **호도법** (각도를 다른 단위로 표현하는 방법)을 배울 때 훨씬 세련된 형태로 다시 만나게 됩니다.\n\n### 이 개념의 위치\n\n부채꼴 공식의 핵심 아이디어는 \"원 전체를 1로 보고, 중심각의 비율로 쪼갠다\"는 것입니다. 이 비율 사고방식은 중학교 3학년에서 배우는 원주각과 중심각의 관계, 더 나아가 고등학교 삼각함수의 호도법까지 이어지는 중요한 토대가 됩니다.\n\n### 자주 하는 실수\n\n중심각 $x$를 비율 $\\frac{x}{360}$으로 변환하는 것을 잊고 그대로 곱하는 실수가 많습니다. 중심각이 90°인 부채꼴이라면 $\\frac{90}{360} = \\frac{1}{4}$를 곱해야 하는데, 90을 그냥 곱하면 원의 90배가 되어버립니다. **항상 360으로 나눈 비율을 쓰는 것**을 잊지 마세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#2c3e50\">부채꼴의 호의 길이와 넓이</text>\n\n  <!-- ===== LEFT: Full Circle (pizza 6 slices) ===== -->\n  <circle cx=\"118\" cy=\"135\" r=\"78\" fill=\"#4A90D9\" fill-opacity=\"0.10\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n\n  <!-- Highlighted sector (60° = 1/6) -->\n  <path d=\"M 118 135 L 196 135 A 78 78 0 0 0 157 67.5 Z\" fill=\"#E67E22\" fill-opacity=\"0.45\"/>\n\n  <!-- 5 other radius lines (pizza slices) -->\n  <line x1=\"118\" y1=\"135\" x2=\"79\"  y2=\"67.5\"  stroke=\"#aaa\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/>\n  <line x1=\"118\" y1=\"135\" x2=\"40\"  y2=\"135\"   stroke=\"#aaa\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/>\n  <line x1=\"118\" y1=\"135\" x2=\"79\"  y2=\"202.5\" stroke=\"#aaa\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/>\n  <line x1=\"118\" y1=\"135\" x2=\"157\" y2=\"202.5\" stroke=\"#aaa\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/>\n  <!-- The two radii of the highlighted slice -->\n  <line x1=\"118\" y1=\"135\" x2=\"196\" y2=\"135\"   stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <line x1=\"118\" y1=\"135\" x2=\"157\" y2=\"67.5\"  stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n\n  <!-- Center dot -->\n  <circle cx=\"118\" cy=\"135\" r=\"3\" fill=\"#4A90D9\"/>\n\n  <!-- 360° label at center -->\n  <text x=\"118\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">360°</text>\n\n  <!-- x°=60° label on the highlighted slice -->\n  <path d=\"M 143 135 A 25 25 0 0 0 130.5 113.4\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"152\" y=\"126\" text-anchor=\"start\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">x°</text>\n\n  <!-- Labels bottom -->\n  <text x=\"118\" y=\"230\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#333\">원 전체</text>\n  <text x=\"118\" y=\"246\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">둘레 = 2πr</text>\n  <text x=\"118\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">넓이 = πr²</text>\n\n  <!-- ===== MIDDLE: × x/360 ratio box + arrow ===== -->\n  <rect x=\"208\" y=\"107\" width=\"66\" height=\"56\" rx=\"8\" fill=\"#FFF8F0\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <text x=\"241\" y=\"123\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">×</text>\n  <text x=\"241\" y=\"138\" text-anchor=\"middle\" font-size=\"14\" fill=\"#E67E22\" font-weight=\"bold\">x</text>\n  <line x1=\"215\" y1=\"141\" x2=\"267\" y2=\"141\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"241\" y=\"156\" text-anchor=\"middle\" font-size=\"14\" fill=\"#E67E22\" font-weight=\"bold\">360</text>\n\n  <!-- Arrow -->\n  <line x1=\"278\" y1=\"135\" x2=\"293\" y2=\"135\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <polygon points=\"291,131 299,135 291,139\" fill=\"#E67E22\"/>\n\n  <!-- \"비율만큼\" label -->\n  <text x=\"241\" y=\"180\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#888\">이 비율만큼!</text>\n\n  <!-- ===== RIGHT: Isolated Sector ===== -->\n  <!-- Sector: center (385,135), r=78, angle=60° -->\n  <!-- End points: (463,135) and (385+39, 135-67.5)=(424, 67.5) -->\n  <path d=\"M 385 135 L 463 135 A 78 78 0 0 0 424 67.5 Z\"\n        fill=\"#E67E22\" fill-opacity=\"0.22\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n\n  <!-- Arc (호) highlighted in orange -->\n  <path d=\"M 463 135 A 78 78 0 0 0 424 67.5\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"3.5\"/>\n\n  <!-- Center dot -->\n  <circle cx=\"385\" cy=\"135\" r=\"3\" fill=\"#4A90D9\"/>\n\n  <!-- Angle arc -->\n  <path d=\"M 410 135 A 25 25 0 0 0 397.5 113.4\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.5\"/>\n  <text x=\"416\" y=\"127\" text-anchor=\"start\" font-size=\"11\" fill=\"#333\" font-style=\"italic\">x°</text>\n\n  <!-- r labels on radius lines -->\n  <text x=\"425\" y=\"128\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-style=\"italic\">r</text>\n  <text x=\"399\" y=\"98\"  text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-style=\"italic\">r</text>\n\n  <!-- 호(arc) label with pointer -->\n  <text x=\"476\" y=\"90\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">호(l)</text>\n  <line x1=\"467\" y1=\"93\" x2=\"450\" y2=\"101\" stroke=\"#E67E22\" stroke-width=\"1\" stroke-dasharray=\"2,2\"/>\n\n  <!-- Sector labels bottom -->\n  <text x=\"385\" y=\"230\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#333\">부채꼴</text>\n  <text x=\"385\" y=\"246\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">l = 2πr × x/360</text>\n  <text x=\"385\" y=\"262\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">S = πr² × x/360</text>\n\n  <!-- ===== Bottom summary bar ===== -->\n  <rect x=\"20\" y=\"277\" width=\"460\" height=\"20\" rx=\"5\" fill=\"#EAF4FB\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"291\" text-anchor=\"middle\" font-size=\"10\" fill=\"#2c3e50\">\n    핵심: 호의 길이도, 넓이도 모두 원 전체의\n  </text>\n  <text x=\"388\" y=\"291\" text-anchor=\"start\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">x/360</text>\n  <text x=\"410\" y=\"291\" text-anchor=\"start\" font-size=\"10\" fill=\"#2c3e50\">배!</text>\n</svg>",
+      "checkQuestion": {
+        "question": "반지름이 9 cm이고 중심각이 80°인 부채꼴의 호의 길이는 얼마인가요?",
+        "options": [
+          "$4\\pi$ cm",
+          "$6\\pi$ cm",
+          "$8\\pi$ cm",
+          "$3\\pi$ cm"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "원의 넓이 (원주와 원주율, 원주 구하기, 원의 넓이 구하기)",
+          "chapterId": "math-6-2-05",
+          "reason": "부채꼴 공식은 원의 둘레 $2\\pi r$와 넓이 $\\pi r^2$를 비율로 쪼개는 방식으로 유도되므로, 원의 기본 공식을 반드시 알아야 합니다."
+        },
+        {
+          "concept": "비와 비율 (비율의 뜻과 구하기)",
+          "chapterId": "math-6-1-04",
+          "reason": "중심각이 360° 중 차지하는 비율($\\frac{x}{360}$)을 이해하고 활용하는 것이 이 단원의 핵심 원리이기 때문입니다."
+        },
+        {
+          "concept": "원과 부채꼴 (부채꼴의 뜻, 중심각, 호, 현)",
+          "chapterId": "math-7-2-05",
+          "reason": "부채꼴·호·중심각의 정의를 먼저 알아야 호의 길이와 넓이 공식을 의미 있게 이해할 수 있습니다."
+        }
+      ],
+      "concept": "부채꼴의 호의 길이와 넓이"
+    }
+  ]
+}

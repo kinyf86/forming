@@ -1,0 +1,125 @@
+{
+  "chapterId": "math-7-1-04",
+  "chapterTitle": "4단원 - 문자의 사용과 식의 계산",
+  "generatedAt": "2026-04-01T09:55:52.831429+00:00",
+  "lessons": [
+    {
+      "explanation": "## 왜 숫자 대신 문자를 쓸까?\n\n잠깐, 이 상황을 생각해봐.\n\n과자 한 봉지가 800원이야. 과자를 1봉지 사면 800원, 2봉지 사면 1600원, 3봉지 사면 2400원… 이걸 매번 따로 계산해야 할까?\n\n여기서 뭔가 규칙이 보이지 않아? 봉지 수가 바뀔 때마다 **800을 곱한다**는 건 변하지 않아. 바뀌는 건 봉지 수뿐이야.\n\n그럼 이렇게 쓰면 어때?\n\n$$800 \\times a$$\n\n여기서 $a$는 \"봉지 수\"를 나타내는 **문자** (숫자 대신 쓰는 기호)야. $a$ 자리에 1을 넣으면 800원, 2를 넣으면 1600원이 나와.\n\n이게 바로 수학의 강력한 도구야. 매번 새로 계산하는 대신, 상황을 한 줄로 표현할 수 있거든.\n\n---\n\n## 문자를 사용할 때의 약속\n\n수학에서는 문자를 쓸 때 몇 가지 약속이 있어. 복잡해 보이지만 모두 \"더 간단하게 쓰자\"는 이유에서 나온 거야.\n\n**곱셈 기호 $\\times$는 생략한다**\n\n$$4 \\times x = 4x$$\n\n$$a \\times b = ab$$\n\n왜냐고? 숫자에서 $4 \\times 3$은 12라고 바로 계산하면 되지만, $4 \\times x$는 계산이 안 되니까 그냥 붙여서 쓰는 게 더 깔끔하거든.\n\n**숫자는 문자 앞에 쓴다**\n\n$$x \\times 3 = 3x$$ (O) &nbsp;&nbsp; $x3$ (X)\n\n**1은 생략한다**\n\n$$1 \\times x = x$$\n\n$$-1 \\times x = -x$$\n\n1을 굳이 쓸 필요가 없어 — $1x$라고 쓰면 오히려 헷갈리거든.\n\n**나눗셈은 분수로 쓴다**\n\n$$x \\div 3 = \\frac{x}{3}$$\n\n---\n\n## 식의 이름들\n\n이렇게 수와 문자, 사칙연산으로 이루어진 식을 **식** (수나 문자를 연산 기호로 연결한 것)이라고 해.\n\n그중에서 $3x$, $-2a$처럼 수와 문자의 곱으로 이루어진 것을 **단항식** (항이 하나인 식)이라고 하고, $3x + 2$, $a - 5b$처럼 항이 두 개 이상인 것을 **다항식** (항이 여러 개인 식)이라고 해.\n\n---\n\n## 문자 하나가 이렇게 많은 걸 표현해\n\n예를 들어, 어떤 수 $x$에 3을 더하고 2를 곱한 결과는?\n\n$$(x + 3) \\times 2 = 2(x + 3)$$\n\n$x = 1$이면 $2(1+3) = 8$\n$x = 5$이면 $2(5+3) = 16$\n$x = 100$이면 $2(100+3) = 206$\n\n문자 하나로 무한히 많은 경우를 한 번에 담은 거야. 이게 **문자를 사용한 식**의 진짜 힘이야.\n\n---\n\n## 한 가지 주의!\n\n$3 + x$를 $3x$로 헷갈리는 경우가 많아. **더하기와 곱하기는 완전히 다른 연산**이야. $3x$는 $3 \\times x$이고, $3 + x$는 3과 $x$를 더한 거야. 식을 쓸 때 곱셈 기호를 생략하다 보면 덧셈까지 붙여 쓰고 싶어지는데, 절대로 그러면 안 돼.",
+      "checkQuestion": {
+        "question": "다음 중 $a \\div 5 + b \\times 2$를 올바르게 나타낸 것은?",
+        "options": [
+          "$\\frac{a}{5} + 2b$",
+          "$\\frac{a}{5} + b2$",
+          "$a5 + 2b$",
+          "$\\frac{a}{5+2b}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "대응 관계를 식으로 나타내기",
+          "chapterId": "math-5-1-03",
+          "reason": "두 양 사이의 관계를 식으로 표현하는 경험이 없으면, 문자가 '변하는 수'를 나타낸다는 개념을 이해하기 어렵습니다."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "문자를 사용한 식에는 음수와 유리수 계산이 등장하므로, 음수 곱셈과 분수 연산을 먼저 알아야 합니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"22\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">문자를 사용한 식</text>\n\n  <!-- ===== LEFT: Pattern Table ===== -->\n  <rect x=\"18\" y=\"32\" width=\"180\" height=\"220\" rx=\"10\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <rect x=\"18\" y=\"32\" width=\"180\" height=\"28\" rx=\"10\" fill=\"#4A90D9\"/>\n  <rect x=\"18\" y=\"50\" width=\"180\" height=\"10\" fill=\"#4A90D9\"/>\n  <text x=\"108\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"white\">매번 따로 계산하면…</text>\n\n  <!-- Table header -->\n  <line x1=\"108\" y1=\"60\" x2=\"108\" y2=\"252\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <rect x=\"18\" y=\"60\" width=\"180\" height=\"22\" fill=\"#EBF4FF\"/>\n  <text x=\"63\" y=\"75\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">봉지 수</text>\n  <text x=\"153\" y=\"75\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">가격 (원)</text>\n\n  <!-- Row 1 -->\n  <rect x=\"18\" y=\"82\" width=\"180\" height=\"24\" fill=\"white\"/>\n  <line x1=\"18\" y1=\"82\" x2=\"198\" y2=\"82\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <text x=\"63\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">1봉지</text>\n  <text x=\"153\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\">800</text>\n\n  <!-- Row 2 -->\n  <rect x=\"18\" y=\"106\" width=\"180\" height=\"24\" fill=\"#FAFAFA\"/>\n  <line x1=\"18\" y1=\"106\" x2=\"198\" y2=\"106\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <text x=\"63\" y=\"122\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">2봉지</text>\n  <text x=\"153\" y=\"122\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\">1,600</text>\n\n  <!-- Row 3 -->\n  <rect x=\"18\" y=\"130\" width=\"180\" height=\"24\" fill=\"white\"/>\n  <line x1=\"18\" y1=\"130\" x2=\"198\" y2=\"130\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <text x=\"63\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">3봉지</text>\n  <text x=\"153\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\">2,400</text>\n\n  <!-- Row 4 -->\n  <rect x=\"18\" y=\"154\" width=\"180\" height=\"24\" fill=\"#FAFAFA\"/>\n  <line x1=\"18\" y1=\"154\" x2=\"198\" y2=\"154\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <text x=\"63\" y=\"170\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">4봉지</text>\n  <text x=\"153\" y=\"170\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\">3,200</text>\n\n  <!-- Row 5 dots -->\n  <line x1=\"18\" y1=\"178\" x2=\"198\" y2=\"178\" stroke=\"#E0E0E0\" stroke-width=\"1\"/>\n  <text x=\"63\" y=\"196\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">⋮</text>\n  <text x=\"153\" y=\"196\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">⋮</text>\n\n  <!-- Pain point label -->\n  <text x=\"108\" y=\"230\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E74C3C\">끝없이 계산해야 해…😓</text>\n\n  <!-- ===== ARROW ===== -->\n  <defs>\n    <marker id=\"arrowhead\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\">\n      <polygon points=\"0 0, 8 3, 0 6\" fill=\"#5CB85C\"/>\n    </marker>\n  </defs>\n  <line x1=\"210\" y1=\"142\" x2=\"268\" y2=\"142\" stroke=\"#5CB85C\" stroke-width=\"2.5\" marker-end=\"url(#arrowhead)\"/>\n  <rect x=\"207\" y=\"125\" width=\"65\" height=\"18\" rx=\"4\" fill=\"#5CB85C\"/>\n  <text x=\"239\" y=\"137\" text-anchor=\"middle\" font-size=\"10\" fill=\"white\" font-weight=\"bold\">문자 사용!</text>\n\n  <!-- ===== RIGHT: Formula Card ===== -->\n  <rect x=\"280\" y=\"32\" width=\"202\" height=\"220\" rx=\"10\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <rect x=\"280\" y=\"32\" width=\"202\" height=\"28\" rx=\"10\" fill=\"#5CB85C\"/>\n  <rect x=\"280\" y=\"50\" width=\"202\" height=\"10\" fill=\"#5CB85C\"/>\n  <text x=\"381\" y=\"52\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"white\">한 줄로 표현하면!</text>\n\n  <!-- Formula box -->\n  <rect x=\"298\" y=\"70\" width=\"166\" height=\"50\" rx=\"8\" fill=\"#EBF4FF\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"381\" y=\"92\" text-anchor=\"middle\" font-size=\"11\" fill=\"#666\">가격 =</text>\n  <text x=\"381\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4A90D9\">800 × a</text>\n\n  <!-- Arrow showing substitution -->\n  <text x=\"381\" y=\"140\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">a 에 숫자를 넣으면:</text>\n\n  <!-- Substitution examples -->\n  <rect x=\"290\" y=\"148\" width=\"82\" height=\"44\" rx=\"6\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"1.2\"/>\n  <text x=\"331\" y=\"163\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\">a = 3 이면</text>\n  <text x=\"331\" y=\"180\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">800×3 = <tspan font-weight=\"bold\" fill=\"#E67E22\">2400</tspan></text>\n\n  <rect x=\"380\" y=\"148\" width=\"88\" height=\"44\" rx=\"6\" fill=\"#F0FFF0\" stroke=\"#5CB85C\" stroke-width=\"1.2\"/>\n  <text x=\"424\" y=\"163\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\" font-weight=\"bold\">a = 7 이면</text>\n  <text x=\"424\" y=\"180\" text-anchor=\"middle\" font-size=\"11\" fill=\"#333\">800×7 = <tspan font-weight=\"bold\" fill=\"#5CB85C\">5600</tspan></text>\n\n  <!-- Bonus: multiplication sign rule -->\n  <rect x=\"290\" y=\"202\" width=\"172\" height=\"38\" rx=\"6\" fill=\"#FDF2F8\" stroke=\"#9B59B6\" stroke-width=\"1.2\"/>\n  <text x=\"376\" y=\"216\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#9B59B6\" font-weight=\"bold\">약속: × 기호는 생략!</text>\n  <text x=\"376\" y=\"232\" text-anchor=\"middle\" font-size=\"12\" fill=\"#555\">\n    <tspan fill=\"#9B59B6\" font-weight=\"bold\">4 × x</tspan>\n    <tspan fill=\"#888\">  →  </tspan>\n    <tspan fill=\"#9B59B6\" font-weight=\"bold\">4x</tspan>\n  </text>\n\n  <!-- Bottom label -->\n  <text x=\"250\" y=\"285\" text-anchor=\"middle\" font-size=\"10\" fill=\"#999\">변하는 값을 문자로 → 규칙을 식 하나로 표현</text>\n</svg>",
+      "concept": "문자를 사용한 식"
+    },
+    {
+      "explanation": "한 가지 질문부터 시작할게요. $x + 3$이라는 식이 있을 때, 이 식의 \"값\"은 얼마일까요?\n\n사실, 이 질문엔 정해진 답이 없어요. $x$가 뭔지 모르니까요. 그런데 누군가 \"$x = 5$야\"라고 알려준다면? 그 순간 이 식은 $5 + 3 = 8$이 되죠.\n\n이게 바로 **식의 값**(문자에 특정 수를 대입했을 때 계산된 결과)이에요.\n\n### 대입이란?\n\n문자에 수를 넣는 행위를 **대입**(substitution, 문자 자리에 특정 수를 집어넣기)이라고 해요. 레시피에 \"달걀 $x$개\"라고 적혀 있을 때 $x = 2$를 대입하면 \"달걀 2개\"가 되는 것처럼요.\n\n$2x + 1$에 $x = 3$을 대입하면:\n$$2 \\times 3 + 1 = 6 + 1 = 7$$\n\n이때 식의 값은 $7$이에요. $2x$는 $2 \\times x$를 뜻하므로, 대입할 때 이 곱셈 기호를 다시 살려야 해요.\n\n### 음수를 대입할 때\n\n$x = -3$을 $2x + 1$에 대입하면 어떻게 될까요?\n$$2 \\times (-3) + 1 = -6 + 1 = -5$$\n\n여기서 중요한 규칙이 보이지 않나요? **음수를 대입할 때는 반드시 괄호를 써야 해요.** $2 \\times -3$처럼 괄호 없이 쓰면 계산 실수가 생겨요.\n\n조금 더 나아가볼게요. $x = -2$일 때, $x^2 - x + 1$의 값을 구해봅시다.\n$$(-2)^2 - (-2) + 1 = 4 + 2 + 1 = 7$$\n\n$x^2$에 대입할 때도 반드시 $(-2)^2$처럼 괄호를 써야 해요. 만약 $-2^2$라고 쓰면 $-(2^2) = -4$가 되어서 전혀 다른 값이 나와요.\n\n### 왜 이게 중요한가?\n\n문자를 사용한 식의 힘은, 하나의 식이 무한히 많은 상황을 표현할 수 있다는 데 있어요. 그리고 필요할 때 특정 값을 대입해서 답을 구할 수 있죠.\n\n예를 들어, 한 개에 $a$원인 사탕을 5개 사면 $5a$원이에요. 사탕 가격이 300원이라면 $a = 300$을 대입해서 $5 \\times 300 = 1500$원을 바로 구할 수 있어요.\n\n이후에 배울 **일차방정식**에서는, 식의 값이 특정 수가 되도록 하는 $x$를 거꾸로 찾게 됩니다. 오늘 배운 식의 값이 그 출발점이에요.\n\n### 가장 흔한 실수 한 가지\n\n음수를 대입할 때 괄호를 빠뜨리는 실수가 제일 많이 나와요. $x = -2$를 $x^2$에 대입하면 $(-2)^2 = 4$이지만, 괄호 없이 $-2^2$로 쓰면 $-4$가 됩니다. 같은 수를 넣었는데 부호가 달라지는 거죠. 대입할 때는 항상 괄호를 먼저 쓰는 습관을 들이세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$a = -3$일 때, $a^2 + 2a - 1$의 값은 얼마인가요?",
+        "options": [
+          "2",
+          "-4",
+          "14",
+          "-10"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "문자를 사용한 식",
+          "chapterId": "math-7-1-04",
+          "reason": "식의 값을 구하려면 먼저 문자로 이루어진 식이 무엇을 의미하는지 이해해야 합니다."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "음수나 유리수를 대입한 후 계산을 정확히 하려면 정수와 유리수의 사칙연산이 필요합니다."
+        }
+      ],
+      "concept": "식의 값"
+    },
+    {
+      "explanation": "## 일차식을 몇 배 하면 어떻게 될까요?\n\n갑자기 퀴즈 하나 드릴게요.\n\n어떤 상자 안에 연필이 $x$자루, 지우개가 5개 들어 있어요. 이 상자가 **3개** 있다면, 연필과 지우개는 각각 몇 개일까요?\n\n연필: $x$자루짜리 상자 3개 → $x + x + x = 3x$자루  \n지우개: $5$개짜리 상자 3개 → $5 + 5 + 5 = 15$개\n\n그러니까 상자 3개에 든 것들을 합치면?\n\n$$3(x + 5) = 3x + 15$$\n\n이게 핵심입니다. 괄호 밖의 3이 **안에 있는 각 항에 모두** 곱해졌죠.\n\n---\n\n## 분배법칙으로 정리하기\n\n이 원리를 **분배법칙** (distribution law, 곱셈을 괄호 안 각 항에 나눠서 적용하는 법칙)이라고 합니다.\n\n$$a(bx + c) = abx + ac$$\n\n더 복잡한 예시도 똑같이 작동해요.\n\n$$3(2x + 5) = 3 \\times 2x + 3 \\times 5 = 6x + 15$$\n\n음수가 붙어도 마찬가지입니다.\n\n$$-2(3x - 4) = (-2) \\times 3x + (-2) \\times (-4) = -6x + 8$$\n\n곱하는 수가 분수여도 같은 방식이에요.\n\n$$\\frac{1}{2}(4x + 6) = \\frac{1}{2} \\times 4x + \\frac{1}{2} \\times 6 = 2x + 3$$\n\n---\n\n## 나눗셈은 어떻게 할까요?\n\n$(6x + 9) \\div 3$을 계산해야 한다면?\n\n나눗셈은 **역수의 곱셈**으로 바꿀 수 있다는 것, 기억하시죠?\n\n$$( 6x + 9) \\div 3 = (6x + 9) \\times \\frac{1}{3} = \\frac{1}{3} \\times 6x + \\frac{1}{3} \\times 9 = 2x + 3$$\n\n또는 각 항을 직접 3으로 나눠도 됩니다.\n\n$$\\frac{6x + 9}{3} = \\frac{6x}{3} + \\frac{9}{3} = 2x + 3$$\n\n---\n\n## 이 개념이 수학에서 어디에 있을까요?\n\n이미 알고 계신 **정수와 유리수의 곱셈**이 문자식으로 확장된 것입니다. $3 \\times 5 = 15$를 할 줄 안다면, $3 \\times 5x = 15x$도 할 수 있어요. 숫자 대신 문자가 들어왔을 뿐이에요.\n\n이 계산을 익히면 바로 다음 개념인 **일차식의 덧셈과 뺄셈**으로 이어집니다. 여러 일차식을 더하거나 뺄 때 먼저 각 식을 정리하는 데 오늘 배운 기술이 꼭 필요하거든요.\n\n---\n\n## 가장 자주 하는 실수 하나\n\n$$3(2x + 5) = 6x + 5$$\n\n이렇게 계산하는 경우가 많습니다. 첫 번째 항 $2x$에만 3을 곱하고, $5$는 그냥 놔둔 거예요.\n\n괄호 안에 항이 두 개라면, 반드시 **두 항 모두에** 곱해야 합니다. \"내가 괄호 안의 모든 항을 빠짐없이 곱했는가?\"를 계산 후 한 번 더 확인하는 습관을 들이세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">분배법칙: 괄호 밖의 수는 안에 있는 모든 항에 곱해진다</text>\n\n  <!-- ===== TOP: Box Analogy ===== -->\n  <!-- Box 1 -->\n  <rect x=\"30\" y=\"50\" width=\"80\" height=\"60\" rx=\"8\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"70\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">연필 x자루</text>\n  <text x=\"70\" y=\"90\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">지우개 5개</text>\n  <text x=\"70\" y=\"124\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">(x + 5)</text>\n\n  <!-- Box 2 -->\n  <rect x=\"130\" y=\"50\" width=\"80\" height=\"60\" rx=\"8\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"170\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">연필 x자루</text>\n  <text x=\"170\" y=\"90\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">지우개 5개</text>\n  <text x=\"170\" y=\"124\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">(x + 5)</text>\n\n  <!-- Box 3 -->\n  <rect x=\"230\" y=\"50\" width=\"80\" height=\"60\" rx=\"8\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"270\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">연필 x자루</text>\n  <text x=\"270\" y=\"90\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">지우개 5개</text>\n  <text x=\"270\" y=\"124\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">(x + 5)</text>\n\n  <!-- × 3 label -->\n  <text x=\"155\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\" font-weight=\"bold\">상자 3개</text>\n\n  <!-- Arrow right -->\n  <line x1=\"325\" y1=\"80\" x2=\"355\" y2=\"80\" stroke=\"#666\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/>\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#666\"/>\n    </marker>\n    <marker id=\"arr2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#4A90D9\"/>\n    </marker>\n    <marker id=\"arr3\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L8,3 z\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n\n  <!-- Result box -->\n  <rect x=\"360\" y=\"50\" width=\"120\" height=\"60\" rx=\"8\" fill=\"#EAF4FB\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"420\" y=\"72\" text-anchor=\"middle\" font-size=\"12\" fill=\"#4A90D9\" font-weight=\"bold\">연필 3x자루</text>\n  <text x=\"420\" y=\"92\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\" font-weight=\"bold\">지우개 15개</text>\n  <text x=\"420\" y=\"124\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">3x + 15</text>\n\n  <!-- ===== MIDDLE: Distributive Law Visual ===== -->\n  <rect x=\"20\" y=\"145\" width=\"460\" height=\"80\" rx=\"10\" fill=\"#fff\" stroke=\"#ddd\" stroke-width=\"1.5\"/>\n\n  <!-- Expression: 3(2x + 5) -->\n  <text x=\"40\" y=\"178\" text-anchor=\"start\" font-size=\"22\" font-weight=\"bold\" fill=\"#333\">3</text>\n  <text x=\"58\" y=\"178\" text-anchor=\"start\" font-size=\"22\" fill=\"#333\">(</text>\n  <text x=\"70\" y=\"178\" text-anchor=\"start\" font-size=\"22\" font-weight=\"bold\" fill=\"#4A90D9\">2x</text>\n  <text x=\"100\" y=\"178\" text-anchor=\"start\" font-size=\"22\" fill=\"#333\"> + </text>\n  <text x=\"126\" y=\"178\" text-anchor=\"start\" font-size=\"22\" font-weight=\"bold\" fill=\"#E67E22\">5</text>\n  <text x=\"143\" y=\"178\" text-anchor=\"start\" font-size=\"22\" fill=\"#333\">)</text>\n  <text x=\"165\" y=\"178\" text-anchor=\"start\" font-size=\"22\" fill=\"#333\"> = </text>\n\n  <!-- Result: 6x + 15 -->\n  <text x=\"200\" y=\"178\" text-anchor=\"start\" font-size=\"22\" font-weight=\"bold\" fill=\"#4A90D9\">6x</text>\n  <text x=\"230\" y=\"178\" text-anchor=\"start\" font-size=\"22\" fill=\"#333\"> + </text>\n  <text x=\"256\" y=\"178\" text-anchor=\"start\" font-size=\"22\" font-weight=\"bold\" fill=\"#E67E22\">15</text>\n\n  <!-- Curved arrows showing distribution -->\n  <!-- Arrow from 3 to 2x -->\n  <path d=\"M 48,162 Q 75,138 95,162\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"2\" marker-end=\"url(#arr2)\"/>\n  <text x=\"72\" y=\"133\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">×3</text>\n\n  <!-- Arrow from 3 to 5 -->\n  <path d=\"M 50,164 Q 90,128 130,162\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\" marker-end=\"url(#arr3)\"/>\n  <text x=\"96\" y=\"125\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">×3</text>\n\n  <!-- Annotations -->\n  <text x=\"215\" y=\"208\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">3×2x</text>\n  <text x=\"268\" y=\"208\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">3×5</text>\n\n  <!-- ===== BOTTOM: General Formula ===== -->\n  <rect x=\"20\" y=\"238\" width=\"460\" height=\"50\" rx=\"10\" fill=\"#5CB85C\" fill-opacity=\"0.1\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"259\" text-anchor=\"middle\" font-size=\"12\" fill=\"#5CB85C\" font-weight=\"bold\">분배법칙</text>\n  <text x=\"250\" y=\"278\" text-anchor=\"middle\" font-size=\"14\" fill=\"#333\" font-weight=\"bold\">a(bx + c)  =  abx + ac</text>\n</svg>",
+      "checkQuestion": {
+        "question": "$-3(2x - 4)$를 계산한 결과는 무엇인가요?",
+        "options": [
+          "-6x + 12",
+          "-6x - 12",
+          "-6x - 4",
+          "6x - 12"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "음수끼리의 곱셈, 분수와의 곱셈 등 수의 곱셈·나눗셈 규칙을 알아야 각 항에 올바르게 곱할 수 있습니다."
+        },
+        {
+          "concept": "문자를 사용한 식",
+          "chapterId": "math-7-1-04",
+          "reason": "$3x$, $2x+5$처럼 문자를 포함한 식의 구조(항, 계수, 상수항)를 이해해야 분배법칙을 적용할 수 있습니다."
+        },
+        {
+          "concept": "식의 값",
+          "chapterId": "math-7-1-04",
+          "reason": "계산 결과가 맞는지 $x$에 숫자를 대입해 검증할 수 있어야 합니다."
+        }
+      ],
+      "concept": "일차식과 수의 곱셈, 나눗셈"
+    },
+    {
+      "explanation": "잠깐, 질문 하나 드릴게요.\n\n사과 3개와 오렌지 2개가 있어요. 이걸 합쳐서 \"과일 5개\"라고 할 수 있을까요?\n\n네, 가능하죠. 하지만 \"사과 5개\"라고 하면 틀립니다. 사과는 사과끼리, 오렌지는 오렌지끼리 더해야 하니까요. 식에서도 똑같은 원리가 있어요. $2x + 3y$를 $5xy$로 만들 수는 없습니다.\n\n## 동류항이란?\n\n$3x + 5x$를 계산해 볼까요?\n\n$x$가 3개 있고, 거기에 $x$가 5개 더 있으니 $x$가 8개입니다. 그래서 $3x + 5x = 8x$예요. 여기서 $3x$와 $5x$처럼 **문자 부분이 완전히 같은 항**을 **동류항**(같은 종류의 항이라는 뜻)이라고 합니다.\n\n동류항인지 확인하는 법:\n- $2x$와 $5x$ → 동류항 ✓ (둘 다 $x$)\n- $3x$와 $4y$ → 동류항 아님 ✗ (문자가 다름)\n- $x^2$와 $x$ → 동류항 아님 ✗ (차수가 다름)\n- $-2$와 $7$ → 동류항 ✓ (둘 다 상수항)\n\n## 일차식의 덧셈\n\n$(3x + 1) + (2x - 4)$를 계산해 봅시다.\n\n괄호를 풀면: $3x + 1 + 2x - 4$\n\n동류항끼리 모아서 계산합니다:\n$$3x + 2x = 5x, \\quad 1 + (-4) = -3$$\n\n결과: $\\boxed{5x - 3}$\n\n## 일차식의 뺄셈 — 여기가 핵심입니다\n\n$(3x + 1) - (2x - 4)$를 계산해 봅시다.\n\n뒤 괄호 앞에 $-$ 부호가 있으면, **괄호 안 모든 항의 부호가 반대로 바뀝니다**.\n\n$$= 3x + 1 \\underbrace{- 2x + 4}_{-(2x-4) \\text{ 를 전개}}$$\n\n동류항끼리 모으면:\n$$3x - 2x = x, \\quad 1 + 4 = 5$$\n\n결과: $\\boxed{x + 5}$\n\n이처럼 동류항끼리 모아 계수를 더하거나 빼는 것을 **일차식의 덧셈과 뺄셈**이라고 합니다.\n\n## 수학의 지도에서 이 개념의 위치\n\n문자를 사용한 식과 일차식의 곱셈·나눗셈을 이미 익혔다면, 이제 식끼리 더하고 뺄 수 있게 됩니다. 이 기술은 바로 다음에 배우는 **일차방정식** 풀이에서 양변을 정리할 때 핵심 도구가 됩니다.\n\n## 딱 하나, 자주 하는 실수\n\n$(5x + 3) - (2x - 1)$을 계산할 때, 많은 학생이 $5x + 3 - 2x - 1 = 3x + 2$라고 합니다. 하지만 정답은 $3x + 4$예요. $-(2x - 1) = -2x + 1$이므로 $-1$의 부호도 $+1$로 바뀌어야 하거든요. **뒤 괄호 전체에 마이너스가 붙으면, 괄호 안 마지막 항까지 예외 없이 부호가 바뀐다**는 것을 꼭 기억하세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$(4x - 3) - (x + 2)$를 계산하면?",
+        "options": [
+          "$3x - 5$",
+          "$3x - 1$",
+          "$3x + 5$",
+          "$5x - 5$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "일차식과 수의 곱셈, 나눗셈",
+          "chapterId": "math-7-1-04",
+          "reason": "계수(문자 앞의 수)의 의미와 조작 방법을 이해해야 동류항의 계수를 더하고 뺄 수 있습니다."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "동류항을 합칠 때 음수 계수끼리 더하고 빼는 계산이 필요합니다."
+        },
+        {
+          "concept": "문자를 사용한 식",
+          "chapterId": "math-7-1-04",
+          "reason": "항, 계수, 상수항 등 식의 구성 요소를 알아야 동류항을 구별할 수 있습니다."
+        }
+      ],
+      "concept": "일차식의 덧셈과 뺄셈"
+    }
+  ]
+}

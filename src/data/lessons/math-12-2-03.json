@@ -1,0 +1,130 @@
+{
+  "chapterId": "math-12-2-03",
+  "chapterTitle": "3단원 - 수열의 극한",
+  "generatedAt": "2026-04-06T12:52:11.497786+00:00",
+  "lessons": [
+    {
+      "explanation": "## 분모도 무한대, 분자도 무한대인데... 극한값이 있다고?\n\n지난 시간에 수열의 극한의 뜻을 배웠죠. $\\lim_{n \\to \\infty} \\frac{1}{n} = 0$처럼 단순한 경우는 바로 보이지만, 이런 경우는 어떨까요?\n\n$$\\lim_{n \\to \\infty} \\frac{3n^2 + 2n}{n^2 - 1}$$\n\n$n$이 무한대로 가면 분자도 $\\infty$, 분모도 $\\infty$. 그러면 $\\frac{\\infty}{\\infty}$... 이건 1인가요? 아니면 무한대인가요? 사실 이 형태만으로는 아무것도 알 수 없습니다. 이걸 **부정형** (값이 정해지지 않은 형태)이라고 해요.\n\n그런데 실제로 계산해 보면 값이 딱 나옵니다. 어떻게?\n\n---\n\n### 핵심 기술: 최고차항으로 나누기\n\n분자와 분모를 **$n$의 최고차항** $n^2$으로 나눠보세요.\n\n$$\\frac{3n^2 + 2n}{n^2 - 1} = \\frac{\\dfrac{3n^2 + 2n}{n^2}}{\\dfrac{n^2 - 1}{n^2}} = \\frac{3 + \\dfrac{2}{n}}{1 - \\dfrac{1}{n^2}}$$\n\n$n \\to \\infty$이면 $\\dfrac{2}{n} \\to 0$, $\\dfrac{1}{n^2} \\to 0$이므로:\n\n$$\\lim_{n \\to \\infty} \\frac{3n^2 + 2n}{n^2 - 1} = \\frac{3 + 0}{1 - 0} = 3$$\n\n$\\infty$처럼 보이던 식이 나누기 하나로 깔끔하게 정리됐습니다. 이게 바로 극한값 계산의 핵심 전략이에요.\n\n**일반 원칙:** $\\frac{\\infty}{\\infty}$ 꼴의 유리식은 **분모의 최고차항**으로 분자·분모를 나누면 부정형이 해소됩니다.\n\n---\n\n### 최고차항 비교로 빠르게 판단하기\n\n매번 나누기를 직접 하지 않아도, 다음 패턴을 알면 빠릅니다.\n\n$\\lim_{n \\to \\infty} \\frac{a_m n^m + \\cdots}{b_k n^k + \\cdots}$ 에서:\n\n- **분자 차수 = 분모 차수** ($m = k$): 극한값 $= \\dfrac{a_m}{b_k}$ (최고차항 계수의 비)\n- **분자 차수 < 분모 차수** ($m < k$): 극한값 $= 0$\n- **분자 차수 > 분모 차수** ($m > k$): 극한값 $= \\pm\\infty$ (발산)\n\n---\n\n### 또 다른 부정형: $\\infty - \\infty$\n\n$$\\lim_{n \\to \\infty} (\\sqrt{n^2 + 3n} - n)$$\n\n$\\infty - \\infty$ 꼴입니다. 이건 **분자 유리화** (근호 포함 식을 제거하는 기법)로 해결해요.\n\n$$\\sqrt{n^2 + 3n} - n = \\frac{(\\sqrt{n^2+3n} - n)(\\sqrt{n^2+3n} + n)}{\\sqrt{n^2+3n} + n} = \\frac{3n}{\\sqrt{n^2+3n} + n}$$\n\n다시 $n$으로 분자·분모를 나누면:\n\n$$= \\frac{3}{\\sqrt{1 + \\dfrac{3}{n}} + 1} \\xrightarrow{n \\to \\infty} \\frac{3}{1 + 1} = \\frac{3}{2}$$\n\n---\n\n### 극한의 사칙연산\n\n$\\lim_{n \\to \\infty} a_n = \\alpha$, $\\lim_{n \\to \\infty} b_n = \\beta$가 **존재할 때** (수렴할 때):\n\n$$\\lim_{n \\to \\infty} (a_n \\pm b_n) = \\alpha \\pm \\beta, \\quad \\lim_{n \\to \\infty} a_n b_n = \\alpha\\beta, \\quad \\lim_{n \\to \\infty} \\frac{a_n}{b_n} = \\frac{\\alpha}{\\beta} \\ (\\beta \\neq 0)$$\n\n이것을 **극한의 사칙연산** (수렴하는 수열끼리의 극한값 계산 법칙)이라 합니다. 단, 반드시 **두 극한이 모두 수렴할 때**만 쓸 수 있어요.\n\n---\n\n### 이 개념의 위치\n\n극한값의 계산은 수열의 극한에서 '말로만 알던 것'을 실제로 구하는 도구입니다. 이 기술은 바로 다음 주제인 등비급수와 급수의 수렴 판단에 직접 쓰입니다. 나아가 고교 2학기에 배울 함수의 극한(math-12-1-01)에서도 완전히 같은 전략이 등장합니다.\n\n---\n\n### 한 가지 주의\n\n가장 흔한 실수는 **극한의 사칙연산 법칙을 부정형에 그냥 적용하는 것**입니다. 예를 들어 $\\lim (a_n - b_n)$을 계산할 때, $a_n$과 $b_n$ 각각의 극한이 $\\infty$이면 이 법칙을 쓸 수 없습니다. $\\infty - \\infty$는 부정형이므로 반드시 변형을 먼저 해야 합니다. 법칙은 수렴하는 수열에만 적용됩니다.",
+      "checkQuestion": {
+        "question": "$\\lim_{n \\to \\infty} \\dfrac{2n^2 - n + 1}{4n^2 + 3}$ 의 값은?",
+        "options": [
+          "$\\dfrac{1}{2}$",
+          "$\\dfrac{1}{4}$",
+          "$2$",
+          "$\\infty$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "수열의 극한의 뜻과 성질",
+          "chapterId": "math-12-2-03",
+          "reason": "극한값을 계산하려면 수열이 수렴·발산한다는 것이 무엇인지 먼저 알아야 변형 전략을 선택할 수 있습니다."
+        },
+        {
+          "concept": "다항식의 곱셈, 나머지정리와 인수정리, 인수분해",
+          "chapterId": "math-10-1-01",
+          "reason": "분자 유리화와 분자·분모 변형 과정에서 다항식 전개와 인수분해가 필수적으로 사용됩니다."
+        },
+        {
+          "concept": "등비수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "$r^n$ 꼴이 포함된 극한($|r|<1$이면 $r^n \\to 0$ 등)을 계산할 때 등비수열의 성질을 알아야 합니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "극한값의 계산"
+    },
+    {
+      "explanation": "## 무한히 더하면 얼마가 될까?\n\n이런 식을 본 적 있나요?\n\n$$\\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots$$\n\n항이 무한히 많은데, 더할수록 합이 어딘가에 가까워지는 느낌이 드시나요? 정말로 그럴 수 있을까요?\n\n1미터짜리 선분을 생각해보세요. 먼저 절반인 $\\frac{1}{2}$만큼 이동하고, 남은 것의 절반인 $\\frac{1}{4}$만큼 더 이동하고, 또 절반... 이렇게 무한히 반복해도 선분을 벗어날 수 없습니다. 합은 정확히 **1**에 수렴합니다.\n\n이것이 **등비급수** (첫째 항부터 공비를 계속 곱해서 만든 수열의 항을 무한히 더한 것)의 핵심 아이디어입니다.\n\n---\n\n## 유한 합 공식에서 출발하기\n\n이미 알고 있는 공식을 다시 꺼내볼게요. 첫째 항이 $a$, 공비가 $r$인 등비수열의 첫 $n$항의 합, 즉 **부분합** $S_n$은:\n\n$$S_n = \\frac{a(1 - r^n)}{1 - r} \\quad (r \\neq 1)$$\n\n이제 $n$을 무한히 크게 보내봅시다. $S_n$이 특정 값에 수렴하려면 $r^n$이 어떻게 되어야 할까요?\n\n- $|r| < 1$이면: $r^n \\to 0$ (예: $\\left(\\frac{1}{2}\\right)^{10} \\approx 0.001$, $n$이 커질수록 0에 가까워짐)\n- $|r| \\geq 1$이면: $r^n$이 0으로 가지 않음 (발산하거나 진동)\n\n$|r| < 1$인 경우에만:\n\n$$S = \\lim_{n \\to \\infty} S_n = \\lim_{n \\to \\infty} \\frac{a(1 - r^n)}{1 - r} = \\frac{a(1 - 0)}{1 - r} = \\frac{a}{1-r}$$\n\n---\n\n## 정리: 등비급수\n\n첫째 항이 $a$, 공비가 $r$인 **등비급수** (geometric series):\n\n$$\\sum_{n=1}^{\\infty} ar^{n-1} = a + ar + ar^2 + ar^3 + \\cdots$$\n\n**수렴 조건과 합:**\n\n$$|r| < 1 \\text{일 때}: \\quad S = \\frac{a}{1-r}$$\n\n$|r| \\geq 1$이면 등비급수는 **발산**합니다.\n\n맨 처음 예시를 확인해볼까요?\n\n$$\\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\cdots = \\frac{\\frac{1}{2}}{1 - \\frac{1}{2}} = \\frac{\\frac{1}{2}}{\\frac{1}{2}} = 1 \\checkmark$$\n\n---\n\n## 이 개념의 위치\n\n등비급수는 수열의 극한 개념을 처음으로 급수에 적용한 구체적인 사례입니다. 이후 일반 급수의 수렴·발산 판단으로 나아가는 토대가 되며, 물리학의 감쇠 진동, 경제학의 현재가치 계산, 확률의 무한 시행 등 다양한 분야에 그대로 등장합니다.\n\n---\n\n## 이것만은 주의하세요\n\n수렴 조건을 확인하지 않고 공식 $\\frac{a}{1-r}$을 바로 적용하는 실수가 가장 흔합니다. 공비가 $r = 2$인 경우에 공식을 쓰면 $\\frac{a}{1-2} = -a$라는 이상한 음수 결과가 나옵니다. **공식을 쓰기 전에 반드시 $|r| < 1$ 인지 확인하는 것이 첫 번째 단계**입니다.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"32\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#222\">등비급수 — 무한히 더해도 유한한 합</text>\n\n  <!-- Subtitle -->\n  <text x=\"250\" y=\"54\" text-anchor=\"middle\" font-size=\"12\" fill=\"#666\">1미터 선분을 반씩 나누면…</text>\n\n  <!-- Bar outline (total = 1) -->\n  <rect x=\"50\" y=\"90\" width=\"400\" height=\"64\" fill=\"#e9ecef\" stroke=\"#aaa\" stroke-width=\"1.5\" rx=\"4\"/>\n\n  <!-- 1/2 segment -->\n  <rect x=\"50\" y=\"90\" width=\"200\" height=\"64\" fill=\"#4A90D9\" rx=\"4\"/>\n  <text x=\"150\" y=\"118\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"white\">1/2</text>\n  <text x=\"150\" y=\"138\" text-anchor=\"middle\" font-size=\"11\" fill=\"#d0e8ff\">첫째 항</text>\n\n  <!-- 1/4 segment -->\n  <rect x=\"250\" y=\"90\" width=\"100\" height=\"64\" fill=\"#5CB85C\"/>\n  <text x=\"300\" y=\"118\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"white\">1/4</text>\n  <text x=\"300\" y=\"138\" text-anchor=\"middle\" font-size=\"10\" fill=\"#d4f5d4\">둘째</text>\n\n  <!-- 1/8 segment -->\n  <rect x=\"350\" y=\"90\" width=\"50\" height=\"64\" fill=\"#E67E22\"/>\n  <text x=\"375\" y=\"118\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"white\">1/8</text>\n  <text x=\"375\" y=\"136\" text-anchor=\"middle\" font-size=\"9\" fill=\"#fde8cc\">셋째</text>\n\n  <!-- 1/16 segment -->\n  <rect x=\"400\" y=\"90\" width=\"25\" height=\"64\" fill=\"#9B59B6\"/>\n  <text x=\"412\" y=\"122\" text-anchor=\"middle\" font-size=\"8\" font-weight=\"bold\" fill=\"white\">1/16</text>\n\n  <!-- 1/32 segment -->\n  <rect x=\"425\" y=\"90\" width=\"13\" height=\"64\" fill=\"#E74C3C\"/>\n\n  <!-- remainder dots -->\n  <rect x=\"438\" y=\"90\" width=\"12\" height=\"64\" fill=\"#bbb\" rx=\"0 4 4 0\"/>\n  <text x=\"444\" y=\"125\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">…</text>\n\n  <!-- Axis ticks -->\n  <line x1=\"50\" y1=\"158\" x2=\"50\" y2=\"165\" stroke=\"#444\" stroke-width=\"1.5\"/>\n  <line x1=\"450\" y1=\"158\" x2=\"450\" y2=\"165\" stroke=\"#444\" stroke-width=\"1.5\"/>\n  <text x=\"50\" y=\"178\" text-anchor=\"middle\" font-size=\"12\" fill=\"#444\">0</text>\n  <text x=\"450\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#4A90D9\">1</text>\n\n  <!-- Arrows pointing to \"1\" -->\n  <line x1=\"350\" y1=\"195\" x2=\"440\" y2=\"195\" stroke=\"#E67E22\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\" marker-end=\"url(#arr)\"/>\n  <defs>\n    <marker id=\"arr\" markerWidth=\"7\" markerHeight=\"7\" refX=\"6\" refY=\"3.5\" orient=\"auto\">\n      <polygon points=\"0 0, 7 3.5, 0 7\" fill=\"#E67E22\"/>\n    </marker>\n  </defs>\n  <text x=\"290\" y=\"192\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">점점 1에 가까워집니다</text>\n\n  <!-- Formula -->\n  <rect x=\"60\" y=\"210\" width=\"380\" height=\"38\" rx=\"8\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"234\" text-anchor=\"middle\" font-size=\"14\" fill=\"#333\">\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">1/2</tspan>\n    <tspan fill=\"#555\"> + </tspan>\n    <tspan font-weight=\"bold\" fill=\"#5CB85C\">1/4</tspan>\n    <tspan fill=\"#555\"> + </tspan>\n    <tspan font-weight=\"bold\" fill=\"#E67E22\">1/8</tspan>\n    <tspan fill=\"#555\"> + </tspan>\n    <tspan font-weight=\"bold\" fill=\"#9B59B6\">1/16</tspan>\n    <tspan fill=\"#555\"> + ··· =</tspan>\n    <tspan font-weight=\"bold\" fill=\"#222\"> 1</tspan>\n  </text>\n\n  <!-- Aha label -->\n  <text x=\"250\" y=\"270\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\" font-weight=\"bold\">✦ 무한히 더해도 딱 1 — 등비급수의 수렴!</tspan>\n  </text>\n</svg>",
+      "checkQuestion": {
+        "question": "다음 등비급수의 합을 구하세요. $$\\frac{1}{3} + \\frac{1}{9} + \\frac{1}{27} + \\cdots$$",
+        "options": [
+          "$\\dfrac{1}{2}$",
+          "$\\dfrac{1}{3}$",
+          "$1$",
+          "발산한다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "등비수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "등비급수의 합은 유한 부분합 공식 $S_n = \\frac{a(1-r^n)}{1-r}$에서 $n \\to \\infty$ 극한을 취해 유도하므로, 이 공식을 이해하고 있어야 합니다."
+        },
+        {
+          "concept": "수열의 극한의 뜻과 성질",
+          "chapterId": "math-12-2-03",
+          "reason": "부분합 $S_n$의 극한이 존재하는지 판단하는 수렴·발산 개념이 등비급수 정의의 핵심입니다."
+        },
+        {
+          "concept": "극한값의 계산",
+          "chapterId": "math-12-2-03",
+          "reason": "$|r| < 1$일 때 $r^n \\to 0$임을 계산할 수 있어야 등비급수 합 공식을 유도할 수 있습니다."
+        }
+      ],
+      "concept": "등비급수"
+    },
+    {
+      "explanation": "## 무한히 더하면 어떻게 될까?\n\n잠깐 이런 질문을 생각해 봅시다.\n\n$$1 + \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots$$\n\n이걸 끝없이 더하면 결국 얼마가 될까요? \"무한히 더하니까 무한대가 되는 거 아닌가요?\" 라고 생각했다면, 사실 그게 더 자연스러운 반응입니다. 그런데 실제로 해보면 이 합은 2에 **수렴**합니다. 이게 왜 그럴까요?\n\n---\n\n## 급수란 무엇인가\n\n수열 $\\{a_n\\}$이 있을 때, 그 항들을 무한히 더한 식\n\n$$a_1 + a_2 + a_3 + \\cdots = \\sum_{n=1}^{\\infty} a_n$$\n\n을 **급수** (무한급수, infinite series)라고 합니다.\n\n그런데 \"무한히 더한다\"는 것 자체가 조금 모호하지 않나요? 실제로 우리가 무한 번 덧셈을 할 수는 없으니까요. 그래서 수학자들은 이렇게 정의했습니다: **부분합**의 극한으로 급수를 이해하자.\n\n**부분합** $S_n$은 처음 $n$개 항의 합입니다:\n\n$$S_1 = a_1, \\quad S_2 = a_1 + a_2, \\quad S_3 = a_1 + a_2 + a_3, \\quad \\ldots$$\n\n이렇게 $S_1, S_2, S_3, \\ldots$ 는 또 하나의 수열입니다. 그러면 자연스러운 질문이 생깁니다: 이 부분합 수열 $\\{S_n\\}$은 어떤 값에 다가가나요?\n\n---\n\n## 수렴과 발산\n\n$\\lim_{n \\to \\infty} S_n = S$ (유한한 값 $S$)이면, 급수가 **수렴**한다고 하고, 그 값 $S$를 급수의 **합**이라고 합니다:\n\n$$\\sum_{n=1}^{\\infty} a_n = S$$\n\n반면 $S_n$이 특정 값에 다가가지 않고 발산하거나 진동하면, 급수가 **발산**한다고 합니다.\n\n처음 예시로 돌아가면:\n$$S_1 = 1, \\quad S_2 = 1.5, \\quad S_3 = 1.75, \\quad S_4 = 1.875, \\quad \\ldots$$\n\n이 수열은 2에 한없이 가까워집니다. 따라서 $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{1}{2^{n-1}} = 2$.\n\n---\n\n## 수렴하려면 어떤 조건이 필요할까?\n\n급수가 수렴하려면 최소한 각 항 $a_n$이 0에 수렴해야 합니다. 즉:\n\n$$\\sum_{n=1}^{\\infty} a_n \\text{ 이 수렴하면} \\Rightarrow \\lim_{n \\to \\infty} a_n = 0$$\n\n이건 **필요조건**입니다. 증명은 간단해요: $a_n = S_n - S_{n-1}$이고, $S_n \\to S$이면 $a_n \\to S - S = 0$.\n\n그래서 이 **대우**가 매우 유용합니다:\n\n$$\\lim_{n \\to \\infty} a_n \\neq 0 \\Rightarrow \\sum_{n=1}^{\\infty} a_n \\text{ 은 발산한다}$$\n\n예를 들어 $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n}{n+1}$은 각 항 $\\frac{n}{n+1} \\to 1 \\neq 0$이므로 바로 발산을 판정할 수 있습니다.\n\n---\n\n## 급수의 성질\n\n두 급수 $\\sum a_n = A$, $\\sum b_n = B$가 수렴하면:\n\n$$\\sum (a_n \\pm b_n) = A \\pm B, \\qquad \\sum k a_n = kA \\quad (k \\text{는 상수})$$\n\n이건 수열의 극한 성질이 급수에도 그대로 이어지는 구조입니다.\n\n---\n\n## 지도에서의 위치\n\n급수의 수렴·발산은 수열의 극한을 기반으로 합니다. 부분합이라는 다리를 통해 \"수열의 극한\"이 \"무한합\"의 언어로 번역되는 것이죠. 이 개념은 등비급수의 합 공식 $\\frac{a}{1-r}$을 이해하는 기초이며, 더 나아가 테일러 급수나 푸리에 급수 같은 고등 수학의 문을 여는 열쇠입니다.\n\n---\n\n## 꼭 주의할 것 하나\n\n$\\lim_{n \\to \\infty} a_n = 0$이라고 해서 반드시 급수가 수렴하지는 않습니다. 유명한 반례가 **조화급수**입니다:\n\n$$\\sum_{n=1}^{\\infty} \\frac{1}{n} = 1 + \\frac{1}{2} + \\frac{1}{3} + \\cdots$$\n\n각 항은 0으로 수렴하지만, 이 급수는 발산합니다. $a_n \\to 0$은 수렴의 **필요조건**일 뿐, **충분조건**이 아닙니다. 이 차이를 혼동하면 큰 오류로 이어집니다.",
+      "checkQuestion": {
+        "question": "급수 $\\displaystyle\\sum_{n=1}^{\\infty} a_n$이 수렴할 때, 반드시 옳은 것은?",
+        "options": [
+          "$\\lim_{n \\to \\infty} a_n = 0$",
+          "$\\lim_{n \\to \\infty} a_n = 0$이면 급수는 반드시 수렴한다",
+          "$\\lim_{n \\to \\infty} S_n$은 발산한다",
+          "모든 $n$에 대해 $a_n > 0$이다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "수열의 극한의 뜻과 성질",
+          "chapterId": "math-12-2-03",
+          "reason": "급수의 수렴은 부분합 수열의 극한으로 정의되므로, 수열의 극한 개념이 반드시 선행되어야 합니다."
+        },
+        {
+          "concept": "등비수열의 일반항과 합",
+          "chapterId": "math-11-2-02",
+          "reason": "등비급수의 부분합 공식을 유도하고 수렴 조건을 이해하는 데 등비수열의 합 공식이 직접 사용됩니다."
+        },
+        {
+          "concept": "합의 기호 시그마(Σ)의 뜻과 성질",
+          "chapterId": "math-11-2-03",
+          "reason": "급수를 $\\sum$ 기호로 표기하고 그 성질을 다루려면 시그마 표기법에 익숙해야 합니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "급수의 수렴과 발산"
+    },
+    {
+      "explanation": "## 무한히 가까워진다는 것\n\n잠깐 상상해 보세요. 다음 수열을 보면 어떤 느낌이 드나요?\n\n$$\\frac{1}{1},\\ \\frac{1}{2},\\ \\frac{1}{3},\\ \\frac{1}{4},\\ \\frac{1}{5},\\ \\ldots$$\n\n$n$이 커질수록 값이 작아지고 있습니다. 그런데 과연 **0이 될 수 있을까요?** 아무리 큰 $n$을 대입해도 $\\frac{1}{n} > 0$이므로 절대 0에 도달하지는 않습니다. 그런데도 우리는 직관적으로 \"이 수열은 결국 0에 가까워진다\"고 말하고 싶어집니다. 이 감각에 수학적 이름을 붙인 것이 바로 **극한(limit)**입니다.\n\n---\n\n### 수열의 극한이란?\n\n$n$이 한없이 커질 때 수열 $\\{a_n\\}$의 값이 일정한 수 $\\alpha$에 한없이 가까워지면, 이 수열은 $\\alpha$에 **수렴(converge)**한다고 합니다. 이를 기호로는 다음과 같이 씁니다:\n\n$$\\lim_{n \\to \\infty} a_n = \\alpha$$\n\n반대로, 수렴하지 않는 수열은 **발산(diverge)**한다고 합니다. 발산에는 세 가지 유형이 있어요:\n- $a_n = n^2$처럼 양의 무한대로 발산: $\\lim_{n \\to \\infty} a_n = +\\infty$\n- $a_n = -n$처럼 음의 무한대로 발산: $\\lim_{n \\to \\infty} a_n = -\\infty$\n- $a_n = (-1)^n$처럼 진동 발산 (극한값 없음)\n\n---\n\n### 극한의 성질\n\n$\\lim_{n \\to \\infty} a_n = \\alpha$, $\\lim_{n \\to \\infty} b_n = \\beta$일 때 (두 수열 모두 수렴), 다음이 성립합니다:\n\n1. $\\lim_{n \\to \\infty} (a_n \\pm b_n) = \\alpha \\pm \\beta$\n2. $\\lim_{n \\to \\infty} c\\,a_n = c\\alpha$ (단, $c$는 상수)\n3. $\\lim_{n \\to \\infty} a_n b_n = \\alpha\\beta$\n4. $\\lim_{n \\to \\infty} \\dfrac{a_n}{b_n} = \\dfrac{\\alpha}{\\beta}$ (단, $\\beta \\neq 0$)\n\n이 성질들 덕분에 복잡한 수열도 **부분으로 분해**해서 극한을 계산할 수 있습니다.\n\n---\n\n### 실전 기술: $\\frac{\\infty}{\\infty}$ 꼴 처리\n\n극한을 배우면 가장 먼저 만나는 난관이 바로 분자, 분모가 모두 발산하는 경우입니다:\n\n$$\\lim_{n \\to \\infty} \\frac{3n^2 + 2n}{n^2 - 1}$$\n\n분자와 분모 모두 $\\infty$로 발산하므로 성질을 바로 쓸 수 없습니다. 이럴 때는 **분자·분모를 최고차항 $n^2$으로 나누는** 테크닉을 씁니다:\n\n$$= \\lim_{n \\to \\infty} \\frac{3 + \\dfrac{2}{n}}{1 - \\dfrac{1}{n^2}} = \\frac{3 + 0}{1 - 0} = 3$$\n\n$\\lim_{n \\to \\infty} \\frac{1}{n} = 0$, $\\lim_{n \\to \\infty} \\frac{1}{n^2} = 0$을 적용하면 깔끔하게 정리됩니다.\n\n---\n\n### 이 개념이 어디에 놓여 있나요?\n\n수열의 극한은 이 단원 전체의 토대입니다. 급수의 수렴·발산을 판정할 때도, 무한등비급수의 합을 구할 때도, 심지어 미적분에서 미분의 정의($\\lim$로 쓰는 것)까지 — 모두 \"한없이 가까워진다\"는 이 개념 위에 세워집니다.\n\n---\n\n### 딱 하나의 경고\n\n\"$\\lim_{n \\to \\infty} a_n = \\alpha$이면 $a_n$이 결국 $\\alpha$와 같아진다\"고 생각하기 쉽습니다. 하지만 수렴은 **도달**이 아니라 **접근**입니다. $\\frac{1}{n}$은 무한히 많은 항이 있어도 0이 되는 순간은 없습니다. 극한은 \"충분히 큰 $n$에서 원하는 만큼 가까워질 수 있다\"는 뜻이지, \"언젠가 만난다\"는 뜻이 아닙니다. 이 미묘한 차이를 잡아두는 것이 극한 전체를 이해하는 출발점입니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\lim_{n \\to \\infty} \\dfrac{2n^2 - 1}{n^2 + 3}$의 값은?",
+        "options": [
+          "$0$",
+          "$1$",
+          "$2$",
+          "발산"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "수열의 뜻과 표현",
+          "chapterId": "math-11-1-01",
+          "reason": "극한은 수열의 각 항이 변해가는 방향을 다루므로, 수열이 무엇이고 일반항 $a_n$이 어떻게 정의되는지 알아야 합니다."
+        },
+        {
+          "concept": "등비수열",
+          "chapterId": "math-11-1-02",
+          "reason": "무한등비급수의 수렴 조건을 이해하려면 공비 $r$에 따른 등비수열의 거동을 먼저 파악해야 합니다."
+        }
+      ],
+      "concept": "수열의 극한의 뜻과 성질"
+    }
+  ]
+}

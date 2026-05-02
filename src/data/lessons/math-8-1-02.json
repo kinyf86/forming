@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-8-1-02",
+  "chapterTitle": "2단원 - 식의 계산",
+  "generatedAt": "2026-04-01T13:59:31.219062+00:00",
+  "lessons": [
+    {
+      "explanation": "## 같은 수를 여러 번 곱하면 어떻게 될까?\n\n$2$를 다섯 번 곱하면 어떻게 쓸까?\n\n$$2 \\times 2 \\times 2 \\times 2 \\times 2$$\n\n쓰기도 귀찮고, 몇 번 곱했는지도 한눈에 안 보이지. 그래서 수학자들이 편리한 표기법을 만들었어. 바로 **거듭제곱** (같은 수를 여러 번 곱한 것을 간단하게 나타낸 표현)이야.\n\n$$2 \\times 2 \\times 2 \\times 2 \\times 2 = 2^5$$\n\n여기서 $2$는 **밑** (곱해지는 수), $5$는 **지수** (몇 번 곱했는지 나타내는 수)라고 해. 이건 이미 알고 있지?\n\n---\n\n## 여기서 뭔가 규칙이 보이지 않아?\n\n이제 조금 다른 상황을 생각해 봐.\n\n$$2^3 \\times 2^4$$\n\n이걸 그대로 풀어 쓰면:\n\n$$\\underbrace{2 \\times 2 \\times 2}_{3개} \\times \\underbrace{2 \\times 2 \\times 2 \\times 2}_{4개}$$\n\n결국 $2$를 몇 번 곱한 거야? **3 + 4 = 7번**이지.\n\n$$2^3 \\times 2^4 = 2^7$$\n\n**밑이 같은 거듭제곱끼리 곱하면, 지수끼리 더하면 돼.** 이게 첫 번째 **지수법칙** (지수를 계산할 때 성립하는 규칙들)이야.\n\n$$a^m \\times a^n = a^{m+n}$$\n\n---\n\n## 나눗셈은 어떨까?\n\n$$2^5 \\div 2^3 = \\frac{2^5}{2^3} = \\frac{2 \\times 2 \\times 2 \\times 2 \\times 2}{2 \\times 2 \\times 2}$$\n\n분자와 분모에서 $2$가 3개씩 약분되니까, 남는 건 $2^2$. 즉 지수끼리 **빼**면 돼.\n\n$$a^m \\div a^n = a^{m-n} \\quad (m > n)$$\n\n---\n\n## 거듭제곱을 또 거듭제곱하면?\n\n$$(2^3)^4$$\n\n이건 $2^3$을 4번 곱한다는 뜻이야.\n\n$$2^3 \\times 2^3 \\times 2^3 \\times 2^3 = 2^{3+3+3+3} = 2^{12}$$\n\n$3$을 4번 더한 거니까, **지수끼리 곱**하면 돼.\n\n$$(a^m)^n = a^{mn}$$\n\n---\n\n## 곱과 나눗셈에 지수가 붙으면?\n\n$$(2 \\times 3)^4 = (2 \\times 3) \\times (2 \\times 3) \\times (2 \\times 3) \\times (2 \\times 3) = 2^4 \\times 3^4$$\n\n묶음 전체를 거듭제곱하면, **안의 각각에 지수를 나눠서** 붙이면 돼.\n\n$$(ab)^n = a^n b^n, \\quad \\left(\\frac{a}{b}\\right)^n = \\frac{a^n}{b^n}$$\n\n---\n\n## 이걸 왜 배워야 해?\n\n지수법칙은 앞으로 나오는 단항식 계산, 다항식 계산의 기초 중의 기초야. 예를 들어 $3x^2 \\times 2x^3 = 6x^5$라고 계산할 수 있는 건 바로 $x^2 \\times x^3 = x^5$ 덕분이지. 더 나아가 고등학교에서 배울 지수함수, 로그도 모두 이 개념 위에 쌓여.\n\n---\n\n## 딱 하나, 자주 틀리는 것\n\n**$2^3 \\times 2^4 = 2^{12}$라고 쓰는 실수!**\n\n이건 지수를 더해야 하는데 곱해버린 거야. 왜 헷갈리냐면, \"곱셈을 했으니까 지수도 곱하겠지\"라는 느낌이 드거든. 하지만 지수는 **같은 밑의 곱셈에서는 더하고**, 거듭제곱의 거듭제곱 $(a^m)^n$에서만 곱해. 연산 종류를 꼭 확인해.",
+      "checkQuestion": {
+        "question": "$(a^2)^3 \\times a^4$를 간단히 하면?",
+        "options": [
+          "$a^{10}$",
+          "$a^9$",
+          "$a^{24}$",
+          "$a^{14}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "거듭제곱과 소인수분해",
+          "chapterId": "math-7-1-01",
+          "reason": "거듭제곱 표기법(밑과 지수)을 모르면 지수법칙의 식 자체를 이해할 수 없어요."
+        },
+        {
+          "concept": "문자를 사용한 식, 식의 값",
+          "chapterId": "math-7-1-04",
+          "reason": "지수법칙은 $a^m$처럼 문자로 일반화해서 표현하므로, 문자 식 다루기가 익숙해야 해요."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "지수 자리에 음수나 분수가 등장할 수 있어서, 정수·유리수 연산이 탄탄해야 해요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "지수법칙"
+    },
+    {
+      "explanation": "## 숫자는 숫자끼리, 문자는 문자끼리\n\n$3 \\times 4 = 12$는 어렵지 않죠. 그렇다면 $3x^2 \\times 4x^3$은 어떻게 계산할까요?\n\n이 식을 곱셈 기호로 완전히 풀어서 써볼게요:\n\n$$3x^2 \\times 4x^3 = 3 \\times x \\times x \\times 4 \\times x \\times x \\times x$$\n\n순서를 바꿔서 계수끼리, 문자끼리 묶어볼게요:\n\n$$= (3 \\times 4) \\times (\\underbrace{x \\times x \\times x \\times x \\times x}_{5\\text{개}}) = 12x^5$$\n\n규칙이 보이시나요? **계수** (문자 앞의 숫자)끼리는 곱하고, 같은 문자의 지수는 더했습니다. 이것은 앞에서 배운 지수법칙 $a^m \\times a^n = a^{m+n}$을 그대로 적용한 것입니다.\n\n이처럼 숫자와 문자의 거듭제곱으로만 이루어진 하나의 항, 즉 **단항식** (monomial)끼리 곱하거나 나누는 것을 **단항식의 곱셈과 나눗셈**이라고 합니다.\n\n---\n\n### 나눗셈도 같은 논리로\n\n나눗셈은 분수 형태로 바꾸면 자연스럽게 이어집니다:\n\n$$12x^5 \\div 4x^3 = \\frac{12x^5}{4x^3} = \\frac{12}{4} \\times \\frac{x^5}{x^3} = 3 \\times x^{5-3} = 3x^2$$\n\n계수는 나누고, 지수는 뺍니다. 지수법칙 $a^m \\div a^n = a^{m-n}$이 여기서도 작동합니다.\n\n---\n\n### 문자가 여러 개라도 당황하지 마세요\n\n$2a^2b \\times 3ab^2$처럼 문자가 두 종류라면, 각 문자에 대해 따로 지수법칙을 적용하면 됩니다:\n\n$$2a^2b \\times 3ab^2 = (2 \\times 3) \\times (a^2 \\times a^1) \\times (b^1 \\times b^2) = 6a^3b^3$$\n\n나눗셈도 마찬가지예요:\n\n$$6a^3b^3 \\div 2a^2b = \\frac{6}{2} \\times \\frac{a^3}{a^2} \\times \\frac{b^3}{b} = 3ab^2$$\n\n---\n\n### 이 개념의 자리\n\n단항식의 곱셈과 나눗셈은 지수법칙의 직접적인 응용입니다. 그리고 이 개념을 탄탄히 이해해야 다음 단계인 다항식의 곱셈, 그리고 중3에서 배울 인수분해까지 흔들리지 않고 나아갈 수 있습니다.\n\n---\n\n### 가장 흔한 실수\n\n$3x^2 \\times 4x^3$을 $12x^{\\mathbf{6}}$으로 계산하는 실수입니다. 계수 $3 \\times 4 = 12$는 맞는데, 지수를 더하지 않고 곱해버리는 것($2 \\times 3 = 6$)이 문제입니다. 계수는 곱하고, 지수는 **더하는** 것임을 꼭 기억하세요.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">단항식의 곱셈: 숫자는 숫자끼리, 문자는 문자끼리</text>\n\n  <!-- Step 1: Original expression -->\n  <rect x=\"20\" y=\"44\" width=\"460\" height=\"44\" rx=\"8\" fill=\"#EAF3FB\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"60\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">① 식을 풀어서 써보기</text>\n  <text x=\"250\" y=\"79\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">3x² × 4x³  =  3 × x × x × 4 × x × x × x</text>\n\n  <!-- Step 2: Reordering with colored groups -->\n  <rect x=\"20\" y=\"98\" width=\"460\" height=\"66\" rx=\"8\" fill=\"#FFF8F0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"114\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\" font-weight=\"bold\">② 숫자끼리, 문자끼리 묶기</text>\n\n  <!-- Numbers group box -->\n  <rect x=\"52\" y=\"122\" width=\"78\" height=\"28\" rx=\"6\" fill=\"#E67E22\" opacity=\"0.15\" stroke=\"#E67E22\" stroke-width=\"1.2\"/>\n  <text x=\"91\" y=\"140\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\" font-weight=\"bold\">3 × 4</text>\n\n  <text x=\"148\" y=\"140\" text-anchor=\"middle\" font-size=\"14\" fill=\"#555\">×</text>\n\n  <!-- Variables group box -->\n  <rect x=\"162\" y=\"122\" width=\"202\" height=\"28\" rx=\"6\" fill=\"#4A90D9\" opacity=\"0.12\" stroke=\"#4A90D9\" stroke-width=\"1.2\"/>\n  <text x=\"263\" y=\"140\" text-anchor=\"middle\" font-size=\"13\" fill=\"#4A90D9\" font-weight=\"bold\">x × x × x × x × x</text>\n\n  <!-- Labels below boxes -->\n  <text x=\"91\" y=\"158\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">계수끼리 곱</text>\n  <text x=\"263\" y=\"158\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">x가 2+3=5개</text>\n\n  <!-- Exponent law hint -->\n  <text x=\"390\" y=\"131\" text-anchor=\"middle\" font-size=\"10\" fill=\"#888\">지수법칙:</text>\n  <text x=\"390\" y=\"145\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\" font-weight=\"bold\">aᵐ × aⁿ = aᵐ⁺ⁿ</text>\n\n  <!-- Arrow down -->\n  <line x1=\"250\" y1=\"168\" x2=\"250\" y2=\"184\" stroke=\"#555\" stroke-width=\"2\" marker-end=\"url(#arr)\"/>\n  <defs>\n    <marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\">\n      <path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#555\"/>\n    </marker>\n  </defs>\n\n  <!-- Step 3: Result -->\n  <rect x=\"80\" y=\"186\" width=\"340\" height=\"50\" rx=\"10\" fill=\"#EAF7EA\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"204\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\" font-weight=\"bold\">③ 결과</text>\n\n  <!-- Colored result breakdown -->\n  <text x=\"175\" y=\"226\" text-anchor=\"middle\" font-size=\"18\" fill=\"#E67E22\" font-weight=\"bold\">12</text>\n  <text x=\"218\" y=\"226\" text-anchor=\"middle\" font-size=\"18\" fill=\"#4A90D9\" font-weight=\"bold\">x⁵</text>\n  <text x=\"255\" y=\"226\" text-anchor=\"middle\" font-size=\"14\" fill=\"#888\">=</text>\n  <text x=\"183\" y=\"226\" text-anchor=\"middle\" font-size=\"14\" fill=\"#888\">=  </text>\n\n  <!-- Annotation arrows for result -->\n  <text x=\"155\" y=\"242\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">3×4</text>\n  <text x=\"215\" y=\"242\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">2+3=5</text>\n\n  <!-- Rule box at bottom -->\n  <rect x=\"20\" y=\"252\" width=\"460\" height=\"36\" rx=\"8\" fill=\"#333\" opacity=\"0.88\"/>\n  <text x=\"250\" y=\"267\" text-anchor=\"middle\" font-size=\"11\" fill=\"#FFD700\" font-weight=\"bold\">공식: (a × xᵐ) × (b × xⁿ)  =  (a×b) × x</text>\n  <text x=\"385\" y=\"261\" text-anchor=\"middle\" font-size=\"9\" fill=\"#FFD700\">m+n</text>\n  <text x=\"250\" y=\"280\" text-anchor=\"middle\" font-size=\"10\" fill=\"#ccc\">계수는 곱하고 · 지수는 더한다</text>\n</svg>",
+      "checkQuestion": {
+        "question": "$2x^3 \\times 3x^2$를 계산하면?",
+        "options": [
+          "$6x^5$",
+          "$5x^5$",
+          "$6x^6$",
+          "$5x^6$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "지수법칙",
+          "chapterId": "math-8-1-02",
+          "reason": "단항식의 곱셈과 나눗셈은 지수법칙($a^m \\times a^n = a^{m+n}$, $a^m \\div a^n = a^{m-n}$)을 단항식 전체에 적용한 것이므로, 지수법칙을 먼저 이해해야 합니다."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "단항식의 계수가 분수나 음수일 수 있으므로, 유리수의 곱셈·나눗셈을 정확히 할 수 있어야 합니다."
+        },
+        {
+          "concept": "문자를 사용한 식과 일차식의 계산",
+          "chapterId": "math-7-1-04",
+          "reason": "단항식이 무엇인지, 계수와 문자 부분을 구분하는 기본 개념을 이미 알고 있어야 합니다."
+        }
+      ],
+      "concept": "단항식의 곱셈과 나눗셈"
+    },
+    {
+      "explanation": "## 다항식의 덧셈과 뺄셈\n\n수학 시간에 이런 식을 본 적 있을 거예요:\n\n$$3x^2 + 2x - 1$$\n\n그런데 여기에 $x^2 - 5x + 4$를 더하라고 하면 어디서부터 시작해야 할까요? 그냥 항을 쭉 나열하면 될까요? 아니면 뭔가 정리할 수 있을까요?\n\n잠깐 일상으로 돌아가 봅시다. 여러분이 마트 직원이에요. 사과 3개, 바나나 2개, 오렌지 1개가 있는 바구니에 사과 1개, 바나나 5개, 오렌지 4개를 더 담아야 해요. 어떻게 셀까요?\n\n사과끼리, 바나나끼리, 오렌지끼리 세겠죠. $3+1=4$개의 사과, $2+5=7$개의 바나나, $1+4=5$개의 오렌지. **다항식도 똑같아요.**\n\n---\n\n### 동류항: \"같은 종류\"란 뭘까요?\n\n**동류항** (같을 同, 무리 類 — 문자와 차수가 똑같은 항)이란, 변수와 그 차수가 모두 같은 항들을 말해요.\n\n예를 들어:\n- $3x^2$와 $-x^2$ → 둘 다 $x^2$항 → **동류항** ✓\n- $2x$와 $-5x$ → 둘 다 $x$항 → **동류항** ✓\n- $3x^2$와 $2x$ → 차수가 다름 (2차 vs 1차) → **동류항 아님** ✗\n- $2x$와 $2y$ → 문자가 다름 → **동류항 아님** ✗\n\n---\n\n### 다항식의 덧셈: 동류항끼리 모으기\n\n이제 실제로 계산해 봐요:\n\n$$\\underbrace{(3x^2 + 2x - 1)}_{\\text{첫 번째}} + \\underbrace{(x^2 - 5x + 4)}_{\\text{두 번째}}$$\n\n**Step 1.** 괄호를 풀어요. 더하기니까 부호는 그대로.\n$$= 3x^2 + 2x - 1 + x^2 - 5x + 4$$\n\n**Step 2.** 동류항끼리 모아요.\n$$= (3x^2 + x^2) + (2x - 5x) + (-1 + 4)$$\n\n**Step 3.** 각 묶음을 계산해요.\n$$= 4x^2 - 3x + 3$$\n\n---\n\n### 다항식의 뺄셈: 부호에 주의!\n\n뺄셈은 딱 한 가지만 다릅니다. **빼는 식의 괄호를 풀 때 모든 항의 부호가 바뀌어요.**\n\n$$(3x^2 + 2x - 1) - (x^2 - 5x + 4)$$\n\n$$= 3x^2 + 2x - 1 \\color{red}{-} x^2 \\color{red}{+} 5x \\color{red}{-} 4$$\n\n$$= (3x^2 - x^2) + (2x + 5x) + (-1 - 4)$$\n\n$$= 2x^2 + 7x - 5$$\n\n---\n\n### 이 개념의 위치\n\n이미 7학년 때 일차식($ax + b$ 꼴)의 덧셈과 뺄셈을 배웠어요. 다항식의 덧셈과 뺄셈은 그걸 더 높은 차수로 확장한 거예요. 항의 개수가 늘어도, 차수가 높아져도 원리는 동일합니다. 이 스킬은 곧 배울 다항식의 곱셈에서도, 나중에 인수분해와 방정식 풀이에서도 계속 쓰이니까 완벽하게 익혀 두는 게 중요해요.\n\n---\n\n### 자주 하는 실수 하나\n\n뺄셈에서 괄호 안의 **첫 번째 항만 부호를 바꾸고** 나머지는 그냥 두는 실수가 아주 많아요.\n\n$$-(x^2 - 5x + 4) \\neq -x^2 - 5x + 4 \\quad \\text{(틀림!)}$$\n$$-(x^2 - 5x + 4) = -x^2 + 5x - 4 \\quad \\text{(맞음)}$$\n\n괄호 앞에 마이너스가 있으면 괄호 안의 **모든 항**의 부호가 바뀐다는 것, 꼭 기억하세요.",
+      "checkQuestion": {
+        "question": "$(2x^2 - 3x + 5) - (x^2 + 2x - 1)$을 계산하면?",
+        "options": [
+          "$x^2 - 5x + 6$",
+          "$x^2 + 5x + 4$",
+          "$3x^2 - x + 4$",
+          "$x^2 - 5x + 4$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "일차식의 덧셈과 뺄셈",
+          "chapterId": "math-7-1-04",
+          "reason": "다항식의 덧셈과 뺄셈은 일차식에서 배운 동류항 정리 원리를 고차식으로 확장한 것이에요."
+        },
+        {
+          "concept": "지수법칙",
+          "chapterId": "math-8-1-02",
+          "reason": "어떤 항이 동류항인지 판단하려면 지수(차수)의 의미를 정확히 알아야 해요."
+        },
+        {
+          "concept": "정수와 유리수의 계산",
+          "chapterId": "math-7-1-03",
+          "reason": "동류항을 합칠 때 계수를 더하고 빼는 과정에서 음수 계수 계산이 자주 등장해요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "다항식의 덧셈과 뺄셈"
+    },
+    {
+      "explanation": "## 다항식끼리 곱하면 어떻게 될까?\n\n잠깐, 이 계산을 먼저 해 보세요.\n\n$$5 \\times 9 = ?$$\n\n네, 45죠. 그런데 이렇게도 계산할 수 있어요.\n\n$$5 \\times 9 = (2 + 3) \\times 9 = 2 \\times 9 + 3 \\times 9 = 18 + 27 = 45$$\n\n같은 답이 나오죠? 이건 여러분이 이미 아는 **분배법칙** (괄호 안의 각 항에 바깥의 수를 각각 곱하는 규칙) 덕분이에요.\n\n그렇다면 이건요?\n\n$$(2 + 3) \\times (4 + 5) = ?$$\n\n물론 $5 \\times 9 = 45$라고 바로 계산할 수도 있어요. 그런데 괄호를 풀지 않고, 분배법칙만으로 이걸 풀 수 있을까요?\n\n---\n\n## 핵심 아이디어: 분배법칙을 두 번\n\n$(2 + 3) \\times (4 + 5)$에서 $(4+5)$ 전체를 하나의 덩어리로 보고 분배해 보세요.\n\n$$= 2 \\times (4 + 5) + 3 \\times (4 + 5)$$\n\n이제 각각 또 분배하면:\n\n$$= 2 \\times 4 + 2 \\times 5 + 3 \\times 4 + 3 \\times 5 = 8 + 10 + 12 + 15 = 45$$\n\n같은 답! 여기서 패턴이 보이나요? **앞 괄호의 각 항**이 **뒤 괄호의 모든 항**과 한 번씩 곱해졌어요.\n\n---\n\n## 문자식에서도 똑같이\n\n이제 수 대신 문자가 들어가도 원리는 완전히 같아요.\n\n$$\\boxed{(a + b)(c + d) = ac + ad + bc + bd}$$\n\n이것을 **다항식의 곱셈** (두 개 이상의 항으로 이루어진 식을 서로 곱하는 것)이라고 해요.\n\n실제로 해볼게요.\n\n$$\\textbf{예제: } (x + 2)(x + 3)$$\n\n앞 괄호의 $x$를 뒤 괄호에 분배하고, 그다음 $2$를 뒤 괄호에 분배해요.\n\n$$= x \\cdot x + x \\cdot 3 + 2 \\cdot x + 2 \\cdot 3$$\n$$= x^2 + 3x + 2x + 6$$\n$$= x^2 + 5x + 6$$\n\n$3x$와 $2x$처럼 **동류항** (문자와 차수가 같은 항)끼리는 마지막에 합쳐 주는 걸 잊지 마세요.\n\n---\n\n## 단항식 × 다항식은 더 간단\n\n괄호가 하나라면 더 쉬워요.\n\n$$3x(2x^2 - x + 4) = 3x \\cdot 2x^2 + 3x \\cdot (-x) + 3x \\cdot 4 = 6x^3 - 3x^2 + 12x$$\n\n단항식의 곱셈 규칙(지수법칙, 계수 곱하기)을 각 항에 차례로 적용하면 끝이에요.\n\n---\n\n## 나눗셈: 각 항을 나눠라\n\n**다항식의 나눗셈** (다항식을 단항식으로 나누는 것)은 각 항을 따로따로 나누면 돼요.\n\n$$\\frac{6x^3 - 3x^2 + 12x}{3x} = \\frac{6x^3}{3x} - \\frac{3x^2}{3x} + \\frac{12x}{3x} = 2x^2 - x + 4$$\n\n분수의 덧셈처럼, 분자의 각 항을 같은 분모로 나눠 주는 거예요.\n\n---\n\n## 지도에서의 위치\n\n다항식의 곱셈은 이 단원에서 배운 지수법칙, 단항식 계산, 다항식의 덧셈을 모두 종합하는 개념이에요. 이것을 잘 익혀 두면 중학교 3학년에서 배울 **인수분해** (곱셈을 거꾸로 분해하는 것)를 훨씬 쉽게 이해할 수 있어요.\n\n---\n\n## 자주 하는 실수 하나\n\n$(x + 2)(x + 3)$을 계산할 때 $x^2 + 6$이라고 쓰는 경우가 많아요. $x \\times x = x^2$, $2 \\times 3 = 6$만 곱하고 교차항($x \\times 3$과 $2 \\times x$)을 빠뜨린 거예요. 분배법칙은 **앞 괄호의 모든 항 × 뒤 괄호의 모든 항**, 빠짐없이 곱해야 한다는 것을 꼭 기억하세요.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$(x + 3)(x - 2)$를 전개하면?",
+        "options": [
+          "$x^2 + x - 6$",
+          "$x^2 - 6$",
+          "$x^2 - x - 6$",
+          "$x^2 + 5x - 6$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "단항식의 곱셈과 나눗셈",
+          "chapterId": "math-8-1-02",
+          "reason": "다항식의 각 항은 단항식이므로, 단항식의 곱셈·나눗셈 규칙을 모르면 각 항 계산 자체가 불가능합니다."
+        },
+        {
+          "concept": "다항식의 덧셈과 뺄셈",
+          "chapterId": "math-8-1-02",
+          "reason": "전개 후 동류항을 합쳐야 하므로 다항식 덧셈 규칙이 필요합니다."
+        },
+        {
+          "concept": "문자의 사용과 식의 계산",
+          "chapterId": "math-7-1-04",
+          "reason": "문자식에서 분배법칙을 적용하려면 일차식과 수의 곱셈·나눗셈에 대한 기초 이해가 있어야 합니다."
+        }
+      ],
+      "concept": "다항식의 곱셈과 나눗셈"
+    }
+  ]
+}

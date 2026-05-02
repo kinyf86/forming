@@ -1,0 +1,162 @@
+{
+  "chapterId": "math-5-1-04",
+  "chapterTitle": "4단원 - 약분과 통분",
+  "generatedAt": "2026-04-01T05:46:17.140275+00:00",
+  "lessons": [
+    {
+      "explanation": "어떤 분수가 \"진짜 더 큰 걸까?\" — 수수께끼를 하나 풀어봐.\n\n피자 한 판이 있어. 두 친구가 이렇게 말해:\n\n- 민준: \"나 피자의 $\\frac{1}{2}$ 먹었어!\"\n- 서연: \"나 피자의 $\\frac{2}{4}$ 먹었어!\"\n\n누가 더 많이 먹었을까? 민준? 서연? 아니면 같을까?\n\n사실은 **똑같아!** 숫자는 달라 보이는데 왜 같을까?\n\n피자를 2조각으로 나눠서 1조각 먹으면 $\\frac{1}{2}$야. 같은 피자를 4조각으로 나눠서 2조각 먹으면 $\\frac{2}{4}$야. 조각 수만 다르게 자른 거야 — 실제로 먹은 양은 똑같지!\n\n이렇게, 숫자는 달라 보여도 실제 크기(양)가 똑같은 분수들을 **크기가 같은 분수** (분수의 값은 같지만 분자와 분모가 다른 분수)라고 해.\n\n---\n\n어떻게 만들까? 규칙을 찾아봐:\n\n$$\\frac{1}{2} = \\frac{1 \\times 2}{2 \\times 2} = \\frac{2}{4} = \\frac{1 \\times 3}{2 \\times 3} = \\frac{3}{6}$$\n\n**분자** (위에 있는 수)와 **분모** (아래에 있는 수)를 **같은 수로 곱하면** 크기가 같은 분수가 나와. 반대로, **같은 수로 나눠도** 크기가 같은 분수를 만들 수 있어:\n\n$$\\frac{6}{8} = \\frac{6 \\div 2}{8 \\div 2} = \\frac{3}{4}$$\n\n왜 이게 될까? 분자와 분모를 같은 수로 곱하는 건 사실 $\\frac{2}{2} = 1$을 곱하는 거야. 어떤 수에 1을 곱해도 값은 변하지 않으니까, 분수의 크기도 그대로인 거야!\n\n---\n\n이 개념이 왜 중요하냐면 — 곧 배울 **약분** (분수를 더 간단한 형태로 줄이기)과 **통분** (분모를 맞춰서 분수끼리 비교하거나 계산하기)이 모두 크기가 같은 분수를 만드는 기술이야. 이걸 모르면 분수 계산 자체가 불가능해.\n\n---\n\n**주의할 점 딱 하나**: 분자와 분모를 **둘 다** 같은 수로 곱해야 해. 분자만 2배 하거나 분모만 2배 하면 크기가 달라져버려. $\\frac{1}{2}$에서 분자만 2배 하면 $\\frac{2}{2} = 1$ — 완전히 다른 수가 되거든!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333333\">같은 양, 다른 이름</text><rect x=\"120\" y=\"50\" width=\"140\" height=\"42\" fill=\"#4A90D9\"/><rect x=\"260\" y=\"50\" width=\"140\" height=\"42\" fill=\"#ffffff\"/><line x1=\"260\" y1=\"50\" x2=\"260\" y2=\"92\" stroke=\"#4A90D9\" stroke-width=\"2\"/><rect x=\"120\" y=\"50\" width=\"280\" height=\"42\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"2\"/><text x=\"108\" y=\"76\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\" fill=\"#4A90D9\">1/2</text><text x=\"250\" y=\"108\" text-anchor=\"middle\" font-size=\"11\" fill=\"#aaaaaa\">= 같은 크기 =</text><rect x=\"120\" y=\"116\" width=\"70\" height=\"42\" fill=\"#5CB85C\"/><rect x=\"190\" y=\"116\" width=\"70\" height=\"42\" fill=\"#5CB85C\"/><rect x=\"260\" y=\"116\" width=\"70\" height=\"42\" fill=\"#ffffff\"/><rect x=\"330\" y=\"116\" width=\"70\" height=\"42\" fill=\"#ffffff\"/><line x1=\"190\" y1=\"116\" x2=\"190\" y2=\"158\" stroke=\"#5CB85C\" stroke-width=\"1\"/><line x1=\"260\" y1=\"116\" x2=\"260\" y2=\"158\" stroke=\"#5CB85C\" stroke-width=\"2\"/><line x1=\"330\" y1=\"116\" x2=\"330\" y2=\"158\" stroke=\"#5CB85C\" stroke-width=\"1\"/><rect x=\"120\" y=\"116\" width=\"280\" height=\"42\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"2\"/><text x=\"108\" y=\"142\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\" fill=\"#5CB85C\">2/4</text><text x=\"250\" y=\"174\" text-anchor=\"middle\" font-size=\"11\" fill=\"#aaaaaa\">= 같은 크기 =</text><rect x=\"120\" y=\"182\" width=\"47\" height=\"42\" fill=\"#E67E22\"/><rect x=\"167\" y=\"182\" width=\"47\" height=\"42\" fill=\"#E67E22\"/><rect x=\"214\" y=\"182\" width=\"46\" height=\"42\" fill=\"#E67E22\"/><rect x=\"260\" y=\"182\" width=\"47\" height=\"42\" fill=\"#ffffff\"/><rect x=\"307\" y=\"182\" width=\"47\" height=\"42\" fill=\"#ffffff\"/><rect x=\"354\" y=\"182\" width=\"46\" height=\"42\" fill=\"#ffffff\"/><line x1=\"167\" y1=\"182\" x2=\"167\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"1\"/><line x1=\"214\" y1=\"182\" x2=\"214\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"1\"/><line x1=\"260\" y1=\"182\" x2=\"260\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"2\"/><line x1=\"307\" y1=\"182\" x2=\"307\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"1\"/><line x1=\"354\" y1=\"182\" x2=\"354\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"1\"/><rect x=\"120\" y=\"182\" width=\"280\" height=\"42\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/><text x=\"108\" y=\"208\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\" fill=\"#E67E22\">3/6</text><text x=\"415\" y=\"76\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">기준</text><text x=\"415\" y=\"142\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">×2/2</text><text x=\"415\" y=\"208\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">×3/3</text><text x=\"250\" y=\"254\" text-anchor=\"middle\" font-size=\"12\" fill=\"#555555\">분자와 분모에 같은 수를 곱하면 크기는 그대로!</text><text x=\"250\" y=\"280\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333333\">1/2 = 2/4 = 3/6</text></svg>",
+      "checkQuestion": {
+        "question": "$\\frac{2}{3}$와 크기가 같은 분수를 고르세요.",
+        "options": [
+          "$\\frac{3}{4}$",
+          "$\\frac{4}{5}$",
+          "$\\frac{4}{6}$",
+          "$\\frac{2}{6}$"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "분수의 의미",
+          "chapterId": "math-3-1-06",
+          "reason": "분수가 '전체를 몇 등분한 것 중 몇'을 나타낸다는 기본 개념 없이는 두 분수의 크기가 같다는 의미 자체를 이해할 수 없어요."
+        },
+        {
+          "concept": "약수와 배수",
+          "chapterId": "math-5-1-02",
+          "reason": "분자와 분모에 곱하거나 나눌 '같은 수'를 찾을 때 약수와 배수 개념이 기반이 돼요."
+        },
+        {
+          "concept": "곱셈과 나눗셈",
+          "chapterId": "math-4-1-03",
+          "reason": "분자와 분모를 같은 수로 곱하거나 나누는 연산을 정확히 수행할 수 있어야 해요."
+        }
+      ],
+      "concept": "크기가 같은 분수"
+    },
+    {
+      "explanation": "## 분수를 더 간단하게 — 약분과 기약분수\n\n$\\frac{2}{4}$랑 $\\frac{1}{2}$, 이 두 분수 중에 어느 게 더 커?\n\n잠깐, 사실 이 두 분수는 **같아**. 피자 한 판을 4조각으로 나눴을 때 2조각이나, 2조각으로 나눴을 때 1조각이나 먹는 양이 똑같잖아. 그런데 왜 분수가 달라 보일까? 분자와 분모를 같은 수로 나눴기 때문이야.\n\n$\\frac{2}{4} = \\frac{2 \\div 2}{4 \\div 2} = \\frac{1}{2}$\n\n이렇게 **분자와 분모를 공약수(두 수가 공통으로 가지는 약수)로 나누어 크기는 같지만 더 간단한 분수로 만드는 것**을 **약분** (約分, 분수를 간단하게 줄임)이라고 해.\n\n---\n\n### 어디까지 약분할 수 있을까?\n\n$\\frac{12}{18}$을 약분해 보자. 12와 18의 공약수가 뭐가 있지?\n\n- 2로 나누면 → $\\frac{6}{9}$\n- 또 3으로 나누면 → $\\frac{2}{3}$\n\n아니면 처음부터 6으로 나눠도 돼.\n\n$\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$\n\n$\\frac{2}{3}$은 더 이상 약분이 될까? 2와 3의 공약수는 1뿐이야. 1로 나누면 분수가 바뀌지 않으니까, 더 이상 약분할 수 없어.\n\n이처럼 **분자와 분모의 공약수가 1뿐이어서 더 이상 약분이 안 되는 분수**를 **기약분수** (旣約分數, 이미 약분이 다 된 분수)라고 해.\n\n$\\frac{2}{3}$은 기약분수야. $\\frac{12}{18}$은 기약분수가 아니고.\n\n---\n\n### 한 번에 기약분수로 만들려면?\n\n2로 나누고, 또 3으로 나누고… 이렇게 여러 번 하면 귀찮잖아. 처음부터 **최대공약수(공약수 중 가장 큰 수)**로 나누면 한 방에 기약분수가 나와.\n\n12와 18의 최대공약수는 6이니까, 6으로 나누면 바로 $\\frac{2}{3}$!\n\n$$\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$$\n\n분자와 분모의 **최대공약수**로 나누면 → **기약분수**.\n\n---\n\n### 이게 왜 중요하냐면\n\n약분은 분수를 다루는 모든 계산의 기본이야. 분수끼리 더하거나 뺄 때(통분), 크기를 비교할 때 모두 기약분수로 정리하는 게 훨씬 편해. 분수를 간단하게 보는 눈이 생기면, 복잡해 보이는 문제도 쉬워져.\n\n---\n\n### 흔한 실수 하나\n\n약분할 때 분자 또는 분모 **둘 중 하나만** 나누는 실수가 많아. 예를 들어 $\\frac{6}{9}$에서 분자 6만 3으로 나눠서 $\\frac{2}{9}$로 쓰는 경우. 약분은 반드시 **분자와 분모 모두 같은 수**로 나눠야 해 — 그래야 분수의 크기가 바뀌지 않거든.",
+      "checkQuestion": {
+        "question": "$\\frac{18}{24}$를 기약분수로 나타내면?",
+        "options": [
+          "$\\frac{3}{4}$",
+          "$\\frac{9}{12}$",
+          "$\\frac{6}{8}$",
+          "$\\frac{2}{3}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "공약수와 최대공약수",
+          "chapterId": "math-5-1-02",
+          "reason": "약분은 분자와 분모를 공약수로 나누는 것이고, 기약분수를 만들려면 최대공약수를 구할 수 있어야 해."
+        },
+        {
+          "concept": "크기가 같은 분수",
+          "chapterId": "math-5-1-04",
+          "reason": "약분해도 분수의 크기가 변하지 않는다는 것을 이해하려면, 크기가 같은 분수 개념이 먼저 있어야 해."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "약분과 기약분수"
+    },
+    {
+      "explanation": "## 어떤 분수가 더 클까?\n\n$\\frac{2}{3}$랑 $\\frac{3}{4}$ 중에 어느 게 더 클까?\n\n잠깐 눈으로 봐봐. 분자를 보면 3이 2보다 크고, 분모를 봐도 4가 3보다 크고… 뭔가 헷갈리지 않아? 이렇게 분모가 다른 분수끼리는 그냥 봐서는 크기를 비교하기가 어려워.\n\n왜 어려울까? 생각해봐. $\\frac{2}{3}$는 전체를 3조각으로 나눈 것 중 2조각이고, $\\frac{3}{4}$는 전체를 4조각으로 나눈 것 중 3조각이야. 조각 크기 자체가 달라! 3조각짜리 피자와 4조각짜리 피자를 같이 비교하려면 어떻게 해야 할까?\n\n그래, **조각 크기를 같게 만들면** 돼.\n\n## 분모를 같게 만들어 보자\n\n$\\frac{2}{3}$와 $\\frac{3}{4}$의 분모를 같게 만들려면, 3과 4의 **공통분모** (두 분모의 공배수)를 찾아야 해.\n\n3의 배수: 3, 6, 9, **12**, 15…\n4의 배수: 4, 8, **12**, 16…\n\n12가 처음으로 겹치네! 이게 바로 3과 4의 **최소공배수** (가장 작은 공배수)야. 이 12를 공통분모로 쓸게.\n\n이제 두 분수 모두 분모를 12로 바꿔보자:\n\n$$\\frac{2}{3} = \\frac{2 \\times 4}{3 \\times 4} = \\frac{8}{12}$$\n\n$$\\frac{3}{4} = \\frac{3 \\times 3}{4 \\times 3} = \\frac{9}{12}$$\n\n이제 비교할 수 있어! $\\frac{8}{12}$와 $\\frac{9}{12}$은 조각 크기가 같으니까, 조각 개수만 보면 돼.\n\n$8 < 9$이니까 $\\frac{2}{3} < \\frac{3}{4}$야.\n\n## 이름 붙이기\n\n방금 한 것처럼 **분모가 다른 두 분수의 분모를 같게 만드는 것**을 **통분** (通分 — 분수를 서로 통하게 만든다는 뜻)이라고 해. 이때 같아진 분모를 **공통분모** (공통된 분모)라고 하고.\n\n통분할 때는 보통 **최소공배수를 공통분모로 쓰는 게 가장 편해.** 수가 작게 유지되니까.\n\n## 이게 왜 중요할까?\n\n통분은 분수의 크기 비교에서만 쓰이는 게 아니야. 바로 다음 단원인 분수의 덧셈과 뺄셈에서도 꼭 필요해. $\\frac{1}{2} + \\frac{1}{3}$을 계산하려면 먼저 통분해서 $\\frac{3}{6} + \\frac{2}{6}$으로 만들어야 하거든. 통분을 잘 이해하면 분수 계산 전체가 훨씬 쉬워져.\n\n## 자주 하는 실수\n\n통분할 때 분모만 바꾸고 분자는 안 바꾸는 실수를 많이 해. 예를 들어 $\\frac{2}{3}$를 분모 12로 바꿀 때, $\\frac{2}{12}$라고 쓰면 틀려! 분모에 4를 곱했으면 **분자에도 똑같이 4를 곱해야** 크기가 같은 분수가 돼. 분자와 분모에 같은 수를 곱해야 한다는 걸 꼭 기억해.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n  \n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">통분으로 크기 비교하기</text>\n  \n  <!-- Left fraction: 2/3 -->\n  <text x=\"90\" y=\"58\" text-anchor=\"middle\" font-size=\"14\" fill=\"#4A90D9\" font-weight=\"bold\">2/3</text>\n  \n  <!-- Bar for 2/3: 3 segments, 2 filled -->\n  <rect x=\"20\" y=\"68\" width=\"52\" height=\"28\" fill=\"#4A90D9\" rx=\"3\"/>\n  <rect x=\"76\" y=\"68\" width=\"52\" height=\"28\" fill=\"#4A90D9\" rx=\"3\"/>\n  <rect x=\"132\" y=\"68\" width=\"52\" height=\"28\" fill=\"#dde8f7\" rx=\"3\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n  <line x1=\"74\" y1=\"68\" x2=\"74\" y2=\"96\" stroke=\"white\" stroke-width=\"2\"/>\n  <line x1=\"130\" y1=\"68\" x2=\"130\" y2=\"96\" stroke=\"white\" stroke-width=\"2\"/>\n  \n  <!-- Right fraction: 3/4 -->\n  <text x=\"370\" y=\"58\" text-anchor=\"middle\" font-size=\"14\" fill=\"#E67E22\" font-weight=\"bold\">3/4</text>\n  \n  <!-- Bar for 3/4: 4 segments, 3 filled -->\n  <rect x=\"300\" y=\"68\" width=\"39\" height=\"28\" fill=\"#E67E22\" rx=\"3\"/>\n  <rect x=\"343\" y=\"68\" width=\"39\" height=\"28\" fill=\"#E67E22\" rx=\"3\"/>\n  <rect x=\"386\" y=\"68\" width=\"39\" height=\"28\" fill=\"#E67E22\" rx=\"3\"/>\n  <rect x=\"429\" y=\"68\" width=\"39\" height=\"28\" fill=\"#fde8cc\" rx=\"3\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n  <line x1=\"341\" y1=\"68\" x2=\"341\" y2=\"96\" stroke=\"white\" stroke-width=\"2\"/>\n  <line x1=\"384\" y1=\"68\" x2=\"384\" y2=\"96\" stroke=\"white\" stroke-width=\"2\"/>\n  <line x1=\"427\" y1=\"68\" x2=\"427\" y2=\"96\" stroke=\"white\" stroke-width=\"2\"/>\n  \n  <!-- Question mark -->\n  <text x=\"250\" y=\"87\" text-anchor=\"middle\" font-size=\"22\" fill=\"#888\">?</text>\n  \n  <!-- Arrow down -->\n  <text x=\"250\" y=\"118\" text-anchor=\"middle\" font-size=\"18\" fill=\"#5CB85C\">↓ 통분 (공통분모: 12)</text>\n  \n  <!-- After common denominator label -->\n  <text x=\"90\" y=\"152\" text-anchor=\"middle\" font-size=\"14\" fill=\"#4A90D9\" font-weight=\"bold\">8/12</text>\n  <text x=\"370\" y=\"152\" text-anchor=\"middle\" font-size=\"14\" fill=\"#E67E22\" font-weight=\"bold\">9/12</text>\n  \n  <!-- Bar for 8/12: 12 segments, 8 filled - left -->\n  <g transform=\"translate(20, 162)\">\n    <!-- 12 segments of width ~12.5 each in 150px total -->\n    <!-- filled: 8 -->\n    <rect x=\"0\" y=\"0\" width=\"100\" height=\"22\" fill=\"#4A90D9\" rx=\"2\"/>\n    <rect x=\"100\" y=\"0\" width=\"50\" height=\"22\" fill=\"#dde8f7\" rx=\"2\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n    <!-- grid lines -->\n    <line x1=\"12.5\" y1=\"0\" x2=\"12.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"25\" y1=\"0\" x2=\"25\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"37.5\" y1=\"0\" x2=\"37.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"50\" y1=\"0\" x2=\"50\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"62.5\" y1=\"0\" x2=\"62.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"75\" y1=\"0\" x2=\"75\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"87.5\" y1=\"0\" x2=\"87.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"100\" y1=\"0\" x2=\"100\" y2=\"22\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n    <line x1=\"112.5\" y1=\"0\" x2=\"112.5\" y2=\"22\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n    <line x1=\"125\" y1=\"0\" x2=\"125\" y2=\"22\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n    <line x1=\"137.5\" y1=\"0\" x2=\"137.5\" y2=\"22\" stroke=\"#4A90D9\" stroke-width=\"1\"/>\n    <text x=\"75\" y=\"38\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">← 8칸 →</text>\n  </g>\n  \n  <!-- Bar for 9/12: 12 segments, 9 filled - right -->\n  <g transform=\"translate(300, 162)\">\n    <rect x=\"0\" y=\"0\" width=\"112.5\" height=\"22\" fill=\"#E67E22\" rx=\"2\"/>\n    <rect x=\"112.5\" y=\"0\" width=\"37.5\" height=\"22\" fill=\"#fde8cc\" rx=\"2\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n    <line x1=\"12.5\" y1=\"0\" x2=\"12.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"25\" y1=\"0\" x2=\"25\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"37.5\" y1=\"0\" x2=\"37.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"50\" y1=\"0\" x2=\"50\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"62.5\" y1=\"0\" x2=\"62.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"75\" y1=\"0\" x2=\"75\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"87.5\" y1=\"0\" x2=\"87.5\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"100\" y1=\"0\" x2=\"100\" y2=\"22\" stroke=\"white\" stroke-width=\"1\"/>\n    <line x1=\"112.5\" y1=\"0\" x2=\"112.5\" y2=\"22\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n    <line x1=\"125\" y1=\"0\" x2=\"125\" y2=\"22\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n    <line x1=\"137.5\" y1=\"y2=\"22\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n    <text x=\"75\" y=\"38\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">← 9칸 →</text>\n  </g>\n  \n  <!-- Comparison result -->\n  <text x=\"250\" y=\"230\" text-anchor=\"middle\" font-size=\"15\" fill=\"#333\">8칸 &lt; 9칸</text>\n  <text x=\"250\" y=\"258\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#5CB85C\">∴  2/3  &lt;  3/4</text>\n  \n  <!-- Conversion annotations -->\n  <text x=\"90\" y=\"138\" text-anchor=\"middle\" font-size=\"10\" fill=\"#777\">×4 / ×4</text>\n  <text x=\"370\" y=\"138\" text-anchor=\"middle\" font-size=\"10\" fill=\"#777\">×3 / ×3</text>\n</svg>",
+      "checkQuestion": {
+        "question": "$\\frac{3}{5}$와 $\\frac{5}{8}$ 중 어느 것이 더 큰지 비교하려고 해. 통분하면 공통분모는 얼마가 될까?",
+        "options": [
+          "13",
+          "40",
+          "24",
+          "15"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "크기가 같은 분수",
+          "chapterId": "math-5-1-04",
+          "reason": "통분은 크기가 같은 분수로 변환하는 것이므로, 분자와 분모에 같은 수를 곱해도 크기가 변하지 않는다는 원리를 알아야 해."
+        },
+        {
+          "concept": "공배수와 최소공배수",
+          "chapterId": "math-5-1-02",
+          "reason": "공통분모를 찾으려면 두 분모의 최소공배수를 구할 수 있어야 해."
+        },
+        {
+          "concept": "약분과 기약분수",
+          "chapterId": "math-5-1-04",
+          "reason": "통분 결과를 간단히 정리하거나 확인할 때 약분 개념이 필요해."
+        }
+      ],
+      "concept": "통분과 분수의 크기 비교"
+    },
+    {
+      "explanation": "퀴즈 하나 낼게. 피자 $\\frac{3}{4}$판이랑 피자 $0.8$판, 어느 쪽이 더 많을까?\n\n바로 답하기가 좀 이상하지 않아? 분수랑 소수가 섞여 있으니까 한눈에 비교가 안 되잖아. 이건 마치 두 사람의 키를 한 명은 cm, 다른 한 명은 m로 재놓고 비교하려는 것과 비슷해. 단위가 다르면 먼저 같은 단위로 맞춰야 하는 것처럼, 분수와 소수도 **같은 형태**로 바꿔줘야 비교할 수 있어.\n\n## 방법 1: 분수를 소수로 바꾸기\n\n$\\frac{3}{4}$를 소수로 바꾸려면 분자를 분모로 나누면 돼.\n\n$$\\frac{3}{4} = 3 \\div 4 = 0.75$$\n\n이제 소수끼리 비교하면 되니까 쉽지?\n\n$$0.75 \\quad \\text{vs} \\quad 0.8$$\n\n$0.75 < 0.8$이니까, 피자 $0.8$판이 더 많아.\n\n## 방법 2: 소수를 분수로 바꾸기\n\n반대로 $0.8$을 분수로 바꿔서 비교할 수도 있어.\n\n$$0.8 = \\frac{8}{10} = \\frac{4}{5}$$\n\n이제 $\\frac{3}{4}$와 $\\frac{4}{5}$를 통분해서 비교해봐.\n\n$$\\frac{3}{4} = \\frac{15}{20}, \\qquad \\frac{4}{5} = \\frac{16}{20}$$\n\n$\\frac{15}{20} < \\frac{16}{20}$이니까 역시 $0.8$이 더 크네! 두 방법 모두 같은 결론이 나왔어.\n\n어떤 방법을 쓸지는 상황에 따라 편한 걸 고르면 돼. 분수의 분모가 10, 100처럼 10의 배수면 소수로 바꾸기 쉬워. 반대로 소수가 $0.5$, $0.25$처럼 딱 떨어지는 분수이면 분수로 바꾸는 게 빠를 수 있어.\n\n이렇게 분수와 소수를 같은 형태로 변환해서 크기를 비교하는 것을 **분수와 소수의 크기 비교** (분수는 소수로, 소수는 분수로 바꿔 통일된 형태로 대소를 따지는 방법)라고 해.\n\n## 이 개념의 위치\n\n분수와 소수의 크기 비교는 나중에 배우는 **비율**과 **백분율**의 기초가 돼. 비율을 분수로도, 소수로도, 퍼센트(%)로도 자유롭게 표현하는 능력이 필요하거든. 지금 연습하는 변환 감각이 그때 아주 요긴하게 쓰일 거야.\n\n## 조심해야 할 것 하나!\n\n소수의 자릿수만 보고 크기를 판단하면 안 돼. 예를 들어 $\\frac{1}{4} = 0.25$이고 $\\frac{3}{10} = 0.3$인데, \"소수 첫째 자리가 둘 다 $0.2$대니까 비슷하겠지\"라고 생각하면 틀려. 소수로 바꾼 뒤에는 반드시 **같은 자릿수까지 맞춰서** 크기를 비교해야 해.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\frac{7}{10}$과 $0.65$의 크기를 바르게 비교한 것은?",
+        "options": [
+          "$\\frac{7}{10} > 0.65$",
+          "$\\frac{7}{10} < 0.65$",
+          "$\\frac{7}{10} = 0.65$",
+          "분수와 소수는 비교할 수 없다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "분수를 소수로, 소수를 분수로 변환",
+          "chapterId": "math-5-1-04",
+          "reason": "분수를 소수로 나누거나 소수를 분수로 표현하는 변환 방법을 알아야 크기 비교를 시작할 수 있기 때문"
+        },
+        {
+          "concept": "통분과 분수의 크기 비교",
+          "chapterId": "math-5-1-04",
+          "reason": "소수를 분수로 바꾼 뒤 통분하여 분모를 맞추는 방법을 알아야 분수끼리 비교할 수 있기 때문"
+        },
+        {
+          "concept": "소수의 크기 비교",
+          "chapterId": "math-4-2-03",
+          "reason": "분수를 소수로 변환한 후 소수끼리의 대소를 정확히 판단할 수 있어야 하기 때문"
+        }
+      ],
+      "concept": "분수와 소수의 크기 비교"
+    },
+    {
+      "explanation": "## 분수와 소수, 사실 같은 수야!\n\n퀴즈 하나 낼게. $\\frac{1}{2}$와 $0.5$, 이 둘이 같은 수일까, 다른 수일까?\n\n같다고? 맞아! 그런데 왜 같은지 설명할 수 있어?\n\n사실 분수와 소수는 **같은 양을 다른 모양으로 쓴 것**이야. 마치 \"하나\"와 \"1\"이 같듯이. 그럼 어떻게 서로 바꿀 수 있는지 알아보자.\n\n---\n\n### 분수 → 소수로 바꾸기\n\n핵심 아이디어는 이거야: **분수는 나눗셈이야.**\n\n$\\frac{3}{4}$는 \"3을 4로 나누어라\"라는 뜻이거든. 그래서 실제로 나눠보면 돼.\n\n$$\\frac{3}{4} = 3 \\div 4 = 0.75$$\n\n그런데 더 빠른 방법도 있어. 분모를 10, 100, 1000처럼 **10의 거듭제곱** (10, 100, 1000…)으로 만들 수 있다면, 바로 소수로 읽을 수 있어.\n\n예를 들어, $\\frac{3}{4}$를 보자.\n\n- 4에 25를 곱하면 100이 되지?\n- 분자에도 똑같이 25를 곱해: $\\frac{3 \\times 25}{4 \\times 25} = \\frac{75}{100}$\n- $\\frac{75}{100}$는 \"100분의 75\"니까 → $0.75$!\n\n$$\\frac{3}{4} = \\frac{75}{100} = 0.75$$\n\n분모를 10의 거듭제곱으로 만들 수 **없는** 경우엔 (예: 분모가 3, 7, 9처럼 2나 5의 배수가 아닐 때) 나눗셈을 직접 해야 해. 그런 경우는 6학년에서 더 자세히 배워.\n\n---\n\n### 소수 → 분수로 바꾸기\n\n이건 반대로 생각하면 돼. 소수는 분모가 10, 100, 1000인 분수야.\n\n- 소수 한 자리 → 분모 10\n- 소수 두 자리 → 분모 100\n- 소수 세 자리 → 분모 1000\n\n예시로 확인해보자:\n\n$$0.6 = \\frac{6}{10} = \\frac{3}{5} \\quad \\text{(약분!)}$$\n\n$$0.75 = \\frac{75}{100} = \\frac{3}{4} \\quad \\text{(약분!)}$$\n\n$$0.125 = \\frac{125}{1000} = \\frac{1}{8} \\quad \\text{(약분!)}$$\n\n소수를 분수로 바꾼 다음엔 반드시 **약분** (분자와 분모를 공약수로 나누어 간단하게 만들기)을 해줘야 해. 안 그러면 틀린 건 아니지만, 가장 간단한 형태가 아니야.\n\n---\n\n### 이 개념의 자리\n\n분수와 소수를 자유롭게 변환할 수 있으면, 다음 단원에서 배울 **분수의 덧셈과 뺄셈**에서 계산이 훨씬 편해져. 어떤 형태가 계산하기 더 쉬운지 골라서 쓸 수 있거든.\n\n---\n\n### 자주 하는 실수 하나\n\n$0.3$을 분수로 바꿀 때 $\\frac{3}{3}$이라고 쓰는 경우가 있어. \"0점 3이니까 3분의 3?\" 이렇게 생각하는 거야. 하지만 $0.3$의 3은 **소수 첫째 자리**, 즉 $\\frac{1}{10}$짜리 자리야. 그래서 $0.3 = \\frac{3}{10}$이야. 소수 자리 수를 보고 분모를 정해야 해.",
+      "checkQuestion": {
+        "question": "$0.35$를 분수로 바꾼 뒤 약분하면?",
+        "options": [
+          "$\\frac{7}{20}$",
+          "$\\frac{35}{10}$",
+          "$\\frac{7}{10}$",
+          "$\\frac{35}{1000}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "약분과 기약분수",
+          "chapterId": "math-5-1-04",
+          "reason": "소수를 분수로 바꾼 후 반드시 약분해야 하므로, 약분 개념을 먼저 알아야 해요."
+        },
+        {
+          "concept": "크기가 같은 분수",
+          "chapterId": "math-5-1-04",
+          "reason": "분모를 10의 거듭제곱으로 만들기 위해 분자·분모에 같은 수를 곱하는 원리를 이해해야 해요."
+        },
+        {
+          "concept": "소수의 덧셈과 뺄셈",
+          "chapterId": "math-4-2-03",
+          "reason": "소수의 자릿값 구조(소수 첫째 자리, 둘째 자리 등)를 알아야 분모를 10, 100으로 정할 수 있어요."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <defs>\n    <marker id=\"arrowO\" markerWidth=\"10\" markerHeight=\"7\" refX=\"9\" refY=\"3.5\" orient=\"auto\">\n      <polygon points=\"0 0, 10 3.5, 0 7\" fill=\"#E67E22\"/>\n    </marker>\n    <marker id=\"arrowG\" markerWidth=\"10\" markerHeight=\"7\" refX=\"9\" refY=\"3.5\" orient=\"auto\">\n      <polygon points=\"0 0, 10 3.5, 0 7\" fill=\"#5CB85C\"/>\n    </marker>\n  </defs>\n\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title banner -->\n  <rect x=\"88\" y=\"8\" width=\"324\" height=\"32\" rx=\"16\" fill=\"#4A90D9\"/>\n  <text x=\"250\" y=\"29\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"white\">분수와 소수는 같은 수!</text>\n\n  <!-- Left box: Fraction 3/4 -->\n  <rect x=\"20\" y=\"96\" width=\"116\" height=\"108\" rx=\"12\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <text x=\"78\" y=\"134\" text-anchor=\"middle\" font-size=\"36\" font-weight=\"bold\" fill=\"#4A90D9\">3</text>\n  <line x1=\"44\" y1=\"148\" x2=\"112\" y2=\"148\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <text x=\"78\" y=\"186\" text-anchor=\"middle\" font-size=\"36\" font-weight=\"bold\" fill=\"#4A90D9\">4</text>\n  <text x=\"78\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\" font-weight=\"bold\">분수</text>\n\n  <!-- Right box: Decimal 0.75 -->\n  <rect x=\"364\" y=\"96\" width=\"116\" height=\"108\" rx=\"12\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n  <text x=\"422\" y=\"163\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"bold\" fill=\"#5CB85C\">0.75</text>\n  <text x=\"422\" y=\"218\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\" font-weight=\"bold\">소수</text>\n\n  <!-- Center: Pie chart (3/4 filled) -->\n  <!-- Circle: center (250,150), r=52 -->\n  <!-- 3/4 sector: start top (250,98) → clockwise 270° → left (198,150) -->\n  <circle cx=\"250\" cy=\"150\" r=\"52\" fill=\"#EBF5FB\" stroke=\"#BDD7EE\" stroke-width=\"1.5\"/>\n  <path d=\"M 250 98 A 52 52 0 1 1 198 150 L 250 150 Z\" fill=\"#4A90D9\" opacity=\"0.82\"/>\n  <!-- Quarter divider lines -->\n  <line x1=\"250\" y1=\"150\" x2=\"250\" y2=\"98\" stroke=\"white\" stroke-width=\"1.5\"/>\n  <line x1=\"250\" y1=\"150\" x2=\"302\" y2=\"150\" stroke=\"white\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n  <line x1=\"250\" y1=\"150\" x2=\"250\" y2=\"202\" stroke=\"white\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n  <line x1=\"250\" y1=\"150\" x2=\"198\" y2=\"150\" stroke=\"white\" stroke-width=\"1.5\"/>\n  <!-- Label inside filled sector -->\n  <text x=\"265\" y=\"167\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"white\">3/4</text>\n  <!-- Label in empty sector (upper-left) -->\n  <text x=\"228\" y=\"122\" text-anchor=\"middle\" font-size=\"9\" fill=\"#4A90D9\" font-weight=\"bold\">1/4</text>\n\n  <!-- Equals signs -->\n  <text x=\"191\" y=\"158\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">=</text>\n  <text x=\"309\" y=\"158\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">=</text>\n\n  <!-- Top arc: Method 1 — division -->\n  <path d=\"M 142 113 Q 250 50 358 113\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\" stroke-dasharray=\"5,4\" marker-end=\"url(#arrowO)\"/>\n  <rect x=\"175\" y=\"48\" width=\"150\" height=\"23\" rx=\"8\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"64\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#E67E22\" font-weight=\"bold\">방법① 3 ÷ 4 = 0.75</text>\n\n  <!-- Bottom arc: Method 2 — multiply to /100 -->\n  <path d=\"M 142 188 Q 250 251 358 188\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"2\" stroke-dasharray=\"5,4\" marker-end=\"url(#arrowG)\"/>\n  <rect x=\"155\" y=\"238\" width=\"190\" height=\"23\" rx=\"8\" fill=\"#E9F7EF\" stroke=\"#5CB85C\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"254\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\" font-weight=\"bold\">방법② ×25/×25 → 75/100 = 0.75</text>\n\n  <!-- Bottom tip -->\n  <text x=\"250\" y=\"284\" text-anchor=\"middle\" font-size=\"9.5\" fill=\"#888\">분모를 10, 100, 1000으로 만들면 소수로 바로 읽을 수 있어!</text>\n</svg>",
+      "concept": "분수를 소수로, 소수를 분수로 변환"
+    }
+  ]
+}

@@ -11,7 +11,11 @@ const locales: Record<string, LocaleConfig> = {
     code: "ko-KR",
     country: "대한민국",
     language: "한국어",
-    gradeLabel: (grade) => `초등학교 ${grade}학년`,
+    gradeLabel: (grade) => {
+      if (grade <= 6) return `초등학교 ${grade}학년`;
+      if (grade <= 9) return `중학교 ${grade - 6}학년`;
+      return `고등학교 ${grade - 9}학년`;
+    },
     tutorPrompt: `한국어로 설명하세요. 영어 수학 용어(gcd, lcm, fraction 등)를 사용하지 말고 대한민국 초등 교육과정에서 사용하는 한국어 용어를 사용하세요. 용어를 처음 사용할 때는 괄호 안에 뜻을 함께 설명하세요.`,
   },
   "en-US": {

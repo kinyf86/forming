@@ -1,0 +1,135 @@
+{
+  "chapterId": "math-9-1-01",
+  "chapterTitle": "1단원 - 제곱근과 실수",
+  "generatedAt": "2026-04-01T15:22:37.379397+00:00",
+  "lessons": [
+    {
+      "explanation": "## 제곱해서 9가 되는 수는 몇 개일까요?\n\n$3^2 = 9$. 당연하죠. 그런데 $(-3)^2 = 9$도 성립합니다. 그렇다면 **\"제곱해서 9가 되는 수\"는 3 하나가 아니라 3과 -3, 두 개**인 셈입니다.\n\n이 단순한 관찰에서 중요한 개념이 시작됩니다.\n\n---\n\n## 제곱근이란?\n\n어떤 수 $x$를 제곱했을 때 $a$가 된다면, 즉 $x^2 = a$를 만족하는 $x$를 **$a$의 제곱근** (square root, 어떤 수를 제곱해서 $a$를 만드는 수)이라고 합니다.\n\n몇 가지 경우를 살펴보면:\n\n| $a$ | $x^2 = a$를 만족하는 $x$ | 제곱근 개수 |\n|-----|--------------------------|-------------|\n| $9$ | $3, -3$ | 2개 |\n| $0$ | $0$ | 1개 |\n| $-4$ | 없음 | 0개 |\n\n왜 음수는 제곱근이 없을까요? 어떤 수든 제곱하면 반드시 $0$ 이상이 되기 때문입니다. 음수를 제곱해서 음수를 만드는 수는 실수 범위에서 존재하지 않아요.\n\n---\n\n## 근호(√)의 등장\n\n양수 $a$의 제곱근은 양수와 음수 두 개입니다. 그 중 **양수인 쪽**을 특별히 **$\\sqrt{a}$** (양의 제곱근, 근호를 사용해 표기)라 쓰고, 음수인 쪽은 $-\\sqrt{a}$라고 씁니다.\n\n예를 들어:\n- $\\sqrt{9} = 3$ (양의 제곱근만)\n- $-\\sqrt{9} = -3$ (음의 제곱근)\n- $9$의 두 제곱근을 모두 쓰면 $\\pm\\sqrt{9} = \\pm 3$\n\n$\\sqrt{9} = \\pm 3$이 **아님**에 주의하세요. $\\sqrt{a}$는 항상 $0$ 이상의 값 하나만을 나타냅니다.\n\n---\n\n## 제곱근의 핵심 성질\n\n두 가지 성질을 꼭 기억해야 합니다.\n\n**성질 1:** $a \\geq 0$일 때, $(\\sqrt{a})^2 = a$\n\n$\\sqrt{a}$는 \"제곱해서 $a$가 되는 수\"이므로 제곱하면 당연히 $a$로 돌아옵니다.\n\n**성질 2:** $\\sqrt{a^2} = |a|$\n\n이것이 가장 자주 헷갈리는 부분입니다. $a$가 음수일 수도 있으니까요.\n- $a = 3$이면: $\\sqrt{3^2} = \\sqrt{9} = 3 = |3|$ ✓\n- $a = -3$이면: $\\sqrt{(-3)^2} = \\sqrt{9} = 3 = |-3|$ ✓\n\n$\\sqrt{\\text{어떤 수}^2}$의 결과는 항상 $0$ 이상이어야 하므로, 절댓값이 필요합니다.\n\n---\n\n## 이 개념이 왜 중요한가요?\n\n지금까지 배운 수는 모두 **유리수** (분수 $\\frac{p}{q}$ 꼴로 나타낼 수 있는 수)였습니다. 그런데 $\\sqrt{2}$는 어떤 분수로도 정확히 나타낼 수 없어요. 이런 수를 **무리수**라고 하며, 제곱근 개념은 유리수를 넘어선 수의 세계로 나아가는 첫 관문입니다. 이 단원의 나머지 내용인 실수, 근호 계산이 모두 여기서 출발합니다.\n\n---\n\n## 자주 하는 실수 한 가지\n\n$\\sqrt{a^2} = a$라고 쓰는 경우가 많습니다. 하지만 $a$가 음수라면 $\\sqrt{a^2}$은 양수인데 $a$는 음수이므로 틀립니다. 반드시 $\\sqrt{a^2} = |a|$로 써야 합니다. 특히 $a$의 부호가 정해지지 않은 문제에서 이 실수가 자주 발생합니다.",
+      "checkQuestion": {
+        "question": "$\\sqrt{(-5)^2}$의 값은 무엇인가요?",
+        "options": [
+          "-5",
+          "5",
+          "±5",
+          "25"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "거듭제곱과 소인수분해",
+          "chapterId": "math-7-1-01",
+          "reason": "제곱($a^2$)의 의미와 계산을 알아야 '제곱해서 어떤 수가 되는 수'라는 개념을 이해할 수 있습니다."
+        },
+        {
+          "concept": "수직선과 절댓값",
+          "chapterId": "math-7-1-02",
+          "reason": "$\\sqrt{a^2} = |a|$ 성질에서 절댓값의 정의와 계산이 반드시 필요합니다."
+        },
+        {
+          "concept": "유리수와 순환소수",
+          "chapterId": "math-8-1-01",
+          "reason": "유리수의 범위를 알아야 $\\sqrt{2}$ 같은 무리수가 왜 새로운 수인지 이해할 수 있습니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <defs>\n    <marker id=\"ma\" markerWidth=\"8\" markerHeight=\"6\" refX=\"7\" refY=\"3\" orient=\"auto\">\n      <polygon points=\"0 0, 8 3, 0 6\" fill=\"#4A90D9\"/>\n    </marker>\n    <marker id=\"mb\" markerWidth=\"8\" markerHeight=\"6\" refX=\"7\" refY=\"3\" orient=\"auto\">\n      <polygon points=\"0 0, 8 3, 0 6\" fill=\"#5CB85C\"/>\n    </marker>\n  </defs>\n\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"26\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#2C3E50\">제곱근(square root)의 뜻</text>\n\n  <!-- -3 node -->\n  <circle cx=\"75\" cy=\"97\" r=\"27\" fill=\"#EBF5FB\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n  <text x=\"75\" y=\"104\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4A90D9\">-3</text>\n\n  <!-- 9 node (center) -->\n  <circle cx=\"250\" cy=\"97\" r=\"31\" fill=\"#FEF9E7\" stroke=\"#E67E22\" stroke-width=\"3\"/>\n  <text x=\"250\" y=\"105\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">9</text>\n\n  <!-- 3 node -->\n  <circle cx=\"425\" cy=\"97\" r=\"27\" fill=\"#EAFAF1\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n  <text x=\"425\" y=\"104\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#5CB85C\">3</text>\n\n  <!-- Forward arc: -3 → 9 -->\n  <path d=\"M 100 82 C 142 44 205 44 220 80\" stroke=\"#4A90D9\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#ma)\"/>\n  <!-- Forward arc: 3 → 9 -->\n  <path d=\"M 400 82 C 358 44 295 44 280 80\" stroke=\"#5CB85C\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#mb)\"/>\n\n  <!-- Forward labels -->\n  <text x=\"160\" y=\"41\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#4A90D9\">제곱</text>\n  <text x=\"160\" y=\"55\" text-anchor=\"middle\" font-size=\"10\" fill=\"#4A90D9\">(-3)² = 9</text>\n  <text x=\"340\" y=\"41\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#5CB85C\">제곱</text>\n  <text x=\"340\" y=\"55\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">3² = 9</text>\n\n  <!-- Reverse arc: 9 → -3 (dashed) -->\n  <path d=\"M 220 114 C 200 150 142 150 102 114\" stroke=\"#4A90D9\" stroke-width=\"1.8\" fill=\"none\" stroke-dasharray=\"5,3\" marker-end=\"url(#ma)\"/>\n  <!-- Reverse arc: 9 → 3 (dashed) -->\n  <path d=\"M 280 114 C 300 150 358 150 398 114\" stroke=\"#5CB85C\" stroke-width=\"1.8\" fill=\"none\" stroke-dasharray=\"5,3\" marker-end=\"url(#mb)\"/>\n\n  <!-- Reverse labels -->\n  <text x=\"160\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">제곱근</text>\n  <text x=\"340\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">제곱근</text>\n\n  <!-- Summary -->\n  <text x=\"250\" y=\"182\" text-anchor=\"middle\" font-size=\"13\" fill=\"#2C3E50\">9의 제곱근 →\n    <tspan font-weight=\"bold\" fill=\"#4A90D9\">-3</tspan>\n    과\n    <tspan font-weight=\"bold\" fill=\"#5CB85C\">3</tspan>\n    , 총 2개\n  </text>\n\n  <!-- Divider -->\n  <line x1=\"30\" y1=\"195\" x2=\"470\" y2=\"195\" stroke=\"#ddd\" stroke-width=\"1\"/>\n  <text x=\"250\" y=\"211\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">수 a에 따른 제곱근의 개수</text>\n\n  <!-- Case 1: a > 0 -->\n  <rect x=\"18\" y=\"218\" width=\"146\" height=\"70\" rx=\"8\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"2\"/>\n  <text x=\"91\" y=\"236\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">양수 (a &gt; 0)</text>\n  <text x=\"91\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">제곱근 2개</text>\n  <circle cx=\"74\" cy=\"269\" r=\"7\" fill=\"#5CB85C\"/>\n  <circle cx=\"108\" cy=\"269\" r=\"7\" fill=\"#5CB85C\"/>\n  <text x=\"91\" y=\"283\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">예: 9의 제곱근 = ±3</text>\n\n  <!-- Case 2: a = 0 -->\n  <rect x=\"177\" y=\"218\" width=\"146\" height=\"70\" rx=\"8\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"236\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#4A90D9\">영 (a = 0)</text>\n  <text x=\"250\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">제곱근 1개</text>\n  <circle cx=\"250\" cy=\"269\" r=\"7\" fill=\"#4A90D9\"/>\n  <text x=\"250\" y=\"283\" text-anchor=\"middle\" font-size=\"10\" fill=\"#666\">0의 제곱근 = 0</text>\n\n  <!-- Case 3: a < 0 -->\n  <rect x=\"336\" y=\"218\" width=\"146\" height=\"70\" rx=\"8\" fill=\"white\" stroke=\"#ccc\" stroke-width=\"2\"/>\n  <text x=\"409\" y=\"236\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#aaa\">음수 (a &lt; 0)</text>\n  <text x=\"409\" y=\"254\" text-anchor=\"middle\" font-size=\"13\" fill=\"#aaa\">제곱근 없음</text>\n  <line x1=\"396\" y1=\"260\" x2=\"422\" y2=\"278\" stroke=\"#ccc\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n  <line x1=\"422\" y1=\"260\" x2=\"396\" y2=\"278\" stroke=\"#ccc\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n  <text x=\"409\" y=\"286\" text-anchor=\"middle\" font-size=\"10\" fill=\"#bbb\">어떤 수² ≥ 0 이므로</text>\n</svg>",
+      "concept": "제곱근의 뜻과 성질"
+    },
+    {
+      "explanation": "계산기에 $\\sqrt{2}$를 입력해 보면 이런 숫자가 나와요.\n\n$$\\sqrt{2} = 1.41421356237\\ldots$$\n\n끝도 없이 이어지는 이 소수, 어딘가에서 같은 숫자가 반복될까요? 예를 들어 $\\frac{1}{3} = 0.3333\\ldots$처럼요.\n\n**유리수와 소수의 관계**를 기억하시나요? 유리수는 반드시 **유한소수** (소수점 아래 자리가 끝나는 소수) 또는 **순환소수** (일정한 숫자가 반복되는 소수)로 나타낼 수 있어요. 거꾸로 말하면, 유한소수도 순환소수도 아닌 수는 유리수가 될 수 없어요.\n\n그런데 수학자들이 증명했더니, $\\sqrt{2}$의 소수 표현은 끝도 없고 반복되는 부분도 없어요. 영원히요. 즉, $\\sqrt{2}$는 분수 $\\frac{p}{q}$ 꼴로 나타낼 수 없어요.\n\n이렇게 **유리수가 아닌 수**, 즉 순환하지 않는 무한소수를 **무리수** (無理數, irrational number)라고 해요.\n\n무리수의 대표적인 예시예요.\n- $\\sqrt{2},\\ \\sqrt{3},\\ \\sqrt{5}$ — 완전제곱수가 아닌 자연수의 제곱근\n- $\\pi = 3.14159265\\ldots$ — 원주율\n\n잠깐, 그럼 $\\sqrt{4}$도 무리수일까요? $\\sqrt{4} = 2$이고, 2는 분수 $\\frac{2}{1}$로 나타낼 수 있으니 유리수예요. 완전제곱수의 제곱근은 유리수라는 것, 꼭 기억해두세요.\n\n이제 수의 세계를 다시 정리해 볼게요. 자연수, 정수, 유리수로 이루어진 세계에 무리수까지 합친 것을 **실수** (實數, real number — \"실제로 수직선 위에 존재하는 수\")라고 해요.\n\n$$\\text{실수} = \\text{유리수} + \\text{무리수}$$\n\n수 체계를 포함 관계로 보면 다음과 같아요.\n\n$$\\text{자연수} \\subset \\text{정수} \\subset \\text{유리수} \\subset \\text{실수}$$\n\n실수의 핵심적인 성질이 하나 있어요. **수직선 위의 모든 점은 정확히 하나의 실수에 대응되고, 모든 실수는 수직선 위의 정확히 한 점에 대응돼요.** 유리수만으로는 수직선에 \"빈 구멍\"이 있었는데 ($\\sqrt{2}$에 해당하는 점에 이름이 없었어요), 무리수를 포함하면 수직선이 빈틈없이 채워져요. 이 개념은 이후 함수의 연속성이나 극한을 배울 때 토대가 됩니다.\n\n**꼭 주의하세요**: $\\sqrt{9} = 3$, $\\sqrt{0.25} = 0.5$처럼 제곱근 기호가 붙어 있어도 유리수인 경우가 있어요. '제곱근이면 무리수'라고 착각하기 쉬운데, 실제로는 그 값이 순환하지 않는 무한소수인지를 확인해야 해요.",
+      "checkQuestion": {
+        "question": "다음 중 무리수인 것은?",
+        "options": [
+          "$\\sqrt{7}$",
+          "$\\sqrt{16}$",
+          "$0.\\overline{3}$ (즉, $0.3333\\ldots$)",
+          "$-\\dfrac{5}{3}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "제곱근의 뜻과 성질",
+          "chapterId": "math-9-1-01",
+          "reason": "무리수의 대표적인 예시가 $\\sqrt{2}$, $\\sqrt{3}$ 등이므로, 제곱근의 의미와 $\\sqrt{a}$의 성질을 먼저 알아야 해요."
+        },
+        {
+          "concept": "유리수와 순환소수",
+          "chapterId": "math-8-1-01",
+          "reason": "유리수는 반드시 유한소수 또는 순환소수라는 사실을 알아야 '순환하지 않는 무한소수 = 무리수'라는 정의를 이해할 수 있어요."
+        },
+        {
+          "concept": "정수와 유리수",
+          "chapterId": "math-7-1-02",
+          "reason": "자연수 → 정수 → 유리수로 이어지는 수 체계를 알아야 실수까지의 확장 과정이 자연스럽게 이해돼요."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"24\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">유리수 vs 무리수 — 소수 표현의 차이</text>\n\n  <!-- === LEFT: 유리수 === -->\n  <rect x=\"10\" y=\"34\" width=\"230\" height=\"148\" rx=\"10\" fill=\"#E8F5E9\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <text x=\"125\" y=\"53\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#5CB85C\">유리수 (반복 O)</text>\n\n  <!-- 1/4 = 0.25 terminating -->\n  <text x=\"125\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">유한소수: 1/4</text>\n  <!-- digit boxes -->\n  <rect x=\"60\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.25\"/>\n  <text x=\"69\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">0</text>\n  <text x=\"83\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">.</text>\n  <rect x=\"88\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.25\"/>\n  <text x=\"97\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">2</text>\n  <rect x=\"110\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.25\"/>\n  <text x=\"119\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">5</text>\n  <text x=\"138\" y=\"91\" text-anchor=\"middle\" font-size=\"13\" fill=\"#5CB85C\" font-weight=\"bold\">끝!</text>\n  <text x=\"167\" y=\"91\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">✔</text>\n\n  <!-- 1/3 = 0.333... repeating -->\n  <text x=\"125\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">순환소수: 1/3</text>\n  <!-- digit boxes with repeating 3s highlighted -->\n  <rect x=\"48\" y=\"117\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.15\"/>\n  <text x=\"57\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">0</text>\n  <text x=\"71\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">.</text>\n  <rect x=\"76\" y=\"117\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.6\"/>\n  <text x=\"85\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">3</text>\n  <rect x=\"97\" y=\"117\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.6\"/>\n  <text x=\"106\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">3</text>\n  <rect x=\"118\" y=\"117\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.6\"/>\n  <text x=\"127\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">3</text>\n  <rect x=\"139\" y=\"117\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.6\"/>\n  <text x=\"148\" y=\"131\" text-anchor=\"middle\" font-size=\"12\" fill=\"#fff\" font-weight=\"bold\">3</text>\n  <text x=\"164\" y=\"131\" text-anchor=\"middle\" font-size=\"13\" fill=\"#5CB85C\">…</text>\n\n  <!-- arc showing repeat -->\n  <path d=\"M76,116 Q112,104 157,116\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n  <text x=\"116\" y=\"106\" text-anchor=\"middle\" font-size=\"9\" fill=\"#5CB85C\">3 반복!</text>\n\n  <text x=\"125\" y=\"159\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">→ 분수 p/q 로 표현 가능</text>\n  <text x=\"125\" y=\"175\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#5CB85C\">∴ 유리수 ✔</text>\n\n  <!-- === RIGHT: 무리수 === -->\n  <rect x=\"260\" y=\"34\" width=\"230\" height=\"148\" rx=\"10\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"375\" y=\"53\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">무리수 (반복 X)</text>\n\n  <!-- √2 digits -->\n  <text x=\"375\" y=\"72\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">무한소수: √2</text>\n  <!-- each digit different, no pattern -->\n  <rect x=\"268\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#4A90D9\" opacity=\"0.3\"/>\n  <text x=\"277\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">1</text>\n  <text x=\"291\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">.</text>\n  <rect x=\"296\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#E67E22\" opacity=\"0.4\"/>\n  <text x=\"305\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">4</text>\n  <rect x=\"317\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#9B59B6\" opacity=\"0.3\"/>\n  <text x=\"326\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">1</text>\n  <rect x=\"338\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#E74C3C\" opacity=\"0.3\"/>\n  <text x=\"347\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">4</text>\n  <rect x=\"359\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#1ABC9C\" opacity=\"0.3\"/>\n  <text x=\"368\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">2</text>\n  <rect x=\"380\" y=\"77\" width=\"18\" height=\"20\" rx=\"3\" fill=\"#F39C12\" opacity=\"0.3\"/>\n  <text x=\"389\" y=\"91\" text-anchor=\"middle\" font-size=\"12\" fill=\"#333\">1</text>\n  <text x=\"408\" y=\"91\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\">…</text>\n\n  <!-- no-repeat annotation -->\n  <text x=\"375\" y=\"112\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">반복되는 패턴이 없어요!</text>\n  <line x1=\"270\" y1=\"107\" x2=\"480\" y2=\"107\" stroke=\"#E67E22\" stroke-width=\"0.8\" stroke-dasharray=\"2,2\"/>\n\n  <!-- pi digits -->\n  <text x=\"375\" y=\"128\" text-anchor=\"middle\" font-size=\"11\" fill=\"#555\">무한소수: π</text>\n  <text x=\"375\" y=\"143\" text-anchor=\"middle\" font-size=\"11\" fill=\"#999\">3.14159265358979…</text>\n\n  <text x=\"375\" y=\"159\" text-anchor=\"middle\" font-size=\"11\" fill=\"#E67E22\">→ 분수 p/q 로 표현 불가</text>\n  <text x=\"375\" y=\"175\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"bold\" fill=\"#E67E22\">∴ 무리수 ✔</text>\n\n  <!-- === BOTTOM: Real number structure === -->\n  <rect x=\"10\" y=\"194\" width=\"480\" height=\"96\" rx=\"10\" fill=\"#EEF4FB\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <text x=\"250\" y=\"212\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#4A90D9\">실수 (Real Numbers)</text>\n\n  <rect x=\"22\" y=\"220\" width=\"218\" height=\"60\" rx=\"8\" fill=\"#E8F5E9\" stroke=\"#5CB85C\" stroke-width=\"1.2\"/>\n  <text x=\"131\" y=\"238\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#5CB85C\">유리수</text>\n  <text x=\"131\" y=\"254\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">정수, 유한소수, 순환소수</text>\n  <text x=\"131\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"#5CB85C\">예: -3, 0, 1/2, 0.25, 0.333…</text>\n\n  <text x=\"250\" y=\"253\" text-anchor=\"middle\" font-size=\"18\" fill=\"#4A90D9\" font-weight=\"bold\">+</text>\n\n  <rect x=\"260\" y=\"220\" width=\"218\" height=\"60\" rx=\"8\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"1.2\"/>\n  <text x=\"369\" y=\"238\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\" fill=\"#E67E22\">무리수</text>\n  <text x=\"369\" y=\"254\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">순환하지 않는 무한소수</text>\n  <text x=\"369\" y=\"270\" text-anchor=\"middle\" font-size=\"10\" fill=\"#E67E22\">예: √2, √3, √5, π, …</text>\n</svg>",
+      "concept": "무리수와 실수"
+    },
+    {
+      "explanation": "## 실수의 대소 관계\n\n$\\sqrt{2}$와 $1.4$ 중 어느 것이 더 클까요? 계산기 없이는 바로 알기 어렵죠. 하지만 방법은 분명히 있습니다. 이번에는 무리수가 섞인 실수들의 크기를 **정확하게** 비교하는 법을 배워 봅시다.\n\n### 수직선이 알려주는 기본 원리\n\n모든 실수는 수직선 위의 점 하나에 대응됩니다. 수직선에서는 **오른쪽에 있는 수가 항상 더 큽니다**. 이것이 실수의 대소 관계의 출발점입니다.\n\n유리수끼리는 분모를 통일하거나 소수로 바꿔 바로 비교할 수 있었죠. 그런데 무리수가 끼어들면? 소수 전개가 끝나지 않으니 직접 비교하기 어렵습니다.\n\n### 핵심 도구: 제곱 비교\n\n$\\sqrt{3}$과 $\\sqrt{5}$ 중 어느 것이 클까요?\n\n두 수 모두 양수이므로 제곱해서 비교할 수 있습니다.\n\n$$\\left(\\sqrt{3}\\right)^2 = 3, \\quad \\left(\\sqrt{5}\\right)^2 = 5$$\n\n$3 < 5$이므로 $\\sqrt{3} < \\sqrt{5}$\n\n왜 이게 성립할까요? 양수에서는 수가 커질수록 제곱도 커지고, 반대도 성립합니다. 즉 **두 양수 $a$, $b$에 대해 $a < b \\Leftrightarrow a^2 < b^2$** 입니다. 근호 속 숫자가 크면 그 제곱근도 크다는 직관과 정확히 맞아떨어지죠.\n\n### 유리수와 무리수를 함께 비교하기\n\n$\\sqrt{2}$와 $1.5$ 중 어느 것이 클까요?\n\n$$\\left(\\sqrt{2}\\right)^2 = 2, \\quad 1.5^2 = 2.25$$\n\n$2 < 2.25$이므로 $\\sqrt{2} < 1.5$\n\n근호가 있는 수와 유리수도 같은 방법으로 비교합니다. 두 수가 모두 **양수**라는 조건만 확인하면 됩니다.\n\n### 뺄셈으로 판단하기\n\n때로는 두 식의 차를 구해 부호를 보는 방법도 씁니다.\n\n$$a - b > 0 \\Rightarrow a > b, \\quad a - b < 0 \\Rightarrow a < b$$\n\n예: $\\sqrt{3} + 1$과 $\\sqrt{6}$을 비교해 봅시다.\n\n$$\\left(\\sqrt{3} + 1\\right)^2 = 4 + 2\\sqrt{3}, \\quad \\left(\\sqrt{6}\\right)^2 = 6$$\n\n$2\\sqrt{3} \\approx 3.46$이므로 $4 + 2\\sqrt{3} \\approx 7.46 > 6$\n\n따라서 $\\sqrt{3} + 1 > \\sqrt{6}$입니다.\n\n### 이 개념의 위치\n\n실수의 **대소 관계** (두 수의 크기를 비교하는 관계)는 이후 이차방정식의 근을 크기 순으로 정렬하거나, 이차함수의 그래프에서 범위를 판단할 때 기반이 됩니다. 실수 전체를 '순서 있는 하나의 직선'으로 다루게 되는 첫걸음입니다.\n\n### 조심해야 할 것 하나\n\n**음수 무리수를 비교할 때 방향을 바꿔야 합니다.**\n\n$\\sqrt{3} < \\sqrt{5}$이지만, 음수로 만들면 $-\\sqrt{3} > -\\sqrt{5}$입니다.\n\n음수는 절댓값이 작을수록 수직선에서 오른쪽, 즉 더 큰 수입니다. '근호 안이 크면 더 크다'는 규칙은 양수일 때만 통합니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\sqrt{6}$과 $2.5$의 크기를 제곱을 이용해 비교한 결과로 옳은 것은?",
+        "options": [
+          "$\\left(\\sqrt{6}\\right)^2 = 6$, $\\;2.5^2 = 6.25$이므로 $\\sqrt{6} < 2.5$",
+          "$\\left(\\sqrt{6}\\right)^2 = 6$, $\\;2.5^2 = 5.25$이므로 $\\sqrt{6} > 2.5$",
+          "$\\left(\\sqrt{6}\\right)^2 = 36$, $\\;2.5^2 = 6.25$이므로 $\\sqrt{6} > 2.5$",
+          "무리수와 유리수는 제곱으로 비교할 수 없다"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "제곱근의 뜻과 성질",
+          "chapterId": "math-9-1-01",
+          "reason": "제곱근의 기본 성질인 $(\\sqrt{a})^2 = a$를 알아야 제곱 비교를 올바르게 적용할 수 있습니다."
+        },
+        {
+          "concept": "무리수와 실수",
+          "chapterId": "math-9-1-01",
+          "reason": "비교 대상인 실수 전체(유리수 + 무리수)의 범위를 이해해야 대소 관계를 의미 있게 다룰 수 있습니다."
+        },
+        {
+          "concept": "수직선과 절댓값",
+          "chapterId": "math-7-1-02",
+          "reason": "수직선에서 오른쪽이 더 크다는 대소 관계의 기본 원리를 이미 알고 있어야 합니다."
+        }
+      ],
+      "concept": "실수의 대소 관계"
+    },
+    {
+      "explanation": "## 왜 $\\sqrt{2} + \\sqrt{3}$은 $\\sqrt{5}$가 아닐까요?\n\n먼저 실험을 해봅시다. $\\sqrt{4} + \\sqrt{9}$를 두 가지 방법으로 계산해 보세요.\n\n- 방법 1: $\\sqrt{4} = 2$, $\\sqrt{9} = 3$이므로 $2 + 3 = 5$\n- 방법 2: 혹시 $\\sqrt{4+9} = \\sqrt{13} \\approx 3.6$?\n\n두 결과가 완전히 다르죠. 즉, $\\sqrt{4} + \\sqrt{9} \\neq \\sqrt{4+9}$입니다. 이 사실 하나를 확실히 이해하면, 근호를 포함한 계산의 절반은 끝난 거예요.\n\n---\n\n## 곱셈은 된다 — 왜?\n\n덧셈은 안 되지만, **곱셈은 근호 안을 합칠 수 있습니다.** 왜 그럴까요?\n\n$\\sqrt{a} \\times \\sqrt{b}$를 $X$라 놓으면, $X^2 = (\\sqrt{a})^2 \\times (\\sqrt{b})^2 = a \\times b = ab$입니다.\n\n어떤 양수를 제곱해서 $ab$가 되면, 그 수는 $\\sqrt{ab}$이죠. 그러므로:\n\n$$\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab} \\quad (a \\geq 0,\\ b \\geq 0)$$\n\n예: $\\sqrt{3} \\times \\sqrt{5} = \\sqrt{15}$, $\\quad \\sqrt{6} \\div \\sqrt{2} = \\sqrt{\\dfrac{6}{2}} = \\sqrt{3}$\n\n---\n\n## 근호 안을 깔끔하게: 제곱인수 꺼내기\n\n$\\sqrt{12}$를 그냥 놔두면 다루기 불편합니다. 안을 쪼개보세요:\n\n$$\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt{4} \\times \\sqrt{3} = 2\\sqrt{3}$$\n\n이렇게 **근호 안의 완전제곱수를 밖으로 꺼내는 것**을 근호의 **변환** 혹은 **간소화**라고 해요. 일반적으로:\n\n$$\\sqrt{a^2 b} = a\\sqrt{b} \\quad (a > 0,\\ b > 0)$$\n\n---\n\n## 덧셈과 뺄셈: '같은 종류'끼리만\n\n이제 덧셈입니다. $3x + 5x = 8x$라는 것, 잘 알죠? 근호도 똑같습니다.\n\n$$3\\sqrt{2} + 5\\sqrt{2} = (3+5)\\sqrt{2} = 8\\sqrt{2}$$\n\n여기서 $\\sqrt{2}$가 $x$ 역할을 하는 거예요. 이처럼 **근호 안의 수가 같은 항** (동류항)끼리만 더하거나 뺄 수 있습니다.\n\n그러면 $\\sqrt{2} + \\sqrt{3}$은? $x + y$처럼 다른 종류이므로 더 이상 합칠 수 없어요. 이게 처음 질문의 답입니다.\n\n때로는 간소화 후에 같은 종류가 드러나기도 해요:\n\n$$\\sqrt{12} + \\sqrt{3} = 2\\sqrt{3} + \\sqrt{3} = 3\\sqrt{3}$$\n\n---\n\n## 분모의 근호 없애기: 유리화\n\n$\\dfrac{1}{\\sqrt{2}}$처럼 분모에 근호가 있으면 다루기 불편합니다. 분모와 분자에 같은 $\\sqrt{2}$를 곱하면:\n\n$$\\frac{1}{\\sqrt{2}} = \\frac{1 \\times \\sqrt{2}}{\\sqrt{2} \\times \\sqrt{2}} = \\frac{\\sqrt{2}}{2}$$\n\n이처럼 **분모에서 근호를 없애는 것**을 **유리화** (분모를 유리수로 만들기)라고 합니다.\n\n일반적으로: $\\dfrac{a}{\\sqrt{b}} = \\dfrac{a\\sqrt{b}}{b}$\n\n---\n\n## 이 개념의 위치\n\n근호 계산은 앞서 배운 제곱근의 성질을 '계산 도구'로 확장한 것이에요. 이걸 익히면 이어지는 이차방정식의 근의 공식 — $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ — 을 직접 다룰 수 있게 됩니다.\n\n---\n\n## 가장 흔한 실수 하나\n\n**$\\sqrt{a+b} = \\sqrt{a} + \\sqrt{b}$라고 착각하는 것입니다.** 이 등식은 거의 항상 틀려요. 처음에 확인했듯이, 덧셈은 근호 안으로 합칠 수 없습니다. 계산 중에 이 식을 쓰고 싶어진다면, 그건 틀린 방향으로 가고 있다는 신호입니다.",
+      "visualSvg": null,
+      "checkQuestion": {
+        "question": "$\\sqrt{8} + \\sqrt{2}$를 간소화하면?",
+        "options": [
+          "$3\\sqrt{2}$",
+          "$\\sqrt{10}$",
+          "$2\\sqrt{2}$",
+          "$4\\sqrt{2}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "제곱근의 뜻과 성질",
+          "chapterId": "math-9-1-01",
+          "reason": "$\\sqrt{a}^2 = a$, $\\sqrt{a^2} = a$ 같은 제곱근의 기본 성질을 모르면 곱셈 규칙을 증명하거나 이해할 수 없습니다."
+        },
+        {
+          "concept": "식의 계산 (지수법칙, 다항식의 덧셈과 뺄셈)",
+          "chapterId": "math-8-1-02",
+          "reason": "동류항 정리 개념($3x + 5x = 8x$)이 근호 항의 덧셈·뺄셈에 그대로 적용되기 때문입니다."
+        },
+        {
+          "concept": "무리수와 실수",
+          "chapterId": "math-9-1-01",
+          "reason": "$\\sqrt{2}$와 $\\sqrt{3}$이 서로 다른 무리수임을 알아야 두 항을 합칠 수 없다는 것을 이해할 수 있습니다."
+        }
+      ],
+      "concept": "근호를 포함한 식의 계산"
+    }
+  ]
+}

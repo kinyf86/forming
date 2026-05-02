@@ -1,0 +1,93 @@
+{
+  "chapterId": "math-5-1-01",
+  "chapterTitle": "1단원 - 자연수의 혼합 계산",
+  "generatedAt": "2026-04-01T05:11:25.293206+00:00",
+  "lessons": [
+    {
+      "explanation": "어떤 계산이 맞을까?\n\n민준이와 서연이가 같은 문제를 풀었어.\n\n**문제:** $2 + 3 \\times 4$는 얼마?\n\n- 민준: 앞에서부터 → $(2+3) \\times 4 = 5 \\times 4 = 20$\n- 서연: 곱셈 먼저 → $2 + (3 \\times 4) = 2 + 12 = 14$\n\n같은 식인데 답이 두 개야! 이게 과자 값 계산이라면 두 사람이 내야 할 돈이 달라지는 거야. 수학은 누가 풀어도 반드시 같은 답이 나와야 하니까, 전 세계 수학자들이 약속을 만들었어.\n\n**계산 순서** (혼합 계산에서 어떤 연산을 먼저 계산할지 정한 약속)\n\n**① 괄호 $( )$ 안을 가장 먼저**\n\n$(2 + 3) \\times 4$처럼 괄호가 있으면 괄호 안을 먼저 계산해. $2+3=5$이니까 $5 \\times 4 = 20$.\n\n**② 곱셈 $\\times$과 나눗셈 $\\div$ 다음**\n\n$2 + 3 \\times 4$에서 $3 \\times 4 = 12$를 먼저 계산하면 $2 + 12 = 14$. 서연이가 맞아!\n\n**③ 덧셈 $+$과 뺄셈 $-$은 마지막**\n\n같은 순위끼리는 왼쪽에서 오른쪽으로 계산해. $12 \\div 4 \\times 3$은 왼쪽부터 → $12 \\div 4 = 3$, 그다음 $3 \\times 3 = 9$.\n\n**직접 해봐:** $10 - 2 \\times 3 + 8 \\div 4$는?\n\n먼저 $\\times$, $\\div$ → $10 - 6 + 2$\n\n그다음 왼쪽부터 $+$, $-$ → $4 + 2 = \\mathbf{6}$\n\n이 계산 순서는 중학교, 고등학교에서도 그대로 써. 나중에 문자가 섞인 식 $2x + 3 \\times 4$도 똑같은 규칙으로 풀어. 지금 익혀두면 어떤 복잡한 식도 흔들리지 않아.\n\n**자주 하는 실수**\n\n$20 \\div 4 + 1$을 계산할 때 \"왼쪽에 있으니까\" $4+1=5$를 먼저 해서 $20 \\div 5 = 4$로 잘못 푸는 경우야. 나눗셈이 덧셈보다 순위가 높으니까 $20 \\div 4 = 5$를 먼저 계산하고 $5 + 1 = 6$이 정답이야. **\"왼쪽이라서 먼저\"가 아니라 \"순위가 높아서 먼저\"** — 이걸 꼭 기억해!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#222\">혼합 계산의 순서</text><text x=\"115\" y=\"55\" text-anchor=\"middle\" font-size=\"12\" fill=\"#666\">계산 우선순위</text><rect x=\"20\" y=\"62\" width=\"190\" height=\"38\" rx=\"8\" fill=\"#E67E22\"/><text x=\"115\" y=\"86\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1순위: 괄호 ( )</text><rect x=\"20\" y=\"108\" width=\"190\" height=\"38\" rx=\"8\" fill=\"#4A90D9\"/><text x=\"115\" y=\"132\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">2순위: × 와 ÷</text><rect x=\"20\" y=\"154\" width=\"190\" height=\"38\" rx=\"8\" fill=\"#5CB85C\"/><text x=\"115\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">3순위: + 와 −</text><text x=\"115\" y=\"215\" text-anchor=\"middle\" font-size=\"11\" fill=\"#888\">같은 순위는 왼쪽부터</text><line x1=\"228\" y1=\"42\" x2=\"228\" y2=\"278\" stroke=\"#ddd\" stroke-width=\"1.5\"/><text x=\"365\" y=\"55\" text-anchor=\"middle\" font-size=\"12\" fill=\"#666\">예제 풀이</text><text x=\"245\" y=\"78\" text-anchor=\"start\" font-size=\"13\" fill=\"#4A90D9\" font-weight=\"bold\">① × 와 ÷ 먼저 계산</text><text x=\"245\" y=\"100\" text-anchor=\"start\" font-size=\"14\" fill=\"#333\">10 − </text><rect x=\"289\" y=\"84\" width=\"38\" height=\"20\" rx=\"3\" fill=\"#4A90D9\" opacity=\"0.2\"/><text x=\"289\" y=\"100\" text-anchor=\"start\" font-size=\"14\" fill=\"#4A90D9\" font-weight=\"bold\">2×3</text><text x=\"330\" y=\"100\" text-anchor=\"start\" font-size=\"14\" fill=\"#333\"> + </text><rect x=\"352\" y=\"84\" width=\"38\" height=\"20\" rx=\"3\" fill=\"#4A90D9\" opacity=\"0.2\"/><text x=\"352\" y=\"100\" text-anchor=\"start\" font-size=\"14\" fill=\"#4A90D9\" font-weight=\"bold\">8÷4</text><text x=\"365\" y=\"124\" text-anchor=\"middle\" font-size=\"18\" fill=\"#4A90D9\">↓</text><text x=\"245\" y=\"148\" text-anchor=\"start\" font-size=\"13\" fill=\"#5CB85C\" font-weight=\"bold\">② + 와 − 계산</text><text x=\"245\" y=\"170\" text-anchor=\"start\" font-size=\"14\" fill=\"#333\">= 10 − 6 + 2</text><text x=\"365\" y=\"194\" text-anchor=\"middle\" font-size=\"18\" fill=\"#5CB85C\">↓</text><text x=\"245\" y=\"218\" text-anchor=\"start\" font-size=\"14\" fill=\"#333\">= 4 + 2</text><text x=\"365\" y=\"242\" text-anchor=\"middle\" font-size=\"18\" fill=\"#5CB85C\">↓</text><rect x=\"315\" y=\"250\" width=\"100\" height=\"34\" rx=\"8\" fill=\"#5CB85C\"/><text x=\"365\" y=\"273\" text-anchor=\"middle\" font-size=\"17\" fill=\"white\" font-weight=\"bold\">= 6</text></svg>",
+      "checkQuestion": {
+        "question": "$3 + 4 \\times 5 - 2$를 올바르게 계산한 값은?",
+        "options": [
+          "21",
+          "33",
+          "23",
+          "37"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "곱셈과 나눗셈",
+          "chapterId": "math-4-1-03",
+          "reason": "혼합 계산에서 곱셈·나눗셈을 우선 계산해야 하므로 정확히 계산할 수 있어야 해요."
+        },
+        {
+          "concept": "덧셈과 뺄셈",
+          "chapterId": "math-3-1-01",
+          "reason": "혼합 계산의 마지막 단계에서 덧셈·뺄셈을 정확히 계산할 수 있어야 해요."
+        }
+      ],
+      "concept": "덧셈, 뺄셈, 곱셈, 나눗셈의 혼합 계산"
+    },
+    {
+      "explanation": "잠깐, 이 식을 풀어봐.\n\n$$2 + 3 \\times 4$$\n\n친구 두 명이 이 식을 풀었어.\n\n- 민수: \"왼쪽부터 계산하면 $2 + 3 = 5$, 그다음 $5 \\times 4 = 20$이야!\"\n- 지수: \"아니야, 나는 $3 \\times 4 = 12$를 먼저 했더니 $2 + 12 = 14$가 됐는데?\"\n\n둘 다 다른 답이 나왔어. 수학인데 왜 답이 다를까?\n\n이게 문제야. 규칙이 없으면 사람마다 답이 달라지거든. 그래서 수학자들이 오래전에 약속을 정했어. 그게 바로 **계산 순서** (혼합 계산에서 어떤 연산을 먼저 할지 정한 약속)야.\n\n**규칙 1: 괄호 ( ) 안을 가장 먼저**\n\n$(2 + 3) \\times 4$처럼 괄호가 있으면, 괄호 안을 무조건 먼저 계산해.\n\n$$(2 + 3) \\times 4 = 5 \\times 4 = 20$$\n\n괄호는 \"이걸 먼저 해!\"라는 표시야.\n\n**규칙 2: 괄호가 없을 땐, 곱셈·나눗셈이 덧셈·뺄셈보다 먼저**\n\n$2 + 3 \\times 4$에서 괄호가 없으면 곱셈부터야.\n\n$$2 + \\underline{3 \\times 4} = 2 + 12 = 14$$\n\n왜 곱셈이 먼저냐고? 생각해봐.\n\n$3 \\times 4$는 \"3을 4번 더하는 것\"이잖아: $3 + 3 + 3 + 3$\n\n그러니까 $2 + 3 \\times 4$는 사실 이런 의미야:\n\n$$2 + (3 + 3 + 3 + 3) = 2 + 12 = 14$$\n\n곱셈은 덧셈을 묶어서 표현한 거라, 먼저 풀어야 식의 진짜 의미가 살아나. 이게 곱셈·나눗셈이 먼저인 이유야.\n\n**정리하면:**\n\n$$\\text{① 괄호} \\to \\text{② 곱셈 · 나눗셈} \\to \\text{③ 덧셈 · 뺄셈}$$\n\n같은 종류끼리는 왼쪽에서 오른쪽으로 계산해.\n\n한 번 같이 풀어볼까?\n\n$$10 - 12 \\div 4 + 2 \\times 3$$\n\n1단계 (곱셈·나눗셈 먼저, 왼쪽부터): $12 \\div 4 = 3$, $2 \\times 3 = 6$\n\n$$10 - 3 + 6$$\n\n2단계 (덧셈·뺄셈, 왼쪽부터): $10 - 3 = 7$, $7 + 6 = 13$\n\n$$= 13$$\n\n**이 개념은 어디에 쓰일까?**\n\n덧셈, 뺄셈, 곱셈, 나눗셈을 따로따로 배웠다면, 이제 섞어서 쓸 수 있어. 이 계산 순서는 중학교 수학에서 분수, 정수, 문자식을 다룰 때도 똑같이 적용돼. 지금 배우는 게 수학 전체의 기초야.\n\n**자주 하는 실수 하나:**\n\n괄호가 없는 식을 왼쪽부터 그냥 계산하는 거야. $2 + 3 \\times 4$를 $(2 + 3) \\times 4 = 20$으로 풀면 틀려. 괄호가 없으면 곱셈·나눗셈이 먼저라는 걸 꼭 기억해!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><defs><marker id=\"arr\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L0,8 L8,4 z\" fill=\"#aaa\"/></marker></defs><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"120\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">계산 우선순위</text><rect x=\"20\" y=\"35\" width=\"200\" height=\"48\" rx=\"10\" fill=\"#4A90D9\"/><text x=\"120\" y=\"55\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\" font-weight=\"bold\">① 괄호  ( )</text><text x=\"120\" y=\"74\" text-anchor=\"middle\" font-size=\"11\" fill=\"#d0e8ff\">가장 먼저 계산</text><line x1=\"120\" y1=\"83\" x2=\"120\" y2=\"95\" stroke=\"#aaa\" stroke-width=\"2\" marker-end=\"url(#arr)\"/><rect x=\"20\" y=\"97\" width=\"200\" height=\"48\" rx=\"10\" fill=\"#5CB85C\"/><text x=\"120\" y=\"117\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\" font-weight=\"bold\">② × ÷  곱셈 · 나눗셈</text><text x=\"120\" y=\"136\" text-anchor=\"middle\" font-size=\"11\" fill=\"#d0f0d0\">왼쪽 → 오른쪽</text><line x1=\"120\" y1=\"145\" x2=\"120\" y2=\"157\" stroke=\"#aaa\" stroke-width=\"2\" marker-end=\"url(#arr)\"/><rect x=\"20\" y=\"159\" width=\"200\" height=\"48\" rx=\"10\" fill=\"#E67E22\"/><text x=\"120\" y=\"179\" text-anchor=\"middle\" font-size=\"13\" fill=\"white\" font-weight=\"bold\">③ + -  덧셈 · 뺄셈</text><text x=\"120\" y=\"198\" text-anchor=\"middle\" font-size=\"11\" fill=\"#fde8cc\">왼쪽 → 오른쪽</text><text x=\"120\" y=\"238\" text-anchor=\"middle\" font-size=\"11\" fill=\"#888\">이 순서는 전 세계 공통 약속!</text><line x1=\"240\" y1=\"15\" x2=\"240\" y2=\"285\" stroke=\"#ddd\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/><text x=\"370\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">같은 숫자, 다른 결과</text><rect x=\"252\" y=\"35\" width=\"228\" height=\"100\" rx=\"8\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"2\"/><text x=\"366\" y=\"58\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">2 + 3 × 4</text><rect x=\"330\" y=\"62\" width=\"54\" height=\"6\" rx=\"3\" fill=\"#5CB85C\" opacity=\"0.5\"/><text x=\"366\" y=\"88\" text-anchor=\"middle\" font-size=\"12\" fill=\"#5CB85C\">② 3 × 4 = 12 먼저</text><text x=\"366\" y=\"108\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\">③ 2 + 12 =</text><text x=\"430\" y=\"108\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">14</text><rect x=\"252\" y=\"155\" width=\"228\" height=\"100\" rx=\"8\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"2\"/><text x=\"366\" y=\"178\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">(2 + 3) × 4</text><rect x=\"262\" y=\"182\" width=\"60\" height=\"6\" rx=\"3\" fill=\"#4A90D9\" opacity=\"0.5\"/><text x=\"366\" y=\"208\" text-anchor=\"middle\" font-size=\"12\" fill=\"#4A90D9\">① (2 + 3) = 5 먼저</text><text x=\"366\" y=\"228\" text-anchor=\"middle\" font-size=\"12\" fill=\"#5CB85C\">② 5 × 4 =</text><text x=\"430\" y=\"228\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">20</text><text x=\"366\" y=\"272\" text-anchor=\"middle\" font-size=\"11\" fill=\"#999\">괄호 하나로 답이 달라진다!</text></svg>",
+      "checkQuestion": {
+        "question": "$5 + 2 \\times 3$을 바르게 계산한 것은?",
+        "options": [
+          "21",
+          "11",
+          "13",
+          "10"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "곱셈과 나눗셈",
+          "chapterId": "math-4-1-03",
+          "reason": "혼합 계산에서 곱셈과 나눗셈을 정확히 계산할 수 있어야 계산 순서를 적용할 수 있기 때문이야."
+        },
+        {
+          "concept": "덧셈과 뺄셈",
+          "chapterId": "math-3-1-01",
+          "reason": "혼합 계산은 덧셈·뺄셈과 곱셈·나눗셈이 섞여 있어서 두 연산 모두 능숙하게 계산할 수 있어야 하기 때문이야."
+        }
+      ],
+      "concept": "계산 순서 (괄호, 곱셈/나눗셈 우선)"
+    },
+    {
+      "explanation": "편의점에 들어갔어. 1,500원짜리 음료수 3병이랑 800원짜리 과자 2봉지를 집어들었어. 계산대에서 10,000원을 냈는데... 거스름돈이 얼마지?\n\n머릿속으로 어떻게 계산했어? 아마 이렇게 생각했을 거야.\n\n\"음료수 3병 값 먼저 계산하고, 과자 2봉지 값 계산하고, 합치고, 그다음 10,000원에서 빼야지.\"\n\n이걸 수식으로 쓰면 이렇게 돼:\n\n$$10000 - (1500 \\times 3 + 800 \\times 2)$$\n\n이게 바로 **혼합 계산의 활용** (두 가지 이상의 연산을 섞어서 실생활 문제를 푸는 것)이야.\n\n---\n\n## 식을 세우는 법\n\n실생활 문제를 수식으로 바꿀 때, 이 순서를 기억해:\n\n1. **뭘 구하는지** 파악하기 → 거스름돈\n2. **뭘 먼저 계산해야 하는지** 생각하기 → 각 물건의 총 금액\n3. 묶어야 할 것은 **괄호**로 표현하기\n\n실제로 계산해볼까?\n\n$$10000 - (1500 \\times 3 + 800 \\times 2)$$\n$$= 10000 - (4500 + 1600)$$\n$$= 10000 - 6100$$\n$$= 3900 \\text{(원)}$$\n\n---\n\n## 괄호가 없으면?\n\n만약 괄호를 빼면 어떻게 될까?\n\n$$10000 - 1500 \\times 3 + 800 \\times 2$$\n$$= 10000 - 4500 + 1600 = 7100$$\n\n완전히 다른 답이 나와! 그래서 **식을 세울 때 괄호를 정확히 쓰는 게 핵심**이야.\n\n---\n\n## 하나 더 해볼까?\n\n\"하루에 줄넘기를 50개씩 해. 5일 동안 했는데, 마지막 날은 몸이 아파서 20개 덜 했어. 총 몇 개 했을까?\"\n\n$$50 \\times 5 - 20 = 250 - 20 = 230 \\text{(개)}$$\n\n이번엔 괄호가 필요 없었어. 곱셈이 먼저 계산되니까 자연스럽게 맞아.\n\n---\n\n## 어디에 쓰이는 개념일까?\n\n혼합 계산의 활용은 앞으로 배울 분수 사칙연산, 중학교의 방정식에서도 계속 나와. 수학에서 \"상황을 식으로 바꾸는 능력\"은 정말 중요한 기초야.\n\n---\n\n## 자주 하는 실수\n\n식을 세울 때, 머릿속의 계산 순서를 괄호로 담지 않는 경우가 많아. \"합계를 먼저 구한 다음 빼야지\"라고 생각했다면, 반드시 그 합계 부분을 **괄호로 묶어야** 해. 생각한 순서를 식에 정확히 담는 게 실수를 막는 비결이야.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#2C3E50\">문제를 식으로 바꾸는 과정</text><rect x=\"20\" y=\"38\" width=\"460\" height=\"40\" rx=\"8\" fill=\"#E8F4FD\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/><text x=\"250\" y=\"55\" text-anchor=\"middle\" font-size=\"12\" fill=\"#2C3E50\">음료수 3병(1,500원)과 과자 2봉지(800원)를 사고</text><text x=\"250\" y=\"71\" text-anchor=\"middle\" font-size=\"12\" fill=\"#2C3E50\">10,000원을 냈을 때 거스름돈은?</text><polygon points=\"246,82 254,82 250,91\" fill=\"#888\"/><rect x=\"55\" y=\"94\" width=\"390\" height=\"32\" rx=\"8\" fill=\"#FFF3E0\" stroke=\"#E67E22\" stroke-width=\"2\"/><text x=\"250\" y=\"115\" text-anchor=\"middle\" font-size=\"14\" fill=\"#E67E22\" font-weight=\"bold\">10000 − ( 1500×3 + 800×2 )</text><rect x=\"160\" y=\"97\" width=\"72\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#4A90D9\" stroke-width=\"2\" stroke-dasharray=\"4,2\"/><rect x=\"244\" y=\"97\" width=\"72\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#5CB85C\" stroke-width=\"2\" stroke-dasharray=\"4,2\"/><text x=\"196\" y=\"143\" text-anchor=\"middle\" font-size=\"11\" fill=\"#4A90D9\">▲ 음료수 합계</text><text x=\"280\" y=\"143\" text-anchor=\"middle\" font-size=\"11\" fill=\"#5CB85C\">▲ 과자 합계</text><polygon points=\"246,150 254,150 250,159\" fill=\"#888\"/><rect x=\"80\" y=\"162\" width=\"340\" height=\"28\" rx=\"6\" fill=\"#EFEFEF\" stroke=\"#AAA\" stroke-width=\"1\"/><text x=\"250\" y=\"180\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">= 10000 − ( 4500 + 1600 )</text><polygon points=\"246,194 254,194 250,203\" fill=\"#888\"/><rect x=\"110\" y=\"206\" width=\"280\" height=\"28\" rx=\"6\" fill=\"#EFEFEF\" stroke=\"#AAA\" stroke-width=\"1\"/><text x=\"250\" y=\"224\" text-anchor=\"middle\" font-size=\"13\" fill=\"#333\">= 10000 − 6100</text><polygon points=\"246,238 254,238 250,247\" fill=\"#888\"/><rect x=\"150\" y=\"250\" width=\"200\" height=\"36\" rx=\"8\" fill=\"#E8F5E9\" stroke=\"#5CB85C\" stroke-width=\"2\"/><text x=\"250\" y=\"272\" text-anchor=\"middle\" font-size=\"16\" fill=\"#5CB85C\" font-weight=\"bold\">= 3,900원 ✓</text></svg>",
+      "checkQuestion": {
+        "question": "색연필 한 자루에 500원이야. 지민이는 6자루를 샀고, 1,000원짜리 할인 쿠폰을 사용했어. 지민이가 실제로 낸 금액을 구하는 올바른 식은?",
+        "options": [
+          "$500 + 6 - 1000$",
+          "$500 \\times 6 - 1000$",
+          "$(500 + 6) \\times 1000$",
+          "$(500 - 1000) \\times 6$"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "계산 순서 (괄호, 곱셈/나눗셈 우선)",
+          "chapterId": "math-5-1-01",
+          "reason": "식을 세운 후 올바른 순서로 계산하려면 계산 순서 규칙을 정확히 알아야 해요."
+        },
+        {
+          "concept": "곱셈과 나눗셈의 활용",
+          "chapterId": "math-4-1-03",
+          "reason": "실생활 문제에서 곱셈이 필요한 상황을 알아보는 경험이 필요해요."
+        },
+        {
+          "concept": "덧셈과 뺄셈의 활용",
+          "chapterId": "math-3-1-01",
+          "reason": "실생활 문제를 덧셈, 뺄셈 식으로 표현하는 기초 능력이 바탕이 돼요."
+        }
+      ],
+      "concept": "혼합 계산의 활용"
+    }
+  ]
+}

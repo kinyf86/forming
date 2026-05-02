@@ -1,0 +1,167 @@
+{
+  "chapterId": "math-5-2-04",
+  "chapterTitle": "4단원 - 소수의 곱셈",
+  "generatedAt": "2026-04-01T06:32:37.783134+00:00",
+  "lessons": [
+    {
+      "explanation": "리본 $0.4\\text{m}$짜리 3개를 이어 붙이면 얼마나 될까?\n\n$$0.4 \\times 3 = ?$$\n\n덧셈으로도 쓸 수 있어: $0.4 + 0.4 + 0.4 = 1.2$. 맞아! 그런데 매번 덧셈으로 풀면 너무 귀찮잖아. 더 빠른 방법을 찾아보자.\n\n---\n\n### 0.4의 정체\n\n$0.4$는 **소수** (소수점 아래에 숫자가 있는 수)야. 그리고 $0.4 = \\frac{4}{10}$, 즉 **0.1이 4개** 모인 수야.\n\n그러면 $0.4 \\times 3$은? 0.1 묶음 4개가 3번 반복되니까, 0.1이 **12개**야.\n\n$$0.1 \\times 12 = \\frac{12}{10} = 1.2$$\n\n---\n\n### 여기서 규칙이 보이지 않아?\n\n$4 \\times 3 = 12$ 인데, $0.4 \\times 3 = 1.2$ 야.\n\n숫자(4, 3, 12)는 **그대로**고, 소수점 위치만 달라졌어!\n\n왜 그럴까? $0.4$는 $4$의 $\\frac{1}{10}$이야. 곱하는 수(3)는 그대로니까, 결과도 $12$의 $\\frac{1}{10}$인 $1.2$가 되는 거야.\n\n---\n\n### 계산 방법\n\n이렇게 소수와 자연수를 곱하는 것을 **(소수) × (자연수)** 계산이라고 해.\n\n방법은 딱 두 단계야:\n\n1. 소수점을 **무시하고** 자연수처럼 곱해\n2. 원래 소수의 **소수점 아래 자릿수**만큼 소수점을 왼쪽으로 옮겨\n\n$$1.3 \\times 4 \\Rightarrow 13 \\times 4 = 52 \\Rightarrow \\text{소수 한 자리} \\Rightarrow 1.3 \\times 4 = 5.2$$\n\n$$0.25 \\times 6 \\Rightarrow 25 \\times 6 = 150 \\Rightarrow \\text{소수 두 자리} \\Rightarrow 0.25 \\times 6 = 1.50 = 1.5$$\n\n---\n\n### 이 개념은 어디로 이어질까?\n\n이번에 배운 원리(소수점을 무시하고 자연수로 계산 → 소수점 되돌리기)는 **(자연수) × (소수)**, **(소수) × (소수)**에서도 똑같이 써. 소수점을 어디에 찍느냐의 규칙이 이 단원 전체를 관통해.\n\n---\n\n### 조심해야 할 실수 딱 하나!\n\n$0.4 \\times 3 = 0.12$라고 쓰는 경우가 많아. $3 \\times 4 = 12$니까 그냥 앞에 $0.$을 붙인 거야. 하지만 $0.4$는 소수 **한** 자리 수니까, 답도 소수 **한** 자리인 $1.2$야. 자릿수를 먼저 세고 소수점을 찍는 습관을 들여!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"30\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">소수 × 자연수의 원리</text><rect x=\"40\" y=\"50\" width=\"165\" height=\"65\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"2\" rx=\"8\"/><text x=\"122\" y=\"80\" text-anchor=\"middle\" font-size=\"22\" fill=\"#4A90D9\" font-weight=\"bold\">4 × 3 = 12</text><text x=\"122\" y=\"104\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">자연수 곱셈</text><line x1=\"122\" y1=\"118\" x2=\"122\" y2=\"150\" stroke=\"#E67E22\" stroke-width=\"2.5\"/><polygon points=\"114,150 122,165 130,150\" fill=\"#E67E22\"/><text x=\"60\" y=\"143\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\" font-weight=\"bold\">÷ 10</text><rect x=\"40\" y=\"168\" width=\"165\" height=\"65\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"2\" rx=\"8\"/><text x=\"122\" y=\"198\" text-anchor=\"middle\" font-size=\"20\" fill=\"#5CB85C\" font-weight=\"bold\">0.4 × 3 = 1.2</text><text x=\"122\" y=\"221\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">소수 한 자리 × 자연수</text><text x=\"122\" y=\"258\" text-anchor=\"middle\" font-size=\"11\" fill=\"#aaa\">0.4 = 4의 1/10 → 1.2 = 12의 1/10</text><rect x=\"235\" y=\"50\" width=\"240\" height=\"183\" fill=\"white\" stroke=\"#ddd\" stroke-width=\"1.5\" rx=\"10\"/><text x=\"355\" y=\"74\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#333\">계산하는 법</text><line x1=\"250\" y1=\"82\" x2=\"460\" y2=\"82\" stroke=\"#eee\" stroke-width=\"1\"/><circle cx=\"262\" cy=\"105\" r=\"11\" fill=\"#4A90D9\"/><text x=\"262\" y=\"110\" text-anchor=\"middle\" font-size=\"12\" fill=\"white\" font-weight=\"bold\">1</text><text x=\"283\" y=\"101\" font-size=\"12\" fill=\"#333\">소수점을 무시하고</text><text x=\"283\" y=\"117\" font-size=\"12\" fill=\"#333\">자연수로 곱하기</text><circle cx=\"262\" cy=\"147\" r=\"11\" fill=\"#5CB85C\"/><text x=\"262\" y=\"152\" text-anchor=\"middle\" font-size=\"12\" fill=\"white\" font-weight=\"bold\">2</text><text x=\"283\" y=\"143\" font-size=\"12\" fill=\"#333\">소수 자릿수만큼</text><text x=\"283\" y=\"159\" font-size=\"12\" fill=\"#333\">소수점을 왼쪽으로</text><rect x=\"248\" y=\"170\" width=\"212\" height=\"52\" fill=\"#FFF3E0\" rx=\"6\"/><text x=\"354\" y=\"191\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\" font-weight=\"bold\">예: 1.3 × 4</text><text x=\"354\" y=\"210\" text-anchor=\"middle\" font-size=\"12\" fill=\"#555\">13 × 4 = 52 → 소수 1자리 → 5.2</text></svg>",
+      "checkQuestion": {
+        "question": "$1.5 \\times 4$의 값은?",
+        "options": [
+          "0.6",
+          "6",
+          "60",
+          "0.06"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "소수의 덧셈과 뺄셈",
+          "chapterId": "math-4-2-03",
+          "reason": "소수의 자릿값 구조를 이해하고 소수끼리 더하는 방법을 알아야, 0.4×3을 0.4+0.4+0.4로 연결해 원리를 파악할 수 있어요."
+        },
+        {
+          "concept": "약분과 기약분수, 분수와 소수 변환",
+          "chapterId": "math-5-1-04",
+          "reason": "0.4 = 4/10처럼 소수를 분수로 바꿔 원리를 이해하려면 분수-소수 변환 개념이 필요해요."
+        },
+        {
+          "concept": "(두 자리 수) × (두 자리 수) 곱셈",
+          "chapterId": "math-3-2-01",
+          "reason": "소수점을 무시한 뒤 자연수 곱셈을 정확히 계산할 수 있어야 해요."
+        }
+      ],
+      "concept": "(소수) × (자연수)"
+    },
+    {
+      "explanation": "야, 잠깐 질문 하나. $3 \\times 4 = 12$는 알지? 그럼 $3 \\times 0.4$는 얼마일 것 같아?\n\n\"12랑 비슷한 거 아냐?\" 라고 생각했어? 잠깐, 한번 따져보자.\n\n$0.4$는 $1$보다 작잖아. 그러면 $3$에 $1$보다 작은 수를 곱하면 결과는 $3$보다 커야 할까, 작아야 할까?\n\n맞아, **$3$보다 작아야 해.** 여기서 곱셈의 진짜 의미를 다시 생각해 봐.\n\n$3 \\times 4$는 \"$3$의 $4$배\"야. 근데 $3 \\times 0.4$는 \"$3$의 $0.4$배\"야. $0.4$배란 건 절반도 안 된다는 뜻이니까, 답은 $3$보다 훨씬 작아야 해!\n\n## 어떻게 계산할까?\n\n핵심 아이디어는 이거야. $0.4$는 분수로 쓰면 $\\frac{4}{10}$이거든.\n\n$$3 \\times 0.4 = 3 \\times \\frac{4}{10} = \\frac{3 \\times 4}{10} = \\frac{12}{10} = 1.2$$\n\n여기서 뭔가 규칙이 보이지 않아?\n\n- $3 \\times 4 = 12$\n- $3 \\times 0.4 = 1.2$\n\n$3 \\times 4$를 먼저 계산하고, 결과에 **소수점을 한 칸 왼쪽으로** 옮겼어! 이유는 $0.4$가 소수 한 자리 수, 즉 $4$의 $\\frac{1}{10}$이기 때문이야. 곱하는 수가 $\\frac{1}{10}$이 되면, 결과도 $\\frac{1}{10}$이 되거든.\n\n간단하게 정리하면:\n\n$$3 \\times 0.4 \\;\\Rightarrow\\; 3 \\times 4 = 12 \\;\\Rightarrow\\; 12 \\div 10 = 1.2$$\n\n소수점이 **한 자리**면 $\\div 10$, **두 자리**면 $\\div 100$이야. 예를 들어:\n\n$$5 \\times 0.32 \\;\\Rightarrow\\; 5 \\times 32 = 160 \\;\\Rightarrow\\; 160 \\div 100 = 1.60 = 1.6$$\n\n이렇게 자연수에 소수를 곱하는 계산을 **(자연수) × (소수)** 라고 해.\n\n## 이미 아는 것과 연결하기\n\n이미 배운 $(소수) \\times (자연수)$, 예를 들면 $0.4 \\times 3$은 $0.4$를 $3$번 더하는 거였지. 근데 $(자연수) \\times (소수)$는 순서만 바뀐 거야. 곱셈은 순서를 바꿔도 결과가 같으니까, $3 \\times 0.4 = 0.4 \\times 3 = 1.2$야. 이 관계를 익히면 다음 단계인 $(소수) \\times (소수)$도 같은 원리로 계산할 수 있어.\n\n## 딱 하나, 자주 하는 실수\n\n$3 \\times 0.4$를 계산할 때 $3 \\times 4 = 12$까지는 맞게 구하고, 마지막에 소수점을 **안 찍어서** $12$라고 답하는 경우가 많아. 계산하기 전에 \"이 결과가 $3$보다 작아야 한다\"는 걸 먼저 머릿속에 새겨두면, 소수점을 빠뜨리는 실수를 바로 잡을 수 있어!",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">곱하는 수가 ÷10이 되면, 결과도 ÷10</text><rect x=\"30\" y=\"50\" width=\"170\" height=\"175\" rx=\"12\" fill=\"white\" stroke=\"#4A90D9\" stroke-width=\"2\"/><text x=\"115\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#4A90D9\">자연수 × 자연수</text><text x=\"115\" y=\"118\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">3 × 4</text><line x1=\"50\" y1=\"132\" x2=\"180\" y2=\"132\" stroke=\"#ddd\" stroke-width=\"1\"/><text x=\"115\" y=\"167\" text-anchor=\"middle\" font-size=\"36\" font-weight=\"bold\" fill=\"#4A90D9\">12</text><text x=\"115\" y=\"205\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">4는 자연수</text><rect x=\"300\" y=\"50\" width=\"170\" height=\"175\" rx=\"12\" fill=\"white\" stroke=\"#5CB85C\" stroke-width=\"2\"/><text x=\"385\" y=\"78\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#5CB85C\">자연수 × 소수</text><text x=\"385\" y=\"118\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">3 × 0.4</text><line x1=\"320\" y1=\"132\" x2=\"450\" y2=\"132\" stroke=\"#ddd\" stroke-width=\"1\"/><text x=\"385\" y=\"167\" text-anchor=\"middle\" font-size=\"36\" font-weight=\"bold\" fill=\"#5CB85C\">1.2</text><text x=\"385\" y=\"205\" text-anchor=\"middle\" font-size=\"12\" fill=\"#888\">0.4 = 4 ÷ 10</text><defs><marker id=\"arr\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\"><polygon points=\"0 0, 8 3, 0 6\" fill=\"#E67E22\"/></marker></defs><path d=\"M 205 108 L 295 108\" stroke=\"#E67E22\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#arr)\"/><text x=\"250\" y=\"101\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">÷10</text><path d=\"M 205 160 L 295 160\" stroke=\"#E67E22\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#arr)\"/><text x=\"250\" y=\"180\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\" fill=\"#E67E22\">÷10</text><rect x=\"30\" y=\"243\" width=\"440\" height=\"44\" rx=\"8\" fill=\"#FFF3E0\"/><text x=\"250\" y=\"261\" text-anchor=\"middle\" font-size=\"12\" fill=\"#E67E22\" font-weight=\"bold\">계산 방법</text><text x=\"250\" y=\"279\" text-anchor=\"middle\" font-size=\"12\" fill=\"#555\">① 자연수처럼 계산 (3×4=12)  ② 소수 자릿수만큼 소수점 이동 (→1.2)</text></svg>",
+      "checkQuestion": {
+        "question": "4 × 0.7을 바르게 계산한 것은?",
+        "options": [
+          "28",
+          "2.8",
+          "0.28",
+          "280"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "(소수) × (자연수)",
+          "chapterId": "math-5-2-04",
+          "reason": "같은 단원에서 먼저 배우는 개념으로, 소수 곱셈의 기본 원리(자연수 계산 후 소수점 이동)를 이해하는 데 필요해."
+        },
+        {
+          "concept": "분수를 소수로, 소수를 분수로 변환",
+          "chapterId": "math-5-1-04",
+          "reason": "0.4 = 4/10처럼 소수를 분수로 바꿔 계산 원리를 이해하려면 분수-소수 변환을 알아야 해."
+        },
+        {
+          "concept": "(세 자리 수) × (두 자리 수)",
+          "chapterId": "math-4-1-03",
+          "reason": "소수의 곱셈은 자연수 곱셈을 먼저 계산한 뒤 소수점을 이동하므로, 자연수 곱셈이 탄탄해야 해."
+        }
+      ],
+      "concept": "(자연수) × (소수)"
+    },
+    {
+      "explanation": "## 0.3 × 0.4는 얼마일까?\n\n자, 문제를 하나 내볼게. 0.3 × 0.4를 계산하면 얼마가 될 것 같아?\n\n어떤 친구들은 \"0.3이랑 0.4니까... 0.12?\" 하고 감으로 말하기도 하고, 어떤 친구들은 \"3 × 4 = 12니까 12?\" 하고 말하기도 해. 그런데 잠깐, 0.3 × 0.4가 0.3보다 *더 클 수* 있을까?\n\n생각해봐. 0.3을 0.4번 곱한다는 건... 0.3 전체도 아니고, 그보다 *더 작은 일부*를 가져온다는 뜻이잖아. 그러면 결과는 0.3보다 **작아야** 해. 그런데 12는 0.3보다 훨씬 크지? 뭔가 이상하지 않아?\n\n---\n\n## 자연수 곱셈으로 돌아가 보자\n\n이미 배운 걸 이용해볼게. 우리가 알고 있는 건 이거야:\n\n$$3 \\times 4 = 12$$\n\n그러면 0.3 × 0.4는 어떻게 연결될까?\n\n$0.3$은 $3 \\div 10$이고, $0.4$는 $4 \\div 10$이야. 즉:\n\n$$0.3 \\times 0.4 = \\frac{3}{10} \\times \\frac{4}{10} = \\frac{3 \\times 4}{10 \\times 10} = \\frac{12}{100} = 0.12$$\n\n맞아! 0.12야. 처음에 감으로 말한 친구가 정답이었어.\n\n---\n\n## 규칙이 보이지 않아?\n\n몇 가지 더 살펴볼게:\n\n$$0.2 \\times 0.3 = \\frac{2}{10} \\times \\frac{3}{10} = \\frac{6}{100} = 0.06$$\n\n$$1.2 \\times 0.4 = \\frac{12}{10} \\times \\frac{4}{10} = \\frac{48}{100} = 0.48$$\n\n$$2.3 \\times 1.5 = \\frac{23}{10} \\times \\frac{15}{10} = \\frac{345}{100} = 3.45$$\n\n패턴이 보여?\n\n- 자연수끼리 곱셈을 먼저 해 → $23 \\times 15 = 345$\n- 소수점 아래 자리 수를 합쳐 → 첫 번째 수 소수점 아래 1자리 + 두 번째 수 소수점 아래 1자리 = 2자리\n- 결과에서 소수점을 2자리 앞으로 → $345$ → $3.45$\n\n이게 바로 **소수의 곱셈** (소수끼리 곱하는 계산)의 핵심 규칙이야!\n\n---\n\n## 이렇게 정리할 수 있어\n\n$$\\underbrace{2.3}_{소수 1자리} \\times \\underbrace{1.5}_{소수 1자리} = \\underbrace{3.45}_{소수 \\mathbf{2}자리}$$\n\n소수점 아래 자리 수의 **합**만큼 소수점을 이동하면 돼. 자연수 곱셈은 이미 할 줄 알잖아, 그러니까 사실 새로운 계산이 아니야 — 그냥 마지막에 소수점 위치만 결정하는 거야.\n\n이렇게 **소수끼리의 곱셈**을 할 때는, 자연수로 바꿔서 계산한 다음, 곱한 두 수의 소수점 아래 자리 수의 합만큼 소수점을 왼쪽으로 옮긴다고 기억해.\n\n---\n\n## 이 개념이 연결되는 곳\n\n이번 단원에서 이미 (소수) × (자연수), (자연수) × (소수)를 배웠지? 오늘 배운 (소수) × (소수)는 그 확장이야. 그리고 이 규칙은 다음 시간에 배울 \"곱의 소수점 위치\"로 자연스럽게 이어져 — 왜 소수점이 그 위치에 오는지 깊이 이해하게 될 거야.\n\n---\n\n## 이것만 조심해!\n\n계산 결과에 **0이 앞에 붙어야 할 때 빠뜨리는 실수**를 많이 해. 예를 들어 $0.2 \\times 0.3$을 계산하면 $2 \\times 3 = 6$이고 소수점 아래 두 자리니까 $0.06$이야. 그런데 \"6\"이라고 쓰거나 \"0.6\"이라고 쓰는 실수를 자주 해. 소수점 아래 자리 수의 합을 **꼭 확인하고** 자리를 맞춰야 해!",
+      "checkQuestion": {
+        "question": "$0.4 \\times 0.7$을 계산한 결과는?",
+        "options": [
+          "28",
+          "2.8",
+          "0.28",
+          "0.028"
+        ],
+        "correctIndex": 2
+      },
+      "prerequisites": [
+        {
+          "concept": "(소수) × (자연수), (자연수) × (소수)",
+          "chapterId": "math-5-2-04",
+          "reason": "소수와 자연수의 곱셈 원리(자연수 곱셈 후 소수점 이동)를 이해해야 소수끼리의 곱셈으로 확장할 수 있어요."
+        },
+        {
+          "concept": "약분과 통분, 분수와 소수의 변환",
+          "chapterId": "math-5-1-04",
+          "reason": "소수를 분수로 변환하여 곱셈 원리를 이해하는 데 필요해요."
+        },
+        {
+          "concept": "소수 두 자리 수, 세 자리 수, 소수의 크기 비교",
+          "chapterId": "math-4-2-03",
+          "reason": "소수의 자릿값 구조를 알아야 곱셈 결과에서 소수점 위치를 올바르게 판단할 수 있어요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "(소수) × (소수)"
+    },
+    {
+      "explanation": "**패턴을 먼저 봐봐.**\n\n아래 계산들을 순서대로 보면 어떤 생각이 들어?\n\n$$3 \\times 4 = 12$$\n$$0.3 \\times 4 = 1.2$$\n$$0.3 \\times 0.4 = 0.12$$\n$$0.03 \\times 0.4 = 0.012$$\n\n숫자가 점점 작아지는 건 당연한데… 소수점이 이동하는 데 뭔가 규칙이 있지 않아? 잠깐, 소수점 아래 자리 수를 세어봐.\n\n**왜 그런지 분수로 풀어보자**\n\n$0.3 \\times 0.4$를 예로 들어볼게.\n\n$0.3$은 $3$을 $10$으로 나눈 수야. 분수로 쓰면 $\\frac{3}{10}$.\n$0.4$는 $4$를 $10$으로 나눈 수야. 분수로 쓰면 $\\frac{4}{10}$.\n\n두 수를 곱하면:\n$$\\frac{3}{10} \\times \\frac{4}{10} = \\frac{3 \\times 4}{10 \\times 10} = \\frac{12}{100} = 0.12$$\n\n$3 \\times 4 = 12$인데, 분모에 $10$이 두 번 곱해져서 $\\frac{1}{100}$ 단위가 됐어. 그래서 소수점이 두 칸 왼쪽으로 간 거야.\n\n$0.03 \\times 0.4$는? $\\frac{3}{100} \\times \\frac{4}{10} = \\frac{12}{1000} = 0.012$. 분모가 $1000$이니까 소수점이 세 칸!\n\n**이제 규칙으로 정리하면**\n\n이렇게 **곱하는 두 수의 소수점 아래 자리 수를 더하면 곱의 소수점 아래 자리 수**가 돼. 이걸 **소수점 위치의 규칙** (곱한 결과에서 소수점을 어디에 찍을지 결정하는 방법)이라고 해.\n\n계산 순서는 이래:\n① 소수점을 무시하고 자연수처럼 곱한다\n② 두 수의 소수점 아래 자리 수를 더한다\n③ 그 자리 수만큼 오른쪽 끝에서 소수점을 왼쪽으로 찍는다\n\n예시:\n- $2.5 \\times 1.4$: (1자리) + (1자리) = 2자리 → $25 \\times 14 = 350$ → $3.50$\n- $0.12 \\times 0.5$: (2자리) + (1자리) = 3자리 → $12 \\times 5 = 60$ → $0.060$\n\n**이 개념의 위치**\n\n이 규칙은 이번 단원에서 배운 (소수) × (자연수), (자연수) × (소수), (소수) × (소수) 계산을 하나의 원리로 묶어줘. 6학년에서 배울 소수의 나눗셈에서는 이 원리가 반대 방향으로 적용되는 걸 보게 될 거야.\n\n**자주 하는 실수 한 가지**\n\n$0.04 \\times 0.2$를 계산할 때, $4 \\times 2 = 8$이니까 답이 $0.8$이라고 쓰는 경우가 많아. 하지만 소수점 아래가 (2자리) + (1자리) = 3자리여야 하니까 정답은 $0.008$이야. 자연수 곱이 한 자리 숫자일 때 앞에 $0$을 채워서 자릿수를 맞춰야 한다는 걸 잊지 마.",
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\"><rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/><text x=\"250\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">소수점 아래 자리 수를 더하면 = 곱의 소수점 자리 수</text><text x=\"137\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" fill=\"#999\">계산식</text><text x=\"387\" y=\"48\" text-anchor=\"middle\" font-size=\"11\" fill=\"#999\">소수점 아래 자리 수 (첫째 수 + 둘째 수 = 결과)</text><line x1=\"5\" y1=\"53\" x2=\"495\" y2=\"53\" stroke=\"#DDD\" stroke-width=\"1\"/><line x1=\"275\" y1=\"53\" x2=\"275\" y2=\"240\" stroke=\"#DDD\" stroke-width=\"1\"/><text x=\"137\" y=\"83\" text-anchor=\"middle\" font-size=\"17\" fill=\"#888\">3 × 4 = 12</text><rect x=\"285\" y=\"66\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#E0E0E0\"/><text x=\"299\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">0</text><text x=\"323\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">+</text><rect x=\"335\" y=\"66\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#E0E0E0\"/><text x=\"349\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">0</text><text x=\"373\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">=</text><rect x=\"385\" y=\"66\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#E0E0E0\"/><text x=\"399\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">0</text><line x1=\"5\" y1=\"98\" x2=\"495\" y2=\"98\" stroke=\"#EEE\" stroke-width=\"1\"/><text x=\"137\" y=\"128\" text-anchor=\"middle\" font-size=\"17\" fill=\"#333\">0.3 × 4 = 1.2</text><rect x=\"285\" y=\"111\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#4A90D9\"/><text x=\"299\" y=\"129\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1</text><text x=\"323\" y=\"129\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">+</text><rect x=\"335\" y=\"111\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#E0E0E0\"/><text x=\"349\" y=\"129\" text-anchor=\"middle\" font-size=\"14\" fill=\"#999\">0</text><text x=\"373\" y=\"129\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">=</text><rect x=\"385\" y=\"111\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#4A90D9\"/><text x=\"399\" y=\"129\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1</text><line x1=\"5\" y1=\"143\" x2=\"495\" y2=\"143\" stroke=\"#EEE\" stroke-width=\"1\"/><text x=\"137\" y=\"173\" text-anchor=\"middle\" font-size=\"17\" fill=\"#333\">0.3 × 0.4 = 0.12</text><rect x=\"285\" y=\"156\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#4A90D9\"/><text x=\"299\" y=\"174\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1</text><text x=\"323\" y=\"174\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">+</text><rect x=\"335\" y=\"156\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#4A90D9\"/><text x=\"349\" y=\"174\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1</text><text x=\"373\" y=\"174\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">=</text><rect x=\"385\" y=\"156\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#5CB85C\"/><text x=\"399\" y=\"174\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">2</text><line x1=\"5\" y1=\"188\" x2=\"495\" y2=\"188\" stroke=\"#EEE\" stroke-width=\"1\"/><text x=\"137\" y=\"218\" text-anchor=\"middle\" font-size=\"17\" fill=\"#333\">0.03 × 0.4 = 0.012</text><rect x=\"285\" y=\"201\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#5CB85C\"/><text x=\"299\" y=\"219\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">2</text><text x=\"323\" y=\"219\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">+</text><rect x=\"335\" y=\"201\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#4A90D9\"/><text x=\"349\" y=\"219\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">1</text><text x=\"373\" y=\"219\" text-anchor=\"middle\" font-size=\"14\" fill=\"#CCC\">=</text><rect x=\"385\" y=\"201\" width=\"28\" height=\"26\" rx=\"5\" fill=\"#E67E22\"/><text x=\"399\" y=\"219\" text-anchor=\"middle\" font-size=\"14\" fill=\"white\" font-weight=\"bold\">3</text><line x1=\"5\" y1=\"240\" x2=\"495\" y2=\"240\" stroke=\"#DDD\" stroke-width=\"1\"/><rect x=\"10\" y=\"250\" width=\"480\" height=\"40\" rx=\"7\" fill=\"#EBF4FF\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/><text x=\"250\" y=\"267\" text-anchor=\"middle\" font-size=\"12\" fill=\"#4A90D9\" font-weight=\"bold\">① 자연수처럼 곱하기 → ② 자리 수 더하기 → ③ 소수점 찍기</text><text x=\"250\" y=\"283\" text-anchor=\"middle\" font-size=\"11\" fill=\"#777\">예: 0.04 × 0.2 → 4×2=8 → 2+1=3자리 → 0.008</text></svg>",
+      "checkQuestion": {
+        "question": "$0.06 \\times 0.3$을 계산하면?",
+        "options": [
+          "$0.18$",
+          "$0.018$",
+          "$1.8$",
+          "$0.0018$"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "소수 두 자리 수, 세 자리 수와 소수점 아래 자릿값",
+          "chapterId": "math-4-2-03",
+          "reason": "소수점 아래 자리 수를 정확히 셀 수 있어야 이 규칙을 적용할 수 있어요."
+        },
+        {
+          "concept": "분수를 소수로, 소수를 분수로 변환",
+          "chapterId": "math-5-1-04",
+          "reason": "소수를 분수($\\frac{3}{10}$ 등)로 바꿔서 왜 소수점이 이동하는지 원리를 이해하는 데 필요해요."
+        },
+        {
+          "concept": "(소수) × (소수) 계산하기",
+          "chapterId": "math-5-2-04",
+          "reason": "이 규칙은 소수끼리의 곱셈 결과를 설명하므로, 실제 곱셈 계산 방법을 먼저 익혀야 해요."
+        }
+      ],
+      "concept": "곱의 소수점 위치"
+    },
+    {
+      "explanation": "## 곱의 소수점 위치\n\n이미 소수끼리 곱하는 법을 배웠잖아. 근데 매번 계산할 때마다 소수점을 어디에 찍어야 할지 헷갈리지 않아? 사실 여기에 **아주 신기한 규칙**이 숨어 있어.\n\n---\n\n### 패턴을 찾아봐\n\n이 세 가지 계산 결과를 한번 봐봐.\n\n$$3 \\times 4 = 12$$\n\n$$0.3 \\times 4 = 1.2$$\n\n$$0.3 \\times 0.4 = 0.12$$\n\n어? 뭔가 보이지 않아?\n\n$3 \\times 4$에서 소수점 아래 자리가 **0개**, 결과도 소수점 아래 0개.\n$0.3 \\times 4$에서 소수점 아래 자리가 **1개**, 결과도 소수점 아래 1개.\n$0.3 \\times 0.4$에서 소수점 아래 자리가 **2개**, 결과도 소수점 아래 2개.\n\n규칙이 보이지? 그냥 외운 게 아니야. 이유가 있어.\n\n---\n\n### 왜 그런 걸까?\n\n$0.3$은 $3$을 **10으로 나눈 것**이야. 즉, $\\frac{3}{10}$.\n$0.4$도 마찬가지로 $\\frac{4}{10}$.\n\n그러니까:\n\n$$0.3 \\times 0.4 = \\frac{3}{10} \\times \\frac{4}{10} = \\frac{3 \\times 4}{10 \\times 10} = \\frac{12}{100} = 0.12$$\n\n소수점 아래 한 자리인 수는 분모가 $10$, 두 자리면 $100$, 세 자리면 $1000$이잖아. 곱하면 분모끼리도 곱해지니까, 소수점 아래 자리 수가 **더해지는** 거야.\n\n---\n\n### 이름 붙이기\n\n이 규칙을 **곱의 소수점 위치** (곱한 결과에서 소수점을 어디에 찍는지 결정하는 규칙)라고 해.\n\n$$\\underbrace{소수점 아래 자리 수}_{곱하는 두 수의 합} = \\underbrace{곱의 소수점 아래 자리 수}_{결과}$$\n\n예를 들면:\n- $1.2 \\times 3.45$ → 소수점 아래 자리 수: $1 + 2 = 3$자리\n- $12 \\times 345 = 4140$ → 여기서 소수점 세 자리 왼쪽에 찍으면 → $4.140 = 4.14$ ✓\n\n계산 순서는 간단해:\n1. **소수점을 무시하고** 자연수처럼 곱해.\n2. 두 수의 소수점 아래 자리 수를 **더해**.\n3. 그 자리만큼 오른쪽에서 왼쪽으로 세어 소수점 찍기.\n\n---\n\n### 어디에 연결되나?\n\n이 규칙은 소수의 나눗셈을 배울 때도 거꾸로 쓰여. 나눗셈에서 소수점이 어떻게 움직이는지 이해하려면, 곱셈에서 왜 자리 수가 더해지는지를 먼저 알아야 해.\n\n---\n\n### 딱 하나, 조심할 점\n\n계산 결과의 **끝자리가 0**일 때 실수하기 쉬워.\n\n예: $0.4 \\times 0.5 = ?$\n$4 \\times 5 = 20$, 소수점 아래 $1 + 1 = 2$자리 → $0.20$\n\n여기서 $0.20$이라고 쓰는 건 맞는데, 많은 친구들이 소수점을 왼쪽이 아니라 오른쪽으로 세거나, 0을 빼먹고 $0.2$가 아니라 $2.0$으로 쓰는 실수를 해. 항상 자리 수를 먼저 세고, 그다음 소수점 위치를 확인하는 습관을 들여봐.",
+      "checkQuestion": {
+        "question": "$1.4 \\times 2.5$를 계산하면?",
+        "options": [
+          "35",
+          "3.5",
+          "0.35",
+          "350"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "(소수) × (소수)",
+          "chapterId": "math-5-2-04",
+          "reason": "소수점 위치 규칙은 소수끼리 곱하는 계산 방법을 먼저 이해해야 의미를 파악할 수 있기 때문이야."
+        },
+        {
+          "concept": "소수 두 자리 수, 세 자리 수",
+          "chapterId": "math-4-2-03",
+          "reason": "'소수점 아래 자리 수'가 무엇인지 알아야 규칙을 적용할 수 있기 때문이야."
+        },
+        {
+          "concept": "약분과 기약분수",
+          "chapterId": "math-5-1-04",
+          "reason": "소수를 분수로 변환하는 개념($0.3 = \\frac{3}{10}$)을 이해해야 규칙의 이유를 납득할 수 있기 때문이야."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Title -->\n  <text x=\"250\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#333\">소수점 아래 자리 수의 합 = 결과의 소수점 아래 자리 수</text>\n\n  <!-- Row 1: 3 × 4 = 12 -->\n  <!-- Box -->\n  <rect x=\"20\" y=\"48\" width=\"460\" height=\"64\" rx=\"10\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <!-- Equation -->\n  <text x=\"80\" y=\"86\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">3</text>\n  <text x=\"130\" y=\"86\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">×</text>\n  <text x=\"180\" y=\"86\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">4</text>\n  <text x=\"230\" y=\"86\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">=</text>\n  <text x=\"280\" y=\"86\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">12</text>\n  <!-- Badges -->\n  <rect x=\"60\" y=\"95\" width=\"40\" height=\"14\" rx=\"7\" fill=\"#CBD5E0\"/>\n  <text x=\"80\" y=\"106\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">0자리</text>\n  <rect x=\"160\" y=\"95\" width=\"40\" height=\"14\" rx=\"7\" fill=\"#CBD5E0\"/>\n  <text x=\"180\" y=\"106\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">0자리</text>\n  <!-- Arrow + sum -->\n  <text x=\"340\" y=\"86\" text-anchor=\"middle\" font-size=\"13\" fill=\"#4A90D9\">→ 0+0=</text>\n  <rect x=\"378\" y=\"68\" width=\"88\" height=\"30\" rx=\"8\" fill=\"#4A90D9\"/>\n  <text x=\"422\" y=\"88\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">소수점 0개</text>\n\n  <!-- Row 2: 0.3 × 4 = 1.2 -->\n  <rect x=\"20\" y=\"122\" width=\"460\" height=\"64\" rx=\"10\" fill=\"#fff\" stroke=\"#5CB85C\" stroke-width=\"1.5\"/>\n  <!-- 0. in grey, 3 in green -->\n  <text x=\"63\" y=\"160\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#999\">0.</text>\n  <text x=\"90\" y=\"160\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#5CB85C\">3</text>\n  <text x=\"130\" y=\"160\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">×</text>\n  <text x=\"180\" y=\"160\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#333\">4</text>\n  <text x=\"230\" y=\"160\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">=</text>\n  <!-- result 1. in grey, 2 in green -->\n  <text x=\"263\" y=\"160\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#999\">1.</text>\n  <text x=\"290\" y=\"160\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#5CB85C\">2</text>\n  <!-- Badges -->\n  <rect x=\"60\" y=\"169\" width=\"60\" height=\"14\" rx=\"7\" fill=\"#C6F6D5\"/>\n  <text x=\"90\" y=\"180\" text-anchor=\"middle\" font-size=\"10\" fill=\"#276749\">1자리 ↓</text>\n  <rect x=\"160\" y=\"169\" width=\"40\" height=\"14\" rx=\"7\" fill=\"#CBD5E0\"/>\n  <text x=\"180\" y=\"180\" text-anchor=\"middle\" font-size=\"10\" fill=\"#555\">0자리</text>\n  <!-- Arrow + sum -->\n  <text x=\"340\" y=\"160\" text-anchor=\"middle\" font-size=\"13\" fill=\"#5CB85C\">→ 1+0=</text>\n  <rect x=\"378\" y=\"142\" width=\"88\" height=\"30\" rx=\"8\" fill=\"#5CB85C\"/>\n  <text x=\"422\" y=\"162\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">소수점 1개</text>\n\n  <!-- Row 3: 0.3 × 0.4 = 0.12 -->\n  <rect x=\"20\" y=\"196\" width=\"460\" height=\"68\" rx=\"10\" fill=\"#fff\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"63\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#999\">0.</text>\n  <text x=\"90\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">3</text>\n  <text x=\"130\" y=\"236\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">×</text>\n  <text x=\"153\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#999\">0.</text>\n  <text x=\"180\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">4</text>\n  <text x=\"220\" y=\"236\" text-anchor=\"middle\" font-size=\"22\" fill=\"#555\">=</text>\n  <text x=\"251\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#999\">0.</text>\n  <text x=\"285\" y=\"236\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#E67E22\">12</text>\n  <!-- Badges -->\n  <rect x=\"60\" y=\"246\" width=\"60\" height=\"14\" rx=\"7\" fill=\"#FEEBC8\"/>\n  <text x=\"90\" y=\"257\" text-anchor=\"middle\" font-size=\"10\" fill=\"#744210\">1자리 ↓</text>\n  <rect x=\"143\" y=\"246\" width=\"60\" height=\"14\" rx=\"7\" fill=\"#FEEBC8\"/>\n  <text x=\"173\" y=\"257\" text-anchor=\"middle\" font-size=\"10\" fill=\"#744210\">1자리 ↓</text>\n  <!-- Arrow + sum -->\n  <text x=\"340\" y=\"236\" text-anchor=\"middle\" font-size=\"13\" fill=\"#E67E22\">→ 1+1=</text>\n  <rect x=\"378\" y=\"218\" width=\"88\" height=\"30\" rx=\"8\" fill=\"#E67E22\"/>\n  <text x=\"422\" y=\"238\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">소수점 2개</text>\n\n  <!-- Bottom legend -->\n  <rect x=\"20\" y=\"275\" width=\"460\" height=\"20\" rx=\"6\" fill=\"#EBF4FF\"/>\n  <text x=\"250\" y=\"289\" text-anchor=\"middle\" font-size=\"11\" fill=\"#2B6CB0\">💡 곱하는 두 수의 소수점 아래 자리 수를 더하면 → 결과의 소수점 위치가 결정돼!</text>\n</svg>",
+      "concept": "곱의 소수점 위치"
+    }
+  ]
+}

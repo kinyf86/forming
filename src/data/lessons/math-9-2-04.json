@@ -1,0 +1,98 @@
+{
+  "chapterId": "math-9-2-04",
+  "chapterTitle": "4단원 - 삼각비",
+  "generatedAt": "2026-04-01T18:24:36.299569+00:00",
+  "lessons": [
+    {
+      "explanation": "## 크기가 달라져도 변하지 않는 것\n\n직각삼각형을 하나 그려보세요. 이제 그 삼각형을 2배로 키워보면 어떨까요? 모든 변의 길이는 달라지지만, **각도**는 그대로입니다.\n\n여기서 흥미로운 질문이 하나 생깁니다. 각도가 같다면, 변들의 **비율**도 같을까요?\n\n---\n\n## 닮음에서 발견되는 패턴\n\n직각삼각형 ABC에서 ∠C = 90°라고 합시다. 이제 ∠A = 30°인 직각삼각형을 크기를 다르게 해서 여러 개 그려보면, 각 삼각형에서 (BC의 길이) ÷ (AB의 길이)를 계산해보면 모두 같은 값이 나옵니다.\n\n왜 그럴까요? 각도가 같은 직각삼각형들은 모두 **닮은 도형** (대응각이 같고 대응변의 비가 일정한 도형)이기 때문입니다. 닮은 도형에서 대응변의 비는 항상 일정하죠.\n\n즉, 이 비율은 삼각형의 크기와 무관하고, **오직 각도 A에만 의존**합니다.\n\n---\n\n## 삼각비의 정의\n\n직각삼각형 ABC에서 ∠C = 90°일 때, 각 A에 대해 세 가지 비율을 정의합니다.\n\n변의 이름을 먼저 정리하면:\n- **빗변** (직각의 맞은편 변): $AB$\n- **대변** (각 A의 맞은편 변): $BC$\n- **인접변** (각 A에 붙어있는 직각이 아닌 변): $AC$\n\n이 세 비율을 **삼각비** (직각삼각형의 두 변의 비)라고 합니다:\n\n$$\\sin A = \\frac{\\text{대변}}{\\text{빗변}} = \\frac{BC}{AB}$$\n\n$$\\cos A = \\frac{\\text{인접변}}{\\text{빗변}} = \\frac{AC}{AB}$$\n\n$$\\tan A = \\frac{\\text{대변}}{\\text{인접변}} = \\frac{BC}{AC}$$\n\n각각 **사인** (sine, sin), **코사인** (cosine, cos), **탄젠트** (tangent, tan)라고 읽습니다.\n\n---\n\n## 구체적인 예시\n\n∠A = 어떤 각도, ∠C = 90°인 직각삼각형에서 $AB = 5$, $BC = 3$, $AC = 4$ 라면:\n\n$$\\sin A = \\frac{3}{5}, \\quad \\cos A = \\frac{4}{5}, \\quad \\tan A = \\frac{3}{4}$$\n\n이 삼각형을 2배로 키워 $AB = 10$, $BC = 6$, $AC = 8$ 로 만들어도:\n\n$$\\sin A = \\frac{6}{10} = \\frac{3}{5}, \\quad \\cos A = \\frac{8}{10} = \\frac{4}{5}, \\quad \\tan A = \\frac{6}{8} = \\frac{3}{4}$$\n\n변의 길이는 달라졌지만 삼각비는 그대로입니다. 크기가 아니라 각도가 삼각비를 결정하는 것입니다.\n\n---\n\n## 개념의 위치\n\n삼각비는 피타고라스 정리를 발전시킨 개념입니다. 피타고라스 정리가 \"세 변의 길이 사이의 관계\"를 다뤘다면, 삼각비는 \"각도와 변의 비율 사이의 관계\"를 다룹니다. 이 개념은 이후 $\\sin 30°$, $\\cos 45°$ 같은 특수각의 값 계산, 나아가 건물의 높이나 두 지점 사이의 거리를 간접적으로 측정하는 데 활용됩니다.\n\n---\n\n## 주의할 점 하나\n\n\"대변\"과 \"인접변\"은 **기준 각도가 무엇이냐**에 따라 달라집니다. 같은 삼각형에서 $\\sin A$와 $\\sin B$를 구할 때 대변과 인접변이 뒤바뀝니다. 항상 \"내가 지금 어느 각도에 대한 삼각비를 구하고 있는가\"를 먼저 확인하세요.",
+      "checkQuestion": {
+        "question": "직각삼각형 ABC에서 ∠C = 90°이고, AB = 13, BC = 5, AC = 12일 때, sin A의 값은?",
+        "options": [
+          "$\\dfrac{5}{13}$",
+          "$\\dfrac{12}{13}$",
+          "$\\dfrac{5}{12}$",
+          "$\\dfrac{12}{5}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "도형의 닮음",
+          "chapterId": "math-8-2-04",
+          "reason": "삼각비가 삼각형의 크기와 무관하고 각도에만 의존한다는 핵심 원리가 닮음의 성질에서 비롯되기 때문입니다."
+        },
+        {
+          "concept": "피타고라스 정리",
+          "chapterId": "math-9-2-03",
+          "reason": "삼각비 문제에서 세 변 중 하나를 구할 때 피타고라스 정리를 반드시 사용하기 때문입니다."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "삼각비의 뜻"
+    },
+    {
+      "explanation": "## 계산기 없이 삼각비를 알 수 있다고요?\n\n삼각비를 배웠으니 이런 질문이 생길 수 있어요. \"$\\sin 30°$는 얼마죠?\" 계산기를 꺼내려는 순간, 잠깐 멈춰 보세요. 사실 30°, 45°, 60°는 **특수한 각**(손으로 직접 계산할 수 있는 각)이에요. 이 각들은 우리가 이미 알고 있는 도형에서 바로 뽑아낼 수 있거든요.\n\n---\n\n### 첫 번째 도형: 정삼각형을 반으로 가르기\n\n한 변의 길이가 2인 **정삼각형**(세 변이 모두 같고 세 각이 모두 60°인 삼각형)을 떠올려 보세요.\n\n이 삼각형의 꼭대기에서 밑변으로 수선을 내리면 딱 반으로 갈라집니다. 그러면 어떤 직각삼각형이 생길까요?\n\n- 빗변 = 2 (원래 정삼각형의 한 변)\n- 밑변 = 1 (절반으로 갈렸으니까)\n- 높이 = ? → 피타고라스 정리로: $\\sqrt{2^2 - 1^2} = \\sqrt{3}$\n- 각도 = 30°와 60°\n\n이제 삼각비의 정의(빗변 분의 대변, 빗변 분의 인접변...)를 그대로 적용해 봐요.\n\n$$\\sin 30° = \\frac{1}{2}, \\quad \\cos 30° = \\frac{\\sqrt{3}}{2}, \\quad \\tan 30° = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}$$\n\n$$\\sin 60° = \\frac{\\sqrt{3}}{2}, \\quad \\cos 60° = \\frac{1}{2}, \\quad \\tan 60° = \\frac{\\sqrt{3}}{1} = \\sqrt{3}$$\n\n---\n\n### 두 번째 도형: 정사각형의 대각선\n\n한 변의 길이가 1인 정사각형을 대각선으로 자르면 **직각이등변삼각형**(두 예각이 모두 45°인 직각삼각형)이 생겨요.\n\n- 두 변 = 1, 1\n- 빗변 = $\\sqrt{1^2 + 1^2} = \\sqrt{2}$\n- 각도 = 45°\n\n$$\\sin 45° = \\frac{1}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}, \\quad \\cos 45° = \\frac{\\sqrt{2}}{2}, \\quad \\tan 45° = \\frac{1}{1} = 1$$\n\n---\n\n### 정리: 특수각 삼각비 표\n\n이렇게 도형에서 유도한 값들을 정리하면:\n\n| 각도 | $\\sin$ | $\\cos$ | $\\tan$ |\n|------|--------|--------|--------|\n| $30°$ | $\\dfrac{1}{2}$ | $\\dfrac{\\sqrt{3}}{2}$ | $\\dfrac{\\sqrt{3}}{3}$ |\n| $45°$ | $\\dfrac{\\sqrt{2}}{2}$ | $\\dfrac{\\sqrt{2}}{2}$ | $1$ |\n| $60°$ | $\\dfrac{\\sqrt{3}}{2}$ | $\\dfrac{1}{2}$ | $\\sqrt{3}$ |\n\n이렇게 특정 각도에서 삼각비 값을 정확히 구할 수 있는 것을 **특수한 각의 삼각비**라고 해요.\n\n---\n\n### 이 개념이 어디에 연결되나요?\n\n삼각비의 뜻을 알아야 이 표가 어디서 나왔는지 이해할 수 있고, 반대로 이 표를 외우면 다음 단원에서 실제 건물 높이나 거리를 계산하는 **삼각비의 활용** 문제를 풀 수 있게 됩니다. 실용적인 계산을 위해 반드시 필요한 다리예요.\n\n---\n\n### 자주 하는 실수 하나\n\n$\\sin 30° = \\dfrac{\\sqrt{3}}{2}$ 라고 잘못 쓰는 경우가 많아요. $\\sin$과 $\\cos$가 30°와 60°에서 서로 뒤바뀌기 때문이에요. 이걸 막는 가장 좋은 방법은 암기가 아니라 정삼각형 그림을 머릿속에 그리는 것입니다. 30° 맞은편은 짧은 변(1), 60° 맞은편은 긴 변($\\sqrt{3}$) — 이 이미지 하나면 헷갈릴 일이 없어요.",
+      "checkQuestion": {
+        "question": "한 변의 길이가 2인 정삼각형을 이용해서 $\\tan 60°$의 값을 구하면?",
+        "options": [
+          "$\\sqrt{3}$",
+          "$\\dfrac{\\sqrt{3}}{3}$",
+          "$\\dfrac{1}{2}$",
+          "$\\dfrac{\\sqrt{3}}{2}$"
+        ],
+        "correctIndex": 0
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각비의 뜻",
+          "chapterId": "math-9-2-04",
+          "reason": "sin, cos, tan의 정의를 알아야 직각삼각형의 변의 길이로 삼각비 값을 직접 계산할 수 있어요."
+        },
+        {
+          "concept": "제곱근과 실수",
+          "chapterId": "math-9-1-01",
+          "reason": "$\\sqrt{2}$, $\\sqrt{3}$ 같은 무리수 값을 다루고 정리하려면 근호 계산에 익숙해야 해요."
+        },
+        {
+          "concept": "피타고라스 정리",
+          "chapterId": "math-9-2-03",
+          "reason": "정삼각형과 정사각형을 잘랐을 때 높이(세 번째 변)를 구하는 데 피타고라스 정리를 사용해요."
+        }
+      ],
+      "visualSvg": null,
+      "concept": "특수한 각의 삼각비"
+    },
+    {
+      "explanation": "## 삼각비로 직접 잴 수 없는 거리를 구한다고?\n\n건물 꼭대기까지 줄자를 들고 올라갈 수 없어요. 강 건너 나무까지 직접 걸어갈 수도 없죠. 그런데 수천 년 전 이집트 사람들은 피라미드의 높이를 계산했고, 측량사들은 강 너비를 쟀어요. 어떻게?\n\n바로 **삼각비의 활용**(삼각비를 이용해 길이를 간접적으로 구하는 방법)이에요.\n\n---\n\n## 핵심 아이디어: 각도와 한 변만 알면 충분해\n\n직각삼각형에서 한 예각의 크기와 한 변의 길이를 알면, 나머지 두 변을 모두 구할 수 있다는 걸 이미 알고 있죠? 이걸 현실 문제에 적용하는 거예요.\n\n두 가지 핵심 용어를 먼저 알아봅시다.\n\n- **앙각** (올려다보는 각): 수평선을 기준으로 목표물을 올려다볼 때 생기는 각도\n- **부각** (내려다보는 각): 수평선을 기준으로 목표물을 내려다볼 때 생기는 각도\n\n---\n\n## 유형 1: 높이 구하기\n\n건물에서 $d$ 떨어진 지점에서 꼭대기를 올려다봤더니 앙각이 $\\theta$였어요.\n\n직각삼각형을 그려보면:\n- 밑변 = $d$ (수평 거리)\n- 높이 = 구하려는 $h$\n- $\\theta$는 밑변과 빗변 사이의 각\n\n$$\\tan\\theta = \\frac{\\text{높이}}{\\text{밑변}} = \\frac{h}{d}$$\n\n따라서:\n$$h = d \\cdot \\tan\\theta$$\n\n여기서 $h$는 눈높이 위의 높이예요. 눈높이가 $1.5\\text{m}$라면 실제 건물 높이 = $h + 1.5$가 됩니다. 이 부분을 빠뜨리면 안 돼요.\n\n---\n\n## 유형 2: 거리 구하기\n\n이번엔 반대 상황이에요. 절벽 위에서 배를 내려다봤더니 부각이 $\\theta$였어요. 절벽 높이가 $h$라면 수평 거리 $d$는?\n\n$$\\tan\\theta = \\frac{h}{d} \\implies d = \\frac{h}{\\tan\\theta}$$\n\n---\n\n## 유형 3: 두 지점에서 잰 앙각으로 높이 구하기\n\n이게 조금 더 멋진 상황이에요. 건물에 직접 다가갈 수 없을 때, **두 지점**에서 앙각을 잰 거예요.\n\nA 지점(거리 $d_1$)에서 앙각 $\\alpha$, B 지점(A에서 $l$만큼 더 가까운 지점, 거리 $d_1 - l$)에서 앙각 $\\beta$일 때:\n\n$$h = d_1 \\cdot \\tan\\alpha = (d_1 - l) \\cdot \\tan\\beta$$\n\n$d_1 = \\frac{l \\cdot \\tan\\beta}{\\tan\\beta - \\tan\\alpha}$를 구한 뒤 $h$를 계산합니다.\n\n이런 방법을 **삼각측량**(삼각비를 이용한 측량)이라고 해요. GPS가 없던 시대에 지도를 만들 때 실제로 쓴 방법이에요.\n\n---\n\n## 풀이 전략 정리\n\n1. 그림을 그리고 **직각삼각형**을 찾는다.\n2. 아는 것(각도, 한 변)과 구해야 할 것을 표시한다.\n3. $\\sin$, $\\cos$, $\\tan$ 중 두 변을 연결하는 비를 선택한다.\n4. 식을 세우고 푼다.\n5. **눈높이 보정** 등 현실 조건을 빠뜨리지 않는다.\n\n---\n\n## 이 개념의 자리\n\n삼각비의 뜻과 특수각 값($30°, 45°, 60°$)을 기반으로, 이제 실제 측정 문제를 푸는 단계예요. 고등학교에서 배울 **사인법칙·코사인법칙**의 출발점이 되기도 합니다.\n\n---\n\n## 자주 하는 실수 하나\n\n$\\tan\\theta$를 쓸 자리에 $\\sin\\theta$를 쓰는 실수예요. 빗변 없이 높이와 밑변만 나오는 상황에선 반드시 $\\tan$이지만, \"빗변이 보이는\" 문제에서 습관적으로 $\\tan$을 쓰면 틀립니다. 그림에서 **어떤 두 변**이 관계되는지 먼저 확인하세요.",
+      "checkQuestion": {
+        "question": "지면에서 눈높이 1.5m인 사람이 건물에서 20m 떨어진 곳에 서서 건물 꼭대기를 올려다봤더니 앙각이 45°였습니다. 건물의 실제 높이는 얼마입니까?",
+        "options": [
+          "20m",
+          "21.5m",
+          "18.5m",
+          "22m"
+        ],
+        "correctIndex": 1
+      },
+      "prerequisites": [
+        {
+          "concept": "삼각비의 뜻",
+          "chapterId": "math-9-2-04",
+          "reason": "sin, cos, tan의 정의와 직각삼각형에서 변의 비를 식으로 세우는 방법을 알아야 활용 문제를 풀 수 있어요."
+        },
+        {
+          "concept": "특수한 각의 삼각비",
+          "chapterId": "math-9-2-04",
+          "reason": "30°, 45°, 60°의 삼각비 값을 암기하지 않으면 계산 과정에서 막히게 됩니다."
+        },
+        {
+          "concept": "피타고라스 정리",
+          "chapterId": "math-9-2-03",
+          "reason": "빗변을 구하거나 두 변의 관계를 확인할 때 피타고라스 정리가 기반이 됩니다."
+        }
+      ],
+      "visualSvg": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- Background -->\n  <rect width=\"500\" height=\"300\" fill=\"#F8F9FA\"/>\n\n  <!-- Ground line -->\n  <line x1=\"30\" y1=\"230\" x2=\"470\" y2=\"230\" stroke=\"#aaa\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n\n  <!-- Right triangle fill -->\n  <polygon points=\"80,230 370,230 370,70\" fill=\"#4A90D9\" fill-opacity=\"0.08\"/>\n\n  <!-- Triangle sides -->\n  <!-- Hypotenuse (line of sight) -->\n  <line x1=\"80\" y1=\"225\" x2=\"370\" y2=\"75\" stroke=\"#E67E22\" stroke-width=\"2.5\"/>\n  <!-- Vertical side (building height h) -->\n  <line x1=\"370\" y1=\"230\" x2=\"370\" y2=\"70\" stroke=\"#5CB85C\" stroke-width=\"2.5\"/>\n  <!-- Horizontal side (distance d) -->\n  <line x1=\"80\" y1=\"230\" x2=\"370\" y2=\"230\" stroke=\"#4A90D9\" stroke-width=\"2.5\"/>\n\n  <!-- Right angle box -->\n  <rect x=\"355\" y=\"215\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.5\"/>\n\n  <!-- Angle arc (theta) at observer -->\n  <path d=\"M 110,230 A 30,30 0 0,0 90.5,207\" fill=\"none\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n\n  <!-- Building -->\n  <rect x=\"355\" y=\"70\" width=\"30\" height=\"160\" fill=\"#4A90D9\" fill-opacity=\"0.15\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n  <!-- Building windows -->\n  <rect x=\"360\" y=\"80\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <rect x=\"372\" y=\"80\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <rect x=\"360\" y=\"100\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <rect x=\"372\" y=\"100\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <rect x=\"360\" y=\"120\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <rect x=\"372\" y=\"120\" width=\"8\" height=\"8\" fill=\"#4A90D9\" fill-opacity=\"0.5\"/>\n  <!-- Roof triangle -->\n  <polygon points=\"350,70 385,70 367,52\" fill=\"#4A90D9\" fill-opacity=\"0.4\" stroke=\"#4A90D9\" stroke-width=\"1.5\"/>\n\n  <!-- Person (stick figure) -->\n  <!-- Head -->\n  <circle cx=\"80\" cy=\"206\" r=\"7\" fill=\"#E67E22\"/>\n  <!-- Body -->\n  <line x1=\"80\" y1=\"213\" x2=\"80\" y2=\"228\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <!-- Arms (pointing up toward building) -->\n  <line x1=\"80\" y1=\"218\" x2=\"70\" y2=\"224\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <line x1=\"80\" y1=\"218\" x2=\"92\" y2=\"213\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <!-- Legs -->\n  <line x1=\"80\" y1=\"228\" x2=\"74\" y2=\"238\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n  <line x1=\"80\" y1=\"228\" x2=\"86\" y2=\"238\" stroke=\"#E67E22\" stroke-width=\"2\"/>\n\n  <!-- Eye line / sight line dot at top of building -->\n  <circle cx=\"370\" cy=\"70\" r=\"4\" fill=\"#5CB85C\"/>\n\n  <!-- Labels -->\n\n  <!-- θ label -->\n  <text x=\"122\" y=\"222\" font-size=\"15\" fill=\"#E67E22\" font-weight=\"bold\" text-anchor=\"middle\">θ</text>\n  <text x=\"140\" y=\"215\" font-size=\"11\" fill=\"#E67E22\" text-anchor=\"middle\">(앙각)</text>\n\n  <!-- d label (horizontal distance) -->\n  <!-- arrows for d -->\n  <line x1=\"100\" y1=\"248\" x2=\"350\" y2=\"248\" stroke=\"#4A90D9\" stroke-width=\"1.5\" marker-end=\"url(#arrowB)\" marker-start=\"url(#arrowB2)\"/>\n  <text x=\"225\" y=\"263\" font-size=\"13\" fill=\"#4A90D9\" font-weight=\"bold\" text-anchor=\"middle\">d (수평 거리)</text>\n\n  <!-- h label (height) -->\n  <!-- arrows for h -->\n  <line x1=\"400\" y1=\"75\" x2=\"400\" y2=\"225\" stroke=\"#5CB85C\" stroke-width=\"1.5\" marker-end=\"url(#arrowG)\" marker-start=\"url(#arrowG2)\"/>\n  <text x=\"430\" y=\"155\" font-size=\"13\" fill=\"#5CB85C\" font-weight=\"bold\" text-anchor=\"middle\">h</text>\n  <text x=\"430\" y=\"170\" font-size=\"11\" fill=\"#5CB85C\" text-anchor=\"middle\">(높이)</text>\n\n  <!-- Line of sight label -->\n  <text x=\"210\" y=\"135\" font-size=\"11\" fill=\"#E67E22\" text-anchor=\"middle\" transform=\"rotate(-27,210,135)\">시선 방향</text>\n\n  <!-- Formula box -->\n  <rect x=\"110\" y=\"10\" width=\"280\" height=\"48\" rx=\"8\" fill=\"#fff\" stroke=\"#4A90D9\" stroke-width=\"2\"/>\n  <text x=\"250\" y=\"30\" font-size=\"12\" fill=\"#555\" text-anchor=\"middle\">직각삼각형에서</text>\n  <text x=\"250\" y=\"50\" font-size=\"16\" fill=\"#E67E22\" font-weight=\"bold\" text-anchor=\"middle\">h = d × tan θ</text>\n\n  <!-- 핵심 설명 label near person -->\n  <text x=\"48\" y=\"255\" font-size=\"10\" fill=\"#777\" text-anchor=\"middle\">관측점</text>\n\n  <!-- Arrow markers -->\n  <defs>\n    <marker id=\"arrowB\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#4A90D9\"/>\n    </marker>\n    <marker id=\"arrowB2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto-start-reverse\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#4A90D9\"/>\n    </marker>\n    <marker id=\"arrowG\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#5CB85C\"/>\n    </marker>\n    <marker id=\"arrowG2\" markerWidth=\"6\" markerHeight=\"6\" refX=\"3\" refY=\"3\" orient=\"auto-start-reverse\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#5CB85C\"/>\n    </marker>\n  </defs>\n\n  <!-- Insight callout -->\n  <rect x=\"18\" y=\"10\" width=\"85\" height=\"44\" rx=\"6\" fill=\"#FFF7ED\" stroke=\"#E67E22\" stroke-width=\"1.5\"/>\n  <text x=\"60\" y=\"26\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\" text-anchor=\"middle\">직접 재지 않고</text>\n  <text x=\"60\" y=\"39\" font-size=\"10\" fill=\"#E67E22\" text-anchor=\"middle\">각도만으로</text>\n  <text x=\"60\" y=\"52\" font-size=\"10\" fill=\"#E67E22\" font-weight=\"bold\" text-anchor=\"middle\">높이를 계산!</text>\n</svg>",
+      "concept": "삼각비의 활용 (높이와 거리)"
+    }
+  ]
+}
