@@ -13,7 +13,9 @@ export default async function ChapterPage({
   if (!chapter) notFound();
 
   const subject = chapterId.startsWith("math") ? "수학" : "과학";
+  const gradeMatch = chapterId.match(/(?:math|sci)-(\d+)-/);
+  const grade = gradeMatch ? parseInt(gradeMatch[1]) : 6;
   const breadcrumb = buildBreadcrumb({ chapterId });
 
-  return <ChapterClient chapter={chapter} subject={subject} breadcrumb={breadcrumb} />;
+  return <ChapterClient chapter={chapter} subject={subject} grade={grade} breadcrumb={breadcrumb} />;
 }

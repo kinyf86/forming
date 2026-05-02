@@ -6,13 +6,45 @@ import type { Chapter } from "@/lib/curriculum";
 import { getClientId } from "@/lib/client-id";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
 
+interface DifficultyOption {
+  level: 1 | 2 | 3 | 4;
+  label: string;
+  color: string;
+}
+
+function getDifficultyOptions(grade: number): DifficultyOption[] {
+  if (grade <= 6) {
+    // Elementary: 2 levels
+    return [
+      { level: 1, label: "기본 문제", color: "bg-green-600 hover:bg-green-700" },
+      { level: 2, label: "심화 문제", color: "bg-blue-600 hover:bg-blue-700" },
+    ];
+  }
+  if (grade <= 9) {
+    // Middle school: 3 levels
+    return [
+      { level: 1, label: "기본 문제", color: "bg-green-600 hover:bg-green-700" },
+      { level: 2, label: "응용 문제", color: "bg-blue-600 hover:bg-blue-700" },
+      { level: 3, label: "심화 문제", color: "bg-purple-600 hover:bg-purple-700" },
+    ];
+  }
+  // High school: 4 levels
+  return [
+    { level: 1, label: "기본 문제", color: "bg-green-600 hover:bg-green-700" },
+    { level: 2, label: "응용 문제", color: "bg-blue-600 hover:bg-blue-700" },
+    { level: 3, label: "심화 문제", color: "bg-purple-600 hover:bg-purple-700" },
+    { level: 4, label: "도전 문제", color: "bg-orange-600 hover:bg-orange-700" },
+  ];
+}
+
 interface ChapterClientProps {
   chapter: Chapter;
   subject: string;
+  grade: number;
   breadcrumb: BreadcrumbItem[];
 }
 
-export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientProps) {
+export function ChapterClient({ chapter, subject, grade, breadcrumb }: ChapterClientProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -97,35 +129,17 @@ export function ChapterClient({ chapter, subject, breadcrumb }: ChapterClientPro
         </div>
       )}
 
-      <div className="mt-8 grid gap-3 sm:grid-cols-4">
-        <button
-          onClick={() => handleGenerateProblem(1)}
-          disabled={loading}
-          className="rounded-lg bg-green-600 px-6 py-4 text-lg font-medium text-white hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {loading ? "생성 중..." : "기본 문제"}
-        </button>
-        <button
-          onClick={() => handleGenerateProblem(2)}
-          disabled={loading}
-          className="rounded-lg bg-blue-600 px-6 py-4 text-lg font-medium text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {loading ? "생성 중..." : "응용 문제"}
-        </button>
-        <button
-          onClick={() => handleGenerateProblem(3)}
-          disabled={loading}
-          className="rounded-lg bg-purple-600 px-6 py-4 text-lg font-medium text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {loading ? "생성 중..." : "심화 문제"}
-        </button>
-        <button
-          onClick={() => handleGenerateProblem(4)}
-          disabled={loading}
-          className="rounded-lg bg-orange-600 px-6 py-4 text-lg font-medium text-white hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {loading ? "생성 중..." : "도전 문제"}
-        </button>
+      <div className={`mt-8 grid gap-3 ${getDifficultyOptions(grade).length <= 2 ? "sm:grid-cols-2" : getDifficultyOptions(grade).length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"}`}>
+        {getDifficultyOptions(grade).map((opt) => (
+          <button
+            key={opt.level}
+            onClick={() => handleGenerateProblem(opt.level)}
+            disabled={loading}
+            className={`rounded-lg px-6 py-4 text-lg font-medium text-white disabled:cursor-not-allowed disabled:opacity-50 ${opt.color}`}
+          >
+            {loading ? "생성 중..." : opt.label}
+          </button>
+        ))}
       </div>
     </div>
   );

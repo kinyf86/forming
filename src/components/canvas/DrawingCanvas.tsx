@@ -22,6 +22,7 @@ interface Stroke {
   points: Point[];
   color: string;
   size: number;
+  simulatePressure: boolean;
 }
 
 interface TextElement {
@@ -60,13 +61,23 @@ const COLORS = [
   { value: "#5CB85C", label: "초록" },
 ];
 
-const STROKE_OPTIONS = {
-  thinning: 0.5,
-  smoothing: 0.5,
-  streamline: 0.5,
-  start: { taper: true, cap: true },
-  end: { taper: true, cap: true },
-};
+// Matches Excalidraw's freedraw tuning for buttery-smooth stroke rendering.
+// Quarter-sine easing gives the characteristic velvety start/end.
+const STROKE_EASING = (t: number) => Math.sin((t * Math.PI) / 2);
+
+function strokeOptions(size: number, simulatePressure: boolean, last: boolean) {
+  return {
+    size,
+    thinning: 0.6,
+    smoothing: 0.5,
+    streamline: 0.5,
+    easing: STROKE_EASING,
+    simulatePressure,
+    last,
+    start: { taper: 0, cap: true },
+    end: { taper: size * 2, cap: true },
+  };
+}
 
 // --- Helper: convert stroke points to SVG path ---
 
@@ -101,6 +112,9 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const [tool, setTool] = useState<"pen" | "eraser" | "text">("pen");
     const [strokeSize, setStrokeSize] = useState(8);
     const [strokeColor, setStrokeColor] = useState("#1a1a1a");
+    const [pointerType, setPointerType] = useState<"pen" | "mouse" | "touch">(
+      "mouse"
+    );
     const [texts, setTexts] = useState<TextElement[]>([]);
     const [editingText, setEditingText] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -164,21 +178,28 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
 
     // --- Pointer events ---
 
-    const getPoint = useCallback(
-      (e: React.PointerEvent<SVGSVGElement>): Point => {
+    const eventToPoint = useCallback(
+      (e: { clientX: number; clientY: number; pressure?: number }): Point => {
         const svg = svgRef.current!;
         const rect = svg.getBoundingClientRect();
         return {
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
-          pressure: e.pressure || 0.5,
+          pressure: e.pressure ?? 0.5,
         };
       },
       []
     );
 
+    const getPoint = useCallback(
+      (e: React.PointerEvent<SVGSVGElement>): Point => eventToPoint(e),
+      [eventToPoint]
+    );
+
     const handlePointerDown = useCallback(
       (e: React.PointerEvent<SVGSVGElement>) => {
+        setPointerType((e.pointerType as "pen" | "mouse" | "touch") || "mouse");
+
         if (tool === "text") {
           const pt = getPoint(e);
           const id = `t-${Date.now()}`;
@@ -212,10 +233,20 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const handlePointerMove = useCallback(
       (e: React.PointerEvent<SVGSVGElement>) => {
         if (!isDrawing || tool !== "pen") return;
-        const pt = getPoint(e);
-        setCurrentPoints((prev) => [...prev, pt]);
+        // Coalesced events capture sub-frame points on high-Hz devices
+        // (Apple Pencil, gaming mice). Excalidraw relies on this for smoothness.
+        const native = e.nativeEvent;
+        const coalesced =
+          typeof native.getCoalescedEvents === "function"
+            ? native.getCoalescedEvents()
+            : [];
+        const events = coalesced.length > 0 ? coalesced : [native];
+        setCurrentPoints((prev) => [
+          ...prev,
+          ...events.map((ev) => eventToPoint(ev)),
+        ]);
       },
-      [isDrawing, tool, getPoint]
+      [isDrawing, tool, eventToPoint]
     );
 
     const handlePointerUp = useCallback(() => {
@@ -223,13 +254,19 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
       setIsDrawing(false);
 
       if (currentPoints.length > 1) {
+        const simulatePressure = pointerType !== "pen";
         setStrokes((prev) => [
           ...prev,
-          { points: currentPoints, color: strokeColor, size: strokeSize },
+          {
+            points: currentPoints,
+            color: strokeColor,
+            size: strokeSize,
+            simulatePressure,
+          },
         ]);
       }
       setCurrentPoints([]);
-    }, [isDrawing, currentPoints, strokeColor, strokeSize]);
+    }, [isDrawing, currentPoints, strokeColor, strokeSize, pointerType]);
 
     // --- Text editing ---
 
@@ -276,10 +313,10 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const renderStroke = useCallback(
       (stroke: Stroke, index: number) => {
         const pts = stroke.points.map((p) => [p.x, p.y, p.pressure]);
-        const outlinePoints = getStroke(pts, {
-          ...STROKE_OPTIONS,
-          size: stroke.size,
-        });
+        const outlinePoints = getStroke(
+          pts,
+          strokeOptions(stroke.size, stroke.simulatePressure, true)
+        );
         const pathData = getSvgPathFromStroke(outlinePoints);
         return <path key={index} d={pathData} fill={stroke.color} />;
       },
@@ -289,13 +326,14 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const renderCurrentStroke = useCallback(() => {
       if (currentPoints.length < 2) return null;
       const pts = currentPoints.map((p) => [p.x, p.y, p.pressure]);
-      const outlinePoints = getStroke(pts, {
-        ...STROKE_OPTIONS,
-        size: strokeSize,
-      });
+      const simulatePressure = pointerType !== "pen";
+      const outlinePoints = getStroke(
+        pts,
+        strokeOptions(strokeSize, simulatePressure, false)
+      );
       const pathData = getSvgPathFromStroke(outlinePoints);
       return <path d={pathData} fill={strokeColor} opacity={0.8} />;
-    }, [currentPoints, strokeSize, strokeColor]);
+    }, [currentPoints, strokeSize, strokeColor, pointerType]);
 
     return (
       <div>

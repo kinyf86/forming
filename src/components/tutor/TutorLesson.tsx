@@ -112,9 +112,14 @@ export default function TutorLesson({
             <h3 className="text-lg font-bold text-gray-700 mb-4">
               확인 문제
             </h3>
-            <p className="text-gray-800 mb-4 text-lg">
-              {lesson.checkQuestion.question}
-            </p>
+            <div className="text-gray-800 mb-4 text-lg prose prose-lg max-w-none">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+              >
+                {lesson.checkQuestion.question}
+              </ReactMarkdown>
+            </div>
 
             <div className="grid gap-3">
               {lesson.checkQuestion.options.map((option, i) => {
@@ -143,7 +148,17 @@ export default function TutorLesson({
                     <span className="font-bold mr-3 text-gray-400">
                       {String.fromCharCode(65 + i)}.
                     </span>
-                    {option}
+                    <span className="inline-prose">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm, remarkMath]}
+                        rehypePlugins={[rehypeKatex]}
+                        components={{
+                          p: ({ children }) => <>{children}</>,
+                        }}
+                      >
+                        {option}
+                      </ReactMarkdown>
+                    </span>
                   </button>
                 );
               })}

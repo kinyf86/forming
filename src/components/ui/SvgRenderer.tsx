@@ -1,6 +1,6 @@
 "use client";
 
-import DOMPurify from "dompurify";
+import { useState, useEffect } from "react";
 
 interface SvgRendererProps {
   svg: string | null;
@@ -47,19 +47,33 @@ export default function SvgRenderer({
   className = "",
   fallbackText,
 }: SvgRendererProps) {
+  const [sanitized, setSanitized] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!svg) return;
+
+    // Strip markdown code fences if present
+    let cleaned = svg.trim();
+    if (cleaned.startsWith("```")) {
+      cleaned = cleaned.replace(/^```\w*\n?/, "").replace(/\n?```$/, "");
+    }
+
+    // DOMPurify only works in browser
+    import("dompurify").then((mod) => {
+      const DOMPurify = mod.default;
+      setSanitized(DOMPurify.sanitize(cleaned, PURIFY_CONFIG));
+    });
+  }, [svg]);
+
   if (!svg) {
     return fallbackText ? (
       <p className="text-gray-500 text-sm italic">{fallbackText}</p>
     ) : null;
   }
 
-  // Strip markdown code fences if present
-  let cleaned = svg.trim();
-  if (cleaned.startsWith("```")) {
-    cleaned = cleaned.replace(/^```\w*\n?/, "").replace(/\n?```$/, "");
+  if (sanitized === null) {
+    return <div className="w-full h-32 bg-gray-100 animate-pulse rounded" />;
   }
-
-  const sanitized = DOMPurify.sanitize(cleaned, PURIFY_CONFIG);
 
   return (
     <div
