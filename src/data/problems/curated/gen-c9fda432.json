@@ -1,25 +1,34 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-c9fda432",
   "topicId": "sci-11-1-01",
-  "question": "질량이 $$4\\,\\text{kg}$$인 물체에 $$20\\,\\text{N}$$의 알짜힘이 작용할 때, 이 물체의 가속도는?",
-  "diagram": null,
   "difficulty": 1,
-  "hints": [
-    "뉴턴의 운동 제2법칙: $$F = ma$$",
-    "$$a = \\frac{F}{m}$$으로 구하세요."
-  ],
-  "choices": [
-    "$$2\\,\\text{m/s}^2$$",
-    "$$4\\,\\text{m/s}^2$$",
-    "$$5\\,\\text{m/s}^2$$",
-    "$$8\\,\\text{m/s}^2$$",
-    "$$10\\,\\text{m/s}^2$$"
-  ],
-  "solution": "**1단계:** 뉴턴의 운동 제2법칙을 적용합니다.\n$$F = ma$$\n\n**2단계:** 가속도를 구합니다.\n$$a = \\frac{F}{m} = \\frac{20}{4} = 5\\,\\text{m/s}^2$$",
-  "solutionDiagram": null,
-  "answer": "$$5\\,\\text{m/s}^2$$",
-  "concepts": [
-    "뉴턴의 운동 제2법칙",
-    "힘과 가속도"
-  ]
+  "content": {
+    "question": "질량이 $$4\\,\\text{kg}$$인 물체에 $$20\\,\\text{N}$$의 알짜힘이 작용할 때, 이 물체의 가속도는?",
+    "hints": [
+      "뉴턴의 운동 제2법칙: $$F = ma$$",
+      "$$a = \\frac{F}{m}$$으로 구하세요."
+    ],
+    "choices": [
+      "$$2\\,\\text{m/s}^2$$",
+      "$$4\\,\\text{m/s}^2$$",
+      "$$5\\,\\text{m/s}^2$$",
+      "$$8\\,\\text{m/s}^2$$",
+      "$$10\\,\\text{m/s}^2$$"
+    ],
+    "solution": "**1단계:** 뉴턴의 운동 제2법칙을 적용합니다.\n$$F = ma$$\n\n**2단계:** 가속도를 구합니다.\n$$a = \\frac{F}{m} = \\frac{20}{4} = 5\\,\\text{m/s}^2$$",
+    "answer": "$$5\\,\\text{m/s}^2$$",
+    "concepts": [
+      "뉴턴의 운동 제2법칙",
+      "힘과 가속도"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:47:26.147037+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

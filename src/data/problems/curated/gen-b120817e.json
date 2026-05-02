@@ -1,25 +1,35 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-b120817e",
   "topicId": "math-6-1-02",
-  "question": "면의 수가 8개인 각기둥이 있습니다. 이 각기둥의 모서리 수와 꼭짓점 수의 합을 구하시오.",
-  "diagram": null,
   "difficulty": 2,
-  "hints": [
-    "n각기둥의 면의 수는 (n+2)개입니다. 면이 8개이면 밑면이 몇 각형인지 먼저 구해 보세요.",
-    "n각기둥의 모서리 수는 3n개, 꼭짓점 수는 2n개입니다."
-  ],
-  "choices": [
-    "30",
-    "24",
-    "32",
-    "26",
-    "28"
-  ],
-  "solution": "**1단계: 각기둥의 종류 파악**\n\nn각기둥의 면의 수 = 밑면 2개 + 옆면 n개 = n+2\n\nn+2 = 8 → n = 6\n\n따라서 이 각기둥은 **육각기둥**입니다.\n\n**2단계: 모서리 수 계산**\n\n육각기둥의 모서리 수 = 3 × n = 3 × 6 = **18개**\n\n(위 밑면 모서리 6개 + 아래 밑면 모서리 6개 + 옆면 세로 모서리 6개)\n\n**3단계: 꼭짓점 수 계산**\n\n육각기둥의 꼭짓점 수 = 2 × n = 2 × 6 = **12개**\n\n(위 밑면 꼭짓점 6개 + 아래 밑면 꼭짓점 6개)\n\n**4단계: 합 계산**\n\n모서리 수 + 꼭짓점 수 = 18 + 12 = **30**",
-  "solutionDiagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- 육각기둥 비스듬한 투영 -->\n  <!-- 뒷면 육각형 (위 밑면) -->\n  <polygon points=\"175,50 218,50 240,88 218,126 175,126 153,88\" fill=\"#eff6ff\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <!-- 앞면 육각형 (아래 밑면) -->\n  <polygon points=\"195,110 238,110 260,148 238,186 195,186 173,148\" fill=\"#dbeafe\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 세로 모서리 (옆면) -->\n  <line x1=\"175\" y1=\"50\" x2=\"195\" y2=\"110\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <line x1=\"218\" y1=\"50\" x2=\"238\" y2=\"110\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"240\" y1=\"88\" x2=\"260\" y2=\"148\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"218\" y1=\"126\" x2=\"238\" y2=\"186\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"175\" y1=\"126\" x2=\"195\" y2=\"186\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"153\" y1=\"88\" x2=\"173\" y2=\"148\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <!-- 라벨 -->\n  <text x=\"196\" y=\"44\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">위 밑면 (육각형)</text>\n  <text x=\"262\" y=\"152\" font-size=\"13\" fill=\"#333\">옆면</text>\n  <text x=\"183\" y=\"210\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">아래 밑면 (육각형)</text>\n  <!-- 집계 표 -->\n  <rect x=\"290\" y=\"50\" width=\"100\" height=\"110\" rx=\"6\" fill=\"#f8fafc\" stroke=\"#cbd5e1\" stroke-width=\"1.5\"/>\n  <text x=\"340\" y=\"70\" font-size=\"13\" fill=\"#333\" text-anchor=\"middle\" font-weight=\"bold\">육각기둥</text>\n  <line x1=\"290\" y1=\"78\" x2=\"390\" y2=\"78\" stroke=\"#cbd5e1\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"96\" font-size=\"12\" fill=\"#555\">면: 6+2 = 8</text>\n  <text x=\"300\" y=\"116\" font-size=\"12\" fill=\"#dc2626\">모서리: 18</text>\n  <text x=\"300\" y=\"136\" font-size=\"12\" fill=\"#dc2626\">꼭짓점: 12</text>\n  <text x=\"300\" y=\"156\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">합: 30</text>\n</svg>",
-  "answer": "30",
-  "concepts": [
-    "각기둥의 면·모서리·꼭짓점 수 관계",
-    "각기둥의 구성 요소"
-  ]
+  "content": {
+    "question": "면의 수가 8개인 각기둥이 있습니다. 이 각기둥의 모서리 수와 꼭짓점 수의 합을 구하시오.",
+    "hints": [
+      "n각기둥의 면의 수는 (n+2)개입니다. 면이 8개이면 밑면이 몇 각형인지 먼저 구해 보세요.",
+      "n각기둥의 모서리 수는 3n개, 꼭짓점 수는 2n개입니다."
+    ],
+    "choices": [
+      "30",
+      "24",
+      "32",
+      "26",
+      "28"
+    ],
+    "solution": "**1단계: 각기둥의 종류 파악**\n\nn각기둥의 면의 수 = 밑면 2개 + 옆면 n개 = n+2\n\nn+2 = 8 → n = 6\n\n따라서 이 각기둥은 **육각기둥**입니다.\n\n**2단계: 모서리 수 계산**\n\n육각기둥의 모서리 수 = 3 × n = 3 × 6 = **18개**\n\n(위 밑면 모서리 6개 + 아래 밑면 모서리 6개 + 옆면 세로 모서리 6개)\n\n**3단계: 꼭짓점 수 계산**\n\n육각기둥의 꼭짓점 수 = 2 × n = 2 × 6 = **12개**\n\n(위 밑면 꼭짓점 6개 + 아래 밑면 꼭짓점 6개)\n\n**4단계: 합 계산**\n\n모서리 수 + 꼭짓점 수 = 18 + 12 = **30**",
+    "solutionDiagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- 육각기둥 비스듬한 투영 -->\n  <!-- 뒷면 육각형 (위 밑면) -->\n  <polygon points=\"175,50 218,50 240,88 218,126 175,126 153,88\" fill=\"#eff6ff\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <!-- 앞면 육각형 (아래 밑면) -->\n  <polygon points=\"195,110 238,110 260,148 238,186 195,186 173,148\" fill=\"#dbeafe\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 세로 모서리 (옆면) -->\n  <line x1=\"175\" y1=\"50\" x2=\"195\" y2=\"110\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <line x1=\"218\" y1=\"50\" x2=\"238\" y2=\"110\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"240\" y1=\"88\" x2=\"260\" y2=\"148\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"218\" y1=\"126\" x2=\"238\" y2=\"186\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"175\" y1=\"126\" x2=\"195\" y2=\"186\" stroke=\"#333\" stroke-width=\"2\"/>\n  <line x1=\"153\" y1=\"88\" x2=\"173\" y2=\"148\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/>\n  <!-- 라벨 -->\n  <text x=\"196\" y=\"44\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">위 밑면 (육각형)</text>\n  <text x=\"262\" y=\"152\" font-size=\"13\" fill=\"#333\">옆면</text>\n  <text x=\"183\" y=\"210\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">아래 밑면 (육각형)</text>\n  <!-- 집계 표 -->\n  <rect x=\"290\" y=\"50\" width=\"100\" height=\"110\" rx=\"6\" fill=\"#f8fafc\" stroke=\"#cbd5e1\" stroke-width=\"1.5\"/>\n  <text x=\"340\" y=\"70\" font-size=\"13\" fill=\"#333\" text-anchor=\"middle\" font-weight=\"bold\">육각기둥</text>\n  <line x1=\"290\" y1=\"78\" x2=\"390\" y2=\"78\" stroke=\"#cbd5e1\" stroke-width=\"1\"/>\n  <text x=\"300\" y=\"96\" font-size=\"12\" fill=\"#555\">면: 6+2 = 8</text>\n  <text x=\"300\" y=\"116\" font-size=\"12\" fill=\"#dc2626\">모서리: 18</text>\n  <text x=\"300\" y=\"136\" font-size=\"12\" fill=\"#dc2626\">꼭짓점: 12</text>\n  <text x=\"300\" y=\"156\" font-size=\"13\" fill=\"#2563eb\" font-weight=\"bold\">합: 30</text>\n</svg>",
+    "answer": "30",
+    "concepts": [
+      "각기둥의 면·모서리·꼭짓점 수 관계",
+      "각기둥의 구성 요소"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-23T13:00:51.273936+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

@@ -1,25 +1,34 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-f6a7b8c9",
   "topicId": "sci-9-1-01",
-  "question": "마그네슘(Mg) $$24\\text{g}$$과 산소(O$$_2$$) $$16\\text{g}$$이 완전히 반응하여 산화마그네슘(MgO)이 생성되었다. 생성된 산화마그네슘의 질량은?",
-  "diagram": null,
   "difficulty": 1,
-  "hints": [
-    "질량 보존 법칙을 떠올려 보세요.",
-    "반응 전 물질의 총 질량 = 반응 후 물질의 총 질량이에요."
-  ],
-  "choices": [
-    "$$24\\text{g}$$",
-    "$$32\\text{g}$$",
-    "$$40\\text{g}$$",
-    "$$48\\text{g}$$",
-    "$$56\\text{g}$$"
-  ],
-  "solution": "**1단계:** 질량 보존 법칙을 적용합니다.\n반응 전 총 질량 = 반응 후 총 질량\n\n**2단계:** 계산합니다.\n$$24\\text{g} + 16\\text{g} = 40\\text{g}$$\n\n따라서 생성된 산화마그네슘의 질량은 $$40\\text{g}$$입니다.",
-  "solutionDiagram": null,
-  "answer": "$$40\\text{g}$$",
-  "concepts": [
-    "질량 보존 법칙",
-    "화학 반응"
-  ]
+  "content": {
+    "question": "마그네슘(Mg) $$24\\text{g}$$과 산소(O$$_2$$) $$16\\text{g}$$이 완전히 반응하여 산화마그네슘(MgO)이 생성되었다. 생성된 산화마그네슘의 질량은?",
+    "hints": [
+      "질량 보존 법칙을 떠올려 보세요.",
+      "반응 전 물질의 총 질량 = 반응 후 물질의 총 질량이에요."
+    ],
+    "choices": [
+      "$$24\\text{g}$$",
+      "$$32\\text{g}$$",
+      "$$40\\text{g}$$",
+      "$$48\\text{g}$$",
+      "$$56\\text{g}$$"
+    ],
+    "solution": "**1단계:** 질량 보존 법칙을 적용합니다.\n반응 전 총 질량 = 반응 후 총 질량\n\n**2단계:** 계산합니다.\n$$24\\text{g} + 16\\text{g} = 40\\text{g}$$\n\n따라서 생성된 산화마그네슘의 질량은 $$40\\text{g}$$입니다.",
+    "answer": "$$40\\text{g}$$",
+    "concepts": [
+      "질량 보존 법칙",
+      "화학 반응"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:42:39.924230+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

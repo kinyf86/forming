@@ -1,25 +1,34 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-b2c3d4ea",
   "topicId": "math-8-2-02",
-  "question": "이등변삼각형 $$ABC$$에서 $$AB = AC$$이고 $$\\angle B = 65^\\circ$$일 때, $$\\angle A$$의 크기는?",
-  "diagram": null,
   "difficulty": 3,
-  "hints": [
-    "이등변삼각형에서 두 밑각의 크기는 같아요.",
-    "삼각형의 세 내각의 합은 $$180^\\circ$$예요."
-  ],
-  "choices": [
-    "$$40^\\circ$$",
-    "$$50^\\circ$$",
-    "$$55^\\circ$$",
-    "$$60^\\circ$$",
-    "$$65^\\circ$$"
-  ],
-  "solution": "**1단계:** $$AB = AC$$이므로 $$\\angle B = \\angle C = 65^\\circ$$\n\n**2단계:** 삼각형의 내각의 합을 이용합니다.\n$$\\angle A + \\angle B + \\angle C = 180^\\circ$$\n$$\\angle A + 65^\\circ + 65^\\circ = 180^\\circ$$\n$$\\angle A = 180^\\circ - 130^\\circ = 50^\\circ$$",
-  "solutionDiagram": null,
-  "answer": "$$50^\\circ$$",
-  "concepts": [
-    "이등변삼각형의 성질",
-    "삼각형의 내각의 합"
-  ]
+  "content": {
+    "question": "이등변삼각형 $$ABC$$에서 $$AB = AC$$이고 $$\\angle B = 65^\\circ$$일 때, $$\\angle A$$의 크기는?",
+    "hints": [
+      "이등변삼각형에서 두 밑각의 크기는 같아요.",
+      "삼각형의 세 내각의 합은 $$180^\\circ$$예요."
+    ],
+    "choices": [
+      "$$40^\\circ$$",
+      "$$50^\\circ$$",
+      "$$55^\\circ$$",
+      "$$60^\\circ$$",
+      "$$65^\\circ$$"
+    ],
+    "solution": "**1단계:** $$AB = AC$$이므로 $$\\angle B = \\angle C = 65^\\circ$$\n\n**2단계:** 삼각형의 내각의 합을 이용합니다.\n$$\\angle A + \\angle B + \\angle C = 180^\\circ$$\n$$\\angle A + 65^\\circ + 65^\\circ = 180^\\circ$$\n$$\\angle A = 180^\\circ - 130^\\circ = 50^\\circ$$",
+    "answer": "$$50^\\circ$$",
+    "concepts": [
+      "이등변삼각형의 성질",
+      "삼각형의 내각의 합"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:40:22.831646+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

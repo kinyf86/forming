@@ -1,26 +1,36 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-3bd6ea4c",
   "topicId": "math-5-2-05",
-  "question": "가로가 4 cm, 세로가 3 cm, 높이가 5 cm인 직육면체가 있습니다. 이 직육면체의 전개도(입체도형을 펼쳐서 평면 위에 나타낸 그림)의 넓이는 몇 cm²입니까?",
-  "diagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- 앞면 -->\n  <polygon points=\"80,100 240,100 240,220 80,220\" fill=\"white\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 윗면 -->\n  <polygon points=\"80,100 120,65 280,65 240,100\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 오른쪽 옆면 -->\n  <polygon points=\"240,100 280,65 280,185 240,220\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 뒤 세로 점선 -->\n  <line x1=\"80\" y1=\"220\" x2=\"120\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <line x1=\"120\" y1=\"65\" x2=\"120\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <line x1=\"120\" y1=\"185\" x2=\"280\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <!-- 치수: 가로 4 cm -->\n  <line x1=\"80\" y1=\"238\" x2=\"240\" y2=\"238\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"80\" y1=\"233\" x2=\"80\" y2=\"243\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"240\" y1=\"233\" x2=\"240\" y2=\"243\" stroke=\"#555\" stroke-width=\"1\"/>\n  <text x=\"160\" y=\"255\" font-size=\"14\" text-anchor=\"middle\" fill=\"#222\">4 cm</text>\n  <!-- 치수: 높이 5 cm -->\n  <line x1=\"62\" y1=\"100\" x2=\"62\" y2=\"220\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"57\" y1=\"100\" x2=\"67\" y2=\"100\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"57\" y1=\"220\" x2=\"67\" y2=\"220\" stroke=\"#555\" stroke-width=\"1\"/>\n  <text x=\"44\" y=\"165\" font-size=\"14\" text-anchor=\"middle\" fill=\"#222\">5 cm</text>\n  <!-- 치수: 세로 3 cm -->\n  <text x=\"274\" y=\"58\" font-size=\"14\" text-anchor=\"start\" fill=\"#222\">3 cm</text>\n  <line x1=\"241\" y1=\"99\" x2=\"280\" y2=\"64\" stroke=\"#555\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n</svg>",
   "difficulty": 2,
-  "hints": [
-    "직육면체의 면은 모두 6개이며, 마주 보는 면끼리 모양과 크기가 같아 3쌍을 이룹니다.",
-    "전개도의 넓이 = (가로×세로) × 2 + (가로×높이) × 2 + (세로×높이) × 2"
-  ],
-  "choices": [
-    "47 cm²",
-    "74 cm²",
-    "84 cm²",
-    "94 cm²",
-    "120 cm²"
-  ],
-  "solution": "**1단계 — 직육면체의 면 파악 (축 K)**\n\n직육면체는 6개의 직사각형 면으로 이루어져 있고, 마주 보는 두 면끼리 크기가 같으므로 3쌍입니다.\n\n| 면 | 크기 | 쌍 수 |\n|---|---|---|\n| 위·아래 (바닥면) | 가로 × 세로 = $4 \\times 3 = 12$ cm² | 2개 |\n| 앞·뒤 | 가로 × 높이 = $4 \\times 5 = 20$ cm² | 2개 |\n| 왼쪽·오른쪽 | 세로 × 높이 = $3 \\times 5 = 15$ cm² | 2개 |\n\n**2단계 — 전개도의 넓이 계산 (축 F)**\n\n전개도를 펼치면 6개의 면이 모두 이어지므로, 넓이는 6개 면의 넓이의 합입니다.\n\n$$\\text{전개도의 넓이} = 12 \\times 2 + 20 \\times 2 + 15 \\times 2$$\n$$= 24 + 40 + 30 = \\boxed{94 \\text{ cm}^2}$$\n\n**함정 주의:** $12 + 20 + 15 = 47$ cm²로 계산하면 각 쌍에서 면을 1개씩만 센 것입니다. 마주 보는 면이 2개씩 있으므로 반드시 ×2를 해야 합니다.",
-  "solutionDiagram": null,
-  "answer": "94 cm²",
-  "concepts": [
-    "축: K × F (직육면체 + 다각형의 넓이)",
-    "조합: 연쇄 (직육면체 구조 파악 → 각 면 넓이 계산 → 합산)",
-    "함정: 마주 보는 면이 2개씩임을 놓쳐 ×2 누락 (47 cm² 오답 유도)"
-  ]
+  "content": {
+    "question": "가로가 4 cm, 세로가 3 cm, 높이가 5 cm인 직육면체가 있습니다. 이 직육면체의 전개도(입체도형을 펼쳐서 평면 위에 나타낸 그림)의 넓이는 몇 cm²입니까?",
+    "diagram": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\">\n  <!-- 앞면 -->\n  <polygon points=\"80,100 240,100 240,220 80,220\" fill=\"white\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 윗면 -->\n  <polygon points=\"80,100 120,65 280,65 240,100\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 오른쪽 옆면 -->\n  <polygon points=\"240,100 280,65 280,185 240,220\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"2\"/>\n  <!-- 뒤 세로 점선 -->\n  <line x1=\"80\" y1=\"220\" x2=\"120\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <line x1=\"120\" y1=\"65\" x2=\"120\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <line x1=\"120\" y1=\"185\" x2=\"280\" y2=\"185\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"5,4\"/>\n  <!-- 치수: 가로 4 cm -->\n  <line x1=\"80\" y1=\"238\" x2=\"240\" y2=\"238\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"80\" y1=\"233\" x2=\"80\" y2=\"243\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"240\" y1=\"233\" x2=\"240\" y2=\"243\" stroke=\"#555\" stroke-width=\"1\"/>\n  <text x=\"160\" y=\"255\" font-size=\"14\" text-anchor=\"middle\" fill=\"#222\">4 cm</text>\n  <!-- 치수: 높이 5 cm -->\n  <line x1=\"62\" y1=\"100\" x2=\"62\" y2=\"220\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"57\" y1=\"100\" x2=\"67\" y2=\"100\" stroke=\"#555\" stroke-width=\"1\"/>\n  <line x1=\"57\" y1=\"220\" x2=\"67\" y2=\"220\" stroke=\"#555\" stroke-width=\"1\"/>\n  <text x=\"44\" y=\"165\" font-size=\"14\" text-anchor=\"middle\" fill=\"#222\">5 cm</text>\n  <!-- 치수: 세로 3 cm -->\n  <text x=\"274\" y=\"58\" font-size=\"14\" text-anchor=\"start\" fill=\"#222\">3 cm</text>\n  <line x1=\"241\" y1=\"99\" x2=\"280\" y2=\"64\" stroke=\"#555\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/>\n</svg>",
+    "hints": [
+      "직육면체의 면은 모두 6개이며, 마주 보는 면끼리 모양과 크기가 같아 3쌍을 이룹니다.",
+      "전개도의 넓이 = (가로×세로) × 2 + (가로×높이) × 2 + (세로×높이) × 2"
+    ],
+    "choices": [
+      "47 cm²",
+      "74 cm²",
+      "84 cm²",
+      "94 cm²",
+      "120 cm²"
+    ],
+    "solution": "**1단계 — 직육면체의 면 파악 (축 K)**\n\n직육면체는 6개의 직사각형 면으로 이루어져 있고, 마주 보는 두 면끼리 크기가 같으므로 3쌍입니다.\n\n| 면 | 크기 | 쌍 수 |\n|---|---|---|\n| 위·아래 (바닥면) | 가로 × 세로 = $4 \\times 3 = 12$ cm² | 2개 |\n| 앞·뒤 | 가로 × 높이 = $4 \\times 5 = 20$ cm² | 2개 |\n| 왼쪽·오른쪽 | 세로 × 높이 = $3 \\times 5 = 15$ cm² | 2개 |\n\n**2단계 — 전개도의 넓이 계산 (축 F)**\n\n전개도를 펼치면 6개의 면이 모두 이어지므로, 넓이는 6개 면의 넓이의 합입니다.\n\n$$\\text{전개도의 넓이} = 12 \\times 2 + 20 \\times 2 + 15 \\times 2$$\n$$= 24 + 40 + 30 = \\boxed{94 \\text{ cm}^2}$$\n\n**함정 주의:** $12 + 20 + 15 = 47$ cm²로 계산하면 각 쌍에서 면을 1개씩만 센 것입니다. 마주 보는 면이 2개씩 있으므로 반드시 ×2를 해야 합니다.",
+    "answer": "94 cm²",
+    "concepts": [
+      "축: K × F (직육면체 + 다각형의 넓이)",
+      "조합: 연쇄 (직육면체 구조 파악 → 각 면 넓이 계산 → 합산)",
+      "함정: 마주 보는 면이 2개씩임을 놓쳐 ×2 누락 (47 cm² 오답 유도)"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-25T10:17:56.013073+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

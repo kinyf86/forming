@@ -1,22 +1,36 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-0d6e5097",
   "topicId": "math-12-2-03",
-  "question": "수열 $$\\{a_n\\}$$이 다음 조건을 만족시킨다.\n\n$$(가)\\; a_1 = 1$$\n$$(나)\\; \\displaystyle\\sum_{k=1}^{n} a_k = \\frac{n(n+1)}{2} \\cdot a_n \\quad (n \\geq 1)$$\n\n$$\\displaystyle\\sum_{k=1}^{10} \\frac{1}{a_k}$$의 값을 구하면?\n\n(단, 점화관계를 유도하고 $$a_n$$의 일반항을 구해야 합니다.)",
-  "diagram": null,
   "difficulty": 4,
-  "hints": [
-    "$$S_n = \\frac{n(n+1)}{2} a_n$$에서 $$S_{n-1} = \\frac{(n-1)n}{2} a_{n-1}$$을 빼면 $$a_n$$에 대한 점화식이 나옵니다.",
-    "$$a_n = S_n - S_{n-1}$$을 활용하여 $$a_n(n+2) = n \\cdot a_{n-1}$$을 유도하세요. 텔레스코핑으로 일반항을 구합니다."
-  ],
-  "choices": [
-    "$$55$$",
-    "$$65$$",
-    "$$85$$",
-    "$$95$$",
-    "$$110$$"
-  ],
-  "solution": "**1단계:** $$S_n = \\frac{n(n+1)}{2} a_n$$에서 $$n \\geq 2$$일 때 $$S_{n-1} = \\frac{(n-1)n}{2} a_{n-1}$$을 빼면\n$$a_n = \\frac{n(n+1)}{2} a_n - \\frac{(n-1)n}{2} a_{n-1}$$\n\n**2단계:** 정리하면 ($$n \\geq 2$$)\n$$a_n(n+2) = n \\cdot a_{n-1}$$\n\n**3단계:** 텔레스코핑으로 일반항을 구합니다.\n$$a_n = \\frac{n}{n+2} \\cdot a_{n-1} = \\frac{n}{n+2} \\cdot \\frac{n-1}{n+1} \\cdots \\frac{2}{4} \\cdot a_1$$\n$$= \\frac{n! \\cdot 3!}{1! \\cdot (n+2)!/(2!)} \\cdot 1 = \\frac{6}{(n+1)(n+2)}$$\n\n검산: $$a_1 = \\frac{6}{6} = 1$$ ✓, $$a_2 = \\frac{6}{12} = \\frac{1}{2}$$\n$$S_2 = \\frac{3}{2}$$, $$\\frac{2 \\cdot 3}{2} \\cdot \\frac{1}{2} = \\frac{3}{2}$$ ✓\n\n**4단계:** $$\\frac{1}{a_k} = \\frac{(k+1)(k+2)}{6}$$\n\n$$\\sum_{k=1}^{10} \\frac{1}{a_k} = \\frac{1}{6} \\sum_{k=1}^{10} (k^2 + 3k + 2)$$\n$$= \\frac{1}{6}\\left(\\frac{10 \\cdot 11 \\cdot 21}{6} + 3 \\cdot \\frac{10 \\cdot 11}{2} + 20\\right)$$\n$$= \\frac{1}{6}(385 + 165 + 20) = \\frac{570}{6} = 95$$\n\n> **함정 주의:** 텔레스코핑에서 분자/분모의 캔슬 패턴을 잘못 파악하면 일반항이 달라져 합도 틀립니다.",
-  "solutionDiagram": null,
-  "answer": "$$95$$",
-  "concepts": ["수열의 점화관계", "급수의 부분합", "텔레스코핑", "수능 30번 킬러"]
+  "content": {
+    "question": "수열 $$\\{a_n\\}$$이 다음 조건을 만족시킨다.\n\n$$(가)\\; a_1 = 1$$\n$$(나)\\; \\displaystyle\\sum_{k=1}^{n} a_k = \\frac{n(n+1)}{2} \\cdot a_n \\quad (n \\geq 1)$$\n\n$$\\displaystyle\\sum_{k=1}^{10} \\frac{1}{a_k}$$의 값을 구하면?\n\n(단, 점화관계를 유도하고 $$a_n$$의 일반항을 구해야 합니다.)",
+    "hints": [
+      "$$S_n = \\frac{n(n+1)}{2} a_n$$에서 $$S_{n-1} = \\frac{(n-1)n}{2} a_{n-1}$$을 빼면 $$a_n$$에 대한 점화식이 나옵니다.",
+      "$$a_n = S_n - S_{n-1}$$을 활용하여 $$a_n(n+2) = n \\cdot a_{n-1}$$을 유도하세요. 텔레스코핑으로 일반항을 구합니다."
+    ],
+    "choices": [
+      "$$55$$",
+      "$$65$$",
+      "$$85$$",
+      "$$95$$",
+      "$$110$$"
+    ],
+    "solution": "**1단계:** $$S_n = \\frac{n(n+1)}{2} a_n$$에서 $$n \\geq 2$$일 때 $$S_{n-1} = \\frac{(n-1)n}{2} a_{n-1}$$을 빼면\n$$a_n = \\frac{n(n+1)}{2} a_n - \\frac{(n-1)n}{2} a_{n-1}$$\n\n**2단계:** 정리하면 ($$n \\geq 2$$)\n$$a_n(n+2) = n \\cdot a_{n-1}$$\n\n**3단계:** 텔레스코핑으로 일반항을 구합니다.\n$$a_n = \\frac{n}{n+2} \\cdot a_{n-1} = \\frac{n}{n+2} \\cdot \\frac{n-1}{n+1} \\cdots \\frac{2}{4} \\cdot a_1$$\n$$= \\frac{n! \\cdot 3!}{1! \\cdot (n+2)!/(2!)} \\cdot 1 = \\frac{6}{(n+1)(n+2)}$$\n\n검산: $$a_1 = \\frac{6}{6} = 1$$ ✓, $$a_2 = \\frac{6}{12} = \\frac{1}{2}$$\n$$S_2 = \\frac{3}{2}$$, $$\\frac{2 \\cdot 3}{2} \\cdot \\frac{1}{2} = \\frac{3}{2}$$ ✓\n\n**4단계:** $$\\frac{1}{a_k} = \\frac{(k+1)(k+2)}{6}$$\n\n$$\\sum_{k=1}^{10} \\frac{1}{a_k} = \\frac{1}{6} \\sum_{k=1}^{10} (k^2 + 3k + 2)$$\n$$= \\frac{1}{6}\\left(\\frac{10 \\cdot 11 \\cdot 21}{6} + 3 \\cdot \\frac{10 \\cdot 11}{2} + 20\\right)$$\n$$= \\frac{1}{6}(385 + 165 + 20) = \\frac{570}{6} = 95$$\n\n> **함정 주의:** 텔레스코핑에서 분자/분모의 캔슬 패턴을 잘못 파악하면 일반항이 달라져 합도 틀립니다.",
+    "answer": "$$95$$",
+    "concepts": [
+      "수열의 점화관계",
+      "급수의 부분합",
+      "텔레스코핑",
+      "수능 30번 킬러"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:48:10.976178+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

@@ -1,25 +1,34 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-d5b88ac2",
   "topicId": "math-11-1-01",
-  "question": "$$\\log_3 5 = a$$일 때, $$\\log_3 45$$를 $$a$$로 나타내면?",
-  "diagram": null,
   "difficulty": 3,
-  "hints": [
-    "$$45 = 9 \\times 5 = 3^2 \\times 5$$로 분해하세요.",
-    "로그의 성질: $$\\log(ab) = \\log a + \\log b$$를 이용하세요."
-  ],
-  "choices": [
-    "$$a + 2$$",
-    "$$2a + 1$$",
-    "$$2a$$",
-    "$$a + 1$$",
-    "$$3a$$"
-  ],
-  "solution": "**1단계:** $$45$$를 소인수분해합니다.\n$$45 = 3^2 \\times 5$$\n\n**2단계:** 로그의 성질을 적용합니다.\n$$\\log_3 45 = \\log_3(3^2 \\times 5) = \\log_3 3^2 + \\log_3 5 = 2 + a$$",
-  "solutionDiagram": null,
-  "answer": "$$a + 2$$",
-  "concepts": [
-    "로그의 성질",
-    "로그의 덧셈법칙"
-  ]
+  "content": {
+    "question": "$$\\log_3 5 = a$$일 때, $$\\log_3 45$$를 $$a$$로 나타내면?",
+    "hints": [
+      "$$45 = 9 \\times 5 = 3^2 \\times 5$$로 분해하세요.",
+      "로그의 성질: $$\\log(ab) = \\log a + \\log b$$를 이용하세요."
+    ],
+    "choices": [
+      "$$a + 2$$",
+      "$$2a + 1$$",
+      "$$2a$$",
+      "$$a + 1$$",
+      "$$3a$$"
+    ],
+    "solution": "**1단계:** $$45$$를 소인수분해합니다.\n$$45 = 3^2 \\times 5$$\n\n**2단계:** 로그의 성질을 적용합니다.\n$$\\log_3 45 = \\log_3(3^2 \\times 5) = \\log_3 3^2 + \\log_3 5 = 2 + a$$",
+    "answer": "$$a + 2$$",
+    "concepts": [
+      "로그의 성질",
+      "로그의 덧셈법칙"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:47:26.146068+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

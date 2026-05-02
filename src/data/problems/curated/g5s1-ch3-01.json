@@ -1,24 +1,35 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "g5s1-ch3-01",
   "topicId": "math-5-1-03",
-  "question": "학교 운동회 날, 학생들에게는 생수 $2$병과 에너지바 $1$개가 나누어집니다. 학생 수를 $\\square$라고 하고, 나누어 준 전체 간식(생수와 에너지바의 합)의 개수를 $\\triangle$라고 할 때, $\\square$와 $\\triangle$ 사이의 대응 관계를 식으로 나타낸 것은 무엇인가요?",
   "difficulty": 2,
-  "hints": [
-    "힌트 1: 학생 $1$명에게 나누어 주는 전체 간식의 개수가 몇 개인지 먼저 구해보세요.",
-    "힌트 2: 학생 수($\\square$)가 $1$명, $2$명, $3$명으로 늘어날 때, 전체 간식 수($\\triangle$)가 어떻게 변하는지 확인해보세요.",
-    "힌트 3: 두 양 사이의 관계를 곱셈식으로 나타내 보세요."
-  ],
-  "choices": [
-    "$\\square = \\triangle \times 3$",
-    "$\\triangle = \\square + 3$",
-    "$\\triangle = \\square \times 3$",
-    "$\\triangle = \\square \times 2$",
-    "$\\triangle = \\square \\div 3$"
-  ],
-  "solution": "먼저 학생 $1$명에게 나누어 주는 전체 간식의 개수를 구합니다. 생수 $2$병과 에너지바 $1$개를 합하면 $2 + 1 = 3$(개)입니다. 즉, 학생 $1$명당 간식은 $3$개씩 늘어납니다. 따라서 학생 수($\\square$)에 $3$을 곱하면 전체 간식의 개수($\\triangle$)가 됩니다. 이를 대응 관계식으로 나타내면 $\\triangle = \\square \times 3$입니다.",
-  "answer": "$\\triangle = \\square \times 3$",
-  "concepts": [
-    "두 양 사이의 대응 관계",
-    "대응 관계를 식으로 나타내기"
-  ]
+  "content": {
+    "question": "학교 운동회 날, 학생들에게는 생수 $2$병과 에너지바 $1$개가 나누어집니다. 학생 수를 $\\square$라고 하고, 나누어 준 전체 간식(생수와 에너지바의 합)의 개수를 $\\triangle$라고 할 때, $\\square$와 $\\triangle$ 사이의 대응 관계를 식으로 나타낸 것은 무엇인가요?",
+    "hints": [
+      "힌트 1: 학생 $1$명에게 나누어 주는 전체 간식의 개수가 몇 개인지 먼저 구해보세요.",
+      "힌트 2: 학생 수($\\square$)가 $1$명, $2$명, $3$명으로 늘어날 때, 전체 간식 수($\\triangle$)가 어떻게 변하는지 확인해보세요.",
+      "힌트 3: 두 양 사이의 관계를 곱셈식으로 나타내 보세요."
+    ],
+    "choices": [
+      "$\\square = \\triangle \times 3$",
+      "$\\triangle = \\square + 3$",
+      "$\\triangle = \\square \times 3$",
+      "$\\triangle = \\square \times 2$",
+      "$\\triangle = \\square \\div 3$"
+    ],
+    "solution": "먼저 학생 $1$명에게 나누어 주는 전체 간식의 개수를 구합니다. 생수 $2$병과 에너지바 $1$개를 합하면 $2 + 1 = 3$(개)입니다. 즉, 학생 $1$명당 간식은 $3$개씩 늘어납니다. 따라서 학생 수($\\square$)에 $3$을 곱하면 전체 간식의 개수($\\triangle$)가 됩니다. 이를 대응 관계식으로 나타내면 $\\triangle = \\square \times 3$입니다.",
+    "answer": "$\\triangle = \\square \times 3$",
+    "concepts": [
+      "두 양 사이의 대응 관계",
+      "대응 관계를 식으로 나타내기"
+    ]
+  },
+  "provenance": {
+    "source_model": "gemma",
+    "generated_at": "2026-04-10T16:06:05.316639+00:00",
+    "generator": "generate-problems.py"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }

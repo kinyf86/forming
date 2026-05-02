@@ -1,25 +1,34 @@
 {
+  "schema": "forming-problem/2.0",
   "id": "gen-e71f4e22",
   "topicId": "math-12-2-02",
-  "question": "곡선 $$y = x^2$$와 직선 $$y = 4$$로 둘러싸인 영역의 넓이를 구하면?",
-  "diagram": null,
   "difficulty": 3,
-  "hints": [
-    "두 곡선의 교점을 먼저 구하세요: $$x^2 = 4$$에서 $$x = \\pm 2$$",
-    "넓이 = $$\\int_{-2}^{2} (4 - x^2) \\, dx$$"
-  ],
-  "choices": [
-    "$$\\frac{16}{3}$$",
-    "$$\\frac{28}{3}$$",
-    "$$\\frac{32}{3}$$",
-    "$$\\frac{40}{3}$$",
-    "$$16$$"
-  ],
-  "solution": "**1단계:** 교점을 구합니다.\n$$x^2 = 4$$에서 $$x = -2, 2$$\n\n**2단계:** 넓이를 적분합니다.\n$$S = \\int_{-2}^{2}(4 - x^2)\\,dx$$\n\n$$= \\left[4x - \\frac{x^3}{3}\\right]_{-2}^{2}$$\n\n$$= \\left(8 - \\frac{8}{3}\\right) - \\left(-8 + \\frac{8}{3}\\right)$$\n\n$$= 8 - \\frac{8}{3} + 8 - \\frac{8}{3} = 16 - \\frac{16}{3} = \\frac{32}{3}$$",
-  "solutionDiagram": null,
-  "answer": "$$\\frac{32}{3}$$",
-  "concepts": [
-    "정적분을 이용한 넓이",
-    "두 곡선 사이의 넓이"
-  ]
+  "content": {
+    "question": "곡선 $$y = x^2$$와 직선 $$y = 4$$로 둘러싸인 영역의 넓이를 구하면?",
+    "hints": [
+      "두 곡선의 교점을 먼저 구하세요: $$x^2 = 4$$에서 $$x = \\pm 2$$",
+      "넓이 = $$\\int_{-2}^{2} (4 - x^2) \\, dx$$"
+    ],
+    "choices": [
+      "$$\\frac{16}{3}$$",
+      "$$\\frac{28}{3}$$",
+      "$$\\frac{32}{3}$$",
+      "$$\\frac{40}{3}$$",
+      "$$16$$"
+    ],
+    "solution": "**1단계:** 교점을 구합니다.\n$$x^2 = 4$$에서 $$x = -2, 2$$\n\n**2단계:** 넓이를 적분합니다.\n$$S = \\int_{-2}^{2}(4 - x^2)\\,dx$$\n\n$$= \\left[4x - \\frac{x^3}{3}\\right]_{-2}^{2}$$\n\n$$= \\left(8 - \\frac{8}{3}\\right) - \\left(-8 + \\frac{8}{3}\\right)$$\n\n$$= 8 - \\frac{8}{3} + 8 - \\frac{8}{3} = 16 - \\frac{16}{3} = \\frac{32}{3}$$",
+    "answer": "$$\\frac{32}{3}$$",
+    "concepts": [
+      "정적분을 이용한 넓이",
+      "두 곡선 사이의 넓이"
+    ]
+  },
+  "provenance": {
+    "source_model": "unknown",
+    "generated_at": "2026-03-27T18:47:26.146544+00:00",
+    "generator": "api/generate-problem"
+  },
+  "validation": {
+    "status": "UNCHECKED"
+  }
 }
