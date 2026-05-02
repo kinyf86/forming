@@ -1,10 +1,8 @@
 import fs from "fs";
-import path from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { askClaude } from "@/lib/claude";
-import { sanitizePathSegment, assertWithinBase, PathTraversalError } from "@/lib/sanitize";
-
-const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
+import { PathTraversalError } from "@/lib/sanitize";
+import { findProblemFile } from "@/lib/problems";
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,14 +36,16 @@ SVG 코드만 출력하세요. 설명 없이 <svg>...</svg> 만 출력하세요.
       svg = svgMatch[0];
     }
 
-    // Save to problem file if it exists
-    const safeProblemId = sanitizePathSegment(problemId);
-    const filePath = path.join(GENERATED_DIR, `${safeProblemId}.json`);
-    assertWithinBase(filePath, GENERATED_DIR);
-    if (fs.existsSync(filePath)) {
-      const problem = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      problem.diagram = svg;
-      fs.writeFileSync(filePath, JSON.stringify(problem, null, 2), "utf-8");
+    // Persist to whichever location holds this problem (curated v2 or runtime cache)
+    const found = findProblemFile(problemId);
+    if (found) {
+      const problem = JSON.parse(fs.readFileSync(found.path, "utf-8"));
+      if (found.isV2) {
+        problem.content = { ...problem.content, diagram: svg };
+      } else {
+        problem.diagram = svg;
+      }
+      fs.writeFileSync(found.path, JSON.stringify(problem, null, 2), "utf-8");
     }
 
     return NextResponse.json({ diagram: svg });

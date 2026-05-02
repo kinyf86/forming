@@ -8,53 +8,35 @@ import { askClaude, parseJsonFromResponse } from "@/lib/claude";
 import { appendRecord, getSubmissions } from "@/lib/history";
 import { loadPrompt } from "@/lib/prompt-loader";
 import { PathTraversalError } from "@/lib/sanitize";
+import { listAllGeneratedProblems, getRuntimeCacheDir } from "@/lib/problems";
 import type { Problem } from "@/types";
 
-const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
-
-function saveGeneratedProblem(problem: Problem): void {
-  if (!fs.existsSync(GENERATED_DIR)) {
-    fs.mkdirSync(GENERATED_DIR, { recursive: true });
+function saveRuntimeProblem(problem: Problem): void {
+  const dir = getRuntimeCacheDir();
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
-  const filePath = path.join(GENERATED_DIR, `${problem.id}.json`);
+  const filePath = path.join(dir, `${problem.id}.json`);
   fs.writeFileSync(filePath, JSON.stringify(problem, null, 2), "utf-8");
 }
 
-/** DB에서 해당 단원 + 난이도에 맞는 미풀이 문제를 랜덤으로 찾기 */
+/** Find a previously-generated problem for this chapter + difficulty
+ * that the student has not yet solved. Searches both curated v2 problems
+ * and runtime-cache v1 problems via @/lib/problems. */
 function findExistingProblem(
   chapterId: string,
   difficulty: number,
   clientId: string
 ): Problem | null {
-  if (!fs.existsSync(GENERATED_DIR)) return null;
-
-  // Load all problems for this chapter + difficulty
-  const candidates: Problem[] = [];
-  for (const file of fs.readdirSync(GENERATED_DIR)) {
-    if (!file.endsWith(".json")) continue;
-    try {
-      const p = JSON.parse(
-        fs.readFileSync(path.join(GENERATED_DIR, file), "utf-8")
-      ) as Problem;
-      if (p.topicId === chapterId && p.difficulty === difficulty) {
-        candidates.push(p);
-      }
-    } catch {
-      // skip
-    }
-  }
-
+  const candidates = listAllGeneratedProblems().filter(
+    (p) => p.topicId === chapterId && p.difficulty === difficulty
+  );
   if (candidates.length === 0) return null;
 
-  // Check which ones the student already solved
   const submissions = getSubmissions(clientId);
   const solvedIds = new Set<string>(submissions.map((s) => s.problemId));
-
-  // Filter out already solved
   const unsolved = candidates.filter((p) => !solvedIds.has(p.id));
   if (unsolved.length === 0) return null;
-
-  // Random pick
   return unsolved[Math.floor(Math.random() * unsolved.length)];
 }
 
@@ -104,8 +86,8 @@ export async function POST(request: NextRequest) {
     // Ensure consistent ID
     problem.id = problemId;
 
-    // Save to file
-    saveGeneratedProblem(problem);
+    // Save to runtime cache (gitignored)
+    saveRuntimeProblem(problem);
 
     // Save generation history
     appendRecord(clientId, {

@@ -30,7 +30,8 @@ from lib import llm
 from lib import curriculum
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GENERATED_DIR = os.path.join(ROOT, "src/data/generated")
+CURATED_DIR = os.path.join(ROOT, "src/data/problems/curated")
+LEGACY_GENERATED_DIR = os.path.join(ROOT, "src/data/generated")
 REPORTS_DIR = os.path.join(ROOT, "src/data/validation-reports")
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
@@ -82,6 +83,23 @@ REJECT: 심각한 문제 (4점 이하)
 JSON만 출력하세요. 다른 텍스트 없이."""
 
 
+def is_v2(problem: dict) -> bool:
+    return problem.get("schema") == "forming-problem/2.0"
+
+
+def to_validator_view(problem: dict) -> dict:
+    """Flatten v2 → v1-shape so the existing validation prompt keeps working."""
+    if not is_v2(problem):
+        return problem
+    flat = {
+        "id": problem["id"],
+        "topicId": problem["topicId"],
+        "difficulty": problem["difficulty"],
+        **problem["content"],
+    }
+    return flat
+
+
 def validate_problem(problem_path: str, backend: str = "claude") -> dict:
     """Validate a single problem file. Returns the validation result."""
     problem = json.load(open(problem_path))
@@ -98,7 +116,7 @@ def validate_problem(problem_path: str, backend: str = "claude") -> dict:
     grade_label = curriculum.grade_label(grade)
 
     prompt = VALIDATION_PROMPT.format(
-        problem_json=json.dumps(problem, ensure_ascii=False, indent=2),
+        problem_json=json.dumps(to_validator_view(problem), ensure_ascii=False, indent=2),
         grade_label=grade_label,
     )
 
@@ -141,6 +159,21 @@ def validate_problem(problem_path: str, backend: str = "claude") -> dict:
     parsed["problem_id"] = problem.get("id")
     parsed["chapter_id"] = chapter_id
     parsed["validated_at"] = datetime.now(timezone.utc).isoformat()
+
+    if is_v2(problem):
+        problem["validation"] = {
+            "status": parsed.get("verdict", "UNCHECKED"),
+            "scores": {
+                "math_correctness": parsed.get("quality", {}).get("score"),
+                "korean_naturalness": parsed.get("korean", {}).get("score"),
+            },
+            "verdict_at": parsed["validated_at"],
+            "validator_model": "opus",
+        }
+        with open(problem_path, "w", encoding="utf-8") as f:
+            json.dump(problem, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+
     return parsed
 
 
@@ -149,8 +182,11 @@ def find_problems(args) -> list:
     if args.files:
         return args.files
 
-    # Match both old (g5-ch1) and new (g5s1-ch1) naming
-    files = glob.glob(os.path.join(GENERATED_DIR, "g*-ch*.json"))
+    # Match both old (g5-ch1) and new (g5s1-ch1) naming. Curated lives at
+    # CURATED_DIR; legacy stragglers may still be in LEGACY_GENERATED_DIR.
+    files = glob.glob(os.path.join(CURATED_DIR, "g*-ch*.json"))
+    if os.path.isdir(LEGACY_GENERATED_DIR):
+        files += glob.glob(os.path.join(LEGACY_GENERATED_DIR, "g*-ch*.json"))
 
     def matches_grade(path: str, g: int) -> bool:
         name = os.path.basename(path)

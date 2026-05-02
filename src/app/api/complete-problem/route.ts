@@ -4,9 +4,8 @@ import fs from "fs";
 import path from "path";
 import { askClaude, parseJsonFromResponse } from "@/lib/claude";
 import { appendRecord } from "@/lib/history";
+import { getRuntimeCacheDir } from "@/lib/problems";
 import type { Problem } from "@/types";
-
-const GENERATED_DIR = path.join(process.cwd(), "src/data/generated");
 
 export async function POST(request: NextRequest) {
   try {
@@ -52,12 +51,13 @@ ${targetWeakness}
     const problem = parseJsonFromResponse(response) as Problem;
     problem.id = problemId;
 
-    // Save to file
-    if (!fs.existsSync(GENERATED_DIR)) {
-      fs.mkdirSync(GENERATED_DIR, { recursive: true });
+    // Save to runtime cache (gitignored)
+    const runtimeDir = getRuntimeCacheDir();
+    if (!fs.existsSync(runtimeDir)) {
+      fs.mkdirSync(runtimeDir, { recursive: true });
     }
     fs.writeFileSync(
-      path.join(GENERATED_DIR, `${problemId}.json`),
+      path.join(runtimeDir, `${problemId}.json`),
       JSON.stringify(problem, null, 2),
       "utf-8"
     );

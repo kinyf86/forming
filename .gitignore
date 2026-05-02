@@ -44,6 +44,10 @@ next-env.d.ts
 src/data/history/
 .gstack/
 
+# Runtime ad-hoc problem cache (NOT SSoT). Curated problems live in
+# src/data/problems/curated/. Files here are one-off API responses.
+src/data/generated/
+
 # raw data (large images)
 rawdata/
 
@@ -52,6 +56,9 @@ rawdata/
 
 # local snapshots / archives
 *.zip
+
+# external repos used as design references only
+/external_sample/
 
 # Python
 __pycache__/
