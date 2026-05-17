@@ -28,7 +28,9 @@ OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 
 MODEL_MAP = {
     "claude": "claude-sonnet-4-6",
+    "sonnet": "claude-sonnet-4-6",
     "opus": "claude-opus-4-6",
+    "haiku": "claude-haiku-4-5",
     "gemma:e4b": "gemma4:e4b",
     "gemma:26b": "gemma4:26b",
     "gemma:31b": "gemma4:31b",
@@ -50,11 +52,16 @@ def call_llm(
     num_ctx: int = 8192,
     keep_alive: str = "30m",
     silent_retry: bool = False,
+    isolate_cwd: bool = False,
 ) -> Optional[str]:
     """Call an LLM backend and return the raw text response.
 
     Returns None after all retries fail. Does not raise.
     Callers should check for None and decide how to handle it.
+
+    `isolate_cwd=True` runs the claude CLI from /tmp so it does NOT
+    auto-load forming's CLAUDE.md and reinterpret the prompt as a coding
+    request. Required for review / generation prompts.
     """
     if backend not in MODEL_MAP:
         raise ValueError(
@@ -63,8 +70,13 @@ def call_llm(
 
     for attempt in range(retries):
         try:
-            if backend in ("claude", "opus"):
-                return _call_claude(prompt, timeout, MODEL_MAP[backend])
+            if backend in ("claude", "sonnet", "opus", "haiku"):
+                return _call_claude(
+                    prompt,
+                    timeout,
+                    MODEL_MAP[backend],
+                    isolate_cwd=isolate_cwd,
+                )
             else:
                 return _call_ollama(
                     prompt,
@@ -87,7 +99,21 @@ def call_llm(
     return None
 
 
-def _call_claude(prompt: str, timeout: int, model: str = "claude-sonnet-4-6") -> str:
+def _call_claude(
+    prompt: str,
+    timeout: int,
+    model: str = "claude-sonnet-4-6",
+    isolate_cwd: bool = False,
+) -> str:
+    kwargs = {
+        "capture_output": True,
+        "text": True,
+        "timeout": timeout,
+        "stdin": subprocess.DEVNULL,
+    }
+    if isolate_cwd:
+        import tempfile
+        kwargs["cwd"] = tempfile.gettempdir()
     result = subprocess.run(
         [
             "claude",
@@ -98,10 +124,7 @@ def _call_claude(prompt: str, timeout: int, model: str = "claude-sonnet-4-6") ->
             "--model",
             model,
         ],
-        capture_output=True,
-        text=True,
-        timeout=timeout,
-        stdin=subprocess.DEVNULL,
+        **kwargs,
     )
     return result.stdout.strip()
 
