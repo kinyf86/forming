@@ -226,13 +226,15 @@ python3 scripts/review-problem.py g7s1-ch1-01 --personas math-correctness,solvab
 - [ ] axes 3개 자동 추론 — `bun scripts/query-axis.ts --axis difficulty.combination_mode --value chain` 결과 N>0
 - [ ] 운영 검증: `validation.status === "REJECT"`인 문제는 학생에게 노출 안 됨 (Phase A에서 이미 구현)
 
-## 13. 미결사항 (B.0 시작 전 결정)
+## 13. 결정 사항 (2026-05-18 확정)
 
-1. **Patch 형식 표준** — JSONPatch (RFC 6902)? Custom path/before/after? 후자가 LLM friendly. **권장: 후자**.
-2. **Fix-loop의 regenerate 경로** — `/api/generate-problem` 재호출 vs `scripts/generate-problems.py` Python 함수 직접 호출? Python 직접이 격리/throttle에 더 좋음. **권장: Python 직접**.
-3. **temperature** — 0.3 vs 0.5? 0.3은 안정, 0.5는 다양성. 검증은 안정 우선. **권장: 0.3**.
-4. **--concurrency 기본값** — 4 (안전) vs 8 (빠름)? Claude CLI rate limit 우려. **권장: 4 시작 후 조정**.
-5. **validation-reports 보관기간** — 영구 vs N일? raw 결과는 디버그용 — **권장: 영구 (작은 JSON, git에 둠)**.
-6. **Round 2 patch가 Round 1보다 score 떨어지면?** — Round 1 결과로 revert vs Round 2 유지? **권장: revert**.
+| # | 항목 | 결정 |
+|:-:|:--|:--|
+| 1 | Patch 형식 | Custom `{path, before, after}` (LLM-friendly) |
+| 2 | Fix-loop regenerate 경로 | `scripts/generate-problems.py` Python 함수 직접 호출 |
+| 3 | Temperature | 0.3 (안정 우선) |
+| 4 | `--concurrency` 기본값 | 4 (이후 throughput 보고 상향 조정) |
+| 5 | validation-reports 보관 | 영구 (작은 JSON, git 보관) |
+| 6 | Round 2 점수 < Round 1 | Round 1 결과로 revert |
 
-이 6개에 답 주시면 B.0 시작.
+B.0 착수.
