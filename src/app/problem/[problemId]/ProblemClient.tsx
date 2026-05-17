@@ -27,9 +27,12 @@ export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClient
   const [diagram, setDiagram] = useState<string | null>(problem.diagram ?? null);
   const [diagramLoading, setDiagramLoading] = useState(false);
 
-  // Auto-generate diagram if question mentions "그림" but no diagram exists
+  // Auto-generate diagram if the question describes a shape that benefits
+  // from visualization. Keyword set covers common middle/high school cases
+  // (전개도, 직육면체, 원기둥, 좌표 …) so we don't miss obvious geometry problems.
   useEffect(() => {
-    if (!diagram && /그림|도형|아래/.test(problem.question)) {
+    const needsDiagram = /그림|도형|아래|전개도|직육면체|정육면체|각기둥|원기둥|각뿔|원뿔|구|입체|평면도|좌표|선분|반직선|평행사변형|마름모|사다리꼴|다각형|다면체/;
+    if (!diagram && needsDiagram.test(problem.question)) {
       setDiagramLoading(true);
       fetch("/api/generate-diagram", {
         method: "POST",
@@ -118,7 +121,7 @@ export function ProblemClient({ problem, topicTitle, breadcrumb }: ProblemClient
             <span className="text-sm text-gray-400">도형 생성 중...</span>
           </div>
         )}
-        {diagram && <DiagramSvg svg={diagram} />}
+        {diagram && <DiagramSvg svg={diagram} animated />}
       </div>
 
       {/* Frame#5: Reference 영역 */}

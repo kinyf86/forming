@@ -94,15 +94,15 @@ export async function POST(req: NextRequest) {
     let rawResponse: string;
     try {
       rawResponse = canvasImage
-        ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
-        : await askClaude(prompt, logCtx);
+        ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx, "fast")
+        : await askClaude(prompt, logCtx, "fast");
     } catch (err) {
       // Retry once on timeout
       if (err instanceof Error && err.message.includes("timeout")) {
         try {
           rawResponse = canvasImage
-            ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
-            : await askClaude(prompt, logCtx);
+            ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx, "fast")
+            : await askClaude(prompt, logCtx, "fast");
         } catch {
           return NextResponse.json(
             { error: "잠깐만요, AI가 응답하지 못했습니다. 다시 시도해주세요." },

@@ -43,11 +43,16 @@ ${targetWeakness}
   "concepts": ["${targetWeakness}"]
 }`;
 
-    const response = await askClaude(prompt, {
-      clientId,
-      endpoint: "/api/complete-problem",
-      sessionId: `gen-${problemId}`,
-    });
+    // Recommended problems are short, structured JSON — haiku is plenty fast and accurate.
+    const response = await askClaude(
+      prompt,
+      {
+        clientId,
+        endpoint: "/api/complete-problem",
+        sessionId: `gen-${problemId}`,
+      },
+      "fast"
+    );
     const problem = parseJsonFromResponse(response) as Problem;
     problem.id = problemId;
 

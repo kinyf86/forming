@@ -84,8 +84,8 @@ ${chatHistory}
     }
 
     const response = canvasImage
-      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
-      : await askClaude(prompt, logCtx);
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx, "fast")
+      : await askClaude(prompt, logCtx, "fast");
 
     appendConversationTurn(clientId, {
       type: "conversation_turn",

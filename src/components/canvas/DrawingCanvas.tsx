@@ -65,17 +65,36 @@ const COLORS = [
 // Quarter-sine easing gives the characteristic velvety start/end.
 const STROKE_EASING = (t: number) => Math.sin((t * Math.PI) / 2);
 
+// `simulatePressure=false` means the pointer is a real stylus (Apple Pencil
+// etc.) and we want maximum positional fidelity — minimal streamline +
+// no end taper, so the rendered stroke sits exactly where the pen touched.
+// For mouse/touch we keep the buttery Excalidraw look since precision
+// isn't expected. The previous one-size-fits-all preset (streamline 0.5,
+// end taper size*2) made thin strokes look offset / lower than the cursor.
 function strokeOptions(size: number, simulatePressure: boolean, last: boolean) {
+  if (simulatePressure) {
+    return {
+      size,
+      thinning: 0.6,
+      smoothing: 0.5,
+      streamline: 0.5,
+      easing: STROKE_EASING,
+      simulatePressure: true,
+      last,
+      start: { taper: 0, cap: true },
+      end: { taper: size * 2, cap: true },
+    };
+  }
   return {
     size,
-    thinning: 0.6,
-    smoothing: 0.5,
-    streamline: 0.5,
+    thinning: 0.5,
+    smoothing: 0.3,
+    streamline: 0.15,
     easing: STROKE_EASING,
-    simulatePressure,
+    simulatePressure: false,
     last,
     start: { taper: 0, cap: true },
-    end: { taper: size * 2, cap: true },
+    end: { taper: 0, cap: true },
   };
 }
 
@@ -110,7 +129,7 @@ const DrawingCanvas = forwardRef<DrawingCanvasAPI, DrawingCanvasProps>(
     const [currentPoints, setCurrentPoints] = useState<Point[]>([]);
     const [isDrawing, setIsDrawing] = useState(false);
     const [tool, setTool] = useState<"pen" | "eraser" | "text">("pen");
-    const [strokeSize, setStrokeSize] = useState(8);
+    const [strokeSize, setStrokeSize] = useState(4);
     const [strokeColor, setStrokeColor] = useState("#1a1a1a");
     const [pointerType, setPointerType] = useState<"pen" | "mouse" | "touch">(
       "mouse"

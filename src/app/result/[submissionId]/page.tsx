@@ -34,6 +34,31 @@ export default function ResultPage() {
     }
   }, [params.submissionId]);
 
+  // Prefetch the next problem in the background while the student reads
+  // the analysis. By the time they click "다음 문제" the response is
+  // usually cached in sessionStorage and the click feels instant.
+  useEffect(() => {
+    if (!data) return;
+    const cacheKey = `next-prefetch:${data.problem.topicId}:${data.problem.difficulty}`;
+    if (sessionStorage.getItem(cacheKey)) return;
+    fetch("/api/generate-problem", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chapterId: data.problem.topicId,
+        difficulty: data.problem.difficulty,
+        clientId: getClientId(),
+      }),
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((problem) => {
+        if (!problem || !problem.id) return;
+        sessionStorage.setItem(cacheKey, problem.id);
+        sessionStorage.setItem(`problem-${problem.id}`, JSON.stringify(problem));
+      })
+      .catch(() => {});
+  }, [data]);
+
   const breadcrumb = useMemo(
     () =>
       data
@@ -72,12 +97,26 @@ export default function ResultPage() {
 
   const handleSameChapterNewProblem = async () => {
     if (!data) return;
+
+    // Hit the prefetched problem first if we have one — no network round trip.
+    const cacheKey = `next-prefetch:${data.problem.topicId}:${data.problem.difficulty}`;
+    const prefetchedId = sessionStorage.getItem(cacheKey);
+    if (prefetchedId && sessionStorage.getItem(`problem-${prefetchedId}`)) {
+      sessionStorage.removeItem(cacheKey);
+      router.push(`/problem/${prefetchedId}`);
+      return;
+    }
+
     setGeneratingNew(true);
     try {
       const res = await fetch("/api/generate-problem", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chapterId: data.problem.topicId, clientId: getClientId() }),
+        body: JSON.stringify({
+          chapterId: data.problem.topicId,
+          difficulty: data.problem.difficulty,
+          clientId: getClientId(),
+        }),
       });
       if (!res.ok) throw new Error();
       const problem = await res.json();

@@ -25,11 +25,11 @@ function saveRuntimeProblem(problem: Problem): void {
  * and runtime-cache v1 problems via @/lib/problems. */
 function findExistingProblem(
   chapterId: string,
-  difficulty: number,
+  difficulty: number | undefined,
   clientId: string
 ): Problem | null {
   const candidates = listAllGeneratedProblems().filter(
-    (p) => p.topicId === chapterId && p.difficulty === difficulty
+    (p) => p.topicId === chapterId && (difficulty == null || p.difficulty === difficulty)
   );
   if (candidates.length === 0) return null;
 
@@ -42,9 +42,11 @@ function findExistingProblem(
 
 export async function POST(request: NextRequest) {
   try {
-    const { chapterId, difficulty = 1, clientId = "default" } = await request.json();
+    const { chapterId, difficulty, clientId = "default" } = await request.json();
 
-    // Try DB first - instant response
+    // Try DB first - instant response. When difficulty is omitted (e.g.
+    // "다음 문제" from result page), search across all difficulties to
+    // maximize the cache hit rate.
     const existing = findExistingProblem(chapterId, difficulty, clientId);
     if (existing) {
       return NextResponse.json(existing);
@@ -71,16 +73,23 @@ export async function POST(request: NextRequest) {
       subject,
       tutorPrompt: locale.tutorPrompt,
       conceptAxes,
-      difficulty,
+      difficulty: difficulty ?? 1,
       problemId,
       chapterId,
     });
 
-    const response = await askClaude(prompt, {
-      clientId,
-      endpoint: "/api/generate-problem",
-      sessionId: `gen-${problemId}`,
-    });
+    // DB miss path — generate fresh. Haiku is fast and good enough for
+    // worksheet-style problems; quality differences here are dominated
+    // by the prompt + Phase B review, not the model tier.
+    const response = await askClaude(
+      prompt,
+      {
+        clientId,
+        endpoint: "/api/generate-problem",
+        sessionId: `gen-${problemId}`,
+      },
+      "fast"
+    );
     const problem = parseJsonFromResponse(response) as Problem;
 
     // Ensure consistent ID

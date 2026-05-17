@@ -77,10 +77,11 @@ export async function POST(request: NextRequest) {
       attachments: canvasImage ? [{ type: "canvas_image", path: null }] : [],
     });
 
-    // Use vision if canvas image is available
+    // Use vision if canvas image is available. Haiku 4.5 is fast and good
+    // enough for grading + short feedback; sonnet was the bottleneck here.
     const response = canvasImage
-      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx)
-      : await askClaude(prompt, logCtx);
+      ? await askClaudeWithImage(prompt, canvasImage, "image/webp", logCtx, "fast")
+      : await askClaude(prompt, logCtx, "fast");
 
     const analysis = parseJsonFromResponse(response) as AnalysisResult;
 

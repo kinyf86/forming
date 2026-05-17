@@ -1,9 +1,26 @@
 import { spawn } from "child_process";
 import { randomUUID } from "crypto";
+import os from "os";
 import { appendAICall, type AICallRecord } from "./history";
 
 const DEFAULT_MODEL = "claude-sonnet-4-6";
+const FAST_MODEL = "claude-haiku-4-5";
 const TIMEOUT_MS = 180_000;
+
+// Run the claude CLI from a neutral cwd so it does NOT auto-load the
+// project's CLAUDE.md / memory and reinterpret our prompts as coding
+// requests. This was the root cause of "문제 생성이 실패했습니다" —
+// haiku was answering meta-questions about the repo instead of
+// emitting JSON.
+const SUBPROCESS_CWD = os.tmpdir();
+
+export type ClaudeModel = "default" | "fast" | string;
+
+function resolveModel(model?: ClaudeModel): string {
+  if (!model || model === "default") return DEFAULT_MODEL;
+  if (model === "fast") return FAST_MODEL;
+  return model;
+}
 
 export interface AICallLogContext {
   clientId: string;
@@ -13,6 +30,7 @@ export interface AICallLogContext {
 
 function writeLog(
   ctx: AICallLogContext | undefined,
+  modelUsed: string,
   partial: Omit<AICallRecord, "type" | "id" | "timestamp" | "sessionId" | "model">
 ): void {
   if (!ctx) return;
@@ -21,7 +39,7 @@ function writeLog(
     id: `call-${randomUUID()}`,
     timestamp: Date.now(),
     sessionId: ctx.sessionId ?? null,
-    model: DEFAULT_MODEL,
+    model: modelUsed,
     ...partial,
   };
   appendAICall(ctx.clientId, record);
@@ -33,14 +51,16 @@ function writeLog(
  */
 export async function askClaude(
   prompt: string,
-  logCtx?: AICallLogContext
+  logCtx?: AICallLogContext,
+  model?: ClaudeModel
 ): Promise<string> {
   const start = Date.now();
+  const modelUsed = resolveModel(model);
   return new Promise((resolve, reject) => {
     const proc = spawn(
       "claude",
-      ["-p", prompt, "--output-format", "text", "--model", DEFAULT_MODEL],
-      { env: { ...process.env } }
+      ["-p", prompt, "--output-format", "text", "--model", modelUsed],
+      { env: { ...process.env }, cwd: SUBPROCESS_CWD }
     );
     let stdout = "";
     let stderr = "";
@@ -50,7 +70,7 @@ export async function askClaude(
       const latencyMs = Date.now() - start;
       if (code === 0) {
         const out = stdout.trim();
-        writeLog(logCtx, {
+        writeLog(logCtx, modelUsed, {
           endpoint: logCtx?.endpoint ?? "unknown",
           prompt,
           response: out,
@@ -63,7 +83,7 @@ export async function askClaude(
         resolve(out);
       } else {
         const errMsg = stderr || `claude exited with code ${code}`;
-        writeLog(logCtx, {
+        writeLog(logCtx, modelUsed, {
           endpoint: logCtx?.endpoint ?? "unknown",
           prompt,
           response: "",
@@ -79,7 +99,7 @@ export async function askClaude(
     setTimeout(() => {
       proc.kill();
       const latencyMs = Date.now() - start;
-      writeLog(logCtx, {
+      writeLog(logCtx, modelUsed, {
         endpoint: logCtx?.endpoint ?? "unknown",
         prompt,
         response: "",
@@ -102,9 +122,11 @@ export async function askClaudeWithImage(
   prompt: string,
   imageBase64: string,
   mimeType: string = "image/png",
-  logCtx?: AICallLogContext
+  logCtx?: AICallLogContext,
+  model?: ClaudeModel
 ): Promise<string> {
   const start = Date.now();
+  const modelUsed = resolveModel(model);
   return new Promise((resolve, reject) => {
     const proc = spawn(
       "claude",
@@ -113,9 +135,9 @@ export async function askClaudeWithImage(
         "--input-format", "stream-json",
         "--output-format", "stream-json",
         "--verbose",
-        "--model", DEFAULT_MODEL,
+        "--model", modelUsed,
       ],
-      { env: { ...process.env } }
+      { env: { ...process.env }, cwd: SUBPROCESS_CWD }
     );
 
     let output = "";
@@ -158,7 +180,7 @@ export async function askClaudeWithImage(
         error = "No result in Claude output";
       }
 
-      writeLog(logCtx, {
+      writeLog(logCtx, modelUsed, {
         endpoint: logCtx?.endpoint ?? "unknown",
         prompt,
         response: result,
@@ -192,7 +214,7 @@ export async function askClaudeWithImage(
     setTimeout(() => {
       proc.kill();
       const latencyMs = Date.now() - start;
-      writeLog(logCtx, {
+      writeLog(logCtx, modelUsed, {
         endpoint: logCtx?.endpoint ?? "unknown",
         prompt,
         response: "",
