@@ -16,9 +16,11 @@ Supported backends:
     gemma:31b     — Ollama gemma4:31b Dense (slow, highest quality)
 """
 
+import asyncio
 import json
 import re
 import subprocess
+import tempfile
 import time
 import urllib.request
 from typing import Optional
@@ -112,7 +114,6 @@ def _call_claude(
         "stdin": subprocess.DEVNULL,
     }
     if isolate_cwd:
-        import tempfile
         kwargs["cwd"] = tempfile.gettempdir()
     result = subprocess.run(
         [
@@ -257,3 +258,63 @@ def get_backend_info(backend: str) -> dict:
         },
     }
     return info.get(backend, {"name": backend})
+
+
+# ────────────────────────── async variants (B.2) ──────────────────────────
+
+
+async def _call_claude_async(
+    prompt: str,
+    timeout: int,
+    model: str,
+    isolate_cwd: bool,
+) -> str:
+    cwd = tempfile.gettempdir() if isolate_cwd else None
+    proc = await asyncio.create_subprocess_exec(
+        "claude",
+        "-p",
+        prompt,
+        "--output-format",
+        "text",
+        "--model",
+        model,
+        stdin=asyncio.subprocess.DEVNULL,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+        cwd=cwd,
+    )
+    try:
+        stdout, _ = await asyncio.wait_for(proc.communicate(), timeout=timeout)
+    except asyncio.TimeoutError:
+        proc.kill()
+        await proc.wait()
+        raise
+    return stdout.decode("utf-8").strip()
+
+
+async def call_llm_async(
+    prompt: str,
+    backend: str = DEFAULT_BACKEND,
+    timeout: int = 240,
+    retries: int = 2,
+    isolate_cwd: bool = False,
+) -> Optional[str]:
+    """Async sibling of call_llm. Only the claude/sonnet/opus/haiku backends
+    are wired (ollama still uses urllib, sync). Falls back to None after retries."""
+    if backend not in MODEL_MAP:
+        raise ValueError(f"Unknown backend: {backend}")
+    if backend not in ("claude", "sonnet", "opus", "haiku"):
+        raise ValueError(f"async only supports claude family; got {backend}")
+
+    for attempt in range(retries):
+        try:
+            return await _call_claude_async(
+                prompt, timeout, MODEL_MAP[backend], isolate_cwd
+            )
+        except (asyncio.TimeoutError, OSError):
+            if attempt < retries - 1:
+                await asyncio.sleep(5)
+        except Exception:
+            if attempt < retries - 1:
+                await asyncio.sleep(5)
+    return None

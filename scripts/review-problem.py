@@ -6,16 +6,18 @@ problem + chapter context, calls the claude CLI for each (using the
 model distribution from docs/phase-b-review-design.md §6), validates
 the JSON output, and prints a score table + findings summary.
 
-B.1 scope:
-  - single problem, serial calls (no asyncio, no fix-loop)
+B.1 → B.2 scope:
+  - single problem, six personas run in parallel via asyncio
   - dry-run by default — does NOT write the validation block
 
   python3 scripts/review-problem.py g7s1-ch4-01
   python3 scripts/review-problem.py g7s1-ch4-01 --personas math-correctness,solvability
-  python3 scripts/review-problem.py g7s1-ch4-01 --raw  # also dump raw JSON
+  python3 scripts/review-problem.py g7s1-ch4-01 --raw     # also dump raw JSON
+  python3 scripts/review-problem.py g7s1-ch4-01 --serial  # legacy serial mode
 """
 
 import argparse
+import asyncio
 import json
 import os
 import re
@@ -154,25 +156,9 @@ def validate_output(raw: Optional[str], persona: str) -> tuple[Optional[dict], O
     return parsed, None
 
 
-def run_persona(name: str, problem: dict, chapter: dict, shared: str, raw_dump: bool) -> dict:
+def _format_result(name: str, parsed: Optional[dict], err: Optional[str], elapsed: float, raw: Optional[str], raw_dump: bool) -> dict:
     cfg = PERSONAS[name]
-    template = open(os.path.join(PROMPTS_DIR, cfg["file"])).read()
-    context = build_context(problem, chapter)
-    prompt = render_prompt(template, context, shared)
-
     label = f"[{name:<22} → {cfg['backend']:<6}]"
-    print(f"{label} calling…", flush=True)
-    t0 = time.time()
-    raw = llm.call_llm(
-        prompt,
-        backend=cfg["backend"],
-        timeout=cfg["timeout"],
-        retries=2,
-        isolate_cwd=True,
-        silent_retry=True,
-    )
-    elapsed = time.time() - t0
-    parsed, err = validate_output(raw, name)
     if err:
         print(f"{label} FAIL ({elapsed:.1f}s) — {err}")
         if raw_dump and raw:
@@ -184,18 +170,103 @@ def run_persona(name: str, problem: dict, chapter: dict, shared: str, raw_dump: 
     n_find = len(parsed["findings"])
     auto = " +autoFix" if parsed.get("autoFix") else ""
     ask = " +askHuman" if parsed.get("askHuman") else ""
-    print(f"{label} {verdict:<4} score={score}  findings={n_find}{auto}{ask}  ({elapsed:.1f}s)")
+    print(f"{label} {verdict:<4} score={score}  findings={n_find}{auto}{ask}  ({elapsed:.1f}s)", flush=True)
     if raw_dump:
         print(f"--- parsed ({name}) ---\n{json.dumps(parsed, ensure_ascii=False, indent=2)}\n--- end ---")
     parsed["elapsedSec"] = elapsed
     return parsed
 
 
+def _prepare_prompt(name: str, problem: dict, chapter: dict, shared: str) -> str:
+    cfg = PERSONAS[name]
+    template = open(os.path.join(PROMPTS_DIR, cfg["file"])).read()
+    context = build_context(problem, chapter)
+    return render_prompt(template, context, shared)
+
+
+def run_persona(name: str, problem: dict, chapter: dict, shared: str, raw_dump: bool) -> dict:
+    """Synchronous variant. Kept for --serial mode and easier debugging."""
+    cfg = PERSONAS[name]
+    prompt = _prepare_prompt(name, problem, chapter, shared)
+    print(f"[{name:<22} → {cfg['backend']:<6}] calling…", flush=True)
+    t0 = time.time()
+    raw = llm.call_llm(
+        prompt,
+        backend=cfg["backend"],
+        timeout=cfg["timeout"],
+        retries=2,
+        isolate_cwd=True,
+        silent_retry=True,
+    )
+    elapsed = time.time() - t0
+    parsed, err = validate_output(raw, name)
+    return _format_result(name, parsed, err, elapsed, raw, raw_dump)
+
+
+async def run_persona_async(name: str, problem: dict, chapter: dict, shared: str, raw_dump: bool) -> dict:
+    cfg = PERSONAS[name]
+    prompt = _prepare_prompt(name, problem, chapter, shared)
+    t0 = time.time()
+    raw = await llm.call_llm_async(
+        prompt,
+        backend=cfg["backend"],
+        timeout=cfg["timeout"],
+        retries=2,
+        isolate_cwd=True,
+    )
+    elapsed = time.time() - t0
+    parsed, err = validate_output(raw, name)
+    return _format_result(name, parsed, err, elapsed, raw, raw_dump)
+
+
+# ────────────────────────── score gate ──────────────────────────
+
+
+def compute_gate(results: list[dict]) -> dict:
+    """Apply §3 score gate: final_score = min(persona.score), map to status.
+
+    Returns {"final_score": int|None, "status": str, "reason": str, "scored": [...]}.
+    Errored personas are NOT counted toward the min — but if ANY persona errored,
+    the gate is incomplete and we surface that in `reason`.
+    """
+    scored = [r for r in results if "score" in r]
+    errored = [r for r in results if "error" in r]
+
+    if not scored:
+        return {
+            "final_score": None,
+            "status": "INCOMPLETE",
+            "reason": "no personas produced a score",
+            "scored": [],
+        }
+
+    final = min(r["score"] for r in scored)
+    weakest = min(scored, key=lambda r: r["score"])
+
+    if final >= 8:
+        status, reason = "PASS", f"min score {final} from {weakest['persona']}"
+    elif final >= 6:
+        # WARN with autoFix → REVISE; otherwise NEEDS_HUMAN. autoFix presence
+        # decides at the *fix-loop* layer (B.3). Gate just labels REVISE here.
+        status = "REVISE"
+        reason = f"min score {final} from {weakest['persona']} — autoFix or NEEDS_HUMAN"
+    elif final >= 4:
+        status = "NEEDS_HUMAN"
+        reason = f"min score {final} from {weakest['persona']} — likely not patch-fixable"
+    else:
+        status = "REJECT"
+        reason = f"min score {final} from {weakest['persona']} — block from students"
+
+    if errored:
+        reason += f"  (warning: {len(errored)} persona(s) errored — gate may be incomplete)"
+
+    return {"final_score": final, "status": status, "reason": reason, "scored": scored}
+
+
 # ────────────────────────── reporting ──────────────────────────
 
 
 def summarize(problem: dict, results: list[dict]) -> None:
-    scored = [r for r in results if "score" in r]
     print()
     print(f"problem: {problem['id']}  topicId={problem['topicId']}  difficulty=L{problem['difficulty']}")
     print(f"question: {problem['content']['question'][:80]}…")
@@ -216,20 +287,12 @@ def summarize(problem: dict, results: list[dict]) -> None:
             flags.append("axes")
         print(f"{r['persona']:<24}{r['verdict']:<8}{r['score']:<7}{len(r['findings']):<10}{','.join(flags)}")
 
-    if scored:
-        final = min(r["score"] for r in scored)
-        if final >= 8:
-            status = "PASS"
-        elif final >= 6:
-            status = "REVISE  (autoFix or NEEDS_HUMAN)"
-        elif final >= 4:
-            status = "NEEDS_HUMAN"
-        else:
-            status = "REJECT"
-        print("-" * 60)
-        print(f"final_score (min) = {final}  →  {status}")
+    gate = compute_gate(results)
+    print("-" * 60)
+    if gate["final_score"] is None:
+        print(gate["reason"])
     else:
-        print("\nno scored personas — cannot compute final_score")
+        print(f"final_score (min) = {gate['final_score']}  →  {gate['status']}   ({gate['reason']})")
 
     # Show critical/warn findings inline so the summary is actually useful.
     print()
@@ -252,8 +315,14 @@ def summarize(problem: dict, results: list[dict]) -> None:
 # ────────────────────────── main ──────────────────────────
 
 
+async def run_all_async(selected: list[str], problem: dict, chapter: dict, shared: str, raw_dump: bool) -> list[dict]:
+    print(f"launching {len(selected)} personas in parallel…", flush=True)
+    tasks = [run_persona_async(name, problem, chapter, shared, raw_dump) for name in selected]
+    return await asyncio.gather(*tasks)
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Phase B review board — single problem (B.1)")
+    ap = argparse.ArgumentParser(description="Phase B review board — single problem (B.2)")
     ap.add_argument("problem_id")
     ap.add_argument(
         "--personas",
@@ -261,6 +330,7 @@ def main() -> int:
         help="comma-separated subset of personas (default: all 6)",
     )
     ap.add_argument("--raw", action="store_true", help="dump raw + parsed JSON per persona")
+    ap.add_argument("--serial", action="store_true", help="legacy serial mode (debugging)")
     args = ap.parse_args()
 
     selected = [p.strip() for p in args.personas.split(",") if p.strip()]
@@ -274,11 +344,15 @@ def main() -> int:
     chapter = build_chapter_context(problem)
     shared = open(os.path.join(PROMPTS_DIR, "_shared.md")).read()
 
-    results = []
-    for name in selected:
-        results.append(run_persona(name, problem, chapter, shared, args.raw))
+    wall_t0 = time.time()
+    if args.serial:
+        results = [run_persona(name, problem, chapter, shared, args.raw) for name in selected]
+    else:
+        results = asyncio.run(run_all_async(selected, problem, chapter, shared, args.raw))
+    wall_elapsed = time.time() - wall_t0
 
     summarize(problem, results)
+    print(f"\nwall time: {wall_elapsed:.1f}s  (mode: {'serial' if args.serial else 'parallel'})")
 
     # Exit 0 if all parsed; non-zero if any errored — useful for CI later.
     return 1 if any("error" in r for r in results) else 0
