@@ -1,23 +1,28 @@
 #!/usr/bin/env python3
-"""Phase B review board — single-problem driver (B.1).
+"""Phase B review board — single-problem driver (B.1 → B.3).
 
 Loads a curated v2 problem, renders the six persona prompts with the
 problem + chapter context, calls the claude CLI for each (using the
 model distribution from docs/phase-b-review-design.md §6), validates
-the JSON output, and prints a score table + findings summary.
+the JSON output, optionally runs the fix-loop (Round 1 → 2 → 3 with
+revert on regression), and writes the validation block + report.
 
-B.1 → B.2 scope:
-  - single problem, six personas run in parallel via asyncio
-  - dry-run by default — does NOT write the validation block
-
-  python3 scripts/review-problem.py g7s1-ch4-01
+  python3 scripts/review-problem.py g7s1-ch4-01                    # dry-run, fix-loop simulated
+  python3 scripts/review-problem.py g7s1-ch4-01 --apply            # write back if PASS / patched / NEEDS_HUMAN
+  python3 scripts/review-problem.py g7s1-ch4-01 --no-fix-loop      # Round 1 only
   python3 scripts/review-problem.py g7s1-ch4-01 --personas math-correctness,solvability
-  python3 scripts/review-problem.py g7s1-ch4-01 --raw     # also dump raw JSON
+  python3 scripts/review-problem.py g7s1-ch4-01 --raw     # dump raw + parsed JSON
   python3 scripts/review-problem.py g7s1-ch4-01 --serial  # legacy serial mode
+
+B.3 scope: patch-only fix-loop. If a persona returns askHuman *without*
+an autoFix, the loop short-circuits to NEEDS_HUMAN (no regenerate yet —
+that's B.3.5 / B.4).
 """
 
 import argparse
 import asyncio
+import copy
+import datetime as _dt
 import json
 import os
 import re
@@ -32,6 +37,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROMPTS_DIR = os.path.join(ROOT, "src/data/prompts/review")
 CURATED_DIR = os.path.join(ROOT, "src/data/problems/curated")
 RUNTIME_DIR = os.path.join(ROOT, "src/data/generated")
+REPORTS_DIR = os.path.join(ROOT, "src/data/validation-reports")
 
 # §6 model distribution. backend names map to MODEL_MAP in lib/llm.py.
 PERSONAS: dict[str, dict] = {
@@ -263,6 +269,280 @@ def compute_gate(results: list[dict]) -> dict:
     return {"final_score": final, "status": status, "reason": reason, "scored": scored}
 
 
+# ────────────────────────── patch application (B.3) ──────────────────────────
+
+
+class PatchError(Exception):
+    """Raised when a patch cannot be applied safely."""
+
+
+_PATH_TOKEN = re.compile(r"(\w+)|\[(\d+)\]")
+
+
+def parse_path(path: str) -> list:
+    """'content.choices[1]' -> ['content', 'choices', 1]."""
+    parts: list = []
+    pos = 0
+    for m in _PATH_TOKEN.finditer(path):
+        if m.start() != pos and path[pos:m.start()].strip(".") != "":
+            raise PatchError(f"unexpected token at {pos}: {path!r}")
+        key, idx = m.group(1), m.group(2)
+        parts.append(int(idx) if idx is not None else key)
+        pos = m.end()
+    if not parts:
+        raise PatchError(f"empty path: {path!r}")
+    return parts
+
+
+def get_path(obj, parts: list):
+    cur = obj
+    for p in parts:
+        if isinstance(p, int):
+            if not isinstance(cur, list) or p >= len(cur):
+                raise PatchError(f"index out of range at {p} (path so far OK)")
+            cur = cur[p]
+        else:
+            if not isinstance(cur, dict) or p not in cur:
+                raise PatchError(f"missing key {p!r} (path so far OK)")
+            cur = cur[p]
+    return cur
+
+
+def set_path(obj, parts: list, value) -> None:
+    parent = get_path(obj, parts[:-1])
+    last = parts[-1]
+    if isinstance(last, int):
+        if not isinstance(parent, list) or last >= len(parent):
+            raise PatchError(f"cannot set index {last} on {type(parent).__name__}")
+        parent[last] = value
+    else:
+        if not isinstance(parent, dict):
+            raise PatchError(f"cannot set key {last!r} on {type(parent).__name__}")
+        parent[last] = value
+
+
+def apply_patch(problem: dict, patch: dict) -> None:
+    """Apply one {path, before, after} patch in-place. Refuses if `before`
+    doesn't match the current value (guards against stale or duplicated
+    AUTO-FIX proposals from different rounds)."""
+    for key in ("path", "before", "after"):
+        if key not in patch:
+            raise PatchError(f"patch missing key: {key}")
+    parts = parse_path(patch["path"])
+    current = get_path(problem, parts)
+    if not isinstance(current, str) or not isinstance(patch["before"], str):
+        raise PatchError(f"{patch['path']}: only string patches allowed (got {type(current).__name__})")
+    if current != patch["before"]:
+        raise PatchError(
+            f"{patch['path']}: before mismatch — file has {current!r}, patch expects {patch['before']!r}"
+        )
+    set_path(problem, parts, patch["after"])
+
+
+def gather_autofix_patches(results: list[dict]) -> list[dict]:
+    """Collect every autoFix patch from every persona, annotated with the
+    source persona for traceability."""
+    out = []
+    for r in results:
+        af = r.get("autoFix")
+        if not af or not isinstance(af, dict):
+            continue
+        for p in af.get("patches", []):
+            out.append({**p, "_persona": r["persona"], "_reason": af.get("reason", "")})
+    return out
+
+
+def has_unaddressable_findings(results: list[dict]) -> tuple[bool, list[str]]:
+    """Return (has, reasons). True if any persona is askHuman-only — i.e.
+    has FAIL/WARN that can't be patched. These need regenerate (B.3.5) or
+    human review."""
+    reasons = []
+    for r in results:
+        if "score" not in r:
+            continue
+        if r["verdict"] == "FAIL":
+            reasons.append(f"{r['persona']}: FAIL — {r.get('askHuman', 'no reason')}")
+        elif r["verdict"] == "WARN" and not r.get("autoFix"):
+            reasons.append(f"{r['persona']}: WARN with no autoFix — needs regenerate")
+    return bool(reasons), reasons
+
+
+# ────────────────────────── validation block + report (B.3) ──────────────────────────
+
+
+def _persona_key(name: str) -> str:
+    return name.replace("-", "_")
+
+
+def _validator_model_summary() -> str:
+    backends = sorted({cfg["backend"] for cfg in PERSONAS.values()})
+    return "+".join(backends)
+
+
+def _now_iso() -> str:
+    return _dt.datetime.now(_dt.timezone.utc).isoformat()
+
+
+def update_validation_block(
+    problem: dict,
+    gate: dict,
+    results: list[dict],
+    rounds: int,
+    report_ref: str,
+) -> None:
+    """Write the validation block back into the problem dict per §10."""
+    scores = {}
+    for r in results:
+        if "score" in r:
+            scores[_persona_key(r["persona"])] = r["score"]
+    problem["validation"] = {
+        "status": gate["status"],
+        "scores": scores,
+        "verdict_at": _now_iso(),
+        "validator_model": _validator_model_summary(),
+        "rounds": rounds,
+        "report_ref": report_ref,
+    }
+
+
+def report_path(problem_id: str) -> str:
+    return os.path.join(REPORTS_DIR, f"{problem_id}.json")
+
+
+def write_report(problem_id: str, history: list[dict], gate: dict) -> str:
+    """Persist round-by-round raw results + final gate to validation-reports/{id}.json.
+
+    Per §13 #5, reports are kept indefinitely (small JSON, lives in git)."""
+    os.makedirs(REPORTS_DIR, exist_ok=True)
+    payload = {
+        "problemId": problem_id,
+        "createdAt": _now_iso(),
+        "rounds": history,
+        "finalGate": gate,
+        # B.5 will fill axisMerge after weighted-average across personas.
+        "axisMerge": None,
+    }
+    path = report_path(problem_id)
+    with open(path, "w") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return path
+
+
+def save_problem(problem: dict) -> str:
+    """Write the (possibly patched) problem back to disk where it was loaded from."""
+    for d in (CURATED_DIR, RUNTIME_DIR):
+        path = os.path.join(d, f"{problem['id']}.json")
+        if os.path.exists(path):
+            with open(path, "w") as f:
+                json.dump(problem, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            return path
+    raise SystemExit(f"cannot save: {problem['id']}.json not found in curated/ or generated/")
+
+
+# ────────────────────────── fix-loop (B.3) ──────────────────────────
+
+
+def _apply_all(problem: dict, patches: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Apply every patch; collect (applied, failed). Failures don't abort —
+    one bad patch shouldn't kill the others."""
+    applied, failed = [], []
+    for p in patches:
+        try:
+            apply_patch(problem, p)
+            applied.append(p)
+        except PatchError as e:
+            failed.append({**p, "_error": str(e)})
+    return applied, failed
+
+
+async def fix_loop(
+    selected: list[str],
+    problem: dict,
+    chapter: dict,
+    shared: str,
+    raw_dump: bool,
+    max_rounds: int,
+) -> tuple[dict, list[dict], dict]:
+    """Run review with up to max_rounds rounds of patching.
+
+    Returns (final_problem, history, final_gate). `final_problem` is the
+    snapshot that produced `final_gate` — possibly reverted to an earlier
+    round if a later round regressed."""
+    history: list[dict] = []
+    # Round 1
+    print(f"\n=== Round 1 ===")
+    results = await run_all_async(selected, problem, chapter, shared, raw_dump)
+    gate = compute_gate(results)
+    history.append({
+        "round": 1,
+        "results": results,
+        "gate": gate,
+        "appliedPatches": [],
+        "failedPatches": [],
+    })
+    best = {"round": 1, "score": gate["final_score"], "problem": copy.deepcopy(problem)}
+
+    for rnd in range(2, max_rounds + 1):
+        if gate["status"] == "PASS":
+            print(f"\nstatus=PASS after round {rnd - 1} — done.")
+            break
+        if gate["status"] in ("REJECT", "NEEDS_HUMAN"):
+            print(f"\nstatus={gate['status']} — patching won't help, stopping.")
+            break
+        has_bad, bad_reasons = has_unaddressable_findings(results)
+        if has_bad:
+            print(f"\n{len(bad_reasons)} persona(s) need human/regenerate, not patching:")
+            for r in bad_reasons:
+                print(f"  • {r}")
+            gate = {**gate, "status": "NEEDS_HUMAN", "reason": gate["reason"] + "  (unaddressable findings present)"}
+            history[-1]["gate"] = gate
+            break
+
+        patches = gather_autofix_patches(results)
+        if not patches:
+            print("\nno autoFix patches available — stopping.")
+            break
+
+        print(f"\napplying {len(patches)} autoFix patch(es) for round {rnd}…")
+        applied, failed = _apply_all(problem, patches)
+        for p in applied:
+            print(f"  ✓ {p['_persona']:<22} {p['path']}  ({p['before']!r} → {p['after']!r})")
+        for p in failed:
+            print(f"  ✗ {p.get('_persona', '?'):<22} {p.get('path', '?')}  — {p['_error']}")
+
+        if not applied:
+            print("\nno patches applied successfully — stopping.")
+            break
+
+        # Re-run
+        print(f"\n=== Round {rnd} ===")
+        results = await run_all_async(selected, problem, chapter, shared, raw_dump)
+        gate = compute_gate(results)
+        history.append({
+            "round": rnd,
+            "results": results,
+            "gate": gate,
+            "appliedPatches": applied,
+            "failedPatches": failed,
+        })
+
+        # §13 #6: revert if round N+1 score didn't improve over round N's best.
+        if gate["final_score"] is not None and best["score"] is not None and gate["final_score"] <= best["score"]:
+            print(f"\nround {rnd} score {gate['final_score']} did not exceed round {best['round']} score {best['score']} — reverting.")
+            problem.clear()
+            problem.update(copy.deepcopy(best["problem"]))
+            # Use the *previous* best gate as final.
+            gate = history[best["round"] - 1]["gate"]
+            break
+        best = {"round": rnd, "score": gate["final_score"], "problem": copy.deepcopy(problem)}
+    else:
+        print(f"\nmax_rounds={max_rounds} reached without PASS.")
+
+    return problem, history, gate
+
+
 # ────────────────────────── reporting ──────────────────────────
 
 
@@ -322,7 +602,7 @@ async def run_all_async(selected: list[str], problem: dict, chapter: dict, share
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Phase B review board — single problem (B.2)")
+    ap = argparse.ArgumentParser(description="Phase B review board — single problem (B.3)")
     ap.add_argument("problem_id")
     ap.add_argument(
         "--personas",
@@ -331,6 +611,9 @@ def main() -> int:
     )
     ap.add_argument("--raw", action="store_true", help="dump raw + parsed JSON per persona")
     ap.add_argument("--serial", action="store_true", help="legacy serial mode (debugging)")
+    ap.add_argument("--apply", action="store_true", help="write validation block + patched problem + report to disk")
+    ap.add_argument("--no-fix-loop", action="store_true", help="Round 1 only — no patching")
+    ap.add_argument("--max-rounds", type=int, default=3, help="max fix-loop rounds (default 3)")
     args = ap.parse_args()
 
     selected = [p.strip() for p in args.personas.split(",") if p.strip()]
@@ -345,14 +628,38 @@ def main() -> int:
     shared = open(os.path.join(PROMPTS_DIR, "_shared.md")).read()
 
     wall_t0 = time.time()
-    if args.serial:
-        results = [run_persona(name, problem, chapter, shared, args.raw) for name in selected]
-    else:
-        results = asyncio.run(run_all_async(selected, problem, chapter, shared, args.raw))
-    wall_elapsed = time.time() - wall_t0
 
+    if args.serial or args.no_fix_loop:
+        if args.serial:
+            results = [run_persona(name, problem, chapter, shared, args.raw) for name in selected]
+        else:
+            results = asyncio.run(run_all_async(selected, problem, chapter, shared, args.raw))
+        gate = compute_gate(results)
+        history = [{"round": 1, "results": results, "gate": gate, "appliedPatches": [], "failedPatches": []}]
+        rounds = 1
+    else:
+        problem, history, gate = asyncio.run(
+            fix_loop(selected, problem, chapter, shared, args.raw, args.max_rounds)
+        )
+        results = history[-1]["results"]
+        rounds = len(history)
+
+    wall_elapsed = time.time() - wall_t0
     summarize(problem, results)
-    print(f"\nwall time: {wall_elapsed:.1f}s  (mode: {'serial' if args.serial else 'parallel'})")
+    print(f"\nwall time: {wall_elapsed:.1f}s  (mode: {'serial' if args.serial else 'parallel'}, rounds: {rounds})")
+
+    if args.apply:
+        if any("error" in r for r in results):
+            print("\nrefusing to --apply: one or more personas errored. Investigate first.")
+            return 1
+        report = write_report(args.problem_id, history, gate)
+        report_ref = os.path.relpath(report, ROOT)
+        update_validation_block(problem, gate, results, rounds, report_ref)
+        path = save_problem(problem)
+        print(f"\nwrote validation block → {os.path.relpath(path, ROOT)}")
+        print(f"wrote round-by-round report → {report_ref}")
+    elif gate.get("status") and gate["status"] != "PASS":
+        print("\n(dry-run — pass --apply to write validation block + report)")
 
     # Exit 0 if all parsed; non-zero if any errored — useful for CI later.
     return 1 if any("error" in r for r in results) else 0
