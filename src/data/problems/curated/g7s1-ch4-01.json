@@ -12,7 +12,7 @@
     ],
     "choices": [
       "$3900$원",
-      "$4500$원",
+      "$6000$원",
       "$8400$원",
       "$9200$원",
       "$10500$원"
@@ -31,6 +31,18 @@
     "generator": "generate-problems.py"
   },
   "validation": {
-    "status": "UNCHECKED"
+    "status": "PASS",
+    "scores": {
+      "math_correctness": 10,
+      "trap_quality": 8,
+      "grade_appropriateness": 8,
+      "solvability": 9,
+      "curriculum_alignment": 9,
+      "korean_naturalness": 9
+    },
+    "verdict_at": "2026-05-18T16:10:12.019181+00:00",
+    "validator_model": "haiku+opus+sonnet",
+    "rounds": 2,
+    "report_ref": "src/data/validation-reports/g7s1-ch4-01.json"
   }
 }
