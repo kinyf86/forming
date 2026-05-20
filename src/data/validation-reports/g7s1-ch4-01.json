@@ -816,5 +816,82 @@
       }
     ]
   },
-  "axisMerge": null
+  "axisMerge": {
+    "merged": {
+      "difficulty.orthogonal_concepts": {
+        "value": 2,
+        "source": "ai",
+        "confidence": 0.95
+      },
+      "difficulty.combination_mode": {
+        "value": "chain",
+        "source": "ai",
+        "confidence": 0.9
+      },
+      "cognitive.misconception_tag": {
+        "value": [
+          "forgetting_to_add_all_items",
+          "variable_means_unknown_only",
+          "applying_single_unit_price_to_all_items",
+          "expression_not_equation",
+          "substituting_before_forming_expression"
+        ],
+        "source": "ai",
+        "confidence": 0.88
+      }
+    },
+    "byPersona": {
+      "difficulty.orthogonal_concepts": [
+        {
+          "persona": "solvability",
+          "value": 2,
+          "confidence": 0.95
+        }
+      ],
+      "difficulty.combination_mode": [
+        {
+          "persona": "trap-quality",
+          "value": "chain",
+          "confidence": 0.9
+        }
+      ],
+      "cognitive.misconception_tag": [
+        {
+          "persona": "grade-appropriateness",
+          "tag": "forgetting_to_add_all_items",
+          "confidence": 0.88
+        },
+        {
+          "persona": "grade-appropriateness",
+          "tag": "applying_single_unit_price_to_all_items",
+          "confidence": 0.75
+        },
+        {
+          "persona": "grade-appropriateness",
+          "tag": "substituting_before_forming_expression",
+          "confidence": 0.6
+        },
+        {
+          "persona": "curriculum-alignment",
+          "tag": "variable_means_unknown_only",
+          "confidence": 0.85
+        },
+        {
+          "persona": "curriculum-alignment",
+          "tag": "expression_not_equation",
+          "confidence": 0.7
+        }
+      ]
+    },
+    "applied": {
+      "written": [
+        "difficulty.orthogonal_concepts",
+        "difficulty.combination_mode",
+        "cognitive.misconception_tag"
+      ],
+      "preserved_human": [],
+      "no_evidence": []
+    },
+    "_backfilledAt": "2026-05-20T07:46:06.344463+00:00"
+  }
 }

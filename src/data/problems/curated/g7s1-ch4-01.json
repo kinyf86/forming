@@ -44,5 +44,28 @@
     "validator_model": "haiku+opus+sonnet",
     "rounds": 2,
     "report_ref": "src/data/validation-reports/g7s1-ch4-01.json"
+  },
+  "axes": {
+    "difficulty.orthogonal_concepts": {
+      "value": 2,
+      "source": "ai",
+      "confidence": 0.95
+    },
+    "difficulty.combination_mode": {
+      "value": "chain",
+      "source": "ai",
+      "confidence": 0.9
+    },
+    "cognitive.misconception_tag": {
+      "value": [
+        "forgetting_to_add_all_items",
+        "variable_means_unknown_only",
+        "applying_single_unit_price_to_all_items",
+        "expression_not_equation",
+        "substituting_before_forming_expression"
+      ],
+      "source": "ai",
+      "confidence": 0.88
+    }
   }
 }
