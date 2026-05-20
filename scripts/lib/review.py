@@ -563,6 +563,166 @@ def save_problem(problem: dict) -> str:
 # ────────────────────────── fix-loop ──────────────────────────
 
 
+# ────────────────────────── regenerate (B.3.5) ──────────────────────────
+
+
+def _load_generator():
+    """Lazy import of scripts/generate-problems.py (hyphenated filename →
+    can't use a normal `import`). Returns the module so we can reuse
+    build_prompt and normalize_problem without duplicating template logic."""
+    import importlib.util
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(here, "generate-problems.py")
+    spec = importlib.util.spec_from_file_location("_genproblems", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def summarize_for_regenerate(results: list[dict]) -> str:
+    """Build the critique paragraph that gets injected into the generate prompt.
+
+    Includes every persona's WARN/FAIL findings (severity warn or critical) and
+    askHuman reason if present. Keep it tight — the generator already gets the
+    chapter + difficulty + concepts context."""
+    lines: list[str] = []
+    for r in results:
+        if "score" not in r:
+            continue
+        persona = r["persona"]
+        verdict = r["verdict"]
+        if verdict == "PASS":
+            continue
+        ask = r.get("askHuman")
+        notable = [
+            f for f in r.get("findings", [])
+            if f.get("severity") in ("warn", "critical")
+        ]
+        if not ask and not notable:
+            continue
+        lines.append(f"[{persona} → {verdict} score={r['score']}]")
+        if ask:
+            lines.append(f"  • askHuman: {ask}")
+        for f in notable:
+            field = f.get("field", "?")
+            msg = f.get("message", "")
+            sug = f.get("suggestion")
+            sug_s = f"  → {sug}" if sug else ""
+            lines.append(f"  • [{f.get('severity', '?')}] {field}: {msg}{sug_s}")
+    return "\n".join(lines)
+
+
+async def regenerate_problem(
+    problem: dict,
+    chapter: dict,
+    critique: str,
+    backend: str = "opus",
+    verbose: bool = True,
+) -> Optional[dict]:
+    """Build a fresh problem at the SAME id/topicId/difficulty, told to fix
+    the failures the review surfaced. Returns a new ProblemV2 dict, or None
+    on failure. Does NOT touch disk."""
+    gen = _load_generator()
+    # Re-use the generator's template + lesson context for parity with how the
+    # problem was first created.
+    skill = curriculum.load_skill("generate-narrative-problem")
+    curricula = curriculum.load_all_curricula()
+    same_subject = curriculum.get_same_subject_chapters_text(curricula, problem["topicId"])
+    lesson_summary = curriculum.load_lesson_summary(problem["topicId"])
+
+    grade = chapter["grade"]
+    subject_label = "수학" if chapter["subject"] == "math" else "과학"
+
+    # build_prompt expects a *chapter dict* shaped like curriculum.find_chapter
+    # returns (with `chapter` key being the number). Fetch the raw chapter.
+    raw_chapter, _ = curriculum.find_chapter(curricula, problem["topicId"])
+    if raw_chapter is None:
+        return None
+
+    # Index inside the chapter — irrelevant for review, just keep it 1.
+    base_prompt = gen.build_prompt(
+        skill,
+        raw_chapter,
+        grade,
+        subject_label,
+        same_subject,
+        lesson_summary,
+        problem["difficulty"],
+        problem["id"],
+        problem["topicId"],
+        1,
+    )
+
+    critique_block = f"""
+---
+
+## REGENERATION CRITIQUE (Phase B review board)
+
+이 문제는 이전 라운드에서 다음 결함이 지적되었습니다.
+새 문제를 생성할 때 이 결함을 반드시 해결하세요. 같은 id ({problem["id"]}) / topicId / difficulty는 유지하되,
+문항·풀이·보기·힌트는 새로 작성해도 됩니다.
+
+{critique}
+
+---
+
+위 결함을 모두 반영하여 새 문제를 출력하세요. JSON만, 다른 텍스트 없이.
+"""
+
+    prompt = base_prompt + critique_block
+
+    if verbose:
+        print(f"  regenerate via {backend} (critique={len(critique)} chars)…", flush=True)
+
+    raw = await llm.call_llm_async(
+        prompt,
+        backend=backend,
+        timeout=480,  # opus L3-L4 ceiling from generate-problems.py
+        retries=2,
+        isolate_cwd=True,
+    )
+    if not raw:
+        return None
+    parsed = llm.parse_json(raw)
+    if not parsed:
+        return None
+
+    parsed = gen.normalize_problem(parsed, problem["id"], problem["topicId"], problem["difficulty"])
+
+    # The generator produces v1-shaped flat dicts (question/choices/etc. at top).
+    # Convert to v2 shape so the rest of the review pipeline keeps working.
+    if parsed.get("schema") != "forming-problem/2.0":
+        v2 = {
+            "schema": "forming-problem/2.0",
+            "id": parsed["id"],
+            "topicId": parsed["topicId"],
+            "difficulty": parsed["difficulty"],
+            "content": {
+                "question": parsed.get("question", ""),
+                "hints": parsed.get("hints", []),
+                "choices": parsed.get("choices", []),
+                "solution": parsed.get("solution", ""),
+                "answer": parsed.get("answer", ""),
+                "concepts": parsed.get("concepts", []),
+            },
+            "provenance": {
+                "source_model": backend if backend in ("opus", "sonnet", "haiku", "gemma") else "unknown",
+                "generated_at": _now_iso(),
+                "generator": "review-problem.py:regenerate",
+            },
+            "validation": problem.get("validation", {"status": "UNCHECKED"}),
+        }
+        # Carry optional content fields if the generator emitted them.
+        for opt in ("questionImage", "diagram", "solutionDiagram"):
+            if parsed.get(opt):
+                v2["content"][opt] = parsed[opt]
+        if "axes" in problem:
+            v2["axes"] = problem["axes"]
+        parsed = v2
+
+    return parsed
+
+
 def _apply_all(problem: dict, patches: list[dict]) -> tuple[list[dict], list[dict]]:
     applied, failed = [], []
     for p in patches:
@@ -582,9 +742,18 @@ async def fix_loop(
     raw_dump: bool = False,
     max_rounds: int = 3,
     verbose: bool = True,
+    allow_regenerate: bool = True,
 ) -> tuple[dict, list[dict], dict]:
-    """Run review with up to max_rounds rounds of patching. Returns
-    (final_problem, history, final_gate)."""
+    """Run review with up to max_rounds rounds of patching/regenerate.
+
+    Returns (final_problem, history, final_gate).
+
+    If patches alone aren't enough (some persona is WARN-without-autoFix or
+    FAIL with askHuman), the loop attempts one regenerate via
+    regenerate_problem(). Limited to a single regenerate per fix_loop
+    invocation — if that fresh draft still doesn't pass, we stop and the
+    revert rule (§13 #6) keeps the best-so-far snapshot.
+    """
     history: list[dict] = []
     if verbose:
         print("\n=== Round 1 ===")
@@ -592,51 +761,98 @@ async def fix_loop(
     gate = compute_gate(results)
     history.append({"round": 1, "results": results, "gate": gate, "appliedPatches": [], "failedPatches": []})
     best = {"round": 1, "score": gate["final_score"], "problem": copy.deepcopy(problem)}
+    regenerated_once = False
 
     for rnd in range(2, max_rounds + 1):
         if gate["status"] == "PASS":
             if verbose:
                 print(f"\nstatus=PASS after round {rnd - 1} — done.")
             break
-        if gate["status"] in ("REJECT", "NEEDS_HUMAN"):
+        if gate["status"] == "REJECT":
             if verbose:
-                print(f"\nstatus={gate['status']} — patching won't help, stopping.")
-            break
-        has_bad, bad_reasons = has_unaddressable_findings(results)
-        if has_bad:
-            if verbose:
-                print(f"\n{len(bad_reasons)} persona(s) need human/regenerate, not patching:")
-                for r in bad_reasons:
-                    print(f"  • {r}")
-            gate = {**gate, "status": "NEEDS_HUMAN", "reason": gate["reason"] + "  (unaddressable findings present)"}
-            history[-1]["gate"] = gate
+                print(f"\nstatus=REJECT — score too low to recover, stopping.")
             break
 
+        # Decide: patch or regenerate?
         patches = gather_autofix_patches(results)
-        if not patches:
-            if verbose:
-                print("\nno autoFix patches available — stopping.")
-            break
+        has_bad, bad_reasons = has_unaddressable_findings(results)
+        used_regenerate = False
+        applied: list[dict] = []
+        failed: list[dict] = []
 
-        if verbose:
-            print(f"\napplying {len(patches)} autoFix patch(es) for round {rnd}…")
-        applied, failed = _apply_all(problem, patches)
-        if verbose:
-            for p in applied:
-                print(f"  ✓ {p['_persona']:<22} {p['path']}  ({p['before']!r} → {p['after']!r})")
-            for p in failed:
-                print(f"  ✗ {p.get('_persona', '?'):<22} {p.get('path', '?')}  — {p['_error']}")
-
-        if not applied:
+        if not patches and has_bad and allow_regenerate and not regenerated_once:
+            # Pure regenerate path.
+            critique = summarize_for_regenerate(results)
             if verbose:
-                print("\nno patches applied successfully — stopping.")
+                print(f"\nno autoFix patches but {len(bad_reasons)} unaddressable finding(s) — regenerating…")
+            new_problem = await regenerate_problem(problem, chapter, critique, verbose=verbose)
+            if not new_problem:
+                if verbose:
+                    print("regenerate returned no result — marking NEEDS_HUMAN.")
+                gate = {**gate, "status": "NEEDS_HUMAN", "reason": gate["reason"] + "  (regenerate failed)"}
+                history[-1]["gate"] = gate
+                break
+            problem.clear()
+            problem.update(new_problem)
+            regenerated_once = True
+            used_regenerate = True
+        elif patches:
+            if verbose:
+                print(f"\napplying {len(patches)} autoFix patch(es) for round {rnd}…")
+            applied, failed = _apply_all(problem, patches)
+            if verbose:
+                for p in applied:
+                    print(f"  ✓ {p['_persona']:<22} {p['path']}  ({p['before']!r} → {p['after']!r})")
+                for p in failed:
+                    print(f"  ✗ {p.get('_persona', '?'):<22} {p.get('path', '?')}  — {p['_error']}")
+            if not applied:
+                # Patches all failed and no regenerate option → stop.
+                if has_bad and allow_regenerate and not regenerated_once:
+                    # Try regenerate as a fallback.
+                    critique = summarize_for_regenerate(results)
+                    if verbose:
+                        print(f"\nall patches failed and {len(bad_reasons)} unaddressable finding(s) remain — regenerating…")
+                    new_problem = await regenerate_problem(problem, chapter, critique, verbose=verbose)
+                    if not new_problem:
+                        if verbose:
+                            print("regenerate returned no result — marking NEEDS_HUMAN.")
+                        gate = {**gate, "status": "NEEDS_HUMAN", "reason": gate["reason"] + "  (patch + regenerate failed)"}
+                        history[-1]["gate"] = gate
+                        break
+                    problem.clear()
+                    problem.update(new_problem)
+                    regenerated_once = True
+                    used_regenerate = True
+                else:
+                    if verbose:
+                        print("\nno patches applied successfully — stopping.")
+                    break
+        else:
+            # No patches, no regenerate option (either already used or disabled).
+            if has_bad:
+                if verbose:
+                    print(f"\n{len(bad_reasons)} unaddressable finding(s), regenerate exhausted — NEEDS_HUMAN:")
+                    for r in bad_reasons:
+                        print(f"  • {r}")
+                gate = {**gate, "status": "NEEDS_HUMAN", "reason": gate["reason"] + "  (unaddressable, regenerate exhausted)"}
+                history[-1]["gate"] = gate
+            else:
+                if verbose:
+                    print("\nno autoFix patches available — stopping.")
             break
 
         if verbose:
             print(f"\n=== Round {rnd} ===")
         results = await run_all_async(selected, problem, chapter, shared, raw_dump, verbose)
         gate = compute_gate(results)
-        history.append({"round": rnd, "results": results, "gate": gate, "appliedPatches": applied, "failedPatches": failed})
+        history.append({
+            "round": rnd,
+            "results": results,
+            "gate": gate,
+            "appliedPatches": applied,
+            "failedPatches": failed,
+            "regenerated": used_regenerate,
+        })
 
         if gate["final_score"] is not None and best["score"] is not None and gate["final_score"] <= best["score"]:
             if verbose:
