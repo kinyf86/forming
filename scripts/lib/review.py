@@ -347,18 +347,200 @@ def update_validation_block(problem: dict, gate: dict, results: list[dict], roun
     }
 
 
+# ────────────────────────── axis merge (B.5) ──────────────────────────
+
+
+_AXIS_KEYS = {
+    "orthogonal_concepts": "difficulty.orthogonal_concepts",
+    "combination_mode": "difficulty.combination_mode",
+    "misconception_tag": "cognitive.misconception_tag",
+}
+
+
+def _find_axis_payload(infs: Optional[dict], axis_short: str):
+    """Search axisInferences recursively for the shortened axis name.
+
+    Personas emit either `{combination_mode: {...}}`, `{difficulty.combination_mode: {...}}`,
+    or `{difficulty: {combination_mode: {...}}}`. Be permissive about which shape we accept."""
+    if not infs or not isinstance(infs, dict):
+        return None
+    if axis_short in infs:
+        return infs[axis_short]
+    for k, v in infs.items():
+        if k == _AXIS_KEYS[axis_short]:
+            return v
+        if isinstance(k, str) and k.endswith(f".{axis_short}"):
+            return v
+        if isinstance(v, dict):
+            r = _find_axis_payload(v, axis_short)
+            if r is not None:
+                return r
+    return None
+
+
+def _coerce_misconception_list(payload) -> list[dict]:
+    """Normalize misconception_tag payloads into [{tag, confidence}, ...]."""
+    if payload is None:
+        return []
+    # Some personas emit the list directly, some wrap it under {value, confidence}, some nest.
+    if isinstance(payload, dict):
+        if "value" in payload and isinstance(payload["value"], list):
+            items = payload["value"]
+        elif "misconception_tag" in payload:
+            return _coerce_misconception_list(payload["misconception_tag"])
+        else:
+            return []
+    elif isinstance(payload, list):
+        items = payload
+    else:
+        return []
+
+    out = []
+    for it in items:
+        if isinstance(it, str):
+            out.append({"tag": it, "confidence": 0.6})
+        elif isinstance(it, dict) and "tag" in it:
+            try:
+                conf = float(it.get("confidence", 0.6))
+            except (TypeError, ValueError):
+                conf = 0.6
+            out.append({"tag": str(it["tag"]), "confidence": max(0.0, min(1.0, conf))})
+    return out
+
+
+def merge_axis_inferences(results: list[dict]) -> tuple[dict, dict]:
+    """Walk every persona's axisInferences, merge into a ProblemAxes-shaped dict.
+
+    Returns (axes, log) where:
+      - axes: ready to drop into problem.axes (or None per axis if no evidence)
+      - log: per-axis breakdown showing which personas contributed and with what confidence
+
+    Merge rules per §2:
+      - difficulty.orthogonal_concepts (int 1-5): confidence-weighted average, rounded.
+      - difficulty.combination_mode (enum): value with the highest confidence wins.
+      - cognitive.misconception_tag (list[str]): union by tag; final confidence = max across personas.
+    """
+    log: dict = {k: [] for k in _AXIS_KEYS.values()}
+    int_votes: list[tuple[int, float, str]] = []      # (value, conf, persona)
+    enum_votes: list[tuple[str, float, str]] = []     # (value, conf, persona)
+    tag_votes: dict[str, dict] = {}                   # tag -> {confidence, personas}
+
+    for r in results:
+        infs = r.get("axisInferences")
+        if not infs:
+            continue
+        persona = r.get("persona", "?")
+
+        # orthogonal_concepts
+        oc = _find_axis_payload(infs, "orthogonal_concepts")
+        if isinstance(oc, dict) and "value" in oc:
+            try:
+                v = int(oc["value"])
+                conf = float(oc.get("confidence", 0.6))
+                int_votes.append((v, conf, persona))
+                log["difficulty.orthogonal_concepts"].append({"persona": persona, "value": v, "confidence": conf})
+            except (TypeError, ValueError):
+                pass
+
+        # combination_mode
+        cm = _find_axis_payload(infs, "combination_mode")
+        if isinstance(cm, dict) and "value" in cm:
+            v = str(cm["value"])
+            try:
+                conf = float(cm.get("confidence", 0.6))
+            except (TypeError, ValueError):
+                conf = 0.6
+            enum_votes.append((v, conf, persona))
+            log["difficulty.combination_mode"].append({"persona": persona, "value": v, "confidence": conf})
+
+        # misconception_tag
+        mt = _find_axis_payload(infs, "misconception_tag")
+        for item in _coerce_misconception_list(mt):
+            tag = item["tag"]
+            conf = item["confidence"]
+            if tag not in tag_votes or conf > tag_votes[tag]["confidence"]:
+                tag_votes[tag] = {"confidence": conf, "personas": [persona]}
+            elif persona not in tag_votes[tag]["personas"]:
+                tag_votes[tag]["personas"].append(persona)
+            log["cognitive.misconception_tag"].append({"persona": persona, "tag": tag, "confidence": conf})
+
+    axes: dict = {}
+
+    if int_votes:
+        total_conf = sum(c for _, c, _ in int_votes)
+        if total_conf > 0:
+            weighted = sum(v * c for v, c, _ in int_votes) / total_conf
+            agg_conf = max(c for _, c, _ in int_votes)
+            axes["difficulty.orthogonal_concepts"] = {
+                "value": max(1, min(5, round(weighted))),
+                "source": "ai",
+                "confidence": round(agg_conf, 3),
+            }
+
+    if enum_votes:
+        # Pick by confidence; tie-break: take the most common value at top confidence.
+        enum_votes.sort(key=lambda t: t[1], reverse=True)
+        best_conf = enum_votes[0][1]
+        candidates = [v for v, c, _ in enum_votes if c == best_conf]
+        # Pick the most-voted value among the top-confidence ones.
+        best = max(set(candidates), key=candidates.count)
+        axes["difficulty.combination_mode"] = {
+            "value": best,
+            "source": "ai",
+            "confidence": round(best_conf, 3),
+        }
+
+    if tag_votes:
+        # Sort tags by confidence desc for deterministic output.
+        ordered = sorted(tag_votes.items(), key=lambda kv: kv[1]["confidence"], reverse=True)
+        axes["cognitive.misconception_tag"] = {
+            "value": [t for t, _ in ordered],
+            "source": "ai",
+            "confidence": round(max(d["confidence"] for _, d in ordered), 3),
+        }
+
+    return axes, log
+
+
+def apply_merged_axes(problem: dict, merged: dict) -> dict:
+    """Write merged axes onto problem.axes, but never overwrite a human-sourced axis.
+
+    Returns a record of which axes were written / preserved / skipped, useful for the report."""
+    existing = problem.get("axes") or {}
+    final: dict = dict(existing)
+    record = {"written": [], "preserved_human": [], "no_evidence": []}
+    for name, payload in merged.items():
+        cur = existing.get(name)
+        if isinstance(cur, dict) and cur.get("source") == "human":
+            record["preserved_human"].append(name)
+            continue
+        final[name] = payload
+        record["written"].append(name)
+    for name in _AXIS_KEYS.values():
+        if name not in merged and name not in existing:
+            record["no_evidence"].append(name)
+    if final:
+        problem["axes"] = final
+    return record
+
+
 def report_path(problem_id: str) -> str:
     return os.path.join(REPORTS_DIR, f"{problem_id}.json")
 
 
-def write_report(problem_id: str, history: list[dict], gate: dict) -> str:
+def write_report(
+    problem_id: str,
+    history: list[dict],
+    gate: dict,
+    axis_merge: Optional[dict] = None,
+) -> str:
     os.makedirs(REPORTS_DIR, exist_ok=True)
     payload = {
         "problemId": problem_id,
         "createdAt": _now_iso(),
         "rounds": history,
         "finalGate": gate,
-        "axisMerge": None,  # B.5
+        "axisMerge": axis_merge,
     }
     path = report_path(problem_id)
     with open(path, "w") as f:
@@ -521,8 +703,19 @@ async def review_problem(
     if any("error" in r for r in results):
         err = f"{sum('error' in r for r in results)} persona(s) errored"
 
+    # Axis inference merge across the *final* round's persona outputs.
+    merged_axes, axis_log = merge_axis_inferences(results)
+    axis_record = None
+
     if apply_writeback and err is None:
-        report = write_report(problem_id, history, gate)
+        if merged_axes:
+            axis_record = apply_merged_axes(problem, merged_axes)
+        axis_merge_payload = {
+            "merged": merged_axes,
+            "byPersona": axis_log,
+            "applied": axis_record,
+        } if (merged_axes or axis_log) else None
+        report = write_report(problem_id, history, gate, axis_merge=axis_merge_payload)
         report_ref = os.path.relpath(report, ROOT)
         update_validation_block(problem, gate, results, rounds, report_ref)
         saved_path = save_problem(problem)
@@ -540,4 +733,7 @@ async def review_problem(
         "savedPath": saved_path,
         "history": history,
         "finalProblem": problem,
+        "mergedAxes": merged_axes,
+        "axisLog": axis_log,
+        "axisApplyRecord": axis_record,
     }

@@ -120,16 +120,35 @@ def main() -> int:
     summarize(problem, results)
     print(f"\nwall time: {wall_elapsed:.1f}s  (mode: {'serial' if args.serial else 'parallel'}, rounds: {rounds})")
 
+    # Axis inference merge over the final round.
+    merged_axes, axis_log = R.merge_axis_inferences(results)
+    if merged_axes:
+        print("\naxis inference merge:")
+        for name, payload in merged_axes.items():
+            preview = payload["value"]
+            if isinstance(preview, list):
+                preview = ", ".join(preview[:5]) + (f"  (+{len(preview)-5} more)" if len(preview) > 5 else "")
+            print(f"  {name}: {preview}  (conf={payload['confidence']})")
+
     if args.apply:
         if any("error" in r for r in results):
             print("\nrefusing to --apply: one or more personas errored. Investigate first.")
             return 1
-        report = R.write_report(args.problem_id, history, gate)
+        axis_record = R.apply_merged_axes(problem, merged_axes) if merged_axes else None
+        axis_merge_payload = (
+            {"merged": merged_axes, "byPersona": axis_log, "applied": axis_record}
+            if (merged_axes or axis_log) else None
+        )
+        report = R.write_report(args.problem_id, history, gate, axis_merge=axis_merge_payload)
         report_ref = os.path.relpath(report, R.ROOT)
         R.update_validation_block(problem, gate, results, rounds, report_ref)
         path = R.save_problem(problem)
         print(f"\nwrote validation block → {os.path.relpath(path, R.ROOT)}")
         print(f"wrote round-by-round report → {report_ref}")
+        if axis_record and axis_record["written"]:
+            print(f"wrote axes → {', '.join(axis_record['written'])}")
+        if axis_record and axis_record["preserved_human"]:
+            print(f"preserved human axes → {', '.join(axis_record['preserved_human'])}")
     elif gate.get("status") and gate["status"] != "PASS":
         print("\n(dry-run — pass --apply to write validation block + report)")
 
